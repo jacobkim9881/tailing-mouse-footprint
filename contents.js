@@ -1,4 +1,3 @@
-
 function giveBubble(obj, e) {
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
@@ -58,30 +57,79 @@ function giveBubble(obj, e) {
       }
 
       let num = 0;
-document.body.addEventListener('mousemove', (e) => {
-  
-  let obj = document.createElement('div');
-  
-    if (num === 0) {
-      obj.setAttribute('id', 'particle');
-      num++
-      giveBubble(obj, e)
-      
-  document.body.appendChild(obj);
-    } else {
-      if (num === 1) {
-        setTimeout(() => document.getElementById('particle').remove(), 200);
-    
-      } else {
-        let lessNum = num - 1;
-        setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-      }
-      obj.setAttribute('id', 'particle' + num);
-      num++
-      giveBubble(obj, e)
-          
-  document.body.appendChild(obj);
-    }
 
-  
-})
+      let base = (e) => {
+        let obj = document.createElement('div');
+        
+          if (num === 0) {
+            obj.setAttribute('id', 'particle');
+            num++
+            giveBubble(obj, e)
+            
+        document.body.appendChild(obj);
+          } else {
+            if (num === 1) {
+              setTimeout(() => document.getElementById('particle').remove(), 200);
+          
+            } else {
+              let lessNum = num - 1;
+              setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+            }
+            obj.setAttribute('id', 'particle' + num);
+            num++
+            giveBubble(obj, e)
+                
+        document.body.appendChild(obj);
+          }
+          
+      }
+
+      //document.body.addEventListener('mousemove', base);
+
+
+      let bodyCg = (func) => {
+        document.body.addEventListener('mousemove', (e) => {
+        
+        let obj = document.createElement('div');
+        
+          if (num === 0) {
+            obj.setAttribute('id', 'particle');
+            num++
+            func(obj, e)
+            
+        document.body.appendChild(obj);
+          } else {
+            if (num === 1) {
+              setTimeout(() => document.getElementById('particle').remove(), 200);
+          
+            } else {
+              let lessNum = num - 1;
+              setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+            }
+            obj.setAttribute('id', 'particle' + num);
+            num++
+            func(obj, e)
+                
+        document.body.appendChild(obj);
+          }
+      
+        
+      })
+      
+      }
+
+      bodyCg(giveBubble);
+
+      chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
+          switch(msg) {
+              case 'giveBubble' :
+              document.body.removeEventListener('mousemove', base);
+              bodyCg(giveBubble);
+          }
+      })
+//      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+//    chrome.tabs.onMessage.addListener((msg, _, sendRes) => {
+//        alert('sssfdd')
+//    }
+//    )
+//  })
