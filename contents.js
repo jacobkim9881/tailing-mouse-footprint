@@ -74,59 +74,79 @@ function giveBubble(obj, e) {
         document.body.appendChild(obj);
       }
 
-      document.body.addEventListener('mousemove', base);
-
-
-      let bodyCg = (func) => {
-        document.body.addEventListener('mousemove', (e) => {
+      let baseSquare = (e) => {
+        let obj = document.createElement('div');
         
-          let obj = document.createElement('div');
-        
-          let lessNum = num - 1;        
-          let formerObj = document.getElementById('particle' + lessNum);        
-          if (formerObj !== null) {
-            setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-          }                
-          obj.setAttribute('id', 'particle' + num);
-          num++
-          if (e !== undefined) {
-            func(obj, e);  
-          }
-          document.body.appendChild(obj);
-      
-        
-      })
-      
+        let lessNum = num - 1;        
+        let formerObj = document.getElementById('particle' + lessNum);        
+        if (formerObj !== null) {
+          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+        }                
+        obj.setAttribute('id', 'particle' + num);
+        num++
+        if (e !== undefined) {
+          giveSquare(obj, e);  
+        }
+        document.body.appendChild(obj);
       }
 
-      //bodyCg(giveBubble);
+      let baseO = (e) => {
+        let obj = document.createElement('div');
+        
+        let lessNum = num - 1;        
+        let formerObj = document.getElementById('particle' + lessNum);        
+        if (formerObj !== null) {
+          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+        }                
+        obj.setAttribute('id', 'particle' + num);
+        num++
+        if (e !== undefined) {
+          giveStyle(obj, e);  
+        }
+        document.body.appendChild(obj);
+      }
+
+      let baseLetter = (e) => {
+        let obj = document.createElement('div');
+        
+        let lessNum = num - 1;        
+        let formerObj = document.getElementById('particle' + lessNum);        
+        if (formerObj !== null) {
+          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+        }                
+        obj.setAttribute('id', 'particle' + num);
+        num++
+        if (e !== undefined) {
+          giveLetter(obj, e);  
+        }
+        document.body.appendChild(obj);
+      }
+
+
+      document.body.addEventListener('mousemove', base);
 
       let curFunc = base;
-      console.log(curFunc)
 
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
           switch(msg) {
               case 'giveBubble' :
               document.body.removeEventListener('mousemove', curFunc);
-              bodyCg(giveBubble);
-              curFunc = giveBubble;
-              return;
+              curFunc = base;
+              break;
               case 'giveLetter' :
               document.body.removeEventListener('mousemove', curFunc);
-              bodyCg(giveLetter);
-              curFunc = giveLetter;
-              return;
+              curFunc = baseLetter;
+              break;
               case 'colorfulSquare' :
               document.body.removeEventListener('mousemove', curFunc);
-              bodyCg(giveSquare);
-              curFunc = giveSquare;
-              return;
+              curFunc = baseSquare;
+              break;
               case 'colofulO' :
               document.body.removeEventListener('mousemove', curFunc);
-              bodyCg(giveStyle);
-              curFunc = giveStyle;
-              return;
+              curFunc = baseO;
+              break;
           }
+          document.body.addEventListener('mousemove', curFunc)
       })
 //      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 //    chrome.tabs.onMessage.addListener((msg, _, sendRes) => {
