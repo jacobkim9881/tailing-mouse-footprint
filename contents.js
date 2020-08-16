@@ -1,4 +1,4 @@
-function giveBubble(obj, e) {
+function giveBubble(obj, e) {  
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 5) + 5;
@@ -56,75 +56,76 @@ function giveBubble(obj, e) {
       //obj.style.color = `hsl(${ran360}, 100%, 50%)`;
       }
 
-      let num = 0;
+      let num = 1;
 
       let base = (e) => {
         let obj = document.createElement('div');
         
-          if (num === 0) {
-            obj.setAttribute('id', 'particle');
-            num++
-            giveBubble(obj, e)
-            
+        let lessNum = num - 1;        
+        let formerObj = document.getElementById('particle' + lessNum);        
+        if (formerObj !== null) {
+          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+        }                
+        obj.setAttribute('id', 'particle' + num);
+        num++
+        if (e !== undefined) {
+          giveBubble(obj, e);  
+        }
         document.body.appendChild(obj);
-          } else {
-            if (num === 1) {
-              setTimeout(() => document.getElementById('particle').remove(), 200);
-          
-            } else {
-              let lessNum = num - 1;
-              setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-            }
-            obj.setAttribute('id', 'particle' + num);
-            num++
-            giveBubble(obj, e)
-                
-        document.body.appendChild(obj);
-          }
-          
       }
 
-      //document.body.addEventListener('mousemove', base);
+      document.body.addEventListener('mousemove', base);
 
 
       let bodyCg = (func) => {
         document.body.addEventListener('mousemove', (e) => {
         
-        let obj = document.createElement('div');
+          let obj = document.createElement('div');
         
-          if (num === 0) {
-            obj.setAttribute('id', 'particle');
-            num++
-            func(obj, e)
-            
-        document.body.appendChild(obj);
-          } else {
-            if (num === 1) {
-              setTimeout(() => document.getElementById('particle').remove(), 200);
-          
-            } else {
-              let lessNum = num - 1;
-              setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-            }
-            obj.setAttribute('id', 'particle' + num);
-            num++
-            func(obj, e)
-                
-        document.body.appendChild(obj);
+          let lessNum = num - 1;        
+          let formerObj = document.getElementById('particle' + lessNum);        
+          if (formerObj !== null) {
+            setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+          }                
+          obj.setAttribute('id', 'particle' + num);
+          num++
+          if (e !== undefined) {
+            func(obj, e);  
           }
+          document.body.appendChild(obj);
       
         
       })
       
       }
 
-      bodyCg(giveBubble);
+      //bodyCg(giveBubble);
+
+      let curFunc = base;
+      console.log(curFunc)
 
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
           switch(msg) {
               case 'giveBubble' :
-              document.body.removeEventListener('mousemove', base);
+              document.body.removeEventListener('mousemove', curFunc);
               bodyCg(giveBubble);
+              curFunc = giveBubble;
+              return;
+              case 'giveLetter' :
+              document.body.removeEventListener('mousemove', curFunc);
+              bodyCg(giveLetter);
+              curFunc = giveLetter;
+              return;
+              case 'colorfulSquare' :
+              document.body.removeEventListener('mousemove', curFunc);
+              bodyCg(giveSquare);
+              curFunc = giveSquare;
+              return;
+              case 'colofulO' :
+              document.body.removeEventListener('mousemove', curFunc);
+              bodyCg(giveStyle);
+              curFunc = giveStyle;
+              return;
           }
       })
 //      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
