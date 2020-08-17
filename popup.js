@@ -20,7 +20,7 @@ letter.addEventListener('click', () => {
   })
 })
 
-let colorSquare = document.getElementById('colorful square');
+let colorSquare = document.getElementById('colorfulSquare');
 
 colorSquare.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -31,7 +31,7 @@ colorSquare.addEventListener('click', () => {
   })
 })
 
-let colofulO = document.getElementById('colorful o');
+let colofulO = document.getElementById('colorfulO');
 
 colofulO.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {

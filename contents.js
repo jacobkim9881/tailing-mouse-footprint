@@ -61,88 +61,101 @@ function giveBubble(obj, e) {
       let base = (e) => {
         let obj = document.createElement('div');
         
-        let lessNum = num - 1;        
-        let formerObj = document.getElementById('particle' + lessNum);        
-        if (formerObj !== null) {
-          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-        }                
+        //let lessNum = num - 1;        
+        //let formerObj = document.getElementById('particle' + lessNum);        
+        //if (formerObj !== null) {
+        //  setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
+        //}                
         obj.setAttribute('id', 'particle' + num);
         num++
         if (e !== undefined) {
           giveBubble(obj, e);  
         }
         document.body.appendChild(obj);
+        setTimeout(() => obj.remove(), 200);
       }
 
       let baseSquare = (e) => {
         let obj = document.createElement('div');
         
-        let lessNum = num - 1;        
-        let formerObj = document.getElementById('particle' + lessNum);        
-        if (formerObj !== null) {
-          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-        }                
         obj.setAttribute('id', 'particle' + num);
         num++
         if (e !== undefined) {
           giveSquare(obj, e);  
         }
         document.body.appendChild(obj);
+        setTimeout(() => obj.remove(), 200);
       }
 
       let baseO = (e) => {
         let obj = document.createElement('div');
         
-        let lessNum = num - 1;        
-        let formerObj = document.getElementById('particle' + lessNum);        
-        if (formerObj !== null) {
-          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-        }                
         obj.setAttribute('id', 'particle' + num);
         num++
         if (e !== undefined) {
           giveStyle(obj, e);  
         }
         document.body.appendChild(obj);
+        setTimeout(() => obj.remove(), 200);
       }
 
       let baseLetter = (e) => {
         let obj = document.createElement('div');
         
-        let lessNum = num - 1;        
-        let formerObj = document.getElementById('particle' + lessNum);        
-        if (formerObj !== null) {
-          setTimeout(() => document.getElementById('particle' + lessNum).remove(), 200);
-        }                
         obj.setAttribute('id', 'particle' + num);
         num++
         if (e !== undefined) {
           giveLetter(obj, e);  
         }
         document.body.appendChild(obj);
+        setTimeout(() => obj.remove(), 200);
       }
 
-
-      document.body.addEventListener('mousemove', base);
-
-      let curFunc = base;
+      let curFunc;
+      switch (localStorage.pointer) {
+        case 'bubble':
+          document.body.addEventListener('mousemove', base);
+          curFunc = base;
+          break;
+        case 'letter':
+          document.body.addEventListener('mousemove', baseLetter);
+          curFunc = baseLetter;
+          break;
+        case 'cSquare':
+          document.body.addEventListener('mousemove', baseSquare);
+          curFunc = baseSquare;
+          break;
+        case 'cO':
+          document.body.addEventListener('mousemove', baseO);
+          curFunc = baseO;
+          break;
+        default :
+        document.body.addEventListener('mousemove', base);
+        curFunc = base;
+        break;
+            
+      }
 
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
           switch(msg) {
               case 'giveBubble' :
               document.body.removeEventListener('mousemove', curFunc);
+              localStorage.pointer = 'bubble'
               curFunc = base;
               break;
               case 'giveLetter' :
               document.body.removeEventListener('mousemove', curFunc);
+              localStorage.pointer = 'letter';
               curFunc = baseLetter;
               break;
               case 'colorfulSquare' :
               document.body.removeEventListener('mousemove', curFunc);
+              localStorage.pointer = 'cSquare';
               curFunc = baseSquare;
               break;
               case 'colofulO' :
               document.body.removeEventListener('mousemove', curFunc);
+              localStorage.pointer = 'cO';
               curFunc = baseO;
               break;
           }
