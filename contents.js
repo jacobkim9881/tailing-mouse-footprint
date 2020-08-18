@@ -1,8 +1,12 @@
+function screwLine(obj, e, num) {
+  x = e.clientX;
+  y = e.clientY;
+  let changeY = num % 15 + y;
+}
 function giveBubble(obj, e) {  
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 5) + 5;
-    let ran360 = Math.trunc(Math.random() * 360);
     obj.style.position = 'fixed';
     obj.style.top = ranYpos + 'px';
     obj.style.left = ranXpos + 'px';
@@ -109,7 +113,11 @@ function giveBubble(obj, e) {
         obj.setAttribute('class', 'letter')
         if (e !== undefined) {
           giveLetter(obj, e);  
-        }  
+        } 
+        obj.animate([
+          {opacity: 1}, 
+          {opacity: 0}
+        ], 200) 
         document.body.appendChild(obj);
         setTimeout(() => obj.remove(), 200);
       }
@@ -146,13 +154,13 @@ function giveBubble(obj, e) {
                 break;
               case 'letter':
                 document.body.removeEventListener('mousemove', curFunc);
-                let link = document.createElement('link');
-                link.rel = 'stylesheet';  
-
-                link.type = 'text/css'; 
-
-                link.href = './giveLetter.css';
-                head.appendChild(link);
+                //let link = document.createElement('link');
+                //link.rel = 'stylesheet';  
+//
+                //link.type = 'text/css'; 
+//
+                //link.href = 'FOLDER_PATH';
+                //head.appendChild(link);
                 curFunc = baseLetter;
                 break;
               case 'cSquare' :

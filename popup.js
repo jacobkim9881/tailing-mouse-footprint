@@ -6,7 +6,8 @@ bubble.addEventListener('click', () => {
       tabs[0].id,
       'giveBubble'
     )
-  })
+  });
+  
 })
 
 let letter = document.getElementById('letter');
