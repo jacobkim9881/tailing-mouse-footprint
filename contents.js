@@ -99,65 +99,72 @@ function giveBubble(obj, e) {
         setTimeout(() => obj.remove(), 200);
       }
 
+      var head = document.getElementsByTagName('HEAD')[0];
+
       let baseLetter = (e) => {
         let obj = document.createElement('div');
         
         obj.setAttribute('id', 'particle' + num);
         num++
+        obj.setAttribute('class', 'letter')
         if (e !== undefined) {
           giveLetter(obj, e);  
-        }
+        }  
         document.body.appendChild(obj);
         setTimeout(() => obj.remove(), 200);
       }
 
       let curFunc;
-      switch (localStorage.pointer) {
-        case 'bubble':
-          document.body.addEventListener('mousemove', base);
-          curFunc = base;
-          break;
-        case 'letter':
-          document.body.addEventListener('mousemove', baseLetter);
-          curFunc = baseLetter;
-          break;
-        case 'cSquare':
-          document.body.addEventListener('mousemove', baseSquare);
-          curFunc = baseSquare;
-          break;
-        case 'cO':
-          document.body.addEventListener('mousemove', baseO);
-          curFunc = baseO;
-          break;
-        default :
-        document.body.addEventListener('mousemove', base);
-        curFunc = base;
-        break;
-            
-      }
+
+      chrome.runtime.sendMessage(undefined, 'check');
 
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
           switch(msg) {
               case 'giveBubble' :
               document.body.removeEventListener('mousemove', curFunc);
-              localStorage.pointer = 'bubble'
+              chrome.runtime.sendMessage(undefined, 'bubble');
               curFunc = base;
               break;
               case 'giveLetter' :
               document.body.removeEventListener('mousemove', curFunc);
-              localStorage.pointer = 'letter';
+              chrome.runtime.sendMessage(undefined, 'letter');
               curFunc = baseLetter;
               break;
               case 'colorfulSquare' :
               document.body.removeEventListener('mousemove', curFunc);
-              localStorage.pointer = 'cSquare';
+              chrome.runtime.sendMessage(undefined, 'cSquare');
               curFunc = baseSquare;
               break;
               case 'colofulO' :
               document.body.removeEventListener('mousemove', curFunc);
-              localStorage.pointer = 'cO';
+              chrome.runtime.sendMessage(undefined, 'cO');
               curFunc = baseO;
               break;
+              case 'bubble' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = base;
+                break;
+              case 'letter':
+                document.body.removeEventListener('mousemove', curFunc);
+                let link = document.createElement('link');
+                link.rel = 'stylesheet';  
+
+                link.type = 'text/css'; 
+
+                link.href = './giveLetter.css';
+                head.appendChild(link);
+                curFunc = baseLetter;
+                break;
+              case 'cSquare' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseSquare;
+                break;
+                case 'cO' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseO;
+                break;
+                      
+                
           }
           document.body.addEventListener('mousemove', curFunc)
       })
