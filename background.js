@@ -25,6 +25,9 @@ chrome.runtime.onMessage.addListener((msg) => {
         case 'cO':
             localStorage.pointer = 'cO'
           break;
+        case 'wave':
+            localStorage.pointer = 'wave'
+          break;
         case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 chrome.tabs.sendMessage(

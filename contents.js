@@ -1,3 +1,20 @@
+let holdObj = document.createElement('div');
+
+function wave(obj, e) {
+  x = e.clientX;
+  y = e.clientY;
+  let ran360 = Math.trunc(Math.random() * 360);
+  let ran360Two = Math.trunc(Math.random() * 360);
+  let changedY = Math.sin(num) * 10 + y;
+  obj.style.position = 'fixed';
+  obj.style.width = 100 + 'px';
+  obj.style.height = 100 + 'px';
+  obj.style.borderRadius = '50%';  
+  obj.style.top = y + 'px';
+  obj.style.left = x + 'px';
+  obj.style.backgroundColor = `hsl(${ran360}, 100%, 50%)`  
+}
+
 function screwLine(obj, e, num) {
   x = e.clientX;
   y = e.clientY;
@@ -10,11 +27,7 @@ function footprint(obj, e, num, formerX, formerY) {
   let changedY;
   let numTen = (num / 10).toString();
   let numHead = numTen[numTen.length - 1];
-  if (numHead === '5') {
-    changedX = x - 50;
-  } else {
-    changedX = x + 100;
-  }
+  
   obj.style.position = 'fixed';
   obj.style.top = x + 'px';
   obj.style.left = y + 'px';
@@ -24,6 +37,7 @@ function giveBubble(obj, e) {
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 5) + 5;
+    let ran20 = ranYpos - 30;
     obj.style.position = 'fixed';
     obj.style.top = ranYpos + 'px';
     obj.style.left = ranXpos + 'px';
@@ -31,6 +45,10 @@ function giveBubble(obj, e) {
     obj.style.height = ran10 + 'px';
     obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj.style.borderRadius = '50%';  
+    obj.animate([
+      {top: ranYpos + 'px'}, 
+      {top: ran20 + 'px'}
+    ], 200)
   }
 
   function giveSquare(obj, e) {
@@ -141,6 +159,16 @@ function giveBubble(obj, e) {
         setTimeout(() => obj.remove(), 200);
       }
 
+      let baseWave = (e) => {
+        //let obj = document.createElement('div');
+        num++
+        if (e !== undefined) {
+          wave(holdObj, e);  
+        } 
+        document.body.appendChild(holdObj);
+        setTimeout(() => holdObj.remove(), 500);
+      }
+
       let baseFootprint = (e) => {
         if (num % 50 === 0) {
           let obj = document.createElement('div');
@@ -183,6 +211,11 @@ function giveBubble(obj, e) {
               chrome.runtime.sendMessage(undefined, 'cO');
               curFunc = baseO;
               break;
+              case 'giveWave':
+              document.body.removeEventListener('mousemove', curFunc);
+              chrome.runtime.sendMessage(undefined, 'wave');
+              curFunc = baseWave;
+              break;
               case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = base;
@@ -205,6 +238,10 @@ function giveBubble(obj, e) {
                 case 'cO' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = baseO;
+                break;
+              case 'wave' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseWave;
                 break;
                       
                 

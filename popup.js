@@ -49,6 +49,18 @@ colofulO.addEventListener('click', () => {
   })
 })
 
+let wave = document.getElementById('wave');
+
+wave.addEventListener('click', () => {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      'giveWave'
+    );
+      chrome.pageAction.setIcon({path: './images/co/colofulO16.png',
+  tabId: tabs[0].id});
+  })
+})
 //chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 //  chrome.tabs.executeScript(
 //      tabs[0].id,
