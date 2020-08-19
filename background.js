@@ -30,8 +30,23 @@ chrome.runtime.onMessage.addListener((msg) => {
                 chrome.tabs.sendMessage(
                   tabs[0].id,
                   localStorage.pointer
-                )
-              })
+                );
+                let path = '';
+                switch (localStorage.pointer) {
+                  case 'bubble':
+                  path = './images/bubble/buble32.png';
+                  break;
+                  case 'cSquare':
+                  path = './images/csquare/colofulSquare16.png';
+                  break;
+                  case 'cO':
+                  path = './images/co/colofulO16.png';
+                  break;  
+                }
+                chrome.pageAction.setIcon({
+                  path: path,
+                  tabId: tabs[0].id});
+              });
             break;
         default :
         

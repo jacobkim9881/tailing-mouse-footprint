@@ -3,6 +3,23 @@ function screwLine(obj, e, num) {
   y = e.clientY;
   let changeY = num % 15 + y;
 }
+function footprint(obj, e, num, formerX, formerY) {
+  x = e.clientX;
+  y = e.clientY;
+  let changedX;
+  let changedY;
+  let numTen = (num / 10).toString();
+  let numHead = numTen[numTen.length - 1];
+  if (numHead === '5') {
+    changedX = x - 50;
+  } else {
+    changedX = x + 100;
+  }
+  obj.style.position = 'fixed';
+  obj.style.top = x + 'px';
+  obj.style.left = y + 'px';
+
+}
 function giveBubble(obj, e) {  
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
@@ -61,6 +78,8 @@ function giveBubble(obj, e) {
       }
 
       let num = 1;
+      let formerX;
+      let formerY;
 
       let base = (e) => {
         let obj = document.createElement('div');
@@ -120,6 +139,22 @@ function giveBubble(obj, e) {
         ], 200) 
         document.body.appendChild(obj);
         setTimeout(() => obj.remove(), 200);
+      }
+
+      let baseFootprint = (e) => {
+        if (num % 50 === 0) {
+          let obj = document.createElement('div');
+        
+          if (e !== undefined) {
+            giveLetter(obj, e);  
+          } 
+          obj.animate([
+            {opacity: 1}, 
+            {opacity: 0}
+          ], 200) 
+          document.body.appendChild(obj);
+          setTimeout(() => obj.remove(), 200);
+        }
       }
 
       let curFunc;

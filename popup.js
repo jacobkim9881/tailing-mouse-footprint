@@ -5,9 +5,11 @@ bubble.addEventListener('click', () => {
     chrome.tabs.sendMessage(
       tabs[0].id,
       'giveBubble'
-    )
+    );
+    chrome.pageAction.setIcon({path: './images/bubble/buble32.png',
+  tabId: tabs[0].id
+});
   });
-  
 })
 
 let letter = document.getElementById('letter');
@@ -28,7 +30,9 @@ colorSquare.addEventListener('click', () => {
     chrome.tabs.sendMessage(
       tabs[0].id,
       'colorfulSquare'
-    )
+    );
+    chrome.pageAction.setIcon({path: './images/csquare/colofulSquare16.png',
+    tabId: tabs[0].id});
   })
 })
 
@@ -39,7 +43,9 @@ colofulO.addEventListener('click', () => {
     chrome.tabs.sendMessage(
       tabs[0].id,
       'colofulO'
-    )
+    );
+      chrome.pageAction.setIcon({path: './images/co/colofulO16.png',
+  tabId: tabs[0].id});
   })
 })
 
