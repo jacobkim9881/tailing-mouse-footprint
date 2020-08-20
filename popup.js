@@ -20,6 +20,8 @@ letter.addEventListener('click', () => {
       tabs[0].id,
       'giveLetter'
     )
+    chrome.pageAction.setIcon({path: './images/csquare/colofulSquare16.png',
+    tabId: tabs[0].id});
   })
 })
 
@@ -49,15 +51,15 @@ colofulO.addEventListener('click', () => {
   })
 })
 
-let wave = document.getElementById('wave');
+let snowflake = document.getElementById('snowflake');
 
-wave.addEventListener('click', () => {
+snowflake.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     chrome.tabs.sendMessage(
       tabs[0].id,
-      'giveWave'
+      'giveSnowflake'
     );
-      chrome.pageAction.setIcon({path: './images/co/colofulO16.png',
+      chrome.pageAction.setIcon({path: './images/snow/snowflake32.png',
   tabId: tabs[0].id});
   })
 })

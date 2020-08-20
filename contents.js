@@ -1,18 +1,26 @@
 let holdObj = document.createElement('div');
 
-function wave(obj, e) {
+function snowflake(obj, e) {
   x = e.clientX;
   y = e.clientY;
   let ran360 = Math.trunc(Math.random() * 360);
   let ran360Two = Math.trunc(Math.random() * 360);
   let changedY = Math.sin(num) * 10 + y;
+  let bottomY = window.innerHeight - 30;
+  let changedX = x + 10;
   obj.style.position = 'fixed';
-  obj.style.width = 100 + 'px';
-  obj.style.height = 100 + 'px';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 10 + 'px';
   obj.style.borderRadius = '50%';  
-  obj.style.top = y + 'px';
+  //obj.style.top = bottomY + 'px';
   obj.style.left = x + 'px';
-  obj.style.backgroundColor = `hsl(${ran360}, 100%, 50%)`  
+  obj.style.backgroundImage = `radial-gradient(circle, hsl(0, 0%, 70%), hsl(0, 0%, 90%))`;  
+  
+  obj.animate([
+    {top: y + 'px'},
+    {top: bottomY + 'px'}        
+  ], 8000)
+  
 }
 
 function screwLine(obj, e, num) {
@@ -159,14 +167,17 @@ function giveBubble(obj, e) {
         setTimeout(() => obj.remove(), 200);
       }
 
-      let baseWave = (e) => {
-        //let obj = document.createElement('div');
+      let baseSnowflake = (e) => {
+        let obj = document.createElement('div');
         num++
-        if (e !== undefined) {
-          wave(holdObj, e);  
-        } 
-        document.body.appendChild(holdObj);
-        setTimeout(() => holdObj.remove(), 500);
+          if (num % 10 === 0) {
+          if (e !== undefined) {
+            snowflake(obj, e);  
+          } 
+          document.body.appendChild(obj);
+          //setTimeout(() => obj.remove(), 500);
+        }
+        
       }
 
       let baseFootprint = (e) => {
@@ -211,10 +222,10 @@ function giveBubble(obj, e) {
               chrome.runtime.sendMessage(undefined, 'cO');
               curFunc = baseO;
               break;
-              case 'giveWave':
+              case 'giveSnowflake':
               document.body.removeEventListener('mousemove', curFunc);
-              chrome.runtime.sendMessage(undefined, 'wave');
-              curFunc = baseWave;
+              chrome.runtime.sendMessage(undefined, 'snowflake');
+              curFunc = baseSnowflake;
               break;
               case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
@@ -222,13 +233,6 @@ function giveBubble(obj, e) {
                 break;
               case 'letter':
                 document.body.removeEventListener('mousemove', curFunc);
-                //let link = document.createElement('link');
-                //link.rel = 'stylesheet';  
-//
-                //link.type = 'text/css'; 
-//
-                //link.href = 'FOLDER_PATH';
-                //head.appendChild(link);
                 curFunc = baseLetter;
                 break;
               case 'cSquare' :
@@ -239,9 +243,9 @@ function giveBubble(obj, e) {
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = baseO;
                 break;
-              case 'wave' :
+              case 'snowflake' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseWave;
+                curFunc = baseSnowflake;
                 break;
                       
                 

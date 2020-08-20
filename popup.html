@@ -2,13 +2,26 @@
   <html>
     <head>
       <style>
+        body {
+          width: 300px;
+        }
         button {
           height: 32px;
           width: 32px;
           outline: none;
         }
+        h4 {
+          border-bottom: 1px solid black;
+          padding-bottom: 10px; 
+        }
+        .buttonDiv {
+          margin: 5px;
+        }
         #bubble {
           background-image: url('./images/bubble/buble32.png');
+        }
+        #letter {
+          background-image: url('./images/csquare/colofulSquare32.png');
         }
         #colorfulSquare {
           background-image: url('./images/csquare/colofulSquare32.png');
@@ -16,14 +29,28 @@
         #colorfulO {
           background-image: url('./images/co/colofulO32.png');
         }
+        #snowflake {
+          background-image: url('./images/snow/snowflake32.png');
+        }
       </style>
     </head>
     <body>
-      <button id="bubble"></button>
-      <button id="letter">L</button>
+      <h4>Choose your mouse effect</h4>
+      <span class= "buttonDiv" >
+        <button id="bubble"></button>
+      </span>
+      <span class= "buttonDiv" >
+        <button id="letter"></button>
+      </span>
+      <span class= "buttonDiv" >
       <button id="colorfulSquare"></button>
-      <button id="colorfulO"></button>
-      <button id="wave"></button>
+    </span>
+    <span class= "buttonDiv" >
+    <button id="colorfulO"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="snowflake"></button>
+  </span>
       <script src="popup.js"></script>
     </body>
   </html>
