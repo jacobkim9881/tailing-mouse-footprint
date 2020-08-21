@@ -1,5 +1,49 @@
 let holdObj = document.createElement('div');
 
+function waterWave(obj, e) {
+  x = Math.trunc(Math.random() * window.innerWidth);
+  y = Math.trunc(Math.random() * window.innerHeight);
+  let changedX = x - 1000;
+  let changedY = y - 1000;
+  obj.style.position = 'fixed';
+  obj.style.top = y + 'px';
+  obj.style.left = x + 'px';
+  obj.style.border = '1px solid blue';
+  obj.style.borderRadius = "50%";
+  obj.animate([
+    {width: 0 + 'px',
+    height: 0 + 'px',
+  top: y + 'px',
+  left: x + 'px'},
+    {width: 1000 + 'px',
+    height: 1000 + 'px',
+    top: changedY + 'px',
+    left: changedX + 'px'}      
+  ], 8000)
+  
+}
+
+function leafs(obj, e) {
+  x = e.clientX;
+  y = e.clientY;
+  let ran360 = Math.trunc(Math.random() * 360);
+  let ran360Two = Math.trunc(Math.random() * 360);
+  let changedY = Math.sin(num) * 10 + y;
+  let bottomY = window.innerHeight - 30;
+  let changedX = x + 10;
+  obj.style.position = 'fixed';
+  obj.style.width = 50 + 'px';
+  obj.style.height = 50 + 'px';
+  //obj.style.borderRadius = '50%';  
+  obj.style.top = bottomY + 'px';
+  obj.style.left = x + 'px';
+  obj.animate([
+    {top: y + 'px'},
+    {top: bottomY + 'px'}        
+  ], 8000)
+  
+}
+
 function snowflake(obj, e) {
   x = e.clientX;
   y = e.clientY;
@@ -23,11 +67,19 @@ function snowflake(obj, e) {
   
 }
 
-function screwLine(obj, e, num) {
-  x = e.clientX;
-  y = e.clientY;
-  let changeY = num % 15 + y;
+function screwLine(obj, e, num, sin, formerX, formerY) {
+  x = e.clientX + Math.trunc(Math.sin(e.clientY) * 30);
+  y = e.clientY + Math.trunc(Math.sin(e.clientX) * 30);
+  let changeY = y;
+  obj.style.position = 'fixed';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 10 + 'px';
+  obj.style.borderRadius = '50%';  
+  obj.style.top = changeY + 'px';
+  obj.style.left = x + 'px';
+  obj.style.backgroundImage = `radial-gradient(circle, hsl(0, 0%, 70%), hsl(0, 0%, 90%))`; 
 }
+
 function footprint(obj, e, num, formerX, formerY) {
   x = e.clientX;
   y = e.clientY;
@@ -196,6 +248,54 @@ function giveBubble(obj, e) {
         }
       }
 
+      let baseScrewLine = (e) => {
+        num++;
+        if (num % 1 === 0) {
+          let sin = Math.trunc(Math.sin(num) * 10);
+          let obj = document.createElement('div');
+          
+          if (e !== undefined) {
+            screwLine(obj, e, num, -sin);
+          } 
+          document.body.appendChild(obj);
+          setTimeout(() => {
+            obj.remove();
+          }, 200);
+        }
+      }
+
+      let baseLeafs = (e) => {
+        let obj = document.createElement('img');
+        num++;
+        //let test = document.createElement('link');
+        //test.rel = 'stylesheet';
+        //test.type = 'text/css'
+        //document.head.appendChild(test);
+        if (num % 10 === 0) {
+          if (e !== undefined) {
+            leafs(obj, e);  
+          } 
+          document.body.appendChild(obj);
+          //setTimeout(() => obj.remove(), 500);
+        }
+        
+      }
+
+      let baseWaterWave = (e) => {
+        num++;
+        if (num % 50 === 0) {
+
+          let obj = document.createElement('img');
+        
+          if (num % 10 === 0) {
+            if (e !== undefined) {
+              waterWave(obj, e);  
+            } 
+            document.body.appendChild(obj);
+            //setTimeout(() => obj.remove(), 500);
+          }
+        }
+      }
       let curFunc;
 
       chrome.runtime.sendMessage(undefined, 'check');
@@ -227,6 +327,11 @@ function giveBubble(obj, e) {
               chrome.runtime.sendMessage(undefined, 'snowflake');
               curFunc = baseSnowflake;
               break;
+              case 'giveWaterWave':
+                document.body.removeEventListener('mousemove', curFunc);
+                chrome.runtime.sendMessage(undefined, 'waterWave');
+                curFunc = baseWaterWave;
+                break;
               case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = base;
@@ -246,6 +351,10 @@ function giveBubble(obj, e) {
               case 'snowflake' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = baseSnowflake;
+                break;
+              case 'waterWave' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseWaterWave;
                 break;
                       
                 

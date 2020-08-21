@@ -28,6 +28,9 @@ chrome.runtime.onMessage.addListener((msg) => {
         case 'snowflake':
             localStorage.pointer = 'snowflake'
           break;
+        case 'waterWave':
+          localStorage.pointer = 'waterWave'
+        break;  
         case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 chrome.tabs.sendMessage(
@@ -40,7 +43,7 @@ chrome.runtime.onMessage.addListener((msg) => {
                   path = './images/bubble/buble32.png';
                   break;
                   case 'letter':
-                  path = './images/csquare/colofulSquare16.png';
+                  path = './images/letter/letter32.png';
                   break;
                   case 'cSquare':
                   path = './images/csquare/colofulSquare16.png';
@@ -51,6 +54,9 @@ chrome.runtime.onMessage.addListener((msg) => {
                   case 'snowflake':
                   path = './images/snow/snowflake16.png';
                   break;  
+                  case 'waterWave':
+                    path = './images/snow/snowflake16.png';
+                    break;  
                 }
                 chrome.pageAction.setIcon({
                   path: path,
