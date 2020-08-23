@@ -1,15 +1,23 @@
 let holdObj = document.createElement('div');
 
-function rain(obj, e) {
+function rain(e) {
+  let obj = document.createElement('div');
+          
   x = Math.trunc(Math.random() * window.innerWidth);
   y = Math.trunc(Math.random() * window.innerHeight);
   obj.style.position = 'fixed';
   obj.style.top = y + 'px';
   obj.style.left = x + 'px';
   obj.style.width = 10 + 'px';
-  obj.style.height = 100 + 'px';
-  obj.style.border = '0px 0px 0px 1px solid blue';
-
+  obj.style.height = 200 + 'px';
+  obj.style.borderLeft = '1px solid blue';
+  obj.style.transform = 'rotate(-20deg)';
+  //obj.animate([
+  //  {height: '0px'},
+  //  {height: '200px'}
+  //], 50)
+  document.body.appendChild(obj);
+  setTimeout(() => obj.remove(), 100);
 }
 
 function leftRight(obj, e, formerX) {
@@ -374,15 +382,16 @@ function giveBubble(obj, e) {
 
       let baseRain = (e) => {
         num++;
-        if (num % 1 === 0) {
+        let ran150 = Math.trunc(Math.random() * 151);
+        if (num % 150 === ran150) {
 
-          let obj = document.createElement('div');
           if (num % 1 === 0) {
             if (e !== undefined) {
-              rain(obj, e);  
-            } 
-            document.body.appendChild(obj);
-            //setTimeout(() => obj.remove(), 500);
+              rain(e);  
+              if (num % 2 === 0) {
+                rain(e);
+              }
+            }
           }
         }
       }
