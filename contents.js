@@ -1,5 +1,45 @@
 let holdObj = document.createElement('div');
 
+function rain(obj, e) {
+  x = Math.trunc(Math.random() * window.innerWidth);
+  y = Math.trunc(Math.random() * window.innerHeight);
+  obj.style.position = 'fixed';
+  obj.style.top = y + 'px';
+  obj.style.left = x + 'px';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 100 + 'px';
+  obj.style.border = '0px 0px 0px 1px solid blue';
+
+}
+
+function leftRight(obj, e, formerX) {
+  x = e.clientX;
+  y = e.clientY;
+  let hgt = 30;
+  let changedX = x + hgt / 3;
+  let changedY = y - hgt / 3; 
+  let sinGp = Math.sin(num % 360) * 90;
+  obj.style.position = 'fixed';
+  obj.style.top = y + 'px';
+  obj.style.left = x + 'px';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 30 + 'px';
+  obj.style.backgroundColor = 'green';
+
+  
+  //obj.animate([
+  //  {transform: 'rotate(0deg)'},
+  //  {transform: 'rotate(90deg)',
+  //left : changedX + 'px',
+  //top : changedY + 'px'},
+  //  {transform: 'rotate(0deg)'},
+  //        
+  //], {
+  //  duration: 1000,
+  //  iterations: Infinity
+  //})
+}
+
 function waterWave(obj, e) {
   x = Math.trunc(Math.random() * window.innerWidth);
   y = Math.trunc(Math.random() * window.innerHeight);
@@ -296,6 +336,57 @@ function giveBubble(obj, e) {
           }
         }
       }
+
+      //let objt = document.createElement('div');
+      //objt.style.position = 'fixed';
+      //objt.style.top = 500 + 'px';
+      //objt.style.left = 500 + 'px';
+      //objt.style.width = 20 + 'px';
+      //objt.style.height = 50 + 'px';
+      //objt.style.backgroundColor = 'green';
+//
+      //let objt1 = document.createElement('div');
+      //objt1.style.position = 'fixed';
+      //objt1.style.top = 500 - 16.666 + 'px';
+      //objt1.style.left = 500 + 16.666 + 'px';
+      //objt1.style.width = 20 + 'px';
+      //objt1.style.height = 50 + 'px';
+      //objt1.style.backgroundColor = 'green';
+      //objt1.style.transform = 'rotate(90deg)';
+//
+      //document.body.appendChild(objt);
+      //document.body.appendChild(objt1);
+            
+      let baseLeftRight = (e) => {
+        num++;
+        if (num % 1 === 0) {
+
+          //let obj = document.createElement('div');
+          if (num % 1 === 0) {
+            if (e !== undefined) {
+              leftRight(holdObj, e);  
+            } 
+            document.body.appendChild(holdObj);
+            //setTimeout(() => obj.remove(), 500);
+          }
+        }
+      }
+
+      let baseRain = (e) => {
+        num++;
+        if (num % 1 === 0) {
+
+          let obj = document.createElement('div');
+          if (num % 1 === 0) {
+            if (e !== undefined) {
+              rain(obj, e);  
+            } 
+            document.body.appendChild(obj);
+            //setTimeout(() => obj.remove(), 500);
+          }
+        }
+      }
+
       let curFunc;
 
       chrome.runtime.sendMessage(undefined, 'check');
@@ -330,7 +421,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseWaterWave;
+                curFunc = baseRain;
                 break;
               case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
@@ -354,7 +445,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseWaterWave;
+                curFunc = baseRain;
                 break;
                       
                 
