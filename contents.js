@@ -1,5 +1,31 @@
 let holdObj = document.createElement('div');
 
+function heart(obj, e, moveX, deg) {
+  let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
+  let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
+  let ran10 = Math.trunc(Math.random() * 5) + 5;
+  let ranYpos2 = ranYpos + ran10 + 5;
+  let ran360 = Math.trunc(Math.random() * 360);
+  let secLeft = ranXpos + ran10/2;
+  obj.style.position = 'fixed';
+  //obj.style.top = ranYpos + 'px';
+  if (moveX === 1) {
+    obj.style.left = secLeft + 'px';
+  } else {
+    obj.style.left = ranXpos + 'px';
+  }  
+  obj.style.width = ran10 + 'px';
+  obj.style.height = ran10 + 'px';
+  obj.style.backgroundColor = `hsl(0, 100%, 50%)`;
+  obj.style.borderRadius = '50%';  
+  obj.style.transform = `skewY(${deg}deg)`;
+
+  obj.animate([           
+    {top: ranYpos2 + 'px'},
+    {top: ranYpos + 'px'}
+  ], 200)
+  }
+
 function rain(e) {
   let obj = document.createElement('div');
           
@@ -177,14 +203,21 @@ function giveBubble(obj, e) {
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 5) + 5;
+    let ranYpos2 = ranYpos + ran10 + 5;
     let ran360 = Math.trunc(Math.random() * 360);
     obj.style.position = 'fixed';
-    obj.style.top = ranYpos + 'px';
+    //obj.style.top = ranYpos + 'px';
     obj.style.left = ranXpos + 'px';
     obj.style.width = ran10 + 'px';
     obj.style.height = ran10 + 'px';
     obj.style.backgroundColor = `hsl(${ran360}, 100%, 50%)`;
     obj.style.borderRadius = '50%';
+
+    obj.animate([       
+      {top: ranYpos2 + 'px'},
+      {top: ranYpos + 'px'},
+      {top: ranYpos2 + 'px'},
+    ], 200)
     }
 
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -396,6 +429,47 @@ function giveBubble(obj, e) {
         }
       }
 
+
+      let objt = document.createElement('div');
+      objt.style.position = 'fixed';
+      objt.style.top = 520 + 'px';
+      objt.style.left = 500 + 'px';
+      objt.style.width = 50 + 'px';
+      objt.style.height = 50 + 'px';
+      objt.style.backgroundColor = 'green';
+      objt.style.borderRadius = '50%';
+      objt.style.transform = 'skewY(30deg)'
+
+      let objt1 = document.createElement('div');
+      objt1.style.position = 'fixed';
+      objt1.style.top = 520 + 'px';
+      objt1.style.left = 500 + 25 + 'px';
+      objt1.style.width = 50 + 'px';
+      objt1.style.height = 50 + 'px';
+      objt1.style.backgroundColor = 'green';
+      objt1.style.transform = 'rotate(90deg)';
+      objt1.style.borderRadius = '50%';
+      objt1.style.transform = 'skewY(-30deg)'
+
+      document.body.appendChild(objt);
+      document.body.appendChild(objt1);
+            
+
+      let baseHearts = (e) => {
+        let obj = document.createElement('div');
+        let obj1 = document.createElement('div');
+        
+        num++
+        if (e !== undefined) {
+          heart(obj, e, 0, 30);  
+          heart(obj1, e, 1, -30);  
+        }
+        document.body.appendChild(obj);
+        setTimeout(() => obj.remove(), 200);
+        document.body.appendChild(obj1);
+        setTimeout(() => obj1.remove(), 200);
+      }
+
       let curFunc;
 
       chrome.runtime.sendMessage(undefined, 'check');
@@ -430,7 +504,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseRain;
+                curFunc = baseHearts;
                 break;
               case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
@@ -454,7 +528,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseRain;
+                curFunc = baseHearts;
                 break;
                       
                 
