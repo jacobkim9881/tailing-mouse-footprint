@@ -30,7 +30,11 @@ chrome.runtime.onMessage.addListener((msg) => {
           break;
         case 'waterWave':
           localStorage.pointer = 'waterWave'
+        break;
+        case 'heart':
+          localStorage.pointer = 'heart'
         break;  
+          
         case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 chrome.tabs.sendMessage(
@@ -56,6 +60,9 @@ chrome.runtime.onMessage.addListener((msg) => {
                   break;  
                   case 'waterWave':
                     path = './images/snow/snowflake16.png';
+                    break;
+                  case 'heart':
+                    path = './images/heart/heart16.png';
                     break;  
                 }
                 chrome.pageAction.setIcon({

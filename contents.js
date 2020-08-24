@@ -1,7 +1,8 @@
 let holdObj = document.createElement('div');
 
-function heart(obj, e, moveX, deg) {
-  let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
+function heart(test, e, moveX, deg) {
+  let obj = document.createElement('div');
+  let ranXpos = Math.trunc(Math.random() * 15) + parseInt(e.clientX, 10);
   let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
   let ran10 = Math.trunc(Math.random() * 5) + 5;
   let ranYpos2 = ranYpos + ran10 + 5;
@@ -10,7 +11,7 @@ function heart(obj, e, moveX, deg) {
   obj.style.position = 'fixed';
   //obj.style.top = ranYpos + 'px';
   if (moveX === 1) {
-    obj.style.left = secLeft + 'px';
+    obj.style.left = - secLeft + 'px';
   } else {
     obj.style.left = ranXpos + 'px';
   }  
@@ -18,12 +19,32 @@ function heart(obj, e, moveX, deg) {
   obj.style.height = ran10 + 'px';
   obj.style.backgroundColor = `hsl(0, 100%, 50%)`;
   obj.style.borderRadius = '50%';  
-  obj.style.transform = `skewY(${deg}deg)`;
+  obj.style.transform = `skewY(25deg)`;
 
   obj.animate([           
     {top: ranYpos2 + 'px'},
     {top: ranYpos + 'px'}
-  ], 200)
+  ], 500);
+
+  document.body.appendChild(obj);
+  setTimeout(() => obj.remove(), 200);
+  
+  let obj1 = document.createElement('div');
+  obj1.style.position = 'fixed';
+  obj1.style.left = secLeft + 'px';
+  obj1.style.width = ran10 + 'px';
+  obj1.style.height = ran10 + 'px';
+  obj1.style.backgroundColor = `hsl(0, 100%, 50%)`;
+  obj1.style.borderRadius = '50%';  
+  obj1.style.transform = `skewY(-25deg)`;
+
+  obj1.animate([           
+    {top: ranYpos2 + 'px'},
+    {top: ranYpos + 'px'}
+  ], 500);
+
+  document.body.appendChild(obj1);
+  setTimeout(() => obj1.remove(), 200);
   }
 
 function rain(e) {
@@ -118,7 +139,7 @@ function leafs(obj, e) {
   
 }
 
-function snowflake(obj, e) {
+function snowflake(obj, e, background) {
   x = e.clientX;
   y = e.clientY;
   let ran360 = Math.trunc(Math.random() * 360);
@@ -131,14 +152,24 @@ function snowflake(obj, e) {
   obj.style.height = 10 + 'px';
   obj.style.borderRadius = '50%';  
   //obj.style.top = bottomY + 'px';
-  obj.style.left = x + 'px';
   obj.style.backgroundImage = `radial-gradient(circle, hsl(0, 0%, 70%), hsl(0, 0%, 90%))`;  
   
-  obj.animate([
-    {top: y + 'px'},
-    {top: bottomY + 'px'}        
-  ], 8000)
+  if (background === 0) {
+    obj.style.left = x + 'px';
+    obj.animate([
+      {top: y + 'px'},
+      {top: bottomY + 'px'}        
+    ], 8000)
+  } else {
+    x = Math.trunc(Math.random() * window.innerWidth);
+    obj.style.left = x + 'px';
+    obj.animate([
+      {top: 0 + 'px'},
+      {top: bottomY + 'px'}        
+    ], 16000)
   
+  }
+
 }
 
 function screwLine(obj, e, num, sin, formerX, formerY) {
@@ -302,14 +333,27 @@ function giveBubble(obj, e) {
 
       let baseSnowflake = (e) => {
         let obj = document.createElement('div');
+        let obj1 = document.createElement('div');
+        let obj2 = document.createElement('div');
+        let ran2000 = Math.trunc(Math.random() * 2000);
         num++
-          if (num % 10 === 0) {
           if (e !== undefined) {
-            snowflake(obj, e);  
-          } 
-          document.body.appendChild(obj);
-          //setTimeout(() => obj.remove(), 500);
-        }
+            if (num % 10 === 0) {
+            snowflake(obj, e, 0);
+            document.body.appendChild(obj);
+            setTimeout(() => obj.remove(), 8000)
+          setTimeout(() => {
+            snowflake(obj1, e, 1);
+            document.body.appendChild(obj1);
+            setTimeout(() => obj1.remove(), 16000);
+          }, ran2000)
+          //setTimeout(() => {
+          //  snowflake(obj2, e, 1);
+          //  document.body.appendChild(obj2);
+          //  setTimeout(() => obj2.remove(), 16000);
+          //}, 2000 + ran2000)
+          }  
+          }
         
       }
 
@@ -430,44 +474,43 @@ function giveBubble(obj, e) {
       }
 
 
-      let objt = document.createElement('div');
-      objt.style.position = 'fixed';
-      objt.style.top = 520 + 'px';
-      objt.style.left = 500 + 'px';
-      objt.style.width = 50 + 'px';
-      objt.style.height = 50 + 'px';
-      objt.style.backgroundColor = 'green';
-      objt.style.borderRadius = '50%';
-      objt.style.transform = 'skewY(30deg)'
-
-      let objt1 = document.createElement('div');
-      objt1.style.position = 'fixed';
-      objt1.style.top = 520 + 'px';
-      objt1.style.left = 500 + 25 + 'px';
-      objt1.style.width = 50 + 'px';
-      objt1.style.height = 50 + 'px';
-      objt1.style.backgroundColor = 'green';
-      objt1.style.transform = 'rotate(90deg)';
-      objt1.style.borderRadius = '50%';
-      objt1.style.transform = 'skewY(-30deg)'
-
-      document.body.appendChild(objt);
-      document.body.appendChild(objt1);
+      //let objt = document.createElement('div');
+      //objt.style.position = 'fixed';
+      //objt.style.top = 520 + 'px';
+      //objt.style.left = 500 + 'px';
+      //objt.style.width = 50 + 'px';
+      //objt.style.height = 50 + 'px';
+      //objt.style.backgroundColor = 'green';
+      //objt.style.borderRadius = '50%';
+      //objt.style.transform = 'skewY(25deg)'
+//
+      //let objt1 = document.createElement('div');
+      //objt1.style.position = 'fixed';
+      //objt1.style.top = 520 + 'px';
+      //objt1.style.left = 500 + 25 + 'px';
+      //objt1.style.width = 50 + 'px';
+      //objt1.style.height = 50 + 'px';
+      //objt1.style.backgroundColor = 'green';
+      //objt1.style.transform = 'rotate(90deg)';
+      //objt1.style.borderRadius = '50%';
+      //objt1.style.transform = 'skewY(-25deg)'
+//
+      //document.body.appendChild(objt);
+      //document.body.appendChild(objt1);
             
 
       let baseHearts = (e) => {
-        let obj = document.createElement('div');
-        let obj1 = document.createElement('div');
         
         num++
         if (e !== undefined) {
-          heart(obj, e, 0, 30);  
-          heart(obj1, e, 1, -30);  
+          if (num % 3 === 0) {
+            heart('', e, 0, 30);
+          }  
+          //heart(obj1, e, 1, -30);  
         }
-        document.body.appendChild(obj);
-        setTimeout(() => obj.remove(), 200);
-        document.body.appendChild(obj1);
-        setTimeout(() => obj1.remove(), 200);
+        //
+        //document.body.appendChild(obj1);
+        //setTimeout(() => obj1.remove(), 200);
       }
 
       let curFunc;
@@ -506,7 +549,12 @@ function giveBubble(obj, e) {
                 chrome.runtime.sendMessage(undefined, 'waterWave');
                 curFunc = baseHearts;
                 break;
-              case 'bubble' :
+              case 'giveHeart':
+                document.body.removeEventListener('mousemove', curFunc);
+                chrome.runtime.sendMessage(undefined, 'heart');
+                curFunc = baseHearts;
+                break;
+                case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = base;
                 break;
@@ -527,6 +575,10 @@ function giveBubble(obj, e) {
                 curFunc = baseSnowflake;
                 break;
               case 'waterWave' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseHearts;
+                break;
+              case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = baseHearts;
                 break;

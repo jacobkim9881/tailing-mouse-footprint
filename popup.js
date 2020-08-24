@@ -76,6 +76,19 @@ waterWave.addEventListener('click', () => {
   tabId: tabs[0].id});
   })
 })
+
+let heart = document.getElementById('heart');
+
+heart.addEventListener('click', () => {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      'giveHeart'
+    );
+      chrome.pageAction.setIcon({path: './images/heart/heart32.png',
+  tabId: tabs[0].id});
+  })
+})
 //chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 //  chrome.tabs.executeScript(
 //      tabs[0].id,
