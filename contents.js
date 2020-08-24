@@ -1,5 +1,56 @@
 let holdObj = document.createElement('div');
 
+function firefly(obj, e) {
+  x = e.clientX;
+  y = e.clientY
+  let ran100 = Math.trunc(Math.random() * 100);;
+  let ran30 = Math.trunc(Math.random() * 20) + 20;
+  let changedX = x + ran100;
+  let sinGp = Math.sin(num % 360) * 90;
+  
+  obj.style.position = 'fixed';
+  obj.style.top = y + 'px';
+  obj.style.left = x + 'px';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 10 + 'px';
+  obj.style.backgroundImage = `radial-gradient(circle, hsl(66, 100%, 52%), hsl(80, 100%, 52%))`; 
+  obj.style.borderRadius = '50%';
+
+  obj.animate([
+    {backgroundImage: `radial-gradient(circle, hsl(66, 100%, 52%), hsl(80, 100%, 52%))`,
+  width: ran30 + 'px',
+  height: ran30 + 'px',
+opacity: 0},
+    {backgroundImage: `radial-gradient(circle, hsl(66, 100%, 52%), hsl(66, 100%, 52%))`,
+    width: 10 + 'px',
+    height: 10 + 'px',
+    opacity: 0.8},
+    {backgroundImage: `radial-gradient(circle, hsl(66, 100%, 52%), hsl(80, 100%, 52%))`,
+    width: ran30 + 'px',
+    height: ran30 + 'px',
+    opacity: 0}
+    ], {
+    duration: 3000,
+    iterations: Infinity
+  });
+  obj.animate([
+    {left: x + 'px'
+    },
+    {left: changedX + 'px'
+    },
+    {left: x + 'px'
+    }
+  ], {
+    duration: 5000,
+    iterations: Infinity
+  });
+  obj.animate([
+    {top: y + 'px'},
+    {top: 0 + 'px'}
+  ], 8000)
+ 
+}
+
 function heart(test, e, moveX, deg) {
   let obj = document.createElement('div');
   let ranXpos = Math.trunc(Math.random() * 15) + parseInt(e.clientX, 10);
@@ -95,27 +146,63 @@ function leftRight(obj, e, formerX) {
   //})
 }
 
-function waterWave(obj, e) {
+function waterWave(test, e) {
   x = Math.trunc(Math.random() * window.innerWidth);
   y = Math.trunc(Math.random() * window.innerHeight);
-  let changedX = x - 1000;
-  let changedY = y - 1000;
-  obj.style.position = 'fixed';
-  obj.style.top = y + 'px';
-  obj.style.left = x + 'px';
-  obj.style.border = '1px solid blue';
-  obj.style.borderRadius = "50%";
-  obj.animate([
-    {width: 0 + 'px',
-    height: 0 + 'px',
-  top: y + 'px',
-  left: x + 'px'},
-    {width: 1000 + 'px',
-    height: 1000 + 'px',
-    top: changedY + 'px',
-    left: changedX + 'px'}      
-  ], 8000)
-  
+    
+  function makeQuater(e, pos) {
+    let obj = document.createElement('div');
+    obj.style.position = 'fixed';
+    let changedX;
+    let changedY;
+        
+    switch (pos) {
+      case 'lu':
+        changedX = x - 1000;
+        changedY = y - 1000;
+        obj.style.borderRadius = '100% 0% 0% 0%';
+        obj.style.borderLeft = '1px solid blue';
+        obj.style.borderTop = '1px solid blue';
+        break;
+      case 'ru':
+        changedX = x;
+        changedY = y - 1000;
+        obj.style.borderRadius = '0% 100% 0% 0%';
+        obj.style.borderRight = '1px solid blue';
+        obj.style.borderTop = '1px solid blue';
+      break;
+      case 'ld':
+        changedX = x - 1000;
+        changedY = y;
+        obj.style.borderRadius = '0% 0% 0% 100%';
+        obj.style.borderLeft = '1px solid blue';
+        obj.style.borderBottom = '1px solid blue';
+      break;  
+      case 'rd':
+        changedX = x;
+        changedY = y;
+        obj.style.borderRadius = '0% 0% 100% 0%';
+        obj.style.borderRight = '1px solid blue';
+        obj.style.borderBottom = '1px solid blue';
+      break;
+    }
+    obj.animate([
+      {top: y + 'px',
+      left: x + 'px',
+    width: 0 + 'px',
+    height: 0 + 'px'},
+      {top: changedY + 'px',
+      left: changedX + 'px',
+      width: 1000 + 'px',
+      height: 1000 + 'px'}      
+    ], 8000)
+    document.body.appendChild(obj);
+    setTimeout(() => obj.remove(), 8000);
+  }
+  makeQuater(e, 'lu');
+  makeQuater(e, 'ru');         
+  makeQuater(e, 'ld');       
+  makeQuater(e, 'rd');          
 }
 
 function leafs(obj, e) {
@@ -409,16 +496,11 @@ function giveBubble(obj, e) {
       let baseWaterWave = (e) => {
         num++;
         if (num % 50 === 0) {
-
-          let obj = document.createElement('img');
-        
           if (num % 10 === 0) {
             if (e !== undefined) {
-              waterWave(obj, e);  
+              waterWave('', e);  
             } 
-            document.body.appendChild(obj);
-            //setTimeout(() => obj.remove(), 500);
-          }
+            }
         }
       }
 
@@ -513,6 +595,20 @@ function giveBubble(obj, e) {
         //setTimeout(() => obj1.remove(), 200);
       }
 
+      let baseFirefly = (e) => {
+        let obj = document.createElement('img');
+        num++;
+        if (num % 50 === 0) {
+          if (e !== undefined) {
+            firefly(obj, e);  
+          } 
+          document.body.appendChild(obj);
+          setTimeout(() => obj.remove(), 3000);
+        }
+        
+      }
+
+
       let curFunc;
 
       chrome.runtime.sendMessage(undefined, 'check');
@@ -547,7 +643,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseHearts;
+                curFunc = baseFirefly;
                 break;
               case 'giveHeart':
                 document.body.removeEventListener('mousemove', curFunc);
@@ -576,7 +672,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseHearts;
+                curFunc = baseFirefly;
                 break;
               case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);
