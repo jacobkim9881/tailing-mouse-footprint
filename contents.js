@@ -212,18 +212,27 @@ function leafs(obj, e) {
   let ran360Two = Math.trunc(Math.random() * 360);
   let changedY = Math.sin(num) * 10 + y;
   let bottomY = window.innerHeight - 30;
-  let changedX = x + 10;
+  let changedX = x + 30;
   obj.style.position = 'fixed';
-  obj.style.width = 50 + 'px';
-  obj.style.height = 50 + 'px';
-  //obj.style.borderRadius = '50%';  
+  obj.style.width = 15 + 'px';
+  obj.style.height = 15 + 'px';
+  obj.style.backgroundColor = 'hsl(76, 58%, 47%)';
+  obj.style.borderRadius = '40% 90% / 10% 90%';  
   obj.style.top = bottomY + 'px';
   obj.style.left = x + 'px';
   obj.animate([
     {top: y + 'px'},
     {top: bottomY + 'px'}        
   ], 8000)
-  
+  obj.animate([
+    {left: changedX + 'px', easing: 'ease-in-out'},
+    {left: x + 'px', transform: 'skew(20deg, 10deg)', 
+    easing: 'ease-in-out'},
+    {left: changedX + 'px', easing: 'ease-in-out'}
+  ], {
+    duration: 1000,
+    iterations: 8
+  })
 }
 
 function snowflake(obj, e, background) {
@@ -288,19 +297,28 @@ function footprint(obj, e, num, formerX, formerY) {
 function giveBubble(obj, e) {  
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
-    let ran10 = Math.trunc(Math.random() * 5) + 5;
+    let ran10 = Math.trunc(Math.random() * 10) + 5;
     let ran20 = ranYpos - 30;
     obj.style.position = 'fixed';
-    obj.style.top = ranYpos + 'px';
-    obj.style.left = ranXpos + 'px';
-    obj.style.width = ran10 + 'px';
-    obj.style.height = ran10 + 'px';
+    //obj.style.top = ranYpos + 'px';
+    //obj.style.left = ranXpos + 'px';
+    //obj.style.width = ran10 + 'px';
+    //obj.style.height = ran10 + 'px';
     obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj.style.borderRadius = '50%';  
     obj.animate([
-      {top: ranYpos + 'px'}, 
-      {top: ran20 + 'px'}
+      {top: ranYpos + 'px',
+      left: e.clientX + 'px',
+      width: 5 + 'px',
+      height: 5 + 'px' 
+    }, 
+      {top: ran20 + 'px',
+      left: ranXpos + 'px',
+      width: ran10 + 'px',
+      height: ran10 + 'px' 
+    }
     ], 200)
+    
   }
 
   function giveSquare(obj, e) {
@@ -314,8 +332,8 @@ function giveBubble(obj, e) {
     obj.style.left = ranXpos + 'px';
     obj.style.width = ran10 + 'px';
     obj.style.height = ran10 + 'px';
-    obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(${ran360}, 100%, 50%), hsl(${ran360Two}, 100%, 50%)`;
-    }
+    obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(${ran360}, 100%, 50%), hsl(${ran360Two}, 100%, 50%)`;  
+  }
 
   function giveStyle(obj, e) {
     let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
@@ -376,15 +394,17 @@ function giveBubble(obj, e) {
       }
 
       let baseSquare = (e) => {
-        let obj = document.createElement('div');
-        
-        obj.setAttribute('id', 'particle' + num);
         num++
-        if (e !== undefined) {
-          giveSquare(obj, e);  
+        if (num % 1 === 0) {
+          let obj = document.createElement('div');
+        
+          if (e !== undefined) {
+            giveSquare(obj, e);  
+          }
+          document.body.appendChild(obj);
+          setTimeout(() => obj.remove(), 500);
+  
         }
-        document.body.appendChild(obj);
-        setTimeout(() => obj.remove(), 200);
       }
 
       let baseO = (e) => {
@@ -477,7 +497,7 @@ function giveBubble(obj, e) {
       }
 
       let baseLeafs = (e) => {
-        let obj = document.createElement('img');
+        let obj = document.createElement('div');
         num++;
         //let test = document.createElement('link');
         //test.rel = 'stylesheet';
@@ -643,7 +663,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseFirefly;
+                curFunc = baseLeafs;
                 break;
               case 'giveHeart':
                 document.body.removeEventListener('mousemove', curFunc);
@@ -672,7 +692,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseFirefly;
+                curFunc = baseLeafs;
                 break;
               case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);

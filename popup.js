@@ -20,7 +20,7 @@ letter.addEventListener('click', () => {
       tabs[0].id,
       'giveLetter'
     )
-    chrome.pageAction.setIcon({path: './images/letter/letter16.png',
+    chrome.pageAction.setIcon({path: './images/letter/letter32.png',
     tabId: tabs[0].id});
   })
 })
