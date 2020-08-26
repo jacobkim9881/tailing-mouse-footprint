@@ -34,6 +34,9 @@ chrome.runtime.onMessage.addListener((msg) => {
         case 'heart':
           localStorage.pointer = 'heart'
         break;  
+        case 'leaf':
+          localStorage.pointer = 'leaf'
+        break;  
           
         case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -63,7 +66,10 @@ chrome.runtime.onMessage.addListener((msg) => {
                     break;
                   case 'heart':
                     path = './images/heart/heart16.png';
-                    break;  
+                    break;
+                  case 'leaf':
+                  path = './images/leaf/leaf16.png';
+                  break;  
                 }
                 chrome.pageAction.setIcon({
                   path: path,

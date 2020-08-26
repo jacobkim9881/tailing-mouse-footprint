@@ -70,11 +70,15 @@ function heart(test, e, moveX, deg) {
   obj.style.height = ran10 + 'px';
   obj.style.backgroundColor = `hsl(0, 100%, 50%)`;
   obj.style.borderRadius = '50%';  
-  obj.style.transform = `skewY(25deg)`;
+  //obj.style.transform = `skewY(25deg)`;
 
   obj.animate([           
-    {top: ranYpos2 + 'px'},
-    {top: ranYpos + 'px'}
+    {top: ranYpos2 + 'px',
+  transform: 'skewY(25deg)'},
+    {top: ranYpos + 'px',
+    transform: 'skewY(30deg)'},
+    {top: ranYpos + 'px',
+    transform: 'skewY(25deg)'}
   ], 500);
 
   document.body.appendChild(obj);
@@ -87,11 +91,15 @@ function heart(test, e, moveX, deg) {
   obj1.style.height = ran10 + 'px';
   obj1.style.backgroundColor = `hsl(0, 100%, 50%)`;
   obj1.style.borderRadius = '50%';  
-  obj1.style.transform = `skewY(-25deg)`;
+  //obj1.style.transform = `skewY(-25deg)`;
 
   obj1.animate([           
-    {top: ranYpos2 + 'px'},
-    {top: ranYpos + 'px'}
+    {top: ranYpos2 + 'px',
+  transform: 'skewY(-25deg)'},
+    {top: ranYpos + 'px',
+    transform: 'skewY(-30deg)'},
+    {top: ranYpos + 'px',
+    transform: 'skewY(-25deg)'}
   ], 500);
 
   document.body.appendChild(obj1);
@@ -223,7 +231,11 @@ function leafs(obj, e) {
   obj.animate([
     {top: y + 'px'},
     {top: bottomY + 'px'}        
-  ], 8000)
+  ], 8000);
+  obj.animate([
+    {opacity: 1, offset: 0.8},
+    {opacity: 0}    
+  ], 5000);
   obj.animate([
     {left: changedX + 'px', easing: 'ease-in-out'},
     {left: x + 'px', transform: 'skew(20deg, 10deg)', 
@@ -322,8 +334,14 @@ function giveBubble(obj, e) {
   }
 
   function giveSquare(obj, e) {
-    let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
+    let ran = Math.random() * 2;
+    if (ran < 1) {
+      ran = 1;
+    } else {
+      ran = - 1;
+    }
+    let ranXpos = Math.trunc(Math.random() * 30) + parseInt(e.clientX, 10);
+    let ranYpos = Math.trunc(Math.random() * 20 * ran) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 10) + 10;
     let ran360 = Math.trunc(Math.random() * 360);
     let ran360Two = Math.trunc(Math.random() * 360);
@@ -333,6 +351,15 @@ function giveBubble(obj, e) {
     obj.style.width = ran10 + 'px';
     obj.style.height = ran10 + 'px';
     obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(${ran360}, 100%, 50%), hsl(${ran360Two}, 100%, 50%)`;  
+
+    obj.animate([
+      {opacity: 0.7,
+        top: ranYpos + 'px',
+      left: ranXpos + 'px'},
+      {opacity: 0,
+        top: e.clientY + 'px',
+      left: e.clientX + 'px'}
+    ], 200)
   }
 
   function giveStyle(obj, e) {
@@ -402,7 +429,7 @@ function giveBubble(obj, e) {
             giveSquare(obj, e);  
           }
           document.body.appendChild(obj);
-          setTimeout(() => obj.remove(), 500);
+          setTimeout(() => obj.remove(), 200);
   
         }
       }
@@ -503,12 +530,12 @@ function giveBubble(obj, e) {
         //test.rel = 'stylesheet';
         //test.type = 'text/css'
         //document.head.appendChild(test);
-        if (num % 10 === 0) {
+        if (num % 30 === 0) {
           if (e !== undefined) {
             leafs(obj, e);  
           } 
           document.body.appendChild(obj);
-          //setTimeout(() => obj.remove(), 500);
+          setTimeout(() => obj.remove(), 5000);
         }
         
       }
@@ -670,6 +697,11 @@ function giveBubble(obj, e) {
                 chrome.runtime.sendMessage(undefined, 'heart');
                 curFunc = baseHearts;
                 break;
+              case 'giveLeaf':
+                document.body.removeEventListener('mousemove', curFunc);
+                chrome.runtime.sendMessage(undefined, 'leaf');
+                curFunc = baseLeafs;
+                break;  
                 case 'bubble' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = base;
@@ -697,6 +729,10 @@ function giveBubble(obj, e) {
               case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);
                 curFunc = baseHearts;
+                break;
+              case 'leaf' :
+                document.body.removeEventListener('mousemove', curFunc);
+                curFunc = baseLeafs;
                 break;
                       
                 

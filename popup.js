@@ -89,6 +89,19 @@ heart.addEventListener('click', () => {
   tabId: tabs[0].id});
   })
 })
+
+let leaf = document.getElementById('leaf');
+
+leaf.addEventListener('click', () => {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      'giveLeaf'
+    );
+      chrome.pageAction.setIcon({path: './images/leaf/leaf32.png',
+  tabId: tabs[0].id});
+  })
+})
 //chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 //  chrome.tabs.executeScript(
 //      tabs[0].id,
