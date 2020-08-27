@@ -163,35 +163,36 @@ function waterWave(test, e) {
     obj.style.position = 'fixed';
     let changedX;
     let changedY;
+    let color = 'hsl(201, 53%, 50%)'
         
     switch (pos) {
       case 'lu':
         changedX = x - 1000;
         changedY = y - 1000;
         obj.style.borderRadius = '100% 0% 0% 0%';
-        obj.style.borderLeft = '1px solid blue';
-        obj.style.borderTop = '1px solid blue';
+        obj.style.borderLeft = `1px solid ${color}`;
+        obj.style.borderTop = `1px solid ${color}`;
         break;
       case 'ru':
         changedX = x;
         changedY = y - 1000;
         obj.style.borderRadius = '0% 100% 0% 0%';
-        obj.style.borderRight = '1px solid blue';
-        obj.style.borderTop = '1px solid blue';
+        obj.style.borderRight = `1px solid ${color}`;
+        obj.style.borderTop = `1px solid ${color}`;
       break;
       case 'ld':
         changedX = x - 1000;
         changedY = y;
         obj.style.borderRadius = '0% 0% 0% 100%';
-        obj.style.borderLeft = '1px solid blue';
-        obj.style.borderBottom = '1px solid blue';
+        obj.style.borderLeft = `1px solid ${color}`;
+        obj.style.borderBottom = `1px solid ${color}`;
       break;  
       case 'rd':
         changedX = x;
         changedY = y;
         obj.style.borderRadius = '0% 0% 100% 0%';
-        obj.style.borderRight = '1px solid blue';
-        obj.style.borderBottom = '1px solid blue';
+        obj.style.borderRight = `1px solid ${color}`;
+        obj.style.borderBottom = `1px solid ${color}`;
       break;
     }
     obj.animate([
@@ -203,9 +204,9 @@ function waterWave(test, e) {
       left: changedX + 'px',
       width: 1000 + 'px',
       height: 1000 + 'px'}      
-    ], 8000)
+    ], 500)
     document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), 8000);
+    setTimeout(() => obj.remove(), 500);
   }
   makeQuater(e, 'lu');
   makeQuater(e, 'ru');         
@@ -340,8 +341,8 @@ function giveBubble(obj, e) {
     } else {
       ran = - 1;
     }
-    let ranXpos = Math.trunc(Math.random() * 30) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 20 * ran) + parseInt(e.clientY, 10);
+    let ranXpos = Math.trunc(Math.random() * 40) + parseInt(e.clientX, 10);
+    let ranYpos = Math.trunc(Math.random() * 30 * ran) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 10) + 10;
     let ran360 = Math.trunc(Math.random() * 360);
     let ran360Two = Math.trunc(Math.random() * 360);
@@ -690,7 +691,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseLeafs;
+                curFunc = baseWaterWave;
                 break;
               case 'giveHeart':
                 document.body.removeEventListener('mousemove', curFunc);
@@ -724,7 +725,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseLeafs;
+                curFunc = baseWaterWave;
                 break;
               case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);

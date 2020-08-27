@@ -13,8 +13,14 @@
         "persistent": false
       },
       "page_action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "images/foot16.png",
+          "32": "images/foot32.png",
+          "64": "images/foot64.png",
+          "128": "images/foot.png"
+        }
       },
-    "description": "This is test!",
+    "description": "Adding funny effects when you do with your mouse. This extension make your mouse pointer more beautifully.",
     "manifest_version": 2
 }
