@@ -78,11 +78,13 @@ function heart(test, e, moveX, deg) {
     {top: ranYpos + 'px',
     transform: 'skewY(30deg)'},
     {top: ranYpos + 'px',
+    transform: 'skewY(30deg)'},
+    {top: ranYpos + 'px',
     transform: 'skewY(25deg)'}
   ], 500);
 
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 200);
+  setTimeout(() => obj.remove(), 500);
   
   let obj1 = document.createElement('div');
   obj1.style.position = 'fixed';
@@ -99,11 +101,13 @@ function heart(test, e, moveX, deg) {
     {top: ranYpos + 'px',
     transform: 'skewY(-30deg)'},
     {top: ranYpos + 'px',
+    transform: 'skewY(-30deg)'},
+    {top: ranYpos + 'px',
     transform: 'skewY(-25deg)'}
   ], 500);
 
   document.body.appendChild(obj1);
-  setTimeout(() => obj1.remove(), 200);
+  setTimeout(() => obj1.remove(), 500);
   }
 
 function rain(e) {
@@ -222,6 +226,10 @@ function leafs(obj, e) {
   let changedY = Math.sin(num) * 10 + y;
   let bottomY = window.innerHeight - 30;
   let changedX = x + 30;
+  let skewness = [
+    {first: 'skew(0deg, 0deg)', second: 'skew(20deg, 10deg)'},
+    {first: 'rotateY(360deg)', second: 'rotateY(0deg)'}
+  ]
   obj.style.position = 'fixed';
   obj.style.width = 15 + 'px';
   obj.style.height = 15 + 'px';
@@ -238,10 +246,10 @@ function leafs(obj, e) {
     {opacity: 0}    
   ], 5000);
   obj.animate([
-    {left: changedX + 'px', easing: 'ease-in-out'},
-    {left: x + 'px', transform: 'skew(20deg, 10deg)', 
+    {left: changedX + 'px', transform: skewness[0].first, easing: 'ease-in-out'},
+    {left: x + 'px', transform: skewness[0].second, 
     easing: 'ease-in-out'},
-    {left: changedX + 'px', easing: 'ease-in-out'}
+    {left: changedX + 'px', transform: skewness[0].first, easing: 'ease-in-out'}
   ], {
     duration: 1000,
     iterations: 8
@@ -308,9 +316,9 @@ function footprint(obj, e, num, formerX, formerY) {
 
 }
 function giveBubble(obj, e) {  
-    let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 10) + 5;
+    let ranXpos = Math.trunc(Math.random() * ran10) + parseInt(e.clientX, 10);
+    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
     let ran20 = ranYpos - 30;
     obj.style.position = 'fixed';
     //obj.style.top = ranYpos + 'px';
@@ -341,8 +349,8 @@ function giveBubble(obj, e) {
     } else {
       ran = - 1;
     }
-    let ranXpos = Math.trunc(Math.random() * 40) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 30 * ran) + parseInt(e.clientY, 10);
+    let ranXpos = Math.trunc(Math.random() * 400) + parseInt(e.clientX, 10);
+    let ranYpos = Math.trunc(Math.random() * 300 * ran) + parseInt(e.clientY, 10);
     let ran10 = Math.trunc(Math.random() * 10) + 10;
     let ran360 = Math.trunc(Math.random() * 360);
     let ran360Two = Math.trunc(Math.random() * 360);
@@ -360,7 +368,7 @@ function giveBubble(obj, e) {
       {opacity: 0,
         top: e.clientY + 'px',
       left: e.clientX + 'px'}
-    ], 200)
+    ], 200);
   }
 
   function giveStyle(obj, e) {
@@ -423,7 +431,7 @@ function giveBubble(obj, e) {
 
       let baseSquare = (e) => {
         num++
-        if (num % 1 === 0) {
+        if (num % 10 === 0) {
           let obj = document.createElement('div');
         
           if (e !== undefined) {
@@ -644,7 +652,7 @@ function giveBubble(obj, e) {
       }
 
       let baseFirefly = (e) => {
-        let obj = document.createElement('img');
+        let obj = document.createElement('div');
         num++;
         if (num % 50 === 0) {
           if (e !== undefined) {
@@ -691,7 +699,7 @@ function giveBubble(obj, e) {
               case 'giveWaterWave':
                 document.body.removeEventListener('mousemove', curFunc);
                 chrome.runtime.sendMessage(undefined, 'waterWave');
-                curFunc = baseWaterWave;
+                curFunc = baseFirefly;
                 break;
               case 'giveHeart':
                 document.body.removeEventListener('mousemove', curFunc);
@@ -725,7 +733,7 @@ function giveBubble(obj, e) {
                 break;
               case 'waterWave' :
                 document.body.removeEventListener('mousemove', curFunc);
-                curFunc = baseWaterWave;
+                curFunc = baseFirefly;
                 break;
               case 'heart' :
                 document.body.removeEventListener('mousemove', curFunc);

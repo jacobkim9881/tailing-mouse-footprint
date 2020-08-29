@@ -1,7 +1,7 @@
 {
     "name": "Mouse Footprint Tailing",
     "version": "0.0.0.1",
-    "permissions": ["activeTab", "declarativeContent"],
+    "permissions": ["activeTab", "declarativeContent", "*://*/*"],
     "content_scripts": [
       {
         "matches": ["<all_urls>"],

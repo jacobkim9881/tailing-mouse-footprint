@@ -1,5 +1,4 @@
 chrome.runtime.onInstalled.addListener(() => {
-
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
         chrome.declarativeContent.onPageChanged.addRules([{
             conditions: [new chrome.declarativeContent.PageStateMatcher({
@@ -9,9 +8,15 @@ chrome.runtime.onInstalled.addListener(() => {
             actions: [new chrome.declarativeContent.ShowPageAction()]
         }])     
     });    
+    
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
+  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.executeScript(tabs[0].id, {
+      file: './test.js'  
+    })
+  })
     switch (msg) {
         case 'bubble':
             localStorage.pointer = 'bubble'   
