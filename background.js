@@ -6,9 +6,8 @@ chrome.runtime.onInstalled.addListener(() => {
             })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
-        }])     
-    });    
-    
+         }])     
+    });
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
@@ -17,32 +16,11 @@ chrome.runtime.onMessage.addListener((msg) => {
       file: './test.js'  
     })
   })
-    switch (msg) {
-        case 'bubble':
-            localStorage.pointer = 'bubble'   
-          break;
-        case 'letter':
-            localStorage.pointer = 'letter'
-          break;
-        case 'cSquare':
-            localStorage.pointer = 'cSquare'
-          break;
-        case 'cO':
-            localStorage.pointer = 'cO'
-          break;
-        case 'snowflake':
-            localStorage.pointer = 'snowflake'
-          break;
-        case 'waterWave':
-          localStorage.pointer = 'waterWave'
-        break;
-        case 'heart':
-          localStorage.pointer = 'heart'
-        break;  
-        case 'leaf':
-          localStorage.pointer = 'leaf'
-        break;  
-          
+
+    if (msg !== 'check') {
+      localStorage.pointer = msg;
+    } else {
+      switch (msg) {
         case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 chrome.tabs.sendMessage(
@@ -82,8 +60,9 @@ chrome.runtime.onMessage.addListener((msg) => {
               });
             break;
         default :
-        
         break;
             
       }
+    }
+    
 })

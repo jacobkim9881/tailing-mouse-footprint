@@ -1,5 +1,9 @@
-let bubble = document.getElementById('bubble');
+function getId(targetId) {
+  return document.getElementById(targetId);
+}
 
+let bubble = document.getElementById('bubble');
+let letter = document.getElementById('letter');
 bubble.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
     chrome.tabs.sendMessage(
@@ -12,7 +16,6 @@ bubble.addEventListener('click', () => {
   });
 })
 
-let letter = document.getElementById('letter');
 
 letter.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -102,9 +105,3 @@ leaf.addEventListener('click', () => {
   tabId: tabs[0].id});
   })
 })
-//chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-//  chrome.tabs.executeScript(
-//      tabs[0].id,
-//      {file: `test.js`}
-//  )  
-//})
