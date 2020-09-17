@@ -2,20 +2,59 @@ function getId(targetId) {
   return document.getElementById(targetId);
 }
 
-let bubble = document.getElementById('bubble');
-let letter = document.getElementById('letter');
-bubble.addEventListener('click', () => {
-  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.sendMessage(
-      tabs[0].id,
-      'giveBubble'
-    );
-    chrome.pageAction.setIcon({path: './images/bubble/buble32.png',
-  tabId: tabs[0].id
-});
-  });
-})
+function setButtonImage(targetId, targetUrl) {
+  getId(targetId).style.backgroundImage = `url(${targetUrl})`;
+  return
+}
 
+function addClickEvent(targetId) {
+  targetId.addEventListener('click', () => {
+  
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {name: 'give' + 'Bubble'}
+      );
+  
+      chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
+        chrome.pageAction.setIcon({path: bubble,
+          tabId: tabs[0].id
+        });
+      });
+  
+    });
+  });
+  return;  
+}
+
+function startPointerFunction(targetId, targetUrl) {
+  getId(targetId);
+  setButtonImage(targetId, targetUrl);
+  addClickEvent(getId(targetId));
+  return;
+}
+
+let bubble = './images/bubble/buble32.png'
+//let bubble = document.getElementById('bubble');
+let letter = document.getElementById('letter');
+let colorSquare = document.getElementById('colorfulSquare');
+let colofulO = document.getElementById('colorfulO');
+let snowflake = document.getElementById('snowflake');
+let waterWave = document.getElementById('waterWave');
+let heart = document.getElementById('heart');
+let leaf = document.getElementById('leaf');
+
+
+chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+  chrome.tabs.sendMessage(
+    tabs[0].id,
+    'check'
+  );
+});
+
+startPointerFunction('bubble', bubble);
+//getId('bubble').style.backgroundImage = url(bubble);
 
 letter.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -28,7 +67,6 @@ letter.addEventListener('click', () => {
   })
 })
 
-let colorSquare = document.getElementById('colorfulSquare');
 
 colorSquare.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -41,7 +79,6 @@ colorSquare.addEventListener('click', () => {
   })
 })
 
-let colofulO = document.getElementById('colorfulO');
 
 colofulO.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -54,7 +91,6 @@ colofulO.addEventListener('click', () => {
   })
 })
 
-let snowflake = document.getElementById('snowflake');
 
 snowflake.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -67,7 +103,6 @@ snowflake.addEventListener('click', () => {
   })
 })
 
-let waterWave = document.getElementById('waterWave');
 
 waterWave.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -80,7 +115,6 @@ waterWave.addEventListener('click', () => {
   })
 })
 
-let heart = document.getElementById('heart');
 
 heart.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -93,7 +127,6 @@ heart.addEventListener('click', () => {
   })
 })
 
-let leaf = document.getElementById('leaf');
 
 leaf.addEventListener('click', () => {
   chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {

@@ -17,17 +17,11 @@ chrome.runtime.onMessage.addListener((msg) => {
     })
   })
 
-    if (msg !== 'check') {
-      localStorage.pointer = msg;
+    if (msg.name !== 'check') {
+      localStorage.pointer = msg.name;
     } else {
-      switch (msg) {
-        case 'check':
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-                chrome.tabs.sendMessage(
-                  tabs[0].id,
-                  localStorage.pointer
-                );
-                let path = '';
+              let path = '';
                 switch (localStorage.pointer) {
                   case 'bubble':
                   path = './images/bubble/buble32.png';
@@ -53,16 +47,17 @@ chrome.runtime.onMessage.addListener((msg) => {
                   case 'leaf':
                   path = './images/leaf/leaf16.png';
                   break;  
-                }
+                } 
+              chrome.tabs.sendMessage(
+                  tabs[0].id,
+                  {name:localStorage.pointer,
+                  path: path}
+                );
                 chrome.pageAction.setIcon({
                   path: path,
                   tabId: tabs[0].id});
               });
-            break;
-        default :
-        break;
-            
-      }
+       
     }
     
 })

@@ -400,15 +400,14 @@ function giveBubble(obj, e) {
 
       let curFunc;
 
-      chrome.runtime.sendMessage(undefined, 'check');
+      chrome.runtime.sendMessage(undefined, {name: 'check'});
 
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
-        
         document.body.removeEventListener('mousemove', curFunc);
         
-        switch(msg) {
+        switch(msg.name) {
               case 'giveBubble' :
-              chrome.runtime.sendMessage(undefined, 'bubble');
+              chrome.runtime.sendMessage(undefined, {name: 'bubble', path: ''});
               curFunc = base;
               break;
               case 'giveLetter' :
