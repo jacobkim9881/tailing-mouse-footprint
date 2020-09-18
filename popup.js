@@ -7,18 +7,21 @@ function setButtonImage(targetId, targetUrl) {
   return
 }
 
-function addClickEvent(targetId) {
-  targetId.addEventListener('click', () => {
+function addClickEvent(func, targetId, targetUrl) {
+  func(targetId).addEventListener('click', () => {
   
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       
       chrome.tabs.sendMessage(
         tabs[0].id,
-        {name: 'give' + 'Bubble'}
+        {
+          name: targetId, 
+          path: targetUrl, 
+          sender: 'popup'}
       );
-  
+      
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
-        chrome.pageAction.setIcon({path: bubble,
+        chrome.pageAction.setIcon({path: targetUrl,
           tabId: tabs[0].id
         });
       });
@@ -31,13 +34,14 @@ function addClickEvent(targetId) {
 function startPointerFunction(targetId, targetUrl) {
   getId(targetId);
   setButtonImage(targetId, targetUrl);
-  addClickEvent(getId(targetId));
+  addClickEvent(getId, targetId, targetUrl);
   return;
 }
 
 let bubble = './images/bubble/buble32.png'
+let letter = './images/letter/letter32.png'
 //let bubble = document.getElementById('bubble');
-let letter = document.getElementById('letter');
+//let letter = document.getElementById('letter');
 let colorSquare = document.getElementById('colorfulSquare');
 let colofulO = document.getElementById('colorfulO');
 let snowflake = document.getElementById('snowflake');
@@ -45,27 +49,20 @@ let waterWave = document.getElementById('waterWave');
 let heart = document.getElementById('heart');
 let leaf = document.getElementById('leaf');
 
-
-chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-  chrome.tabs.sendMessage(
-    tabs[0].id,
-    'check'
-  );
-});
-
 startPointerFunction('bubble', bubble);
+startPointerFunction('letter', letter);
 //getId('bubble').style.backgroundImage = url(bubble);
 
-letter.addEventListener('click', () => {
-  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.sendMessage(
-      tabs[0].id,
-      'giveLetter'
-    )
-    chrome.pageAction.setIcon({path: './images/letter/letter32.png',
-    tabId: tabs[0].id});
-  })
-})
+//letter.addEventListener('click', () => {
+//  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+//    chrome.tabs.sendMessage(
+//      tabs[0].id,
+//      'giveLetter'
+//    )
+//    chrome.pageAction.setIcon({path: './images/letter/letter32.png',
+//    tabId: tabs[0].id});
+//  })
+//})
 
 
 colorSquare.addEventListener('click', () => {

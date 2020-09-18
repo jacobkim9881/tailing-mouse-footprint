@@ -400,16 +400,68 @@ function giveBubble(obj, e) {
 
       let curFunc;
 
-        chrome.runtime.sendMessage(undefined,
-          {name:'check', sender: 'contents'}
-        );
-    
-
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
-        chrome.runtime.sendMessage(undefined,
-          { name:msg.name,
-            path: msg.path,
-            sender: msg.sender + 'contents'}
-        );
-
-      });
+        document.body.removeEventListener('mousemove', curFunc);
+        
+        switch(msg.name) {
+              case 'giveBubble' :
+              chrome.runtime.sendMessage(undefined, {name: 'bubble', path: ''});
+              curFunc = base;
+              break;
+              case 'giveLetter' :
+              chrome.runtime.sendMessage(undefined, 'letter');
+              curFunc = baseLetter;
+              break;
+              case 'colorfulSquare' :
+              chrome.runtime.sendMessage(undefined, 'cSquare');
+              curFunc = baseSquare;
+              break;
+              case 'colofulO' :
+              chrome.runtime.sendMessage(undefined, 'cO');
+              curFunc = baseO;
+              break;
+              case 'giveSnowflake':
+              chrome.runtime.sendMessage(undefined, 'snowflake');
+              curFunc = baseSnowflake;
+              break;
+              case 'giveWaterWave':
+                chrome.runtime.sendMessage(undefined, 'waterWave');
+                curFunc = baseFirefly;
+                break;
+              case 'giveHeart':
+                chrome.runtime.sendMessage(undefined, 'heart');
+                curFunc = baseHearts;
+                break;
+              case 'giveLeaf':
+                chrome.runtime.sendMessage(undefined, 'leaf');
+                curFunc = baseLeafs;
+                break;  
+                case 'bubble' :
+                curFunc = base;
+                break;
+              case 'letter':
+                curFunc = baseLetter;
+                break;
+              case 'cSquare' :
+                curFunc = baseSquare;
+                break;
+                case 'cO' :
+                curFunc = baseO;
+                break;
+              case 'snowflake' :
+                curFunc = baseSnowflake;
+                break;
+              case 'waterWave' :
+                curFunc = baseFirefly;
+                break;
+              case 'heart' :
+                curFunc = baseHearts;
+                break;
+              case 'leaf' :
+                curFunc = baseLeafs;
+                break;
+                      
+                
+          }
+          document.body.addEventListener('mousemove', curFunc)
+      })

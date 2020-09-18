@@ -8,21 +8,24 @@ chrome.runtime.onInstalled.addListener(() => {
             actions: [new chrome.declarativeContent.ShowPageAction()]
          }])     
     });
+
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
-  chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-    chrome.tabs.executeScript(tabs[0].id, {
-      file: './test.js'  
-    })
-  })
+  if (msg.name !== 'check') {
+      localStorage.pointer.name = msg.name;      
+      localStorage.pointer.path = msg.path;
 
-    if (msg.name !== 'check') {
-      localStorage.pointer = msg.name;
+      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+        chrome.tabs.executeScript(
+          tabs[0].id,
+          {file: './functions/' + msg.name + '.js'} );
+      });
+      
     } else {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
               let path = '';
-                switch (localStorage.pointer) {
+                switch (localStorage.pointer.name) {
                   case 'bubble':
                   path = './images/bubble/buble32.png';
                   break;
@@ -50,8 +53,9 @@ chrome.runtime.onMessage.addListener((msg) => {
                 } 
               chrome.tabs.sendMessage(
                   tabs[0].id,
-                  {name:localStorage.pointer,
-                  path: path}
+                  { name:localStorage.pointer,
+                    path: path,
+                    sender: msg.sender + 'bg'}
                 );
                 chrome.pageAction.setIcon({
                   path: path,
