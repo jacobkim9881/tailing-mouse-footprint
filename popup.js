@@ -25,7 +25,7 @@ function addClickEvent(func, targetId, targetUrl) {
           tabId: tabs[0].id
         });
       });
-  
+      
     });
   });
   return;  

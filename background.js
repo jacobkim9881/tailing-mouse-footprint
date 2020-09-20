@@ -13,8 +13,8 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.name !== 'check') {
-      localStorage.pointer.name = msg.name;      
-      localStorage.pointer.path = msg.path;
+      localStorage.pointerName = msg.name;      
+      localStorage.pointerPath = msg.path;
 
       chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.executeScript(
@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener((msg) => {
     } else {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
               let path = '';
-                switch (localStorage.pointer.name) {
+                switch (localStorage.pointerName) {
                   case 'bubble':
                   path = './images/bubble/buble32.png';
                   break;
@@ -53,7 +53,7 @@ chrome.runtime.onMessage.addListener((msg) => {
                 } 
               chrome.tabs.sendMessage(
                   tabs[0].id,
-                  { name:localStorage.pointer,
+                  { name:localStorage.pointerName,
                     path: path,
                     sender: msg.sender + 'bg'}
                 );
