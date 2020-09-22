@@ -1,8 +1,9 @@
 chrome.runtime.onInstalled.addListener(() => {
+
     chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
         chrome.declarativeContent.onPageChanged.addRules([{
             conditions: [new chrome.declarativeContent.PageStateMatcher({
-                
+            
             })
         ],
             actions: [new chrome.declarativeContent.ShowPageAction()]
@@ -12,6 +13,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.runtime.onMessage.addListener((msg) => {
+
   if (msg.name !== 'check') {
       localStorage.pointerName = msg.name;      
       localStorage.pointerPath = msg.path;
@@ -23,42 +25,17 @@ chrome.runtime.onMessage.addListener((msg) => {
       });
       
     } else {
-            chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-              let path = '';
-                switch (localStorage.pointerName) {
-                  case 'bubble':
-                  path = './images/bubble/buble32.png';
-                  break;
-                  case 'letter':
-                  path = './images/letter/letter32.png';
-                  break;
-                  case 'cSquare':
-                  path = './images/csquare/colofulSquare16.png';
-                  break;
-                  case 'cO':
-                  path = './images/co/colofulO16.png';
-                  break;
-                  case 'snowflake':
-                  path = './images/snow/snowflake16.png';
-                  break;  
-                  case 'waterWave':
-                    path = './images/snow/snowflake16.png';
-                    break;
-                  case 'heart':
-                    path = './images/heart/heart16.png';
-                    break;
-                  case 'leaf':
-                  path = './images/leaf/leaf16.png';
-                  break;  
-                } 
+            chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+
               chrome.tabs.sendMessage(
                   tabs[0].id,
                   { name:localStorage.pointerName,
-                    path: path,
-                    sender: msg.sender + 'bg'}
+                    path: localStorage.pointerPath,
+                    sender: 'background'}
                 );
+
                 chrome.pageAction.setIcon({
-                  path: path,
+                  path: localStorage.pointerPath,
                   tabId: tabs[0].id});
               });
        
