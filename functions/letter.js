@@ -1,5 +1,4 @@
 //letter.js
-console.log('letter js')
 function mouseEvent(e) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
@@ -11,7 +10,7 @@ function mouseEvent(e) {
   obj.style.position = 'fixed';
   obj.style.top = ranYpos + 'px';
   obj.style.left = ranXpos + 'px';
-  obj.innerHTML = alphabet[ranAlpha];
+  obj.innerText = alphabet[ranAlpha];
   obj.style.fontSize = ran15 + 'px';
       
   obj.animate([

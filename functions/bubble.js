@@ -1,5 +1,4 @@
-console.log('bubble js')
-
+//bubble.js
 function mouseEvent(e) {
   let obj = document.createElement('div');
   
