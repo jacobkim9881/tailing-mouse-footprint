@@ -8,6 +8,15 @@
  	 height: 100%;;
  	 margin: 0 auto;
 	}
+	#copy {
+	 display: block;
+ 	 
+	}
+	#copyright {
+	 position: absolute;
+	 bottom: 0;
+	 text-align: center;
+	}
       </style>
       <title>Prvacy Policy on tailing-mouse-footprint</title>
     </head>
@@ -19,5 +28,14 @@
       <h2>Contact us</h2>
       <p>If you have any question then please don't hesitate to send an e-mail below: <br/> <a href="mailto:jacobkim9881@gmail.com">jacobkim9881@gmail.com</a>
       </p>
+      <div id='copy'>
+        <p id='copyright'></p>
+      </div>
+      <div>
+	<script>
+	  const copyRight = document.getElementById('copyright');
+	  const time = new Date();	  
+	  copyRight.innerHTML = `©  ${time.getFullYear()} Tainling Mouse Footprint`
+	</script>
     </body>
   </html>
