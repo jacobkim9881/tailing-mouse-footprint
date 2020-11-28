@@ -14,9 +14,10 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.runtime.onMessage.addListener((msg) => {
 
-  if (msg.name !== 'check') {
+  if (msg.type === 'moving') {
       localStorage.pointerName = msg.name;      
       localStorage.pointerPath = msg.path;
+      localStorage.type = 'check';
 
       chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.executeScript(
@@ -24,13 +25,23 @@ chrome.runtime.onMessage.addListener((msg) => {
           {file: './functions/' + msg.name + '.js'} );
       });
       
-    } else {
+    } else if (msg.type === 'stop') {
+      localStorage.type = 'stop';
+
+      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+        chrome.tabs.executeScript(
+          tabs[0].id,
+          {file: './functions/' + msg.name + '.js'} );
+      });
+
+    } else if (msg.type === 'check') {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
 
               chrome.tabs.sendMessage(
                   tabs[0].id,
                   { name:localStorage.pointerName,
                     path: localStorage.pointerPath,
+	 	    type: localStorage.type,
                     sender: 'background'}
                 );
 
