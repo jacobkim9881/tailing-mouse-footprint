@@ -1,5 +1,5 @@
         chrome.runtime.sendMessage(undefined,
-          {name:'check', sender: 'contents'}
+          {type:'check', sender: 'contents'}
         );
     
 
@@ -8,6 +8,7 @@
         chrome.runtime.sendMessage(undefined,
           { name:msg.name,
             path: msg.path,
+  	    type: msg.type,
             sender: 'contents'}
         );
 
