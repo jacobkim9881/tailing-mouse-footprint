@@ -1,16 +1,16 @@
-function getId(targetId) {
+function buttonElement(targetId) {
   return document.getElementById(targetId);
 }
 
 function setButtonImage(targetId, targetUrl) {
-  getId(targetId).style.backgroundImage = `url(${targetUrl})`;
+  buttonElement(targetId).style.backgroundImage = `url(${targetUrl})`;
   return
 }
 
 function addClickEvent(func, targetId, targetUrl, type) {
   func(targetId).addEventListener('click', () => {
     
-    let stopButton = getId('stop');
+    let stopButton = buttonElement('stop');
     if (stopButton.innerHTML === 'START Extension') {
 	  stopButton.innerHTML= 'STOP Extension'};
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -37,9 +37,9 @@ function addClickEvent(func, targetId, targetUrl, type) {
 }
 
 function startPointerFunction(targetId, targetUrl, type) {
-  getId(targetId);
+  buttonElement(targetId);
   setButtonImage(targetId, targetUrl);
-  addClickEvent(getId, targetId, targetUrl, type);
+  addClickEvent(buttonElement, targetId, targetUrl, type);
   return;
 }
 
@@ -75,7 +75,8 @@ function stopEvent(func, targetId) {
 
 let bubble = './images/bubble/bubble32.png'
 let letter = './images/letter/letter32.png'
-let stop = './images/icon32.png'
+let snowflake = './images/snow/snowflake32.png'
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
-triggerStop(getId, 'stop');
+startPointerFunction('snowflake', snowflake, 'moving');
+triggerStop(buttonElement, 'stop');
