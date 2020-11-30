@@ -31,8 +31,8 @@ chrome.runtime.onMessage.addListener((msg) => {
       chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.executeScript(
           tabs[0].id,
-          {file: './functions/' + msg.name + '.js'} );
-      });
+          {file: './functions/' + 'stop' + '.js'} );
+    });
 
     } else if (msg.type === 'check') {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
@@ -41,7 +41,7 @@ chrome.runtime.onMessage.addListener((msg) => {
                   tabs[0].id,
                   { name:localStorage.pointerName,
                     path: localStorage.pointerPath,
-	 	    type: localStorage.type,
+	 	    type: localStorage.type === 'stop' ? 'stop' : 'moving',
                     sender: 'background'}
                 );
 
