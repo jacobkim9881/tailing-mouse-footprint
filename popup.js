@@ -54,9 +54,9 @@ function triggerStop(func, targetId) {
       chrome.tabs.sendMessage(
         tabs[0].id,
         {
-          name: targetId,
-          path: '',
-          type: buttonName === 'STOP Extension' ? 'check' : targetId,
+	  name: buttonName === 'STOP Extension' ? localStorage.pointerName : targetId,
+          path: buttonName === 'STOP Extension' ? localStorage.pointerPath : '',
+          type: buttonName === 'STOP Extension' ? 'moving' : targetId,
           sender: 'popup'}
       );
 
@@ -76,7 +76,10 @@ function stopEvent(func, targetId) {
 let bubble = './images/bubble/bubble32.png'
 let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
+
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
 triggerStop(buttonElement, 'stop');
+
+if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
