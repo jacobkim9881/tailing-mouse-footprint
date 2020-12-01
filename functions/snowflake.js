@@ -1,5 +1,4 @@
-//baseFunction.js
-//Add mouse events for decorating
+//snowflake.js
 
 function mouseEvent(e) {
 
@@ -7,8 +6,8 @@ function mouseEvent(e) {
   let obj = document.createElement('div');
   let flakeSize = window.innerWidth/100;
   obj.id = 'obj' + sec;
-  x = e.clientX;
-  y = e.clientY;
+  x = background ? Math.trunc(Math.random() * window.innerWidth) :  e.clientX;
+  y = background ? 0 : e.clientY;
   let bottomY = window.innerHeight - 30;
   obj.style.position = 'fixed';
   obj.style.width = flakeSize + 'px';
@@ -16,21 +15,12 @@ function mouseEvent(e) {
   obj.style.borderRadius = '50%';
   obj.style.backgroundImage = `radial-gradient(circle, hsl(0, 0%, 70%), hsl(0, 0%, 90%))`;
   obj.style.left = x + 'px';
-  
-  if (background) {
-    x = Math.trunc(Math.random() * window.innerWidth);
-    obj.style.left = x + 'px';
-    obj.animate([
-      {top: 0 + 'px'},
-      {top: bottomY + 'px'}
-    ], 16000)
+  let fallingTime = background ? 16000 : 8000;
 
-  } else {
-    obj.animate([
-      {top: y + 'px'},
-      {top: bottomY + 'px'}
-    ], 8000)
-  }
+  obj.animate([
+    {top: y + 'px'},
+    {top: bottomY + 'px'}
+  ], fallingTime);
 
   document.body.appendChild(obj);
   setTimeout(() => obj.remove(), 8000)
