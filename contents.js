@@ -1,5 +1,8 @@
-        chrome.runtime.sendMessage(undefined,
-          {type:'check', sender: 'contents'}
+      localStorage.mouseCounter = 0;
+      chrome.runtime.sendMessage(undefined,
+          {
+		  type : 'check',
+		  sender: 'contents'}
         );
     
 
