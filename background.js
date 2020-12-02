@@ -10,10 +10,37 @@ chrome.runtime.onInstalled.addListener(() => {
          }])     
     });
 
+    chrome.contextMenus.create({
+                	        "id": "tails-mouse-footpring-switch",
+                                "title": "STOP Extension"
+                               });
+
 });
 
-chrome.runtime.onMessage.addListener((msg) => {
+chrome.contextMenus.onClicked.addListener(() => {
+  if(localStorage.type === 'stop') {
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
+              chrome.tabs.sendMessage(
+                  tabs[0].id,
+                 {
+                        name: localStorage.pointerName,
+                        path: localStorage.pointerPath,
+                        type: 'moving'})
+              });
+   
+  } else {
+         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+
+              chrome.tabs.sendMessage(
+                  tabs[0].id,
+                 {type: 'stop'})
+              });
+
+  }
+})
+
+chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === 'moving') {
       localStorage.pointerName = msg.name;      
       localStorage.pointerPath = msg.path;
@@ -24,7 +51,9 @@ chrome.runtime.onMessage.addListener((msg) => {
           tabs[0].id,
           {file: './functions/' + msg.name + '.js'} );
       });
-      
+    
+      chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
+
     } else if (msg.type === 'stop') {
       localStorage.type = 'stop';
 
@@ -33,6 +62,8 @@ chrome.runtime.onMessage.addListener((msg) => {
           tabs[0].id,
           {file: './functions/' + 'stop' + '.js'} );
     });
+
+      chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
 
     } else if (msg.type === 'check') {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
