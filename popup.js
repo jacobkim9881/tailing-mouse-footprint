@@ -78,12 +78,14 @@ let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
 let heart = './images/heart/heart32.png'
 let colorfulBall = './images/co/colorfulBall32.png'
+let bunny = './images/snow/snowflake32.png';
 
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
 startPointerFunction('heart', heart, 'moving');
 startPointerFunction('colorfulBall', colorfulBall, 'moving');
+startPointerFunction('bunny', bunny, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
