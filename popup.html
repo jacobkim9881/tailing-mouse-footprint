@@ -23,6 +23,10 @@
           border-bottom: 1px solid black;
           padding-bottom: 10px; 
         }
+	h5 {
+          border-bottom: 1px solid black;
+          padding-bottom: 10px;
+	}
         .buttonDiv {
           margin: 5px;
           padding: 0px;
@@ -54,6 +58,12 @@
         #leaf {
           background-image: url('./images/leaf/leaf32.png');
         }
+
+        #scrollBar {
+          background-image: url('./images/heart/heart32.png');
+        }
+
+
         #stop {
           width: 100%;
  	  height: 30px;
@@ -64,7 +74,7 @@
     </head>
     <body>
       <h4>Choose your mouse effect</h4>
-
+      <h5>Mouse move event</h5>
       <div id="icons">
       <span class= "buttonDiv" >
         <button id="bubble"></button>
@@ -92,6 +102,11 @@
     <button id="leaf"></button>
   </span>
   </div>
+
+  <h5>Mouse scroll event</h5>
+  <span class= "buttonDiv" >
+    <button id="scrollBar"></button>
+  </span>
 
   <span class= "stopButton" >
     <button id="stop">STOP Extension</button>
