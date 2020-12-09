@@ -1,12 +1,13 @@
 //bunny.js
-localStorage.tmfObjArr = ['obj', 'eye1', 'eye2',
+localStorage.mouseObjArr = ['obj', 'eye1', 'eye2',
            'ear1', 'ear2', 'ear3', 'ear4',
            'mouth', 'mouth1', 'mouth2', 'mouth3',
            'tie', 'tie1', 'tie2', 'tie3', 'tie4'];
+
 function createObjs() {
 let sox = document.createElement('div');
 sox.id = 'sox'
-let ids = localStorage.tmfObjArr.match(/[^,]\w+/gi);
+let ids = localStorage.mouseObjArr.match(/[^,]\w+/gi);
 for (let oneId in ids) {
  let arr =  document.createElement('div')
  arr.id = ids[oneId];
@@ -87,7 +88,7 @@ document.body.appendChild(sox);
 }
 
 function deleteObjs() {
-  let ids = localStorage.tmfObjArr.match(/[^,]\w+/gi);
+  let ids = localStorage.mouseObjArr.match(/[^,]\w+/gi);
   for (let oneId in ids) {
   let ele = document.getElementById(ids[oneId]);
   }
@@ -285,7 +286,7 @@ let tie2 = document.getElementById('tie2');
 let tie3 = document.getElementById('tie3');
 let tie4 = document.getElementById('tie4');
 
-	  let ids = localStorage.tmfObjArr.match(/[^,]\w+/gi);
+	  let ids = localStorage.mouseObjArr.match(/[^,]\w+/gi);
   for (let oneId in ids) {
     
   }
@@ -336,7 +337,10 @@ createObjs();
 document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
- // document.getElementById('sox').style.display = 'none';
-//	deleteObjs();
-  document.body.removeEventListener('mousemove', mouseEvent)
+  if (msg.name === 'bunny') {
+    document.getElementById('sox').style.display = 'block'; 
+  } else {
+    document.getElementById('sox').style.display = 'none';
+    document.body.removeEventListener('mousemove', mouseEvent);
+  }
 });
