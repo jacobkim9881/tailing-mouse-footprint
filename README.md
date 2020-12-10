@@ -1,21 +1,29 @@
 # Tailing mouse footprint
 ![Boggling mouse pointer](./docs/mousepointer.gif "mouse pointer")
 
+This extension is on chrome webstore now: [chrome webstore](https://chrome.google.com/webstore/detail/mouse-footprint-tailing/bgmbliffojkhembdalfdgldpeihhpdnm)
+
+## How to try 
 `
 git clone https://github.com/jacobkim9881/tailing-mouse-footprint.git
-'
+`
 
-Open the Extension Management page by navigating to chrome://extensions.
+* Open the Extension Management page by navigating to chrome://extensions.
 
 ![Extensions image](https://developer.chrome.com/static/images/get_started/load_extension.png "Extensions img")
 
-Select tailing-mouse-footprint folder
+* Select tailing-mouse-footprint folder
 
-Click tailing-mouse-footprint icon at chrome plugins
+* Click tailing-mouse-footprint icon at chrome plugins
 
-Select what would you like to choose of themes
+* Select what would you like to choose of themes
 
-Surf web and enjoy
+* Surf web and enjoy
 
 ## What is this?
 This is chrome exetension which makes you experience HTML style animation with mouse pointer. Since chrome exetension makes UX better, this app let you whenever surfing on web with chrome browser.
+
+## Contribution
+This extension based on Chrome extension, Javascript, ES6, HTML, CSS. So with these skills contiributing will be esier. 
+
+But adding nice mouse pointers is available only with Javascript, CSS.
