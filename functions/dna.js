@@ -1,33 +1,42 @@
-//colofulBall.js
+//dna.js
 
 function mouseEvent(e) {
-  let ballSize = window.innerWidth/100; 
-  let randomBallSize = Math.trunc(Math.random() * (ballSize -15)) + 10;
+  let pxByScreenWidth = window.innerWidth/100;
+  let basicSize = 10;
+  let randomBallSize = Math.trunc(Math.random() * (pxByScreenWidth -15)) + basicSize;
  
   function trigger(e, isItUp=true) {
   let stick = document.createElement('div');
-  let ranXpos = ballSize + parseInt(e.clientX, 10);
-  let ranYpos = ballSize + parseInt(e.clientY, 10);
+  let xPos = pxByScreenWidth + parseInt(e.clientX, 10);
+  let yPos = pxByScreenWidth + parseInt(e.clientY, 10);
   let ranH = Math.trunc(Math.random() * 360);
   let ranH2 =  Math.trunc(Math.random() * 360);
+  
+  //stick between DNAs	  
+  let middleOfBall = randomBallSize/2 - window.innerWidth/800; 
+  let stickWidth =  window.innerWidth/400;
+  let pink = 336;	  
   stick.style.position = 'fixed';
-  stick.style.left = (ranXpos + randomBallSize/2 - window.innerWidth/800 )+ 'px';
-  stick.style.width = window.innerWidth/400 + 'px';
-  stick.style.backgroundColor = `hsl(${336}, 100%, 50%)`;
+  stick.style.left = xPos +  middleOfBall + 'px';
+  stick.style.width = stickWidth + 'px';
+  stick.style.backgroundColor = `hsl(${pink}, 100%, 50%)`;
 
+  //This animation decides length of sticks between DNAs	  
+  //This condition with a DNA ball of two
+  //Sticks' lengths aren't exact to DNAs
   if (isItUp) {
   stick.animate([
-    {top: (ranYpos + randomBallSize) + 'px',
+    {top: (yPos + randomBallSize) + 'px',
      height: (30 - randomBallSize) + 'px',
      backgroundColor: `hsl(${115}, 100%, 50%)` 
     },
-    {top: (ranYpos + 30 - randomBallSize) + 'px',
+    {top: (yPos + 30 - randomBallSize) + 'px',
      height: 0 + 'px'
     },
-    {top: (ranYpos + randomBallSize) + 'px',
+    {top: (yPos + randomBallSize) + 'px',
      height: (29 - randomBallSize) + 'px'    
     },
-    {top: (ranYpos + 30 - randomBallSize) + 'px',
+    {top: (yPos + 30 - randomBallSize) + 'px',
      height: 0 + 'px',
      backgroundColor: `hsl(${115}, 100%, 50%)` 
     }
@@ -35,19 +44,21 @@ function mouseEvent(e) {
       timing(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
-  } else {
+  }
+  //This condition with the other DNA ball of two	  
+  else {
   stick.animate([
-    {top: (ranYpos + 30 - randomBallSize) +  'px',
+    {top: (yPos + 30 - randomBallSize) +  'px',
      height: 0 + 'px',
      backgroundColor: `hsl(${336}, 100%, 50%)`
     },
-    {top: (ranYpos + randomBallSize) + 'px',
+    {top: (yPos + randomBallSize) + 'px',
      height: (30 - randomBallSize) + 'px'
     },
-    {top: (ranYpos + 30 - randomBallSize) + 'px',
+    {top: (yPos + 30 - randomBallSize) + 'px',
      height: 0 + 'px'
- },
-    {top: (ranYpos + randomBallSize) + 'px',
+   },
+    {top: (yPos + randomBallSize) + 'px',
      height: (30 - randomBallSize) + 'px',    
      backgroundColor: `hsl(${336}, 100%, 50%)` }
   ], {duration: 700,
@@ -57,33 +68,37 @@ function mouseEvent(e) {
  
   }
 
-  let obj = document.createElement('div');
-  obj.style.position = 'fixed';
-  obj.style.left = ranXpos + 'px';
-  obj.style.width = randomBallSize + 'px';
-  obj.style.height = randomBallSize + 'px';
-  obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
-  obj.style.borderRadius = '50%';
+  let dnaBall = document.createElement('div');
+  dnaBall.style.position = 'fixed';
+  dnaBall.style.left = xPos + 'px';
+  dnaBall.style.width = randomBallSize + 'px';
+  dnaBall.style.height = randomBallSize + 'px';
+  dnaBall.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+  dnaBall.style.borderRadius = '50%';
 
+  //This if condition makes balls cross moving like waves	  
+  //This condition with a DNA of two
   if (isItUp) {
-  obj.animate([
-    {top: ranYpos + 'px',
+  dnaBall.animate([
+    {top: yPos + 'px',
 	    backgroundColor: `hsl(${ranH}, 100%, 50%)`  },
-    {top: (ranYpos + 30 ) + 'px'},
-    {top: ranYpos + 'px'},
-    {top: (ranYpos + 30)+ 'px',
+    {top: (yPos + 30 ) + 'px'},
+    {top: yPos + 'px'},
+    {top: (yPos + 30)+ 'px',
       backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
   ], {duration: 700,
       timing(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
-  } else {
-   obj.animate([
-   {top: (ranYpos + 30 ) + 'px',
+  }
+  //This condition with other DNA of two
+  else {
+   dnaBall.animate([
+   {top: (yPos + 30 ) + 'px',
       backgroundColor: `hsl(${ranH}, 100%, 50%)`},
-    {top: ranYpos + 'px'},
-    {top: (ranYpos + 30)+ 'px'},
-    {top: ranYpos + 'px',
+    {top: yPos + 'px'},
+    {top: (yPos + 30)+ 'px'},
+    {top: yPos + 'px',
       backgroundColor: `hsl(${ranH2}, 100%, 50%)` }      
   ], {duration: 700,
       timing(timeFraction) {
@@ -92,12 +107,13 @@ function mouseEvent(e) {
  
   }
   
-  document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 700);
+  document.body.appendChild(dnaBall);
+  setTimeout(() => dnaBall.remove(), 700);
   document.body.appendChild(stick);
   setTimeout(() => stick.remove(), 700);  
   return;
   }
+  //This decides number of objects by mousemove	
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  2 === 0 ) {
