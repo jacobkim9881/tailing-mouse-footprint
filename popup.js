@@ -21,6 +21,8 @@ function addClickEvent(func, targetId, targetUrl, type) {
           name: targetId, 
           path: targetUrl, 
 	  type: type,
+  	  eventName: func(targetId).className ,
+          isItOn: true,
           sender: 'popup'}
       );
       
@@ -78,12 +80,15 @@ let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
 let heart = './images/heart/heart32.png'
 let colorfulBall = './images/co/colorfulBall32.png'
-
+let bunny = './images/snow/snowflake32.png';
+let dna = './images/dna/dna32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
 startPointerFunction('heart', heart, 'moving');
 startPointerFunction('colorfulBall', colorfulBall, 'moving');
+startPointerFunction('bunny', bunny, 'moving');
+startPointerFunction('dna', dna, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
