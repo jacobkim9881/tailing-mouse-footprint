@@ -80,7 +80,7 @@ let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
 let heart = './images/heart/heart32.png'
 let colorfulBall = './images/co/colorfulBall32.png'
-let bunny = './images/snow/snowflake32.png';
+let bunny = './images/bunny/bunny32.png';
 let dna = './images/dna/dna32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
