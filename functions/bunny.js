@@ -2,7 +2,9 @@
 localStorage.mouseObjArr = ['obj', 'eye1', 'eye2',
            'ear1', 'ear2', 'ear3', 'ear4',
            'mouth', 'mouth1', 'mouth2', 'mouth3',
-           'tie', 'tie1', 'tie2', 'tie3', 'tie4'];
+           'tie', 'tie1', 'tie2', 'tie3', 'tie4', 
+	   'emotion', 'emotion1', 'emotion2',
+           'emotion3', 'emotion4', 'emotion5', 'emotion6'];
 
 function createObjs() {
 let sox = document.createElement('div');
@@ -13,77 +15,6 @@ for (let oneId in ids) {
  arr.id = ids[oneId];
  sox.appendChild(arr);
 }
-	/*
-	let obj = document.createElement('div');
-let eye1 = document.createElement('div');
-let eye2 = document.createElement('div');
-let sox = document.createElement('div');
-let ear1 = document.createElement('div');
-let ear2 = document.createElement('div');
-let ear3 = document.createElement('div');
-let ear4 = document.createElement('div');
-let mouth = document.createElement('div');
-let mouth1 = document.createElement('div');
-let mouth2 = document.createElement('div');
-let mouth3 = document.createElement('div');
-let tie = document.createElement('div');
-let tie1 = document.createElement('div');
-let tie2 = document.createElement('div');
-let tie3 = document.createElement('div');
-let tie4 = document.createElement('div');
-*/
-
-/*
-y = e.clientY;
-x = e.clientX;
-obj.style.position = 'fixed';
-obj.style.left = (x + 100) + 'px';
-obj.style.top = (y + 100) + 'px';
-obj.style.width = '100px';
-obj.style.height = '100px';
-obj.style.borderRadius = '50%';
-obj.style.backgroundColor = `hsl(0, 100%, 85%)`;
-obj.style.border = `2px solid black`
-*/
-
-/*
-sox.appendChild(ear1);
-sox.appendChild(ear2);
-sox.appendChild(ear3);
-sox.appendChild(ear4);
-sox.appendChild(eye1);
-sox.appendChild(eye2);
-sox.appendChild(mouth);
-sox.appendChild(mouth1);
-sox.appendChild(mouth2);
-sox.appendChild(mouth3);
-sox.appendChild(tie);
-sox.appendChild(tie1);
-sox.appendChild(tie2);
-sox.appendChild(tie3);
-sox.appendChild(tie4);
-*/
-
-/*
-appendObj(ear1, stylingEar, 100, sox, 20);
-appendObj(ear2, stylingEar, 160, sox, -20);
-appendObj(ear3, stylingEar2, 171, sox, -20);
-appendObj(ear4, stylingEar2, 111, sox, 20);
-appendObj(eye1, stylingEye, 120, sox);
-appendObj(eye2, stylingEye, 170, sox);
-appendObj(mouth, stylingMouth, 148, sox, 45);
-appendObj(mouth1, stylingMouth1, 153, sox);
-appendObj(mouth2, stylingMouth2, 148, sox, 270);
-appendObj(mouth3, stylingMouth3, 148, sox, 0);
-appendObj(tie, stylingtie, 130, sox, 45);
-appendObj(tie1, stylingtie, 160, sox, 45);
-appendObj(tie4, stylingtie3, 150, sox, 0);
-appendObj(tie3, stylingblush, 121, sox, 0);
-appendObj(tie2, stylingblush, 171, sox, 0);
-*/
-
-//sox.appendChild(obj);
-//
 document.body.appendChild(sox);
 }
 
@@ -122,7 +53,7 @@ ele.style.width = '35px';
 ele.style.height = '100px';
 ele.style.borderRadius = '100% 30% 50% 30%';
 ele.style.backgroundColor = `hsl(0, 100%, 85%)`;
-ele.style.border = `2px solid black`;
+//ele.style.border = `2px solid black`;
 ele.style.zIndex = '0';
 ele.style.transform = `skew(${howMuch}deg)`
 
@@ -154,6 +85,7 @@ ele.style.left = (x + pos) + 'px';
 ele.style.top = (y + 180) + 'px';
 ele.style.width = '10px';
 ele.style.height = '10px';
+ele.style.backgroundColor = 'hsl(0, 100%, 50%, 0)',
 ele.style.borderTop = `2px solid black`;
 ele.style.borderLeft = `2px solid black`;
 ele.style.zIndex = '1';
@@ -238,6 +170,29 @@ ele.style.zIndex = '1';
 ele.style.transform = `rotate(${howMuch}deg)`
 }
 
+function addHearts(ele, pos, howMuch, ypos, size) {
+ele.style.position = 'fixed';
+ele.style.left = (pos) + 'px';
+ele.style.top = (ypos) + 'px';
+ele.style.width = (size) + 'px';
+ele.style.height = (size) + 'px';
+ele.style.borderRadius = `100%`
+ele.style.backgroundColor = `hsl(0, 100%, 50%)`;
+ele.style.borderRadius = '50%';
+ele.style.transform = `skewY(${howMuch}deg)`; 
+}
+
+function addMusicNote(ele, pos, ypos) {
+ele.style.position = 'fixed';
+ele.style.left = (pos) + 'px';
+ele.style.top = (ypos) + 'px';
+
+//let letter = document.createElement('p');
+ele.innerText = '♪';
+ele.style.fontWeight = 'bold';
+ele.style.fontSize = (window.screen.width/30) + 'px'
+//ele.appendChild(letter);	
+}
 
 function appendObj(objec, func, pos, mo, deg) {
 objec = document.createElement('div');
@@ -245,25 +200,110 @@ func(objec, pos, deg);
 mo.appendChild(objec);
 }
 
-//sox.style.transform = 'scale(0.3, 0.3)'
-/*
-stylingEar(ear1, 100, 20);
-stylingEar(ear2, 160, -20);
-stylingEar2(ear3, 171, -20);
-stylingEar2(ear4, 111, 20);
-stylingEye(eye1, 120);
-stylingEye(eye2, 170);
-stylingMouth(mouth, 148, 45);
-stylingMouth1(mouth1, 153);
-stylingMouth2(mouth2, 148, 270);
-stylingMouth3(mouth3, 148, 0);
-stylingtie(tie, 130, 45);
-stylingtie(tie1, 160, 45);
-stylingtie3(tie2, 171, 0);
-stylingblush(tie3, 121, 0);
-stylingblush(tie4, 150, 0);
-*/
+function dblclickEvent(e) {
+let emotion = document.getElementById('emotion');
+let emotion1 = document.getElementById('emotion1');
+let emotion2 = document.getElementById('emotion2');
+let emotion3 = document.getElementById('emotion3');
+let emotion4 = document.getElementById('emotion4');
+let emotion5 = document.getElementById('emotion5');
+let emotion6 = document.getElementById('emotion6');
+emotion.style.display = 'none';
+emotion1.style.display = 'none';
+emotion2.style.display = 'none';
+emotion3.style.display = 'none';
+emotion4.style.display = 'none';
+emotion5.style.display = 'none';
 
+addMusicNote(emotion6, 222, 100);
+emotion6.style.display = 'block';
+setTimeout(() => {emotion6.style.top = 20 + 'px';
+	emotion6.style.left = 50 + 'px';
+        emotion6.innerText = '♩'}, 200);
+
+}
+
+function mousedownEvent(e) {
+let eye1 = document.getElementById('eye1');
+let eye2 = document.getElementById('eye2');
+eye1.style.borderRadius = '0%';
+eye1.style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+eye1.style.borderBottom = 'none';
+eye1.style.borderLeft = 'none';	
+eye1.style.transform = 'rotate(45deg)';
+eye1.style.left = 120 + 'px';	
+eye2.style.borderRadius = '0%';
+eye2.style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+eye2.style.borderTop = 'none';
+eye2.style.borderRight = 'none';	
+eye2.style.transform = 'rotate(45deg)';
+eye2.style.left = 175 + 'px';	
+}
+
+function mouseupEvent(e) {
+let eye1 = document.getElementById('eye1');
+let eye2 = document.getElementById('eye2');
+let mouth = document.getElementById('mouth');
+eye1.style.borderRadius = '0%';
+eye1.style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+eye1.style.borderBottom = 'none';
+eye1.style.borderLeft = 'none';	
+eye1.style.transform = 'rotate(45deg)';
+eye1.style.left = 120 + 'px';	
+eye2.style.borderRadius = '0%';
+eye2.style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+eye2.style.borderTop = 'none';
+eye2.style.borderRight = 'none';	
+eye2.style.transform = 'rotate(45deg)';
+eye2.style.left = 175 + 'px';	
+mouth.style.backgroundColor = 'hsl(0, 100%, 50%)';
+
+}
+
+function onScrollEvent(e) {
+let scroll = window.scrollY;
+
+let emotion = document.getElementById('emotion');
+let emotion1 = document.getElementById('emotion1');
+let emotion2 = document.getElementById('emotion2');
+let emotion3 = document.getElementById('emotion3');
+let emotion4 = document.getElementById('emotion4');
+let emotion5 = document.getElementById('emotion5');
+let emotion6 = document.getElementById('emotion6');
+
+emotion6.style.display = 'none';
+
+addHearts(emotion, 222, 25, 150, 13);
+addHearts(emotion1, 227, -25, 150, 13);
+addHearts(emotion2, 232, 25, 120, 20);
+addHearts(emotion3, 239, -25, 120, 20);
+addHearts(emotion4, 242, 25, 85, 26);
+addHearts(emotion5, 251, -25, 85, 26);
+
+if (scroll %  300 < 100) {
+emotion.style.display = 'block';
+emotion1.style.display = 'block';
+emotion2.style.display = 'none';
+emotion3.style.display = 'none';
+emotion4.style.display = 'none';
+emotion5.style.display = 'none';
+
+} else if (scroll % 300 < 200) {
+emotion.style.display = 'block';
+emotion1.style.display = 'block';
+emotion2.style.display = 'block';
+emotion3.style.display = 'block';
+emotion4.style.display = 'none';
+emotion5.style.display = 'none';
+} else if (scroll % 300 < 300) {
+emotion.style.display = 'block';
+emotion1.style.display = 'block';
+emotion2.style.display = 'block';
+emotion3.style.display = 'block';
+emotion4.style.display = 'block';
+emotion5.style.display = 'block';
+}
+}
 
 function mouseEvent(e) {
   let sox = document.getElementById('sox');
@@ -286,10 +326,21 @@ let tie2 = document.getElementById('tie2');
 let tie3 = document.getElementById('tie3');
 let tie4 = document.getElementById('tie4');
 
-	  let ids = localStorage.mouseObjArr.match(/[^,]\w+/gi);
-  for (let oneId in ids) {
-    
-  }
+let emotion = document.getElementById('emotion');
+let emotion1 = document.getElementById('emotion1');
+let emotion2 = document.getElementById('emotion2');
+let emotion3 = document.getElementById('emotion3');
+let emotion4 = document.getElementById('emotion4');
+let emotion5 = document.getElementById('emotion5');
+let emotion6 = document.getElementById('emotion6');
+emotion.style.display = 'none';
+emotion1.style.display = 'none';
+emotion2.style.display = 'none';
+emotion3.style.display = 'none';
+emotion4.style.display = 'none';
+emotion5.style.display = 'none';
+emotion6.style.display = 'none';
+
   y = 0;
   x = 0;
 	  //y = e.clientY;
@@ -299,10 +350,10 @@ obj.style.left = (x + 100) + 'px';
 obj.style.top = (y + 100) + 'px';
 obj.style.width = '100px';
 obj.style.height = '100px';
-obj.style.borderRadius = '50%';
+obj.style.borderRadius = '30%';
 obj.style.zIndex = '1';
 obj.style.backgroundColor = `hsl(0, 100%, 85%)`;
-obj.style.border = `2px solid black`
+//obj.style.border = `2px solid black`
 stylingEar(ear1, 100, 20);
 stylingEar(ear2, 160, -20);
 stylingEar2(ear3, 171, -20);
@@ -313,11 +364,21 @@ stylingMouth(mouth, 148, 45);
 stylingMouth1(mouth1, 153);
 stylingMouth2(mouth2, 148, 270);
 stylingMouth3(mouth3, 148, 0);
-stylingtie(tie, 130, 45);
-stylingtie(tie1, 160, 45);
-stylingtie3(tie2, 150, 0);
+stylingtie(tie, 129, 45);
+stylingtie(tie1, 159, 45);
+stylingtie3(tie2, 149, 0);
 stylingblush(tie3, 121, 0);
 stylingblush(tie4, 171, 0);
+
+	  /*
+	  addHearts(emotion, 222, 25, 150, 13);
+addHearts(emotion1, 227, -25, 150, 13);
+addHearts(emotion2, 232, 25, 120, 20);
+addHearts(emotion3, 239, -25, 120, 20);
+addHearts(emotion4, 242, 25, 85, 26);
+addHearts(emotion5, 251, -25, 85, 26);
+*/
+
 eye1.style.left = (Math.sin(num/10) * 6 + 120) + 'px';
 eye2.style.left = (Math.sin(num/10) * 6 + 170) + 'px';
   return;
@@ -335,12 +396,20 @@ eye2.style.left = (Math.sin(num/10) * 6 + 170) + 'px';
 createObjs();
 
 document.body.addEventListener('mousemove', mouseEvent);
-
+document.body.addEventListener('mousedown', mousedownEvent);
+document.body.addEventListener('mouseup', mouseupEvent);
+document.body.addEventListener('dblclick', dblclickEvent);
+window.addEventListener('scroll', onScrollEvent);
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.name === 'bunny') {
     document.getElementById('sox').style.display = 'block'; 
   } else {
     document.getElementById('sox').style.display = 'none';
     document.body.removeEventListener('mousemove', mouseEvent);
+    document.body.removeEventListener('mousedown', mousedownEvent);
+    document.body.removeEventListener('mouseup', mouseupEvent);
+    document.body.removeEventListener('scroll', onScrollEvent);
+    document.body.removeEventListener('dblclick', dblclickEvent);
+
   }
 });
