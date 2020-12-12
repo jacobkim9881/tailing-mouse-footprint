@@ -5,30 +5,38 @@ function mouseEvent(e) {
   function trigger(e) {
   let obj = document.createElement('div');
   let ballSize = window.innerWidth/100;
-  let randomBallSize = Math.trunc(Math.random() * ballSize);
-  let ranXpos = randomBallSize + parseInt(e.clientX, 10);
-  let ranYpos = randomBallSize + parseInt(e.clientY, 10);
+  let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
+  let ranXpos = ballSize + parseInt(e.clientX, 10);
+  let ranYpos = ballSize + parseInt(e.clientY, 10);
   let ranH = Math.trunc(Math.random() * 360);
+  let ranH2 =  Math.trunc(Math.random() * 360); 
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
-  obj.style.width = ballSize + 'px';
-  obj.style.height = ballSize + 'px';
+  obj.style.width = randomBallSize + 'px';
+  obj.style.height = randomBallSize + 'px';
   obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   obj.style.borderRadius = '50%';
 
   obj.animate([
+    {top: (ranYpos + randomBallSize) + 'px',
+	    backgroundColor: `hsl(${ranH}, 100%, 50%)`  },
+    {top: (ranYpos - 10 )+ 'px'},
     {top: (ranYpos + randomBallSize) + 'px'},
-    {top: ranYpos + 'px'},
-    {top: (ranYpos + randomBallSize) + 'px'},
-  ], 200)
+    {top: ((ranYpos + 100 )+ randomBallSize) + 'px'},
+    {top: (ranYpos + 80) + 'px',
+      backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
+  ], {duration: 700,
+      timing(timeFraction) {
+      return 1 - Math.sin(Math.acos(timeFraction))}
+  })
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 200);
+  setTimeout(() => obj.remove(), 700);
   return;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  3 === 0 ) {
+  if (num %  4 === 0 ) {
    trigger(e);
   }
 }
