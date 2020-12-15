@@ -1,5 +1,5 @@
 //bunny.js
-localStorage.mouseObjArr = ['obj', 'eye1', 'eye2',
+localStorage.mouseObjArr = ['face', 'eye1', 'eye2',
            'ear1', 'ear2', 'ear3', 'ear4',
            'mouth', 'mouth1', 'mouth2', 'mouth3',
            'tie', 'tie1', 'tie2', 'tie3', 'tie4', 
@@ -7,15 +7,15 @@ localStorage.mouseObjArr = ['obj', 'eye1', 'eye2',
            'emotion3', 'emotion4', 'emotion5', 'emotion6'];
 
 function createObjs() {
-let sox = document.createElement('div');
-sox.id = 'sox'
+let grpDivs = document.createElement('div');
+grpDivs.id = 'grpDivs'
 let ids = localStorage.mouseObjArr.match(/[^,]\w+/gi);
 for (let oneId in ids) {
  let arr =  document.createElement('div')
  arr.id = ids[oneId];
- sox.appendChild(arr);
+ grpDivs.appendChild(arr);
 }
-document.body.appendChild(sox);
+document.body.appendChild(grpDivs);
 }
 
 function deleteObjs() {
@@ -306,10 +306,10 @@ emotion5.style.display = 'block';
 }
 
 function mouseEvent(e) {
-  let sox = document.getElementById('sox');
+  let grpDivs = document.getElementById('grpDivs');
 
   function trigger(e, moveX) {
-   let obj = document.getElementById('obj');
+   let face = document.getElementById('face');
 let eye1 = document.getElementById('eye1');
 let eye2 = document.getElementById('eye2');
 let ear1 = document.getElementById('ear1');
@@ -345,15 +345,15 @@ emotion6.style.display = 'none';
   x = 0;
 	  //y = e.clientY;
 //x = e.clientX;
-obj.style.position = 'fixed';
-obj.style.left = (x + 100) + 'px';
-obj.style.top = (y + 100) + 'px';
-obj.style.width = '100px';
-obj.style.height = '100px';
-obj.style.borderRadius = '30%';
-obj.style.zIndex = '1';
-obj.style.backgroundColor = `hsl(0, 100%, 85%)`;
-//obj.style.border = `2px solid black`
+face.style.position = 'fixed';
+face.style.left = (x + 100) + 'px';
+face.style.top = (y + 100) + 'px';
+face.style.width = '100px';
+face.style.height = '100px';
+face.style.borderRadius = '30%';
+face.style.zIndex = '1';
+face.style.backgroundColor = `hsl(0, 100%, 85%)`;
+//face.style.border = `2px solid black`
 stylingEar(ear1, 100, 20);
 stylingEar(ear2, 160, -20);
 stylingEar2(ear3, 171, -20);
@@ -386,10 +386,10 @@ eye2.style.left = (Math.sin(num/10) * 6 + 170) + 'px';
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
    trigger(e, 0);  
-  sox.style.transform = 'scale(0.3, 0.3)'
-  sox.style.position = 'fixed';
-  sox.style.top = e.clientY + 'px';
-  sox.style.left = e.clientX + 'px';
+  grpDivs.style.transform = 'scale(0.3, 0.3)'
+  grpDivs.style.position = 'fixed';
+  grpDivs.style.top = e.clientY + 'px';
+  grpDivs.style.left = e.clientX + 'px';
 }
 
 //createObj
@@ -402,9 +402,9 @@ document.body.addEventListener('dblclick', dblclickEvent);
 window.addEventListener('scroll', onScrollEvent);
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg.name === 'bunny') {
-    document.getElementById('sox').style.display = 'block'; 
+    document.getElementById('grpDivs').style.display = 'block'; 
   } else {
-    document.getElementById('sox').style.display = 'none';
+    document.getElementById('grpDivs').style.display = 'none';
     document.body.removeEventListener('mousemove', mouseEvent);
     document.body.removeEventListener('mousedown', mousedownEvent);
     document.body.removeEventListener('mouseup', mouseupEvent);
