@@ -1,36 +1,53 @@
-//test.js
-function mouseEvent(e) {
-// object for styling
-  let obj = document.createElement('div');
-  
-	
-  let ran10 = Math.trunc(Math.random() * 10) + 5;
-    let ranXpos = Math.trunc(Math.random() * ran10) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
-    let ran20 = ranYpos - 30;
-    obj.style.position = 'fixed';
-    obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj.style.borderRadius = '50%';  
-    obj.animate([
-      {top: ranYpos + 'px',
-      left: e.clientX + 'px',
-      width: 5 + 'px',
-      height: 5 + 'px' 
-    }, 
-      {top: ran20 + 'px',
-      left: ranXpos + 'px',
-      width: ran10 + 'px',
-      height: ran10 + 'px' 
-    }
-    ], 200)
+//colofulBall.js
 
+function mouseEvent(e) {
+//let ranH = num %  360;
+
+  function trigger(e) {
+  let obj = document.createElement('div');
+  let ballSize = window.innerWidth/100;
+  let randomBallSize = Math.trunc(Math.random() * ballSize);
+  let ranXpos = randomBallSize + parseInt(e.clientX, 10);
+  let ranYpos = randomBallSize + parseInt(e.clientY, 10) + 10;
+//  let ranH = Math.trunc(Math.random() * 360);
+  obj.style.position = 'fixed';
+  obj.style.left = ranXpos + 'px';
+  obj.style.width = 10 + 'px';
+  obj.style.height = 10 + 'px';
+  obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+  obj.style.borderRadius = '50%';
+
+  obj.animate([
+    {top: (ranYpos + randomBallSize) + 'px',
+	    transform: 'scale(1,1)',
+     backgroundColor: `hsl(${ranH}, 100%, 50%)`},
+    {top: ranYpos + 'px',
+    transform: 'scale(0.8, 0.8)',
+    backgroundColor: `hsl(${ranH + 10}, 100%, 50%)`},
+    {top: (ranYpos + randomBallSize) + 'px',
+    transform: 'scale(1,1)',
+    backgroundColor: `hsl(${ranH + 20}, 100%, 50%)`},
+    {top: ranYpos + 'px',
+    transform: 'scale(0.8, 0.8)',
+    backgroundColor: `hsl(${ranH + 30}, 100%, 50%)`},
+  ], 500)
+  
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 200);
+  setTimeout(() => obj.remove(), 500);
   return;
+  }
+  let num = parseInt(localStorage.mouseCounter);
+  localStorage.mouseCounter = num + 1;
+  let ranH = num %  360;
+
+  if (num %  2 === 0 ) {
+   trigger(e);
+  trigger(e);trigger(e);trigger(e);trigger(e);trigger(e);trigger(e);
+  }
 }
 
 document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
-document.body.removeEventListener('mousemove', mouseEvent)
+  document.body.removeEventListener('mousemove', mouseEvent)
 });
