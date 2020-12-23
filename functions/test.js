@@ -2,6 +2,7 @@
 localStorage.mouseObjArr = ['face', 'eye1', 'eye2',
   'ear1', 'ear2', 'ear3', 'ear4',
   'mouth', 'mouth1', 'mouth2', 'mouth3', 'mouth4', 'mouth5', 'mouth6', 'mouth7',
+  'line1', 'line2', 'line3', 'line4', 'line5', 'line6', 'line7',
   'tie', 'tie1', 'tie2',
 	   'blush', 'blush1', 
 	   'emotion', 'emotion1', 'emotion2',
@@ -127,10 +128,10 @@ function stylingMouth({id, left, right, leftM}) {
     left: left,
     top: 160,
     width: 25,
-    height: 15,
+    height: 20,
     borderRadius: '40%',
     zIndex: 2,
-    backgroundColor: '',
+    backgroundColor: {h: 281, s: 29, l: 50},
     transform: `rotate(${0}deg)`
   }
   objProto(config);
@@ -146,9 +147,9 @@ function stylingMouth1({id, left}) {
     element: getId(id),
     position: 'fixed',
     left: left,
-    top: 170,
+    top: 150,
     width: 60,
-    height: 50,
+    height: 45,
     borderRadius: '30%',
     zIndex: 1,
     backgroundColor: {h: 0, s: 100, l: 100},
@@ -163,11 +164,11 @@ function stylingMouth2({id, left, rotate}) {
     element: getId(id),
     position: 'fixed',
     left: left,
-    top: 160,
-    width: 13,
-    height: 13,
+    top: 148,
+    width: 17,
+    height: 17,
     borderRadius: '100% 30% 30% 100%',
-    zIndex: 1,
+    zIndex: 2,
     backgroundColor: {h: 0, s: 100, l: 0},
     transform: `rotate(${rotate}deg)`
   }
@@ -177,18 +178,34 @@ function stylingMouth2({id, left, rotate}) {
 
 }
 
-function stylingMouth3({id, left, rotate}) {
+function stylingMouth3({id, left}) {
   const config = {
     element: getId(id),
     position: 'fixed',
     left: left,
-    top: 155,
-    width: 20,
-    height: 10,
-    borderRadius: '',
+    top: 170,
+    width: 30,
+    height: 20,
+    borderRadius: '50%',
     zIndex: 1,
-    backgroundColor: {h: 0, s: 100, l: 85},
-    transform: `rotate(${rotate}deg)`
+    backgroundColor: {h: 0, s: 100, l: 50},
+    transform: ``
+  }
+  objProto(config);
+}
+
+function stylingLine({id, top, left, width, height}) {
+  const config = {
+    element: getId(id),
+    position: 'fixed',
+    left: left,
+    top: top,
+    width: width,
+    height: height,
+    borderRadius: '30%',
+    zIndex: 1,
+    backgroundColor: {h: 0, s: 100, l: 0},
+    transform: `rotate(${0}deg)`
   }
   objProto(config);
 }
@@ -250,7 +267,7 @@ function stylingBlush({id, left}) {
     element: getId(id),
     position: 'fixed',
     left: left,
-    top: 160,
+    top: 150,
     width: 20,
     height: 10,
     borderRadius: '50%',
@@ -309,22 +326,24 @@ function musicNoteAni() {
 
 }
 
-function sleepyEyes() {
-  getId('eye1').style.borderRadius = '0%';
+function smileEyes() {
+  getId('eye1').style.borderRadius = '50%';
   getId('eye1').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
-  getId('eye1').style.border = '3px solid black';	
-  getId('eye1').style.borderTop = 'none';
+  getId('eye1').style.border = '5px solid black';	
+  getId('eye1').style.borderBottom = 'none';
   getId('eye1').style.borderLeft = 'none';	
   getId('eye1').style.borderRight = 'none';
-  getId('eye1').style.left = 114 + 'px';	
-  getId('eye2').style.borderRadius = '0%';
+  getId('eye1').style.left = 120 + 'px';	
+  getId('eye1').style.top = 135 + 'px';	
+  getId('eye2').style.borderRadius = '50%';
   getId('eye2').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
-  getId('eye2').style.border = '3px solid black';
-  getId('eye2').style.borderTop = 'none';
+  getId('eye2').style.border = '5px solid black';
+  getId('eye2').style.borderBottom = 'none';
   getId('eye2').style.borderRight = 'none';	
   getId('eye2').style.borderLeft = 'none';
-  getId('eye2').style.left = 172 + 'px';	
-
+  getId('eye2').style.left = 200 + 'px';	
+  getId('eye2').style.top = 135 + 'px';	
+  
 }
 
 function excitingEyes() {
@@ -341,7 +360,7 @@ function excitingEyes() {
   getId('eye2').style.borderTop = 'none';
   getId('eye2').style.borderRight = 'none';	
   getId('eye2').style.transform = 'rotate(45deg)';
-  getId('eye2').style.left = 175 + 'px';
+  getId('eye2').style.left = 200 + 'px';
 
 }
 
@@ -364,11 +383,17 @@ function sighEmoj() {
 
 }
 
-function questionEmoj() {
-  addMusicNote({id: 'emotion6' , left: 222, top: 100});
+function meowEmoj() {
+  addMusicNote({id: 'emotion6' , left: 240, top: 100});
   getId('emotion6').style.display = 'block';
-  getId('emotion6').innerText = '?';
+  getId('emotion6').innerText = 'Meow';
 
+}
+
+function mouseDisplay(display= 'block') {
+  getId('mouth').style.display = display;
+  getId('mouth1').style.display = display;
+  
 }
 
 function heartEmoj(num) {
@@ -418,7 +443,7 @@ function dragEvent(e) {
   stylingEye({id: 'eye1', left: 114});
   stylingEye({id: 'eye2', left: 170});
   getId('mouth').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
-  questionEmoj();
+  meowEmoj();
 }
 
 function dblclickEvent(e) {
@@ -427,31 +452,42 @@ function dblclickEvent(e) {
 
   excitingEyes();
 
-  getId('mouth').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+  getId('mouth4').innerText = '3';
+  getId('mouth4').style.fontSize = '40px';
+
+  mouseDisplay('none')
+  getId('mouth4').style.backgroundColor = '';
+  getId('mouth4').style.top = '150px'
 
   getId('emotion7').style.display = 'none';
   getId('emotion8').style.display = 'none';
 
-  musicNoteAni();
+  stylingHeart({id: 'emotion4', left: 242, top: 70, size: 40, skewness: 25});	
+  stylingHeart({id: 'emotion5', left: 255, top: 70, size: 40, skewness: -25});	
+  
+  getId('emotion4').style.display = 'block';
+  getId('emotion5').style.display = 'block';
 
 }
 
 function mousedownEvent(e) {
-  questionEmoj();
-
-  sleepyEyes();
+  
+  smileEyes();
 
   getId('eye1').style.transform = 'rotate(0deg)';
   getId('eye2').style.transform = 'rotate(0deg)';
 
+  stylingMouth3({id: 'mouth4', left: 155});
+  getId('mouth4').innerText = '';
+  mouseDisplay()  
 }
 
 function mouseupEvent(e) {
-  sleepyEyes();
+  smileEyes();
 
-  getId('mouth').style.backgroundColor = 'hsl(0, 100%, 50%)';
+  meowEmoj();
 
-  sighEmoj();
+  //sighEmoj();
 }
 
 function onScrollEvent(e) {
@@ -475,6 +511,7 @@ function mouseEvent(e) {
     let none = null;
 
     heartEmoj(none);
+    getId('emotion6').style.display = 'none';
     getId('emotion7').style.display = 'none';
     getId('emotion8').style.display = 'none';
 
@@ -483,22 +520,35 @@ function mouseEvent(e) {
     stylingEar({id: 'ear2', left: 178, skewness: 0});
     stylingEarHole({id: 'ear3', left: 115, skewness: 0});
     stylingEarHole({id: 'ear4', left: 190, skewness: 0});
-    stylingEye({id: 'eye1', left: 114});
-    stylingEye({id: 'eye2', left: 170});
+    stylingEye({id: 'eye1', left: 120});
+    stylingEye({id: 'eye2', left: 200});
     stylingMouth({id: 'mouth', left: 145, right: 5, leftM: 0});
     stylingMouth({id: 'mouth1', left: 167, right: 0, leftM: 5});
-    stylingMouth2({id: 'mouth2', left: 147, rotate: 270});
-    stylingMouth3({id: 'mouth3', left: 145, rotate: 0});
+    //stylingMouth1({id: 'mouth2', left: 140});
+    stylingMouth2({id: 'mouth3', left: 160, rotate: 0});
+    
+    /*
     stylingTie({id: 'tie', left: 129, rotate: 45});
     stylingTie({id: 'tie1', left: 159, rotate: 45});
     stylingTie1({id: 'tie2', left: 148});
-    stylingBlush({id: 'blush', left: 113});
-    stylingBlush({id: 'blush1', left: 171});
+    */
+    stylingLine({id:'line1', top: 100, left: 160, width:20, height: 25});
+    stylingLine({id:'line2', top: 100, left: 135, width:20, height: 15});
+    stylingLine({id:'line3', top: 100, left: 185, width:20, height: 15});
+    stylingLine({id:'line4', top: 160, left: 100, width:30, height: 15});
+    stylingLine({id:'line5', top: 180, left: 107, width:20, height: 15});
+    stylingLine({id:'line6', top: 160, left: 210, width:30, height: 15});
+    stylingLine({id:'line7', top: 180, left: 210, width:20, height: 15});
 
-    getId('eye1').style.left = (Math.sin(num/10) * 6 + 114) + 'px';
-    getId('eye2').style.left = (Math.sin(num/10) * 6 + 172) + 'px';
-    getId('mouth').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+    //stylingBlush({id: 'blush', left: 120});
+    //stylingBlush({id: 'blush1', left: 200});
 
+    getId('eye1').style.left = (Math.sin(num/10) * 6 + 120) + 'px';
+    getId('eye2').style.left = (Math.sin(num/10) * 6 + 200) + 'px';
+    getId('mouth4').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
+    mouseDisplay();
+    getId('mouth4').innerText = ''
+    
     return;
   }
   let num = parseInt(localStorage.mouseCounter);
