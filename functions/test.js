@@ -333,7 +333,7 @@ function smileEyes() {
   getId('eye1').style.borderBottom = 'none';
   getId('eye1').style.borderLeft = 'none';	
   getId('eye1').style.borderRight = 'none';
-  getId('eye1').style.left = 120 + 'px';	
+  getId('eye1').style.left = 130 + 'px';	
   getId('eye1').style.top = 135 + 'px';	
   getId('eye2').style.borderRadius = '50%';
   getId('eye2').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
@@ -341,7 +341,7 @@ function smileEyes() {
   getId('eye2').style.borderBottom = 'none';
   getId('eye2').style.borderRight = 'none';	
   getId('eye2').style.borderLeft = 'none';
-  getId('eye2').style.left = 200 + 'px';	
+  getId('eye2').style.left = 190 + 'px';	
   getId('eye2').style.top = 135 + 'px';	
   
 }
@@ -353,14 +353,14 @@ function excitingEyes() {
   getId('eye1').style.borderBottom = 'none';
   getId('eye1').style.borderLeft = 'none';	
   getId('eye1').style.transform = 'rotate(45deg)';
-  getId('eye1').style.left = 120 + 'px';
+  getId('eye1').style.left = 130 + 'px';
   getId('eye2').style.borderRadius = '0%';
   getId('eye2').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
   getId('eye2').style.border = '3px solid black';	
   getId('eye2').style.borderTop = 'none';
   getId('eye2').style.borderRight = 'none';	
   getId('eye2').style.transform = 'rotate(45deg)';
-  getId('eye2').style.left = 200 + 'px';
+  getId('eye2').style.left = 190 + 'px';
 
 }
 
@@ -520,8 +520,8 @@ function mouseEvent(e) {
     stylingEar({id: 'ear2', left: 178, skewness: 0});
     stylingEarHole({id: 'ear3', left: 115, skewness: 0});
     stylingEarHole({id: 'ear4', left: 190, skewness: 0});
-    stylingEye({id: 'eye1', left: 120});
-    stylingEye({id: 'eye2', left: 200});
+    stylingEye({id: 'eye1', left: 130});
+    stylingEye({id: 'eye2', left: 190});
     stylingMouth({id: 'mouth', left: 145, right: 5, leftM: 0});
     stylingMouth({id: 'mouth1', left: 167, right: 0, leftM: 5});
     //stylingMouth1({id: 'mouth2', left: 140});
@@ -543,8 +543,8 @@ function mouseEvent(e) {
     //stylingBlush({id: 'blush', left: 120});
     //stylingBlush({id: 'blush1', left: 200});
 
-    getId('eye1').style.left = (Math.sin(num/10) * 6 + 120) + 'px';
-    getId('eye2').style.left = (Math.sin(num/10) * 6 + 200) + 'px';
+    getId('eye1').style.left = (Math.sin(num/10) * 6 + 130) + 'px';
+    getId('eye2').style.left = (Math.sin(num/10) * 6 + 190) + 'px';
     getId('mouth4').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
     mouseDisplay();
     getId('mouth4').innerText = ''
