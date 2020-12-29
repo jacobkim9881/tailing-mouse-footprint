@@ -227,41 +227,6 @@ function stylingSmile({id, left, top, width, height, skewness}) {
 
 }
 
-function stylingTie({id, left, rotate}) {
-  const config = {
-    element: getId(id),
-    position: 'fixed',
-    left: left,
-    top: 207,
-    width: 20,
-    height: 20,
-    borderRadius: '30%',
-    zIndex: 1,
-    backgroundColor: {h: 0, s: 100, l: 0},
-    transform: `rotate(${rotate}deg)`
-  }
-  objProto(config);
-  getId(id).style.borderTop = `2px solid black`;
-  getId(id).style.borderLeft = `2px solid black`;
-
-}
-
-function stylingTie1({id, left, rotate}) {
-  const config = {
-    element: getId(id),
-    position: 'fixed',
-    left: left,
-    top: 210,
-    width: 13,
-    height: 13,
-    borderRadius: '100%',
-    zIndex: 1,
-    backgroundColor: {h: 0, s: 100, l: 0},
-  }
-  objProto(config);
-
-}
-
 function stylingBlush({id, left}) {
   const config = {
     element: getId(id),
@@ -361,25 +326,6 @@ function excitingEyes() {
   getId('eye2').style.borderRight = 'none';	
   getId('eye2').style.transform = 'rotate(45deg)';
   getId('eye2').style.left = 190 + 'px';
-
-}
-
-function sighEmoj() {
-  stylingHeart({id: 'emotion7', left: 130, top: 190, size: 13, skewness: 0});
-  stylingHeart({id: 'emotion8', left: 120, top: 193, size: 20, skewness: 0});	
-
-  getId('emotion7').style.backgroundColor = 'hsl(60, 25%, 75%)';
-  getId('emotion7').style.borderRadius = '0%';
-  getId('emotion7').style.zIndex = 1;
-  getId('emotion7').style.display = 'block';
-  getId('emotion7').style.transform = 'rotate(45deg)';
-
-  getId('emotion8').style.backgroundColor = 'hsl(60, 25%, 75%)';
-  getId('emotion8').style.borderRadius = '100%';
-  getId('emotion8').style.zIndex = 1;
-  getId('emotion8').style.display = 'block';
-
-  getId('emotion6').style.display = 'none';
 
 }
 
@@ -486,8 +432,6 @@ function mouseupEvent(e) {
   smileEyes();
 
   meowEmoj();
-
-  //sighEmoj();
 }
 
 function onScrollEvent(e) {
