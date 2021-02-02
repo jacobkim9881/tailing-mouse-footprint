@@ -25,13 +25,13 @@ function mouseEvent(e) {
       {top: ((ranYpos + 100 )+ randomBallSize) + 'px'},
       {top: (ranYpos + 80) + 'px',
         backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
-    ], {duration: 700,
+    ], {duration: 800,
       timing(timeFraction) {
         return 1 - Math.sin(Math.acos(timeFraction))}
     })
   
     document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), 700);
+   setTimeout(() => obj.remove(), 700);
     return;
   }
   let num = parseInt(localStorage.mouseCounter);
