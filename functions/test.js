@@ -12,8 +12,8 @@ function mouseEvent(e) {
 //  let ranH = Math.trunc(Math.random() * 360);
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
-  obj.style.width = 10 + 'px';
-  obj.style.height = 10 + 'px';
+  obj.style.width = ballSize + 'px';
+  obj.style.height = ballSize + 'px';
   obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   obj.style.borderRadius = '50%';
 
@@ -33,7 +33,7 @@ function mouseEvent(e) {
   ], 500)
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 500);
+  setTimeout(() => obj.remove(), 400);
   return;
   }
   let num = parseInt(localStorage.mouseCounter);
