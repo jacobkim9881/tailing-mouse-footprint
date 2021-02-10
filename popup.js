@@ -62,7 +62,7 @@ function triggerStop(func, targetId) {
           sender: 'popup'}
       );
 
-      });
+    });
 	  
   });
 }
@@ -72,7 +72,7 @@ function stopEvent(func, targetId) {
   stopButton.innerHTML === 'STOP Extension' ? 
     stopButton.innerHTML = 'START Extension' : 
     stopButton.innerHTML = 'STOP Extension';
-    return stopButton.innerHTML;
+  return stopButton.innerHTML;
 }
 
 let bubble = './images/bubble/bubble32.png'
