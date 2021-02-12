@@ -5,12 +5,12 @@ function mouseEvent(e) {
   let basicSize = 10;
   let randomBallSize = Math.trunc(Math.random() * (pxByScreenWidth -15)) + basicSize;
  
-  function trigger(e, isItUp=true) {
+  function trigger(e, n, isItUp=true) {
     let stick = document.createElement('div');
     let xPos = pxByScreenWidth + parseInt(e.clientX, 10);
     let yPos = pxByScreenWidth + parseInt(e.clientY, 10);
-    let ranH = Math.trunc(Math.random() * 360);
-    let ranH2 =  Math.trunc(Math.random() * 360);
+    let ranH = (n * 3 )% 360;
+    let ranH2 = (n * 3 + 180)% 360;
   
     //stick between DNAs	  
     let middleOfBall = randomBallSize/2 - window.innerWidth/800; 
@@ -85,7 +85,7 @@ function mouseEvent(e) {
         {top: (yPos + 30 ) + 'px'},
         {top: yPos + 'px'},
         {top: (yPos + 30)+ 'px',
-          backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
+          backgroundColor: `hsl(${ranH}, 100%, 50%)` }
       ], {duration: 700,
         timing(timeFraction) {
           return 1 - Math.sin(Math.acos(timeFraction))}
@@ -95,7 +95,7 @@ function mouseEvent(e) {
     else {
       dnaBall.animate([
         {top: (yPos + 30 ) + 'px',
-          backgroundColor: `hsl(${ranH}, 100%, 50%)`},
+          backgroundColor: `hsl(${ranH2}, 100%, 50%)`},
         {top: yPos + 'px'},
         {top: (yPos + 30)+ 'px'},
         {top: yPos + 'px',
@@ -117,8 +117,8 @@ function mouseEvent(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  2 === 0 ) {
-    trigger(e, true);
-    trigger(e, false);
+    trigger(e,num, true);
+    trigger(e,num, false);
   }
 }
 
