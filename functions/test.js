@@ -1,53 +1,45 @@
 //test.js
 
-function objProtoType(e) {
+function petal(e, top, left, upside = true) {
     let obj = document.createElement('div');
-    let ballSize = window.innerWidth/100;
-    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
-    let ranXpos = ballSize + parseInt(e.clientX, 10);
-    let ranYpos = ballSize + parseInt(e.clientY, 10);
-    let ranH = Math.trunc(Math.random() * 360);
-    let ranH2 =  Math.trunc(Math.random() * 360); 
+    let ballSize = window.innerWidth/80;
     obj.style.position = 'fixed';
-    obj.style.left = ranXpos + 'px';
-    obj.style.width = randomBallSize + 'px';
-    obj.style.height = randomBallSize + 'px';
-    obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
-    obj.style.borderRadius = '50%';
+    obj.style.top = (e.clientY + top) + 'px';	
+    obj.style.left = (e.clientX + left) + 'px';
+    obj.style.width = ballSize + 'px';
+    obj.style.height = ballSize + 'px';
+    obj.style.backgroundColor = `hsl(300, 60%, 80%)`;
+    obj.style.borderRadius = upside ? '10% 80%' : '80% 10%';
+obj.style.zIndex = '-2';
     return obj;	 
 }
 
-function pop(e) {	
-    let obj = objProtoType(e);
+function center(e) {
+    let obj = document.createElement('div');
     let ballSize = window.innerWidth/100;
-    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
-    let ranXpos = ballSize + parseInt(e.clientX, 10);
-    let ranYpos = ballSize + parseInt(e.clientY, 10);
-    let ranH = Math.trunc(Math.random() * 360);
-    let ranH2 =  Math.trunc(Math.random() * 360);
-    let ran30 =	Math.trunc(Math.random() * 30);
-    let ran30two = Math.trunc(Math.random() * 50); 	  
-    let withIn30 = (ran) => Math.random() > 0.5 ? ran : -ran;
-    obj.animate([
-      {top: (e.clientY) + 'px',
-       left: (e.clientX) + 'px',
-       opacity: 1},
-      {top: (e.clientY + withIn30(ran30))+ 'px',
-      left: (e.clientX + withIn30(ran30two))+ 'px',
-      opacity: 0},
-     ], {duration: 400,
-         easing: "ease-out"})
-  
-    document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), 400);
+    obj.style.position = 'fixed';
+    obj.style.top = (e.clientY) + 'px';	
+    obj.style.left = (e.clientX) + 'px';
+    obj.style.width = ballSize + 'px';
+    obj.style.height = ballSize + 'px';
+    obj.style.backgroundColor = `hsl(60, 100%, 50%)`;
+    obj.style.borderRadius = '50%';
+    obj.style.zIndex = '-1';
+    return obj;	 
 }
 
-function clickEvent(e) {
+function objProtoType(e) {
+    let obj = document.createElement('div');
+    let ballSize = window.innerWidth/100;
+    obj.style.position = 'fixed';
+    obj.appendChild(petal(e,(ballSize * 0.5),(ballSize * 0.5)));	  
+   obj.appendChild(petal(e,-(ballSize * 0.5),(ballSize * 0.5), false));	
+   obj.appendChild(petal(e,(ballSize * 0.5),-(ballSize * 0.5), false));	
+   obj.appendChild(petal(e,-(ballSize * 0.5),-(ballSize * 0.5)));	
 
-  let ran = Math.trunc(Math.random() * 5) + 10;
-  for (let i = 0; i <= ran; i++) {
-  pop(e);
-  }
+    obj.appendChild(center(e));
+
+    return obj;	 
 }
 
 function mouseEvent(e) {
@@ -60,22 +52,19 @@ function mouseEvent(e) {
     let ranYpos = ballSize + parseInt(e.clientY, 10);
     let ranH = Math.trunc(Math.random() * 360);
     let ranH2 =  Math.trunc(Math.random() * 360); 
+    obj.style.left = ranXpos + 'px';
 
     obj.animate([
-      {top: (ranYpos + randomBallSize) + 'px',
-	    backgroundColor: `hsl(${ranH}, 100%, 50%)`  },
-      {top: (ranYpos - 10 )+ 'px'},
       {top: (ranYpos + randomBallSize) + 'px'},
-      {top: ((ranYpos + 100 )+ randomBallSize) + 'px'},
-      {top: (ranYpos + 80) + 'px',
-        backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
+	    {top: (ranYpos + randomBallSize) + 'px'}
+
     ], {duration: 800,
       timing(timeFraction) {
         return 1 - Math.sin(Math.acos(timeFraction))}
     })
   
     document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), 700);
+//    setTimeout(() => obj.remove(), 700);
     return;
   }
   let num = parseInt(localStorage.mouseCounter);
@@ -86,10 +75,8 @@ function mouseEvent(e) {
 }
 
 document.body.addEventListener('mousemove', mouseEvent);
-document.body.addEventListener('click', clickEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
 document.body.removeEventListener('mousemove', mouseEvent);
-document.body.removeEventListener('click', clickEvent);
 
 });
