@@ -3,3 +3,6 @@
 	package-lock.json
 	package.json
         **/test.js
+	.vscode/
+	script.js
+
