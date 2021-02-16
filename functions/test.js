@@ -1,11 +1,24 @@
 //test.js
 
-function objAnimate(obj, e, randomBallSize, top) {
+function objAnimate(obj, e, randomBallSize, top, left) {
     obj.animate([
-      {top: (e.clientY + top + randomBallSize) + 'px'},
-	    {top: (e.clientY + top + (randomBallSize*1.3)) + 'px'},
-	    {top: (e.clientY + top + (randomBallSize*1)) + 'px'}
+      {top: (e.clientY + top + randomBallSize * 1) + 'px',
+       left: (e.clientX + left + (randomBallSize*0)) + 'px',
+       opacity: 1},
+      {top: (e.clientY + top + randomBallSize * 1.3) + 'px',
+       left: (e.clientX + left + (randomBallSize*1.5)) + 'px',
+       opacity: 0.8},
+      {top: (e.clientY + top + randomBallSize * 1) + 'px',
+       left: (e.clientX + left + (randomBallSize*2)) + 'px',
+       opacity: 0.5},
+      {top: (e.clientY + top + randomBallSize * 1.3) + 'px',
+       left: (e.clientX + left + (randomBallSize*2.5)) + 'px',
+       opacity: 0.3},
+      {top: (e.clientY + top + randomBallSize * 1) + 'px',
+       left: (e.clientX + left + (randomBallSize*3)) + 'px',
+       opacity: 0}
 
+ 
     ], {duration: 800,
       timing(timeFraction) {
         return 1 - Math.sin(Math.acos(timeFraction))}
@@ -22,12 +35,12 @@ function petal(e, top, left, upside = true, randomBallSize) {
     obj.style.width = ballSize + 'px';
     obj.style.height = ballSize + 'px';
     obj.style.backgroundColor = `hsl(300, 60%, 80%)`;
-    obj.style.borderRadius = upside ? '10% 80%' : '80% 10%';
+    obj.style.borderRadius = upside ? '50% 50%' : '50% 50%';
 obj.style.zIndex = '-2';
 //    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
 //    randomBallSize = upside ? randomBallSize * -1 : randomBallSize * 1	
    obj.style.position = 'fixed';
-   objAnimate(obj, e, randomBallSize, top)
+   objAnimate(obj, e, randomBallSize, top, left)
 /*	
     obj.animate([
       {top: (e.clientY + top + randomBallSize) + 'px'},
@@ -54,7 +67,7 @@ function center(e, randomBallSize) {
     obj.style.backgroundColor = `hsl(60, 100%, 50%)`;
     obj.style.borderRadius = '50%';
     obj.style.zIndex = '-1';
-    objAnimate(obj, e, randomBallSize, 0)
+    objAnimate(obj, e, randomBallSize, 0, 0)
      return obj;	 
 }
 
@@ -95,12 +108,12 @@ function mouseEvent(e) {
     })
   
     document.body.appendChild(obj);
-//    setTimeout(() => obj.remove(), 700);
+    setTimeout(() => obj.remove(), 700);
     return;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  4 === 0 ) {
+  if (num %  10 === 0 ) {
     trigger(e);
   }
 }
