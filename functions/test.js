@@ -9,18 +9,14 @@ function getObj() {
 
  let obj1 = document.createElement('div');
  obj1.id = 'test-obj1';  
- obj1.style.width = 50 + 'px'; 
- obj1.style.height = 70 + 'px'; 
-// obj1.style.width = 50 + 'px'; 
-// obj1.style.height = 60 + 'px'; 
+ obj1.style.width = 70 + 'px'; 
+ obj1.style.height = 50 + 'px'; 
  document.body.appendChild(obj1);	
 
  let obj2 = document.createElement('div');
  obj2.id = 'test-obj2';  
  obj2.style.width = 70 + 'px'; 
  obj2.style.height = 50 + 'px'; 
-// obj2.style.width = 60 + 'px'; 
-// obj2.style.height = 60 + 'px'; 
  document.body.appendChild(obj2);	
 
  let nuc1 = document.createElement('div');
@@ -66,9 +62,6 @@ function getObj() {
  sub2.style.width = 10 + 'px'; 
  sub2.style.height = 10 + 'px'; 
  document.body.appendChild(sub2);	
-// sub.style.display = 'none';
-// sub1.style.display = 'none';
-// sub2.style.display = 'none';
 
 localStorage.mouseEventOn = false;
 localStorage.mouseLazy = true;
@@ -80,7 +73,10 @@ localStorage.mouseLazy = true;
   sub.style.display = 'block';
   sub1.style.display = 'block';
   sub2.style.display = 'block';	
-	// return obj;
+	// sub.style.display = 'none';
+// sub1.style.display = 'none';
+// sub2.style.display = 'none';
+// return obj;
 }
 getObj();
 
@@ -119,40 +115,37 @@ function mouseEvent(e) {
     let farY = -30;	
     let num1 = (num + 60)% 260 / 20;	
     let num11 = (num + 105)% 315 / 100;	
-console.log(num1)	
-    let x1 = Math.sin(num1) * wid;
-    let y1 = Math.cos(num1) * hei;
+//console.log(num1)	
+    let x1 = Math.sin(num1 - 45) * wid;
+    let y1 = Math.cos(num1 + 45) * (wid);
     let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
-    let x11 = Math.sin(num1 - 45) * rad;	
-    let y11 = Math.cos(num1 + 45) * rad;	
 // console.log(num)
 //	console.log(num11)
 //console.log(x11, y11)
-console.log(x, y)
-console.log(num0)	
- 	
-    x = Math.sin(num1 + 45) * rad;	
-    y = Math.cos(num1 - 45) * rad;	
+	
+    x = Math.sin(num1 + 45) * wid;
+    y = Math.cos(num1 - 45) * (wid);
 
    let num2 = (num + 120) % 315 / 10;	
     let x2 = Math.sin(num2) * hei;
     let y2 = Math.cos(num2) * wid;
-    sub.style.position = 'fixed';
     sub.style.top = (e.clientY -farX) + x + 'px';
     sub.style.left = (e.clientX - farY) + y + 'px';
     sub.style.transform = `translateZ(${num0}deg)`	
+
+    sub.style.position = 'fixed';
     sub.style.borderRadius = '50%';	
-    sub.style.border = '1px solid red';	
+    sub.style.border = '1px solid black';	
     sub.style.zIndex = '-1';	
     sub.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub1.style.borderRadius = '50%'; 
 
     sub1.style.position = 'fixed';
-    sub1.style.top = (e.clientY -farX) + x11 + 'px';
-    sub1.style.left = (e.clientX - farY) + y11 + 'px';
+    sub1.style.top = (e.clientY -farX) + x1 + 'px';
+    sub1.style.left = (e.clientX - farY) + y1 + 'px';
     sub1.style.transform = `translateZ(${num1}deg)`	
     sub1.style.borderRadius = '50%';	
-    sub1.style.border = '1px solid red';	
+    sub1.style.border = '1px solid black';	
     sub1.style.zIndex = '-1';	
     sub1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub1.style.borderRadius = '50%'; 
@@ -162,7 +155,7 @@ console.log(num0)
     sub2.style.left = (e.clientX - farX) + y2 + 'px';
     sub2.style.transform = `translateZ(${num2}deg)`	
     sub2.style.borderRadius = '50%';	
-    sub2.style.border = '1px solid red';	
+    sub2.style.border = '1px solid black';	
     sub2.style.zIndex = '-1';	
     sub2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub2.style.borderRadius = '50%';
@@ -177,17 +170,17 @@ console.log(num0)
  //   obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj.style.borderRadius = '50%';
 
-    obj1.style.position = 'fixed';
-    obj1.style.top = (e.clientY + 5) + 'px';
-    obj1.style.left = (e.clientX + 10) + 'px';
+obj1.style.position = 'fixed';
+    obj1.style.top = (e.clientY + 10) + 'px';
+    obj1.style.left = (e.clientX ) + 'px';
     obj1.style.borderRadius = '50%';	
     obj1.style.border = '1px solid red';	
     obj1.style.zIndex = '-1';	
-    obj1.style.transform = 'rotateY(60deg)';	
+    obj1.style.transform = 'rotate(45deg) rotateX(60deg)';	
  //   obj1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj1.style.borderRadius = '50%';
 
-    obj2.style.position = 'fixed';
+obj2.style.position = 'fixed';
     obj2.style.top = (e.clientY + 10) + 'px';
     obj2.style.left = (e.clientX + 2) + 'px';
 //    obj2.style.top = (e.clientY + 5) + 'px';
@@ -195,17 +188,17 @@ console.log(num0)
     obj2.style.borderRadius = '50%';	
     obj2.style.border = '1px solid red';	
     obj2.style.zIndex = '-1';	
-//    obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';	
+    obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';	
 //   obj2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj2.style.borderRadius = '50%';
+  localStorage.xMousePos = e.clientX;
+  localStorage.yMousePos = e.clientY;	  
 
  function turnonEvent() {
   new Promise((resolve, reject) => {
   setTimeout(() => {
   localStorage.mouseLazy = true;
   localStorage.mouseEventOn = false;	
-  localStorage.xMousePos = e.clientX;
-  localStorage.yMousePos = e.clientY;	  
 //  console.log('3 sec');	
     resolve();
   }, 3000)
@@ -213,7 +206,7 @@ console.log(num0)
 ;
 
   }
-  if (localStorage.mouseEventOn == 'false' && localStorage.mouseLazy === 'true') {		  
+  if (localStorage.mouseEventOn == 'false' && localStorage.mouseLazy === 'true') {		   
 //  console.log('false');	  
 turnonEvent()
   localStorage.mouseLazy = false;
@@ -253,18 +246,16 @@ function lazyEvent(clientX, clientY) {
     let farY = -30;	
     let num1 = (num + 60)% 260 / 20;	
     let num11 = (num + 105)% 315 / 100;	
-console.log(num1)	
-    let x1 = Math.sin(num1) * wid;
-    let y1 = Math.cos(num1) * hei;
+//console.log(num1)	
+    let x1 = Math.sin(num1 - 45) * wid;
+    let y1 = Math.cos(num1 + 45) * (wid);
     let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
-    let x11 = Math.sin(num1 - 45) * rad;	
-    let y11 = Math.cos(num1 + 45) * rad;	
 // console.log(num)
 //	console.log(num11)
 //console.log(x11, y11)
 	
-    x = Math.sin(num1 + 45) * rad;	
-    y = Math.cos(num1 - 45) * rad;	
+    x = Math.sin(num1 + 45) * wid;
+    y = Math.cos(num1 - 45) * (wid);
 
     let num2 = (num + 120) % 315 / 10;	
     let x2 = Math.sin(num2) * hei;
@@ -274,17 +265,17 @@ console.log(num1)
     sub.style.left = (clientX - farY) + y + 'px';
     sub.style.transform = `translateZ(${num0}deg)`	
     sub.style.borderRadius = '50%';	
-    sub.style.border = '1px solid red';	
+    sub.style.border = '1px solid black';	
     sub.style.zIndex = '-1';	
     sub.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub1.style.borderRadius = '50%'; 
 
     sub1.style.position = 'fixed';
-    sub1.style.top = (clientY -farX) + x11 + 'px';
-    sub1.style.left = (clientX - farY) + y11 + 'px';
+    sub1.style.top = (clientY -farX) + x1 + 'px';
+    sub1.style.left = (clientX - farY) + y1 + 'px';
     sub1.style.transform = `translateZ(${num1}deg)`	
     sub1.style.borderRadius = '50%';	
-    sub1.style.border = '1px solid red';	
+    sub1.style.border = '1px solid black';	
     sub1.style.zIndex = '-1';	
     sub1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub1.style.borderRadius = '50%'; 
@@ -294,7 +285,7 @@ console.log(num1)
     sub2.style.left = (clientX - farX) + y2 + 'px';
     sub2.style.transform = `translateZ(${num2}deg)`	
     sub2.style.borderRadius = '50%';	
-    sub2.style.border = '1px solid red';	
+    sub2.style.border = '1px solid black';	
     sub2.style.zIndex = '-1';	
     sub2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     sub2.style.borderRadius = '50%';
@@ -310,12 +301,12 @@ console.log(num1)
     obj.style.borderRadius = '50%';
 
 obj1.style.position = 'fixed';
-    obj1.style.top = (clientY + 5) + 'px';
-    obj1.style.left = (clientX + 10) + 'px';
+    obj1.style.top = (clientY + 10) + 'px';
+    obj1.style.left = (clientX ) + 'px';
     obj1.style.borderRadius = '50%';	
     obj1.style.border = '1px solid red';	
     obj1.style.zIndex = '-1';	
-    obj1.style.transform = 'rotateY(60deg)';	
+    obj1.style.transform = 'rotate(45deg) rotateX(60deg)';	
  //   obj1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
     obj1.style.borderRadius = '50%';
 
