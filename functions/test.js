@@ -80,6 +80,24 @@ localStorage.mouseLazy = true;
 }
 getObj();
 
+function ballStyle(ball) {	
+    ball.style.position = 'fixed';
+    ball.style.borderRadius = '50%';	
+//    ball.style.border = '1px solid black';	
+    ball.style.boxShadow = '0px 0px 2px 1px #d37e04';    
+    ball.style.zIndex = '1';	
+    ball.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
+}
+
+function orbitStyle(orbit) {	
+    orbit.style.position = 'fixed';
+    orbit.style.borderRadius = '50%';	
+    orbit.style.border = '1px solid red';	
+    orbit.style.zIndex = '1';	
+ //   orbit.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
+    orbit.style.borderRadius = '50%';
+}
+
 function mouseEvent(e) {
 // object for styling
   let obj = document.getElementById('test-obj');
@@ -106,91 +124,56 @@ function mouseEvent(e) {
   sub1.style.display = 'block';
   sub2.style.display = 'block';	
 
- //  let obj = getObj();	
 
     let num0 = num % 315 / 10;
     let wid = 30;
     let hei = 10;
     let farX = -30;
     let farY = -30;	
-    let num1 = (num + 60)% 260 / 20;	
-    let num11 = (num + 105)% 315 / 100;	
-//console.log(num1)	
+    let num1 = (num + 60)% 252 / 20;	
     let x1 = Math.sin(num1 - 45) * wid;
     let y1 = Math.cos(num1 + 45) * (wid);
     let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
-// console.log(num)
-//	console.log(num11)
-//console.log(x11, y11)
 	
     x = Math.sin(num1 + 45) * wid;
     y = Math.cos(num1 - 45) * (wid);
 
-   let num2 = (num + 120) % 315 / 10;	
+    let num2 = (num + 120) % 315 / 10;	
     let x2 = Math.sin(num2) * hei;
     let y2 = Math.cos(num2) * wid;
+
     sub.style.top = (e.clientY -farX) + x + 'px';
     sub.style.left = (e.clientX - farY) + y + 'px';
     sub.style.transform = `translateZ(${num0}deg)`	
 
-    sub.style.position = 'fixed';
-    sub.style.borderRadius = '50%';	
-    sub.style.border = '1px solid black';	
-    sub.style.zIndex = '-1';	
-    sub.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub1.style.borderRadius = '50%'; 
-
-    sub1.style.position = 'fixed';
     sub1.style.top = (e.clientY -farX) + x1 + 'px';
     sub1.style.left = (e.clientX - farY) + y1 + 'px';
-    sub1.style.transform = `translateZ(${num1}deg)`	
-    sub1.style.borderRadius = '50%';	
-    sub1.style.border = '1px solid black';	
-    sub1.style.zIndex = '-1';	
-    sub1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub1.style.borderRadius = '50%'; 
+    sub1.style.transform = `translateZ(${num1}deg)`
 
-    sub2.style.position = 'fixed';
     sub2.style.top = (e.clientY -farY) + x2 + 'px';
     sub2.style.left = (e.clientX - farX) + y2 + 'px';
-    sub2.style.transform = `translateZ(${num2}deg)`	
-    sub2.style.borderRadius = '50%';	
-    sub2.style.border = '1px solid black';	
-    sub2.style.zIndex = '-1';	
-    sub2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub2.style.borderRadius = '50%';
+    sub2.style.transform = `translateZ(${num2}deg)`
 
-    obj.style.position = 'fixed';
+    ballStyle(sub);	
+    ballStyle(sub1);	
+    ballStyle(sub2);	
+
     obj.style.top = (e.clientY + 10) + 'px';
     obj.style.left = (e.clientX + 5) + 'px';
-    obj.style.borderRadius = '50%';	
-    obj.style.border = '1px solid red';	
-    obj.style.zIndex = '-1';	
     obj.style.transform = 'rotateX(60deg)';	
- //   obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj.style.borderRadius = '50%';
 
-obj1.style.position = 'fixed';
     obj1.style.top = (e.clientY + 10) + 'px';
     obj1.style.left = (e.clientX ) + 'px';
-    obj1.style.borderRadius = '50%';	
-    obj1.style.border = '1px solid red';	
-    obj1.style.zIndex = '-1';	
-    obj1.style.transform = 'rotate(45deg) rotateX(60deg)';	
- //   obj1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj1.style.borderRadius = '50%';
+    obj1.style.transform = 'rotate(45deg) rotateX(60deg)';
 
-obj2.style.position = 'fixed';
     obj2.style.top = (e.clientY + 10) + 'px';
     obj2.style.left = (e.clientX + 2) + 'px';
-//    obj2.style.top = (e.clientY + 5) + 'px';
-//    obj2.style.left = (e.clientX + 5) + 'px';
-    obj2.style.borderRadius = '50%';	
-    obj2.style.border = '1px solid red';	
-    obj2.style.zIndex = '-1';	
     obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';	
-//   obj2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj2.style.borderRadius = '50%';
+
+    orbitStyle(obj);
+    orbitStyle(obj1);
+    orbitStyle(obj2);
+
   localStorage.xMousePos = e.clientX;
   localStorage.yMousePos = e.clientY;	  
 
@@ -233,26 +216,16 @@ function lazyEvent(clientX, clientY) {
 
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-//  let obj = getObj();	
-  let ran10 = Math.trunc(Math.random() * 10) + 5;
-    let ranXpos = Math.trunc(Math.random() * ran10) + parseInt(clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(clientY, 10);
-    let ran20 = ranYpos - 30;
 
     let num0 = num % 315 / 10;
     let wid = 30;
     let hei = 10;
     let farX = -30;
     let farY = -30;	
-    let num1 = (num + 60)% 260 / 20;	
-    let num11 = (num + 105)% 315 / 100;	
-//console.log(num1)	
+    let num1 = (num + 60)% 252 / 20;	
     let x1 = Math.sin(num1 - 45) * wid;
     let y1 = Math.cos(num1 + 45) * (wid);
     let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
-// console.log(num)
-//	console.log(num11)
-//console.log(x11, y11)
 	
     x = Math.sin(num1 + 45) * wid;
     y = Math.cos(num1 - 45) * (wid);
@@ -260,67 +233,38 @@ function lazyEvent(clientX, clientY) {
     let num2 = (num + 120) % 315 / 10;	
     let x2 = Math.sin(num2) * hei;
     let y2 = Math.cos(num2) * wid;
-    sub.style.position = 'fixed';
     sub.style.top = (clientY -farX) + x + 'px';
     sub.style.left = (clientX - farY) + y + 'px';
-    sub.style.transform = `translateZ(${num0}deg)`	
-    sub.style.borderRadius = '50%';	
-    sub.style.border = '1px solid black';	
-    sub.style.zIndex = '-1';	
-    sub.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub1.style.borderRadius = '50%'; 
+    sub.style.transform = `translateZ(${num0}deg)`
 
-    sub1.style.position = 'fixed';
     sub1.style.top = (clientY -farX) + x1 + 'px';
     sub1.style.left = (clientX - farY) + y1 + 'px';
     sub1.style.transform = `translateZ(${num1}deg)`	
-    sub1.style.borderRadius = '50%';	
-    sub1.style.border = '1px solid black';	
-    sub1.style.zIndex = '-1';	
-    sub1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub1.style.borderRadius = '50%'; 
 
-    sub2.style.position = 'fixed';
     sub2.style.top = (clientY -farY) + x2 + 'px';
     sub2.style.left = (clientX - farX) + y2 + 'px';
     sub2.style.transform = `translateZ(${num2}deg)`	
-    sub2.style.borderRadius = '50%';	
-    sub2.style.border = '1px solid black';	
-    sub2.style.zIndex = '-1';	
-    sub2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    sub2.style.borderRadius = '50%';
 
-    obj.style.position = 'fixed';
+    ballStyle(sub);	
+    ballStyle(sub1);	
+    ballStyle(sub2);	
+
     obj.style.top = (clientY + 10) + 'px';
     obj.style.left = (clientX + 5) + 'px';
-    obj.style.borderRadius = '50%';	
-    obj.style.border = '1px solid red';	
-    obj.style.zIndex = '-1';	
     obj.style.transform = 'rotateX(60deg)';	
- //   obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj.style.borderRadius = '50%';
 
-obj1.style.position = 'fixed';
     obj1.style.top = (clientY + 10) + 'px';
     obj1.style.left = (clientX ) + 'px';
-    obj1.style.borderRadius = '50%';	
-    obj1.style.border = '1px solid red';	
-    obj1.style.zIndex = '-1';	
     obj1.style.transform = 'rotate(45deg) rotateX(60deg)';	
- //   obj1.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj1.style.borderRadius = '50%';
 
-obj2.style.position = 'fixed';
     obj2.style.top = (clientY + 10) + 'px';
     obj2.style.left = (clientX + 2) + 'px';
-//    obj2.style.top = (clientY + 5) + 'px';
-//    obj2.style.left = (clientX + 5) + 'px';
-    obj2.style.borderRadius = '50%';	
-    obj2.style.border = '1px solid red';	
-    obj2.style.zIndex = '-1';	
-    obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';	
-//   obj2.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj2.style.borderRadius = '50%';
+    obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';
+
+    orbitStyle(obj);
+    orbitStyle(obj1);
+    orbitStyle(obj2);
+
  return;
 }
 
