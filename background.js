@@ -45,11 +45,11 @@ chrome.runtime.onMessage.addListener((msg) => {
       localStorage.pointerName = msg.name;      
       localStorage.pointerPath = msg.path;
       localStorage.type = 'check';
-
       chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.executeScript(
           tabs[0].id,
           {file: './functions/' + msg.name + '.js'} );
+
       });
     
       chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
