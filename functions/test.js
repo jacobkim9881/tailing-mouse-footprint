@@ -4,13 +4,13 @@ function mouseEvent(e) {
   let basicSize = 10;
   let randomBallSize = Math.trunc(Math.random() * (pxByScreenWidth -15)) + basicSize;
  
-  function trigger(e, isItUp=true) {
+  function trigger(e, isItUp=true, num) {
   let stick = document.createElement('div');
   let xPos = pxByScreenWidth + parseInt(e.clientX, 10);
   let yPos = pxByScreenWidth + parseInt(e.clientY, 10);
-  let ranH = Math.trunc(Math.random() * 360);
-  let ranH2 =  Math.trunc(Math.random() * 360);
-/*  
+  let ranH = num % 360;
+  let ranH2 = (num + 180) % 360;
+	  /*
   //stick between DNAs	  
   let middleOfBall = randomBallSize/2 - window.innerWidth/800; 
   let stickWidth =  window.innerWidth/400;
@@ -44,7 +44,7 @@ function mouseEvent(e) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
   }
-  */
+  
   //This condition with the other DNA ball of two	  
   stick.animate([
     {top: (yPos + 30 - randomBallSize) +  'px',
@@ -64,12 +64,12 @@ function mouseEvent(e) {
       timing(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
- 
+*/ 
   let dnaBall = document.createElement('div');
   dnaBall.style.position = 'fixed';
   dnaBall.style.left = xPos + 'px';
-  dnaBall.style.width = randomBallSize + 'px';
-  dnaBall.style.height = randomBallSize + 'px';
+  dnaBall.style.width = randomBallSize/3 + 'px';
+  dnaBall.style.height = randomBallSize/3 + 'px';
   dnaBall.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   dnaBall.style.borderRadius = '50%';
 
@@ -82,8 +82,8 @@ function mouseEvent(e) {
     {top: (yPos + 30 ) + 'px'},
     {top: yPos + 'px'},
     {top: (yPos + 30)+ 'px',
-      backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
-  ], {duration: 700,
+      backgroundColor: `hsl(${ranH}, 100%, 50%)` }
+  ], {duration: 690,
       timing(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
@@ -92,12 +92,12 @@ function mouseEvent(e) {
   else {
    dnaBall.animate([
    {top: (yPos + 30 ) + 'px',
-      backgroundColor: `hsl(${ranH}, 100%, 50%)`},
+      backgroundColor: `hsl(${ranH2}, 100%, 50%)`},
     {top: yPos + 'px'},
     {top: (yPos + 30)+ 'px'},
     {top: yPos + 'px',
       backgroundColor: `hsl(${ranH2}, 100%, 50%)` }      
-  ], {duration: 700,
+  ], {duration: 690,
       timing(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))}
   })
@@ -114,8 +114,8 @@ function mouseEvent(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  2 === 0 ) {
-   trigger(e, true);
-   trigger(e, false);
+   trigger(e, true, num);
+   trigger(e, false, num);
   }
 }
 
