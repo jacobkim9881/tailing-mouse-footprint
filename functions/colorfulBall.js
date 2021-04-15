@@ -34,9 +34,7 @@ function mouseEvent(e) {
    setTimeout(() => obj.remove(), 700);
     return;
   }
-  let num = parseInt(localStorage.mouseCounter);
-  localStorage.mouseCounter = num + 1;
-  if (num %  4 === 0 ) {
+  if (new Date().getTime() %  15 === 0 ) {
     trigger(e);
   }
 }

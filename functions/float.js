@@ -1,7 +1,6 @@
 //colofulBall.js
 
 function mouseEvent(e) {
-//let ranH = num %  360;
 
   function trigger(e) {
   let obj = document.createElement('div');  	  
@@ -54,11 +53,12 @@ obj.style.top= ranYpos + 'px';
   setTimeout(() => obj.remove(), 4900);
   return;
   }
+
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
 
-  if (num %  7 === 0 ) {
+  if (num %  14 === 0 ) {
    trigger(e);
 
   }

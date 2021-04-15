@@ -111,9 +111,10 @@ function mouseEvent(e) {
     setTimeout(() => obj.remove(), 700);
     return;
   }
+
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  10 === 0 ) {
+  if (num %  20 === 0 ) {
     trigger(e);
   }
 }
