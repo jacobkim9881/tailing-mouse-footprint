@@ -4,7 +4,7 @@ function getObj() {
   let obj = document.createElement('div');
   obj.id = 'test-obj';  
   obj.style.width = 60 + 'px'; 
-  obj.style.height = 50 + 'px'; 
+  obj.style.height = 45 + 'px'; 
   document.body.appendChild(obj);	
 
   let obj1 = document.createElement('div');
@@ -158,7 +158,7 @@ function mouseEvent(e) {
   ballStyle(sub1);	
   ballStyle(sub2);	
 
-  obj.style.top = (e.clientY + 10) + 'px';
+  obj.style.top = (e.clientY + 13) + 'px';
   obj.style.left = (e.clientX + 5) + 'px';
   obj.style.transform = 'rotateX(60deg)';	
 
@@ -249,7 +249,7 @@ function lazyEvent(clientX, clientY) {
   ballStyle(sub1);	
   ballStyle(sub2);	
 
-  obj.style.top = (clientY + 10) + 'px';
+  obj.style.top = (clientY + 13) + 'px';
   obj.style.left = (clientX + 5) + 'px';
   obj.style.transform = 'rotateX(60deg)';	
 
@@ -307,3 +307,4 @@ chrome.runtime.onMessage.addListener((msg) => {
   document.body.removeEventListener('mousemove', mouseEvent);
   displayToggleObj('none');
 });
+
