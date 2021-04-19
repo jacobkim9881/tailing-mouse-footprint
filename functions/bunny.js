@@ -501,7 +501,6 @@ function mouseEvent(e) {
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-
   trigger(e, 0);  
   getId('grpDivs').style.transform = 'scale(0.3, 0.3)'
   getId('grpDivs').style.position = 'fixed';

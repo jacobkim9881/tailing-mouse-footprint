@@ -4,7 +4,7 @@ function getObj() {
   let obj = document.createElement('div');
   obj.id = 'test-obj';  
   obj.style.width = 60 + 'px'; 
-  obj.style.height = 45 + 'px'; 
+  obj.style.height = 50 + 'px'; 
   document.body.appendChild(obj);	
 
   let obj1 = document.createElement('div');
@@ -113,7 +113,8 @@ function mouseEvent(e) {
   let sub1 = document.getElementById('test-sub1');
   let sub2 = document.getElementById('test-sub2');
 
-  let num = new Date().getTime()/30;
+  let num = parseInt(localStorage.mouseCounter);
+  localStorage.mouseCounter = num + 1;
 
   obj.style.display = 'block';
   obj1.style.display = 'block';
@@ -157,7 +158,7 @@ function mouseEvent(e) {
   ballStyle(sub1);	
   ballStyle(sub2);	
 
-  obj.style.top = (e.clientY + 13) + 'px';
+  obj.style.top = (e.clientY + 10) + 'px';
   obj.style.left = (e.clientX + 5) + 'px';
   obj.style.transform = 'rotateX(60deg)';	
 
@@ -213,7 +214,8 @@ function lazyEvent(clientX, clientY) {
   let sub1 = document.getElementById('test-sub1');
   let sub2 = document.getElementById('test-sub2');
 
-  let num = new Date().getTime() / 60;
+  let num = parseInt(localStorage.mouseCounter);
+  localStorage.mouseCounter = num + 1;
 
   let num0 = num % 315 / 10;
   let wid = 30;
@@ -247,7 +249,7 @@ function lazyEvent(clientX, clientY) {
   ballStyle(sub1);	
   ballStyle(sub2);	
 
-  obj.style.top = (clientY + 13) + 'px';
+  obj.style.top = (clientY + 10) + 'px';
   obj.style.left = (clientX + 5) + 'px';
   obj.style.transform = 'rotateX(60deg)';	
 

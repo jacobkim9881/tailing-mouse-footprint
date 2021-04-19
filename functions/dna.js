@@ -86,7 +86,7 @@ function mouseEvent(e) {
         {top: yPos + 'px'},
         {top: (yPos + 30)+ 'px',
           backgroundColor: `hsl(${ranH2}, 100%, 50%)` }
-      ], {duration: 500,
+      ], {duration: 700,
         timing(timeFraction) {
           return 1 - Math.sin(Math.acos(timeFraction))}
       })
@@ -100,7 +100,7 @@ function mouseEvent(e) {
         {top: (yPos + 30)+ 'px'},
         {top: yPos + 'px',
           backgroundColor: `hsl(${ranH2}, 100%, 50%)` }      
-      ], {duration: 500,
+      ], {duration: 700,
         timing(timeFraction) {
           return 1 - Math.sin(Math.acos(timeFraction))}
       })
@@ -108,18 +108,18 @@ function mouseEvent(e) {
     }
   
     document.body.appendChild(dnaBall);
-    setTimeout(() => dnaBall.remove(), 490);
+    setTimeout(() => dnaBall.remove(), 690);
     document.body.appendChild(stick);
-    setTimeout(() => stick.remove(), 490);  
+    setTimeout(() => stick.remove(), 690);  
     return;
   }
-  //This decides number of objects by mousemove
+  //This decides number of objects by mousemove	
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  2 === 0 ) {
-  trigger(e, true);
-  trigger(e, false);
- }
+    trigger(e, true);
+    trigger(e, false);
+  }
 }
 
 document.body.addEventListener('mousemove', mouseEvent);
