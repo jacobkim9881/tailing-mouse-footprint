@@ -108,9 +108,9 @@ function mouseEvent(e) {
     }
   
     document.body.appendChild(dnaBall);
-    setTimeout(() => dnaBall.remove(), 700);
+    setTimeout(() => dnaBall.remove(), 690);
     document.body.appendChild(stick);
-    setTimeout(() => stick.remove(), 700);  
+    setTimeout(() => stick.remove(), 690);  
     return;
   }
   //This decides number of objects by mousemove	

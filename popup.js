@@ -82,8 +82,14 @@ let heart = './images/heart/heart32.png'
 let colorfulBall = './images/co/colorfulBall32.png'
 let bunny = './images/bunny/bunny32.png';
 let dna = './images/dna/dna32.png';
+<<<<<<< HEAD
 let card = './images/card/card32.png';
 let test = './images/bubble/bubble32.png';
+=======
+let atom = './images/atom/atom32.png';
+let petal = './images/petal/petal32.png';
+let float = './images/float/float32.png';
+>>>>>>> origin
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
@@ -92,7 +98,9 @@ startPointerFunction('colorfulBall', colorfulBall, 'moving');
 startPointerFunction('bunny', bunny, 'moving');
 startPointerFunction('dna', dna, 'moving');
 startPointerFunction('card', card, 'moving');
-startPointerFunction('test', test, 'moving');
+startPointerFunction('atom', atom, 'moving');
+startPointerFunction('petal', petal, 'moving');
+startPointerFunction('float', float, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
