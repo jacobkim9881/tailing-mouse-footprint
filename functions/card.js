@@ -58,4 +58,6 @@ document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
 document.body.removeEventListener('mousemove', mouseEvent)
+document.getElementById('card-obj-playing').remove();
+
 });
