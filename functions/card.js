@@ -5,6 +5,7 @@ function getObj() {
  obj.id = 'card-obj-playing';  
  obj.style.width = 0 + 'px'; 
  obj.style.height = 0 + 'px';
+ obj.style.fontFamily = 'sans-serif';	
  document.body.appendChild(obj);	
 // return obj;
 }
