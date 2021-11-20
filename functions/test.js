@@ -3,11 +3,7 @@
 function animateBar(obj, cls) {
   let d = cls === 'off' ? 0 : 45;
   let d2 = cls === 'on' ? 0 : 45;
-	/*
-  if(cls === 'off' && obj.style.transform === 'rotate(0deg)'
-  || cls === 'on' && obj.style.transform === 'rotate(45deg)'
-  ) {return}	
-  */
+
   obj.className = obj.className === 'off' ? 'on' : 'off';	
 
   obj.animate([
@@ -18,39 +14,25 @@ function animateBar(obj, cls) {
 }
 
 function mouseEvent(e) {
-// object for styling
-/*
-	let obj = document.createElement('div');
-  
-	
-  let ran10 = Math.trunc(Math.random() * 10) + 5;
-    let ranXpos = Math.trunc(Math.random() * ran10) + parseInt(e.clientX, 10);
-    let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
-    let ran20 = ranYpos - 30;
-    obj.style.position = 'fixed';
-    obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    obj.style.borderRadius = '50%'; 
-    obj.class = 'test-balls'	
-    obj.animate([
-      {top: ranYpos + 'px',
-      left: e.clientX + 'px',
-      width: 5 + 'px',
-      height: 5 + 'px' 
-    }, 
-      {top: ran20 + 'px',
-      left: ranXpos + 'px',
-      width: ran10 + 'px',
-      height: ran10 + 'px' 
-    }
-    ], 200)
 
-  document.body.appendChild(obj);
-*/
   if (e.clientX % 13 < 5) {return}	
-  let num = Math.trunc(e.clientX / 45)	
+  let num = Math.trunc(e.clientX / 45);
+  let preNum = localStorage.getItem('tmf-cnt') ? localStorage.getItem('tmf-cnt') : num;	
   let obj = document.getElementById(`objs-test${num}`)
-
-  animateBar(obj, obj.className);
+  let cntWidth = Math.trunc(window.innerWidth / 45);
+  if (localStorage.getItem('tmf-cnt') === num.toString()) {return};	
+  localStorage.setItem('tmf-cnt', num);	
+  
+  for (let i = 0; i < num; i++){
+    let tarObj = document.getElementById(`objs-test${i}`);
+    if (tarObj.className === 'on' && num !== 0) {continue};	  
+    animateBar(tarObj, tarObj.className);
+  }
+  for (i = cntWidth - 1; i >= num; i--) {
+    let tarObj = document.getElementById(`objs-test${i}`);
+    if (tarObj.className === 'off') {continue};	  
+    animateBar(tarObj, tarObj.className);
+  }
 }
 
 function setObjs() {
@@ -81,10 +63,19 @@ function setObjs() {
    document.body.appendChild(stamp);	  
  
 }
+
+function deleteObjs() {
+  let cntWidth = Math.trunc(window.innerWidth / 45);
+  for (let i = 0; i < cntWidth; i++) {
+  document.getElementById(`objs-test${i}`).remove();
+  }
+}
+
 setObjs();	
 
 document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
 document.body.removeEventListener('mousemove', mouseEvent);
+deleteObjs();	
 });
