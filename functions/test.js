@@ -1,11 +1,14 @@
 //test.js
 
-function animateBar(obj, cls) {
-  let d = cls === 'off' ? 0 : 45,
-  d2 = cls === 'on' ? 0 : 45,
+function animateBar(obj, cls) {	
+  let pD = 45,
+  aD = 90,		
+  d = cls === 'off' ? pD : aD,
+  d2 = cls === 'on' ? pD : aD,
   c = cls === 'off' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)',
   c2 = cls === 'on' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)';	
-  obj.className = obj.className === 'off' ? 'on' : 'off';
+  
+  if (cls === 'off') {	
   obj.animate([
       {
     transform: `rotate(${d}deg)`,
@@ -16,8 +19,33 @@ function animateBar(obj, cls) {
     backgroundColor: c2 	      
       }, 
     ], 200)
-  obj.style.backgroundColor = c2;
+  }
+   if (cls === 'on') {
+  let aniArr = [
+   {
+    transform: `rotate(${d}deg)`,
+    backgroundColor: c 	      
+      } 
+
+  ];
+
+  for (let i = 1; i < 9; i++) {
+  let aniObj = {
+  backgroundColor: c2 	      
+  }
+   if (i % 2 === 0) {
+      aniObj.transform = `rotate(${d + Math.log(i) * 20}deg)`
+    } else {
+      aniObj.transform = `rotate(${d2}deg)`
+    }
+    aniArr.push(aniObj);	
+  }
+  obj.animate(aniArr, 1000);	   
+ }
+  
+ obj.style.backgroundColor = c2;
   obj.style.transform = `rotate(${d2}deg)`;
+  obj.className = obj.className === 'off' ? 'on' : 'off';
 }
 
 function mouseEvent(e) {
