@@ -17,7 +17,7 @@ function animateBar(obj, cls) {
     transform: `rotate(${d2}deg)`,
     backgroundColor: c2 	      
       }, 
-    ], 200)
+    ], 400)
   
  obj.style.backgroundColor = c2;
   obj.style.transform = `rotate(${d2}deg)`;
@@ -28,23 +28,30 @@ function animateStamp(obj, cls) {
   let pT = (window.innerHeight - 120),
   aT = (window.innerHeight - 100),
   t = cls === 'off1' ? pT : aT,
-  t2 = cls === 'on1' ? pT : aT,		
+  t2 = cls === 'on1' ? pT : aT,	
+  c = cls === 'off1' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',
+  c2 = cls === 'on1' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',		
   aniArr = [
     {
-      top: `${t}px`
+      top: `${t}px`,
+      backgroundColor: c,
+      easing: 'ease-in'	    
     },
-    {
-      top: `${t2}px`
+     {
+      top: `${t + (t2-t)* 7/8}px`,
+      backgroundColor: c2,
+      easing: 'ease-out'	    
+    },   {
+      top: `${t2}px`,
+      backgroundCOlor: c2,
+      easing: 'ease-in'	    
     }
-  ]
+  ],
+  dur = {duration: 500
+  };		
 
-  obj.animate(aniArr, 200);	
-  obj.style.position = 'fixed';
-  if (cls === 'on1') {
-    setTimeout(() => {
-      obj.style.position = 'unset';
-    }, 200)
-  }
+  obj.animate(aniArr, dur);	
+  obj.style.backgroundColor = c2;
   obj.style.top = `${t2}px`;
   obj.className = obj.className === 'off1' ? 'on1' : 'off1';	
 }
@@ -97,8 +104,8 @@ function setStamp(cls, i) {
     oneObj.style.height = cls.height;
     oneObj.style.backgroundColor = cls.backgroundColor;
     oneObj.style.top = cls.top;
-    oneObj.style.left = i * 65 + 'px';
-    oneObj.style.position = 'unset';
+    oneObj.style.left = i * 45 + 'px';
+    oneObj.style.position = 'fixed';
     document.body.appendChild(oneObj);	  
 
 }
@@ -114,9 +121,9 @@ function setObjs() {
   },
   stamper = {
    id: 'tmf-stamp',
-   width: '30px',
+   width: '20px',
    height: '15px',
-   backgroundColor : 'hsl(230, 100%, 75%)',
+   backgroundColor : 'hsl(230, 100%, 75%, 0)',
    top: (window.innerHeight - 100) + 'px'
   },
   cntWidth = Math.trunc(window.innerWidth / 45);
