@@ -109,6 +109,26 @@ function setStamp(cls, i) {
     document.body.appendChild(oneObj);	  
 
 }
+function setBrick(i) {
+    let oneObj = document.createElement('div'),
+   cls = {
+   id: 'tmf-brick',
+   width: '25px',
+   height: '15px',
+   backgroundColor : 'hsl(230, 100%, 75%, 1)',
+   top: (window.innerHeight - 100) + 'px'
+  };
+    oneObj.id = cls.id + i;
+    oneObj.className = 'off2';	  
+    oneObj.style.width = cls.width;
+    oneObj.style.height = cls.height;
+    oneObj.style.backgroundColor = cls.backgroundColor;
+    oneObj.style.top = cls.top;
+    oneObj.style.left = (i * 45 + 20) + 'px';
+    oneObj.style.position = 'fixed';
+    document.body.appendChild(oneObj);	  
+
+}
 
 function setObjs() {
   let oClass = {
@@ -130,6 +150,7 @@ function setObjs() {
   for (let i = 0; i < cntWidth; i++) {
     setBar(oClass, i);
     setStamp(stamper, i);
+    setBrick(i);	  
   }
 
 }
