@@ -83,8 +83,16 @@ function mouseEvent(e) {
 }
 
 function setBar(oClass, i) {
-    let oneObj = document.createElement('div');
-    oneObj.id = oClass.class + i;
+    let oneObj = document.createElement('div'),
+   oClass = {
+   class: 'objs-test',
+   width: '15px',
+   height: '45px',
+   border: '1px solid white',	  
+   backgroundColor : 'none',
+   top: (window.innerHeight -100) + 'px'
+    };
+   oneObj.id = oClass.class + i;
     oneObj.className = 'off';	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
@@ -97,7 +105,14 @@ function setBar(oClass, i) {
 }
 
 function setStamp(cls, i) {
-    let oneObj = document.createElement('div');
+    let oneObj = document.createElement('div'),
+   cls = {
+   id: 'tmf-stamp',
+   width: '20px',
+   height: '15px',
+   backgroundColor : 'hsl(230, 100%, 75%, 0)',
+   top: (window.innerHeight - 100) + 'px'
+  };
     oneObj.id = cls.id + i;
     oneObj.className = 'off1';	  
     oneObj.style.width = cls.width;
@@ -131,25 +146,10 @@ function setBrick(i) {
 }
 
 function setObjs() {
-  let oClass = {
-   class: 'objs-test',
-   width: '15px',
-   height: '45px',
-   border: '1px solid white',	  
-   backgroundColor : 'none',
-   top: (window.innerHeight -100) + 'px'
-  },
-  stamper = {
-   id: 'tmf-stamp',
-   width: '20px',
-   height: '15px',
-   backgroundColor : 'hsl(230, 100%, 75%, 0)',
-   top: (window.innerHeight - 100) + 'px'
-  },
   cntWidth = Math.trunc(window.innerWidth / 45);
   for (let i = 0; i < cntWidth; i++) {
-    setBar(oClass, i);
-    setStamp(stamper, i);
+    setBar(i);
+    setStamp(i);
     setBrick(i);	  
   }
 
