@@ -56,6 +56,38 @@ function animateStamp(obj, cls) {
   obj.className = obj.className === 'off1' ? 'on1' : 'off1';	
 }
 
+function animateSlide(obj, cls, i) {
+  let pL = (i * 45 + 20),
+  aL = (i * 45),
+  l = cls === 'off3' ? pL : aL,
+  l2 = cls === 'on3' ? pL : aL,	
+  c = cls === 'off3' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',
+  c2 = cls === 'on3' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',		
+  aniArr = [
+    {
+      left: `${l}px`,	    
+//      backgroundColor: c,
+      easing: 'ease-in'	    
+    },
+     {
+      left: `${l + (l2-l)* 7/8}px`,
+//      backgroundColor: c2,
+      easing: 'ease-out'	    
+    },   {
+      left: `${l2}px`,
+//      backgroundCOlor: c2,
+      easing: 'ease-in'	    
+    }
+  ],
+  dur = {duration: 500
+  };		
+
+  obj.animate(aniArr, dur);	
+//  obj.style.backgroundColor = c2;
+  obj.style.left = `${l2}px`;
+  obj.className = obj.className === 'off3' ? 'on3' : 'off3';	
+}
+
 function mouseEvent(e) {
   let num = Math.trunc(e.clientX / 45),
   preNum = localStorage.getItem('tmf-cnt') ? localStorage.getItem('tmf-cnt') : num,	
@@ -66,23 +98,29 @@ function mouseEvent(e) {
   
   for (let i = 0; i < num; i++){
     let tarObj = document.getElementById(`objs-test${i}`)
-    , tarObj2 = document.getElementById(`tmf-stamp${i}`);	  
+    , tarObj2 = document.getElementById(`tmf-stamp${i}`)	  
+    , tarObj3 = document.getElementById(`tmf-slide${i}`);	  
     if (tarObj.className === 'on' && num !== 0) {continue};	  
     if (tarObj2.className === 'on1' && num !== 0) {continue};	  
+    if (tarObj3.className === 'on3' && num !== 0) {continue};	  
     animateBar(tarObj, tarObj.className);
     animateStamp(tarObj2, tarObj2.className);	  
+    animateSlide(tarObj3, tarObj3.className, i);	  
   }
   for (i = cntWidth - 1; i >= num; i--) {
     let tarObj = document.getElementById(`objs-test${i}`)
-    , tarObj2 = document.getElementById(`tmf-stamp${i}`);	  
+    , tarObj2 = document.getElementById(`tmf-stamp${i}`)	  
+    , tarObj3 = document.getElementById(`tmf-slide${i}`);	  
     if (tarObj.className === 'off') {continue};	  
     if (tarObj2.className === 'off1') {continue};	  
+    if (tarObj3.className === 'off3') {continue};	  
     animateBar(tarObj, tarObj.className);
     animateStamp(tarObj2, tarObj2.className);	  
+    animateSlide(tarObj3, tarObj3.className, i);	  
   }
 }
 
-function setBar(oClass, i) {
+function setBar(i) {
     let oneObj = document.createElement('div'),
    oClass = {
    class: 'objs-test',
@@ -104,7 +142,7 @@ function setBar(oClass, i) {
     document.body.appendChild(oneObj);	  
 }
 
-function setStamp(cls, i) {
+function setStamp(i) {
     let oneObj = document.createElement('div'),
    cls = {
    id: 'tmf-stamp',
@@ -145,12 +183,34 @@ function setBrick(i) {
 
 }
 
+function setSlide(i) {
+    let oneObj = document.createElement('div'),
+   cls = {
+   id: 'tmf-slide',
+   width: '25px',
+   height: '15px',
+   backgroundColor : 'hsl(150, 50%, 50%, 1)',
+   top: (window.innerHeight - 115) + 'px'
+  };
+    oneObj.id = cls.id + i;
+    oneObj.className = 'off3';	  
+    oneObj.style.width = cls.width;
+    oneObj.style.height = cls.height;
+    oneObj.style.backgroundColor = cls.backgroundColor;
+    oneObj.style.top = cls.top;
+    oneObj.style.left = (i * 45 + 20) + 'px';
+    oneObj.style.position = 'fixed';
+    document.body.appendChild(oneObj);	  
+
+}
+
 function setObjs() {
   cntWidth = Math.trunc(window.innerWidth / 45);
   for (let i = 0; i < cntWidth; i++) {
     setBar(i);
     setStamp(i);
-    setBrick(i);	  
+    setBrick(i);	 
+    setSlide(i);	  
   }
 
 }
