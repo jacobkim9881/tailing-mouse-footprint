@@ -2,26 +2,47 @@
 
 function animateBar(obj, cls) {	
   let pD = 45,
-  aD = 90,		
+  aD = 0,		
   d = cls === 'off' ? pD : aD,
   d2 = cls === 'on' ? pD : aD,
+  pT = (window.innerHeight - 77),
+  aT = (window.innerHeight - 85),
+  t = cls === 'off' ? pT : aT,
+  t2 = cls === 'on' ? pT : aT,		
   c = cls === 'off' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)',
-  c2 = cls === 'on' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)';	
-  
-  obj.animate([
+  c2 = cls === 'on' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)',
+  aniArr = [
       {
     transform: `rotate(${d}deg)`,
-    backgroundColor: c 	      
+//    backgroundColor: c 	      
+    top: `${t}px`	      
       }, 
       {
     transform: `rotate(${d2}deg)`,
-    backgroundColor: c2 	      
+//    backgroundColor: c2 	      
+    top: `${t2}px`
       }, 
-    ], 400)
+
+  ],
+  dur = 400;	
   
- obj.style.backgroundColor = c2;
+  if (cls === 'off') {	
+  obj.animate(aniArr, dur)
+//  obj.style.backgroundColor = c2;
   obj.style.transform = `rotate(${d2}deg)`;
+  obj.style.top = `${t2}px`;	  
   obj.className = obj.className === 'off' ? 'on' : 'off';
+  }
+
+  if (cls === 'on') {
+  setTimeout( () => {	  
+  obj.animate(aniArr, dur)
+//  obj.style.backgroundColor = c2;
+  obj.style.transform = `rotate(${d2}deg)`;
+  obj.style.top = `${t2}px`;	  
+  obj.className = obj.className === 'off' ? 'on' : 'off';
+  }, 750)
+  }
 }
 
 function animateStamp(obj, cls) {
@@ -49,43 +70,74 @@ function animateStamp(obj, cls) {
   ],
   dur = {duration: 500
   };		
-
+  if (cls === 'on1') {
+  setTimeout(() => {
   obj.animate(aniArr, dur);	
   obj.style.backgroundColor = c2;
   obj.style.top = `${t2}px`;
   obj.className = obj.className === 'off1' ? 'on1' : 'off1';	
+
+  }, 700)
+  }
+
+  if (cls === 'off1') {
+  setTimeout(() => {
+  obj.animate(aniArr, dur);	
+  obj.style.backgroundColor = c2;
+  obj.style.top = `${t2}px`;
+  obj.className = obj.className === 'off1' ? 'on1' : 'off1';	
+
+  }, 200)  }
 }
 
 function animateSlide(obj, cls, i) {
-  let pL = (i * 45 + 20),
-  aL = (i * 45),
+  let pL = (i * 45 - 20),
+  aL = (i * 45 - 20),
   l = cls === 'off3' ? pL : aL,
-  l2 = cls === 'on3' ? pL : aL,	
+  l2 = cls === 'on3' ? pL : aL,
+  pW = 20,
+  aW = 45,
+  w = cls === 'off3' ? pW : aW,
+  w2 = cls === 'on3' ? pW : aW,		
   c = cls === 'off3' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',
   c2 = cls === 'on3' ? 'hsl(230, 100%, 75%, 0)' : 'hsl(230, 100%, 75%, 1)',		
   aniArr = [
     {
-      left: `${l}px`,	    
+      left: `${l}px`,	   
+      width: `${w}px`,	    
 //      backgroundColor: c,
       easing: 'ease-in'	    
     },
      {
       left: `${l + (l2-l)* 7/8}px`,
+      width: `${w + (w2-w)* 7/8}px`,	    
 //      backgroundColor: c2,
       easing: 'ease-out'	    
     },   {
       left: `${l2}px`,
+      width: `${w2}px`,	    
 //      backgroundCOlor: c2,
       easing: 'ease-in'	    
     }
   ],
   dur = {duration: 500
-  };		
-
-  obj.animate(aniArr, dur);	
-//  obj.style.backgroundColor = c2;
+  };	
+if (cls === 'off3') {	
+setTimeout(() => {
+  obj.animate(aniArr, dur)
   obj.style.left = `${l2}px`;
+  obj.style.width = `${w2}px`;	
   obj.className = obj.className === 'off3' ? 'on3' : 'off3';	
+} ,500);	
+}
+if (cls === 'on3') {
+  obj.animate(aniArr, dur)
+  obj.style.left = `${l2}px`;
+  obj.style.width = `${w2}px`;	
+  obj.className = obj.className === 'off3' ? 'on3' : 'off3';	
+}
+//  obj.style.backgroundColor = c2;
+//  obj.className = obj.className === 'off3' ? 'on3' : 'off3';	
 }
 
 function mouseEvent(e) {
@@ -124,21 +176,23 @@ function setBar(i) {
     let oneObj = document.createElement('div'),
    oClass = {
    class: 'objs-test',
-   width: '15px',
-   height: '45px',
-   border: '1px solid white',	  
-   backgroundColor : 'none',
-   top: (window.innerHeight -100) + 'px'
+   width: '45px',
+   height: '15px',
+   border: '1px solid white',
+   transform: 'rotate(45deg)',	   
+   backgroundColor : 'hsl(0, 100%, 100%, 1)',
+   top: (window.innerHeight - 77) + 'px'
     };
    oneObj.id = oClass.class + i;
     oneObj.className = 'off';	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
-//    oneObj.style.backgroundColor = oClass.backgroundColor;
+    oneObj.style.backgroundColor = oClass.backgroundColor;
     oneObj.style.top = oClass.top;
     oneObj.style.left = i * 45 + 'px';
     oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;	
+    oneObj.style.border = oClass.border;
+    oneObj.style.transform = oClass.transform;	
     document.body.appendChild(oneObj);	  
 }
 
@@ -187,7 +241,7 @@ function setSlide(i) {
     let oneObj = document.createElement('div'),
    cls = {
    id: 'tmf-slide',
-   width: '25px',
+   width: '20px',
    height: '15px',
    backgroundColor : 'hsl(150, 50%, 50%, 1)',
    top: (window.innerHeight - 115) + 'px'
@@ -198,7 +252,7 @@ function setSlide(i) {
     oneObj.style.height = cls.height;
     oneObj.style.backgroundColor = cls.backgroundColor;
     oneObj.style.top = cls.top;
-    oneObj.style.left = (i * 45 + 20) + 'px';
+    oneObj.style.left = (i * 45 - 20) + 'px';
     oneObj.style.position = 'fixed';
     document.body.appendChild(oneObj);	  
 
@@ -206,7 +260,7 @@ function setSlide(i) {
 
 function setObjs() {
   cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
+  for (let i = 0; i < cntWidth + 1; i++) {
     setBar(i);
     setStamp(i);
     setBrick(i);	 
