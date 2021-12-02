@@ -1,0 +1,10 @@
+{
+ "appName": {
+   "message": "Cursor Tails - Object Animation for mouse cursor",
+   "description": "The title of the application, displayed in the web store."
+ },
+ "appDesc": {                  
+   "message": "Adding funny effects whenever you move your mouse. This extension make your mouse moving create fun effects.",
+   "description": "The description of the application, displayed in the web store."
+ }
+} 
