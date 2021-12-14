@@ -7,6 +7,11 @@ function setButtonImage(targetId, targetUrl) {
   return
 }
 
+function startShortcut(targetId) {
+  let funcName = 'shortcut_' + targetId;	
+  startAnimation(targetId);
+}
+
 function addClickEvent(func, targetId, targetUrl, type) {
   func(targetId).addEventListener('click', () => {
     
@@ -25,23 +30,36 @@ function addClickEvent(func, targetId, targetUrl, type) {
           isItOn: true,
           sender: 'popup'}
       );
-      
+      /*
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
         chrome.pageAction.setIcon({path: targetUrl,
           tabId: tabs[0].id
         });
       });
-      
+     */ 
     });
 
   });
   return;  
 }
 
+function addHoverEventInPopup(ele, targetId, cnt) {
+  ele.addEventListener('mouseover', (e) => {
+	  console.log('overred');
+  targetId ? animationObj[targetId]() : null;
+  })
+  ele.addEventListener('mouseout', (e) => {
+  
+  })	
+}
+
 function startPointerFunction(targetId, targetUrl, type) {
-  buttonElement(targetId);
-  setButtonImage(targetId, targetUrl);
-  addClickEvent(buttonElement, targetId, targetUrl, type);
+  let buttonEle = buttonElement(targetId);
+//  setButtonImage(targetId, targetUrl);
+	console.log(animationObj[targetId])
+  animationObj[targetId]();	
+  addClickEvent(buttonElement, targetId, targetUrl, type);  
+  addHoverEventInPopup(buttonEle, targetId);
   return;
 }
 
