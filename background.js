@@ -41,6 +41,7 @@ chrome.contextMenus.onClicked.addListener(() => {
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
+/*	
   if (msg.type === 'moving') {
     localStorage.pointerName = msg.name;      
     localStorage.pointerPath = msg.path;
@@ -49,7 +50,8 @@ chrome.runtime.onMessage.addListener((msg) => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.tabs.executeScript(
         tabs[0].id,
-        {file: './functions/' + msg.name + '.js'} );
+        {file: './functions1/' + 'execute' + '.js'} );
+//        {file: './functions/' + msg.name + '.js'} );
     });
     
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
@@ -82,5 +84,5 @@ chrome.runtime.onMessage.addListener((msg) => {
     });
        
   }
-    
+*/    
 })
