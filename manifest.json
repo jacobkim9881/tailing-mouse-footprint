@@ -5,7 +5,10 @@
     "content_scripts": [
       {
         "matches": ["https://*/*"],
-        "js": ["contents.js"]
+        "js": [
+		"functions1/bubble.js",
+		"obj.js",
+		"contents.js"]
       }
     ],
     "background": {
