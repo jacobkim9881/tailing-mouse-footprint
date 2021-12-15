@@ -1,5 +1,7 @@
+//bubble.js
 function bubble(e) {
   let obj = document.createElement('div');
+  
   let ran10 = Math.trunc(Math.random() * 10) + 5;
   let ranXpos = Math.trunc(Math.random() * ran10) + parseInt(e.clientX, 10);
   let ranYpos = Math.trunc(Math.random() * -10 - 10) + parseInt(e.clientY, 10);
@@ -24,3 +26,4 @@ function bubble(e) {
   setTimeout(() => obj.remove(), 200);
   return;
 }
+
