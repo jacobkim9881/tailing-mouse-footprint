@@ -34,3 +34,11 @@ functionObj.bubble.mouse = {}
 functionObj.bubble.mouse.mousemove = {};
 
 functionObj.bubble.mouse.mousemove = bubble;
+
+functionObj.snowflake = {};
+
+functionObj.snowflake.mouse = {};
+
+functionObj.snowflake.mouse.mousemove = {};
+
+functionObj.snowflake.mouse.mousemove = snowflake;

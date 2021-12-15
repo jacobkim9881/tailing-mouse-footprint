@@ -1,6 +1,6 @@
 //snowflake.js
 
-function mouseEvent(e) {
+function snowflake(e) {
 
   function trigger(e, background) {
     let obj = document.createElement('div');
