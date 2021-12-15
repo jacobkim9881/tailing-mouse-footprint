@@ -34,6 +34,11 @@
         .test {
           display: none;
         }
+	.stopButton {
+	 display: block; 	
+ 	 height: 30px;
+	 margin-bottom: 25px;	 
+	}
 	/*
         #bubble {
           background-image: url('./images/bubble/bubble32.png');
@@ -79,8 +84,9 @@
         }
 	*/
        #stop {
-          width: 100%;
+          width: 90%;
  	  height: 30px;
+	  margin: 5px;
 	  margin-top: 10px;
 	}
 
@@ -90,58 +96,21 @@
       <h4>Choose your mouse effect</h4>
 
       <div id="icons">
-      <span class= "buttonDiv" >
-        <button id="bubble" class="mousemove"></button>
-      </span>
-      <span class= "buttonDiv" >
-        <button id="letter" class="mousemove"></button>
-      </span>
       <span class= "test" >
       <button id="colorfulSquare" class="mousemove"></button>
-    </span>
-    <span class= "buttonDiv" >
-    <button id="colorfulBall" class="mousemove"></button>
-  </span>
-  <span class= "buttonDiv" >
-    <button id="snowflake" class="mousemove"></button>
-  </span>
-  <span class= "buttonDiv" >
-    <button id="bunny" class="mousemove"></button>
-  </span>
+      </span>
   <span class= "test" >
     <button id="waterWave"></button>
   </span> 
-  <br/><br/> 
-  <span class= "buttonDiv" >
-    <button id="heart" class="mousemove"></button>
-  </span>
   <span class= "test" >
     <button id="leaf"></button>
   </span>
-  <span class= "buttonDiv" >
-    <button id="dna" class="mousemove"></button>
-  </span>
-  <span class= "buttonDiv" >
-    <button id="atom" class="mousemove"></button>
-  </span>
- <span class= "buttonDiv" >
-    <button id="petal" class="mousemove"></button>
-  </span>
-  <span class= "buttonDiv" >
-    <button id="float" class="mousemove"></button>
-  </span>
-  <br/><br/> 
-  <span class= "buttonDiv" >
-    <button id="card" class="mousemove"></button>
-  </span>
-
-  </div>
-
+      </div>
   <span class= "stopButton" >
     <button id="stop">STOP Extension</button>
   </span>
-      <script src="/popup/bubble.js"></script>
-      <script src="/popup/letter.js"></script>
+      <script src="/functions1/bubble.js"></script>
+      <script src="/obj.js"></script>
       <script src="popup.js"></script>
     </body>
   </html>

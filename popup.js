@@ -1,5 +1,19 @@
+let icons = document.getElementById('icons');
+
+function createButton(id) {
+
+}
+
 function buttonElement(targetId) {
-  return document.getElementById(targetId);
+//  return document.getElementById(targetId + '-button');
+let buttonTag = document.createElement('button')
+, spanTag = document.createElement('span');	
+ buttonTag.id = targetId + '-button';
+ buttonTag.className = 'mousemove';	
+ spanTag.className = 'buttonDiv';
+ spanTag.appendChild(buttonTag);
+ icons.appendChild(spanTag);	
+ return buttonTag	
 }
 
 function setButtonImage(targetId, targetUrl) {
@@ -12,8 +26,10 @@ function startShortcut(targetId) {
   startAnimation(targetId);
 }
 
-function addClickEvent(func, targetId, targetUrl, type) {
-  func(targetId).addEventListener('click', () => {
+function addClickEvent(ele, targetId, type, targetUrl) {
+//let ele = document.getElementById(targetId + '-button');
+	console.log(ele)
+  ele.addEventListener('click', () => {
     
     let stopButton = buttonElement('stop');
     if (stopButton.innerHTML === 'START Extension') {
@@ -24,9 +40,9 @@ function addClickEvent(func, targetId, targetUrl, type) {
         tabs[0].id,
         {
           name: targetId, 
-          path: targetUrl, 
+//          path: targetUrl, 
 	  type: type,
-  	  eventName: func(targetId).className ,
+  	  eventName: ele.className ,
           isItOn: true,
           sender: 'popup'}
       );
@@ -44,21 +60,27 @@ function addClickEvent(func, targetId, targetUrl, type) {
 }
 
 function addHoverEventInPopup(ele, targetId, cnt) {
-  ele.addEventListener('mouseover', (e) => {
-	  console.log('overred');
-  targetId ? animationObj[targetId]() : null;
-  })
-  ele.addEventListener('mouseout', (e) => {
-  
+//console.log(functionObj)
+//console.log(ele)
+		console.log(functionObj[targetId].mouse.mousemove) 
+	ele.addEventListener('mouseover', () => {
+		console.log('moved')
+		ele.addEventListener('mousemove', functionObj[targetId].mouse.mousemove)
+	});
+
+		//functionObj[targetId].mouse.mousemove) 
+  ele.addEventListener('mouseout', (e) => {  
+     ele.removeEventListener('mousemove', functionObj[targetId].mouse.mousemove)
   })	
 }
 
-function startPointerFunction(targetId, targetUrl, type) {
+function startPointerFunction(targetId, type, targetUrl) {
+console.log(targetId)
+
   let buttonEle = buttonElement(targetId);
+	console.log(buttonEle)
 //  setButtonImage(targetId, targetUrl);
-	console.log(animationObj[targetId])
-  animationObj[targetId]();	
-  addClickEvent(buttonElement, targetId, targetUrl, type);  
+  addClickEvent(buttonEle, targetId, type);  
   addHoverEventInPopup(buttonEle, targetId);
   return;
 }
@@ -92,18 +114,29 @@ function stopEvent(func, targetId) {
     stopButton.innerHTML = 'STOP Extension';
   return stopButton.innerHTML;
 }
+let pngPaths = {
+"bubble": './images/bubble/bubble32.png'
+	
+//,"letter": './images/letter/letter32.png'
+	
+,"snowflake": './images/snow/snowflake32.png'
+/*
+,"heart": './images/heart/heart32.png'
+,"colorfulBall": './images/co/colorfulBall32.png'
+,"bunny": './images/bunny/bunny32.png'
+,"dna": './images/dna/dna32.png'
+,"card": './images/card/card32.png'
+,"atom": './images/atom/atom32.png'
+,"petal": './images/petal/petal32.png'
+,"float": './images/float/float32.png'
+*/
+}
 
-let bubble = './images/bubble/bubble32.png'
-let letter = './images/letter/letter32.png'
-let snowflake = './images/snow/snowflake32.png'
-let heart = './images/heart/heart32.png'
-let colorfulBall = './images/co/colorfulBall32.png'
-let bunny = './images/bunny/bunny32.png';
-let dna = './images/dna/dna32.png';
-let card = './images/card/card32.png';
-let atom = './images/atom/atom32.png';
-let petal = './images/petal/petal32.png';
-let float = './images/float/float32.png';
+for (const [key, val] of Object.entries(pngPaths)) {
+  createButton(key)	
+  startPointerFunction(key, 'moving')
+};
+/*
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
@@ -115,6 +148,7 @@ startPointerFunction('card', card, 'moving');
 startPointerFunction('atom', atom, 'moving');
 startPointerFunction('petal', petal, 'moving');
 startPointerFunction('float', float, 'moving');
+*/
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
