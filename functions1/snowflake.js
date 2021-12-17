@@ -36,9 +36,3 @@ function snowflake(e) {
     setTimeout(() => trigger(e, 1), ran2000);
   }
 }
-
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});
