@@ -62,6 +62,7 @@ function addClickEvent(ele, targetId, type, targetUrl) {
 function addHoverEventInPopup(ele, targetId, cnt) {
 //console.log(functionObj)
 //console.log(ele)
+	/*
 		console.log(functionObj[targetId].mouse.mousemove) 
 	ele.addEventListener('mouseover', () => {
 		console.log('moved')
@@ -71,7 +72,17 @@ function addHoverEventInPopup(ele, targetId, cnt) {
 		//functionObj[targetId].mouse.mousemove) 
   ele.addEventListener('mouseout', (e) => {  
      ele.removeEventListener('mousemove', functionObj[targetId].mouse.mousemove)
-  })	
+  })
+	*/
+let eObj = {
+  "clientX": ele.offsetLeft + 50,
+  "clientY": ele.offsetTop + 38	
+}
+console.log(eObj)
+    setInterval(() => {
+      functionObj[targetId].mouse.mousemove(eObj)	   
+    }, 200)	 
+	  //setInterval, addEvent, removeEvent
 }
 
 function startPointerFunction(targetId, type, targetUrl) {
@@ -80,7 +91,8 @@ console.log(targetId)
   let buttonEle = buttonElement(targetId);
 	console.log(buttonEle)
 //  setButtonImage(targetId, targetUrl);
-  addClickEvent(buttonEle, targetId, type);  
+  addClickEvent(buttonEle, targetId, type); 
+	console.log(targetId)
   addHoverEventInPopup(buttonEle, targetId);
   return;
 }
@@ -119,7 +131,7 @@ let pngPaths = {
 	
 //,"letter": './images/letter/letter32.png'
 	
-,"snowflake": './images/snow/snowflake32.png'
+//,"snowflake": './images/snow/snowflake32.png'
 /*
 ,"heart": './images/heart/heart32.png'
 ,"colorfulBall": './images/co/colorfulBall32.png'
