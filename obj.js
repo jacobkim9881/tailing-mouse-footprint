@@ -1,4 +1,22 @@
 let functionObj = {};
+let pngPaths = {
+  "bubble": './images/bubble/bubble32.png'
+    
+  ,"letter": './images/letter/letter32.png'
+    
+  //,"snowflake": './images/snow/snowflake32.png'
+  
+  ,"heart": './images/heart/heart32.png'
+  ,"colorfulBall": './images/co/colorfulBall32.png'
+  ,"dna": './images/dna/dna32.png'
+  ,"petal": './images/petal/petal32.png'
+  ,"float": './images/float/float32.png'
+  /*
+  ,"card": './images/card/card32.png'
+  ,"atom": './images/atom/atom32.png'
+  ,"bunny": './images/bunny/bunny32.png'
+  */
+  }
 
 function executeEvents(obj, name) {
 localStorage.pointerName = name;	
@@ -34,6 +52,14 @@ functionObj.bubble.mouse = {}
 functionObj.bubble.mouse.mousemove = {};
 
 functionObj.bubble.mouse.mousemove = bubble;
+
+functionObj.letter = {};
+
+functionObj.letter.mouse = {}
+
+functionObj.letter.mouse.mousemove = {};
+
+functionObj.letter.mouse.mousemove = letter;
 
 functionObj.snowflake = {};
 

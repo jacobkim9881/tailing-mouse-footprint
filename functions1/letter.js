@@ -1,5 +1,5 @@
 //letter.js
-function mouseEvent(e) {
+function letter(e) {
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
   let obj = document.createElement('div');
@@ -22,9 +22,3 @@ function mouseEvent(e) {
   setTimeout(() => obj.remove(), 200);
   return;
 }
-
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

@@ -7,6 +7,7 @@
         "matches": ["https://*/*"],
         "js": [
 		"functions1/bubble.js",
+    "functions1/letter.js",
 		"functions1/snowflake.js",
 		"obj.js",
 		"contents.js"]
