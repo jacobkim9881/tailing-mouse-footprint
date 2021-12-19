@@ -62,27 +62,31 @@ function addClickEvent(ele, targetId, type, targetUrl) {
 function addHoverEventInPopup(ele, targetId, cnt) {
 //console.log(functionObj)
 //console.log(ele)
-	/*
+
+let eObj = {
+"clientX": ele.offsetLeft + 50,
+"clientY": ele.offsetTop + 38	
+}
+console.log(eObj)
+let aniEvent = setInterval(() => {
+    functionObj[targetId].mouse.mousemove(eObj)	   
+  }, 200)	 
+  //setInterval, addEvent, removeEvent
+	
 		console.log(functionObj[targetId].mouse.mousemove) 
 	ele.addEventListener('mouseover', () => {
 		console.log('moved')
-		ele.addEventListener('mousemove', functionObj[targetId].mouse.mousemove)
+		ele.addEventListener('mousemove', functionObj[targetId].mouse.mousemove);
+    clearInterval(aniEvent)
 	});
 
 		//functionObj[targetId].mouse.mousemove) 
   ele.addEventListener('mouseout', (e) => {  
-     ele.removeEventListener('mousemove', functionObj[targetId].mouse.mousemove)
-  })
-	*/
-let eObj = {
-  "clientX": ele.offsetLeft + 50,
-  "clientY": ele.offsetTop + 38	
-}
-console.log(eObj)
-    setInterval(() => {
+     ele.removeEventListener('mousemove', functionObj[targetId].mouse.mousemove);
+     aniEvent = setInterval(() => {
       functionObj[targetId].mouse.mousemove(eObj)	   
     }, 200)	 
-	  //setInterval, addEvent, removeEvent
+  })
 }
 
 function startPointerFunction(targetId, type, targetUrl) {
@@ -126,23 +130,7 @@ function stopEvent(func, targetId) {
     stopButton.innerHTML = 'STOP Extension';
   return stopButton.innerHTML;
 }
-let pngPaths = {
-"bubble": './images/bubble/bubble32.png'
-	
-//,"letter": './images/letter/letter32.png'
-	
-//,"snowflake": './images/snow/snowflake32.png'
-/*
-,"heart": './images/heart/heart32.png'
-,"colorfulBall": './images/co/colorfulBall32.png'
-,"bunny": './images/bunny/bunny32.png'
-,"dna": './images/dna/dna32.png'
-,"card": './images/card/card32.png'
-,"atom": './images/atom/atom32.png'
-,"petal": './images/petal/petal32.png'
-,"float": './images/float/float32.png'
-*/
-}
+
 
 for (const [key, val] of Object.entries(pngPaths)) {
   createButton(key)	
