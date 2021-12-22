@@ -1,42 +1,23 @@
 //test.js
-
-function animateBar(obj, cls) {
-  let d = cls === 'off' ? 0 : 45,
-  d2 = cls === 'on' ? 0 : 45,
-  c = cls === 'off' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)',
-  c2 = cls === 'on' ? 'hsl(0, 100%, 100%, 0)' : 'hsl(0, 100%, 100%, 1)';	
-  obj.className = obj.className === 'off' ? 'on' : 'off';
-  obj.animate([
-      {
-    transform: `rotate(${d}deg)`,
-    backgroundColor: c 	      
-      }, 
-      {
-    transform: `rotate(${d2}deg)`,
-    backgroundColor: c2 	      
-      }, 
-    ], 200)
-  obj.style.backgroundColor = c2;
-  obj.style.transform = `rotate(${d2}deg)`;
-}
-
 function mouseEvent(e) {
-  let num = Math.trunc(e.clientX / 45),
-  preNum = localStorage.getItem('tmf-cnt') ? localStorage.getItem('tmf-cnt') : num,	
-  obj = document.getElementById(`objs-test${num}`),
-  cntWidth = Math.trunc(window.innerWidth / 45);
-  if (preNum === num.toString()) {return};	
-  localStorage.setItem('tmf-cnt', num);	
+
+  function trigger(e) {
+  let obj = document.getElementsByClassName('objs-test')[0];
+  let ballSize = window.innerWidth/100;
+  let randomBallSize = Math.trunc(Math.random() * ballSize) + 20;
+  obj.style.top = e.clientY + 'px';
+  obj.style.left = e.clientX + 'px';
+  obj.style.width = randomBallSize + 'px';
+  obj.style.height = randomBallSize + 'px';
   
-  for (let i = 0; i < num; i++){
-    let tarObj = document.getElementById(`objs-test${i}`);
-    if (tarObj.className === 'on' && num !== 0) {continue};	  
-    animateBar(tarObj, tarObj.className);
+  document.body.appendChild(obj);
+  //setTimeout(() => obj.remove(), 700);
+  return;
   }
-  for (i = cntWidth - 1; i >= num; i--) {
-    let tarObj = document.getElementById(`objs-test${i}`);
-    if (tarObj.className === 'off') {continue};	  
-    animateBar(tarObj, tarObj.className);
+  let num = parseInt(localStorage.mouseCounter);
+  localStorage.mouseCounter = num + 1;
+  if (num %  1 === 0 ) {
+   trigger(e);
   }
 }
 
@@ -48,37 +29,73 @@ function setObjs() {
    border: '1px solid white',	  
    backgroundColor : 'none',
    top: (window.innerHeight -100) + 'px'
-  },
-  cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
+  };
+  //cntWidth = Math.trunc(window.innerWidth / 45);
+  //for (let i = 0; i < cntWidth; i++) {
     let oneObj = document.createElement('div');
-    oneObj.id = oClass.class + i;
-    oneObj.className = 'off';	  
+    //oneObj.id = oClass.class + i;
+    oneObj.className = oClass.class;	  
+    /*
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
 //    oneObj.style.backgroundColor = oClass.backgroundColor;
     oneObj.style.top = oClass.top;
     oneObj.style.left = 50 + i * 45 + 'px';
+    */
     oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;	
+    //oneObj.style.border = oClass.border;	
     document.body.appendChild(oneObj);	  
-  }
+  //}
 
 }
 
-function deleteObjs() {
-  let cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
-  if (!document.getElementById(`objs-test${i}`)) {continue;}
-  document.getElementById(`objs-test${i}`).remove();
+setObjs();
+
+let animateObj = () => {
+  let obj = document.getElementsByClassName('objs-test')[0];  
+  obj.style.backgroundColor = `hsl(31, 100%, 50%)`;
+  obj.style.borderRadius = '50%';  
+  let styleInfo1 = {}
+  styleInfo1.bg = [];
+  styleInfo1.rd = [];
+  if (!localStorage.tmfStyle) {
+    for (let i = 0; i < 4; i++) {
+      if (i <= 3) {
+        if (i === 0) styleInfo1.bg.push(Math.random() * 360)
+        else styleInfo1.bg.push(Math.trunc(Math.random() * 100))
+      }
+      if (i <= 4) styleInfo1.rd.push(Math.trunc(Math.random() * 100))
+    }  
+  } else {
+    styleInfo1 = JSON.parse(localStorage.tmfStyle);  
   }
+  
+  let styleInfo = {}
+  styleInfo.bg = [];
+  styleInfo.rd = [];
+  for (let i = 0; i < 4; i++) {
+    if (i <= 3) {
+      if (i === 0) styleInfo.bg.push(Math.random() * 360)
+      else styleInfo.bg.push(Math.trunc(Math.random() * 100))
+    }
+    if (i <= 4) styleInfo.rd.push(Math.trunc(Math.random() * 100))
+  }
+  
+  obj.animate([
+    {backgroundColor: `hsl(${styleInfo1.bg[0]}, ${styleInfo1.bg[1]}%, ${styleInfo1.bg[2]}%`
+     , borderRadius: `${styleInfo1.rd[0]}% ${styleInfo1.rd[1]}% ${styleInfo1.rd[2]}% ${styleInfo1.rd[3]}%`},      
+      {backgroundColor: `hsl(${styleInfo.bg[0]}, ${styleInfo.bg[1]}%, ${styleInfo.bg[2]}%`
+      , borderRadius: `${styleInfo.rd[0]}% ${styleInfo.rd[1]}% ${styleInfo.rd[2]}% ${styleInfo.rd[3]}%`},      
+  ], {duration: 700,
+      timing(timeFraction) {
+      return 1 - Math.sin(Math.acos(timeFraction))}
+  })
+  localStorage.tmfStyle = JSON.stringify(styleInfo);
 }
-
-setObjs();	
-
+setInterval(animateObj, 700);
 document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
 document.body.removeEventListener('mousemove', mouseEvent);
-deleteObjs();	
+clearInterval(animateObj);
 });
