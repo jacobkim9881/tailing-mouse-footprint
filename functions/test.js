@@ -18,7 +18,7 @@ function mouseEvent(e) {
   obj.style.borderRadius = '50%';
   
   document.body.appendChild(obj);
-  //setTimeout(() => obj.remove(), 700);
+  setTimeout(() => obj.remove(), 1800);
   return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
@@ -26,7 +26,7 @@ function mouseEvent(e) {
   if (num %  11 === 0 ) {  
   let ballRad = 100;
   //Math.trunc(Math.random() * 100)
-  let ballPos = {x: e.clientX , y: e.clientY};  
+  let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
     let obj = trigger(e);
    for (let i = -180; i <= 0; i++) {     
