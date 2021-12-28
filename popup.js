@@ -81,6 +81,7 @@ let snowflake = './images/snow/snowflake32.png'
 let heart = './images/heart/heart32.png'
 let heart1 = './images/heart1/heart132.png'
 let colorfulBall = './images/co/colorfulBall32.png'
+let strawblueberry = './images/strawblueberry/strawblueberry32.png'
 let bunny = './images/bunny/bunny32.png';
 let dna = './images/dna/dna32.png';
 let card = './images/card/card32.png';
@@ -93,6 +94,7 @@ startPointerFunction('snowflake', snowflake, 'moving');
 startPointerFunction('heart', heart, 'moving');
 startPointerFunction('heart1', heart1, 'moving');
 startPointerFunction('colorfulBall', colorfulBall, 'moving');
+startPointerFunction('strawblueberry', strawblueberry, 'moving');
 startPointerFunction('bunny', bunny, 'moving');
 startPointerFunction('dna', dna, 'moving');
 startPointerFunction('card', card, 'moving');
