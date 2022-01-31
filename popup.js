@@ -27,7 +27,7 @@ function addClickEvent(func, targetId, targetUrl, type) {
       );
       
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
-        chrome.pageAction.setIcon({path: targetUrl,
+        chrome.action.setIcon({path: targetUrl,
           tabId: tabs[0].id
         });
       });

@@ -18,14 +18,15 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
-  if(localStorage.type === 'stop') {
+chrome.storage.get(['msg'], function(res){
+  if(res.type === 'stop') {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
       chrome.tabs.sendMessage(
         tabs[0].id,
         {
-          name: localStorage.pointerName,
-          path: localStorage.pointerPath,
+          name: res.msg.name,
+          path: res.msg.name,
           type: 'moving'})
     });
    
@@ -39,46 +40,55 @@ chrome.contextMenus.onClicked.addListener(() => {
 
   }
 })
+})
 
 chrome.runtime.onMessage.addListener((msg) => {
+  let msgObj;
   if (msg.type === 'moving') {
-    localStorage.pointerName = msg.name;      
-    localStorage.pointerPath = msg.path;
-    localStorage.type = 'check';
+    msgObj = {
+      name: msg.name,
+      path: msg.path,
+      type: 'check'
+    }
+    chrome.storage.local.set({msg: msgObj})
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      chrome.tabs.executeScript(
-        tabs[0].id,
-        {file: './functions/' + msg.name + '.js'} );
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {      
+      chrome.scripting.executeScript(
+        { target: {tabId: tabs[0].id},
+        files: ['./functions/' + msg.name + '.js'] });
     });
     
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
 
   } else if (msg.type === 'stop') {
-    localStorage.type = 'stop';
+    msgObj = {
+      type: 'stop'
+    }
+    chrome.storage.local.set({msg: msgObj})
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      chrome.tabs.executeScript(
-        tabs[0].id,
-        {file: './functions/' + 'stop' + '.js'} );
+      chrome.scripting.executeScript(
+        { target: { tabId : tabs[0].id},
+        files: ['./functions/' + 'stop' + '.js'] });
     });
 
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
 
   } else if (msg.type === 'check') {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
-
+      chrome.storage.local.get(['msg'], function(res){
       chrome.tabs.sendMessage(
         tabs[0].id,
-        { name:localStorage.pointerName,
-          path: localStorage.pointerPath,
-	 	    type: localStorage.type === 'stop' ? 'stop' : 'moving',
+        { name: res.msg.name,
+          path: res.msg.path,
+	 	    type: res.type === 'stop' ? 'stop' : 'moving',
           sender: 'background'}
       );
 
-      chrome.pageAction.setIcon({
-        path: localStorage.pointerPath,
+      chrome.action.setIcon({
+        path: res.msg.path,
         tabId: tabs[0].id});
+      })
     });
        
   }
