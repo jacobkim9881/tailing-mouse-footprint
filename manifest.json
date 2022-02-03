@@ -1,7 +1,8 @@
 {
-    "name": "Mouse Footprint Tailing",
-    "version": "0.0.3.1",
-    "permissions": ["activeTab", "declarativeContent", "contextMenus", "https://*/*"],
+    "name": "__MSG_appName__",
+    "version": "0.2.5.2",
+    "permissions": ["activeTab", "declarativeContent", "contextMenus", "storage", "scripting"],
+    "host_permissions": ["https://*/*"],
     "content_scripts": [
       {
         "matches": ["https://*/*"],
@@ -9,10 +10,9 @@
       }
     ],
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "service_worker": "background.js"
       },
-      "page_action": {
+      "action": {
         "default_popup": "popup.html",
         "default_icon": {
           "16": "images/icon16.png",
@@ -26,6 +26,7 @@
           "48": "images/icon64.png", 
           "128": "images/icon.png" 
         },
-    "description": "Adding funny effects when you do with your mouse. This extension make your mouse pointer more beautifully.",
-    "manifest_version": 2
+    "description": "__MSG_appDesc__",
+    "default_locale": "en",
+    "manifest_version": 3
 }

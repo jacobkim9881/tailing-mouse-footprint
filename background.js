@@ -1,86 +1,96 @@
 chrome.runtime.onInstalled.addListener(() => {
 
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
-        chrome.declarativeContent.onPageChanged.addRules([{
-            conditions: [new chrome.declarativeContent.PageStateMatcher({
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+    chrome.declarativeContent.onPageChanged.addRules([{
+      conditions: [new chrome.declarativeContent.PageStateMatcher({
             
-            })
-        ],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-         }])     
-    });
+      })
+      ],
+      actions: [new chrome.declarativeContent.ShowPageAction()]
+    }])     
+  });
 
-    chrome.contextMenus.create({
-                	        "id": "tails-mouse-footpring-switch",
-                                "title": "STOP Extension"
-                               });
+  chrome.contextMenus.create({
+    "id": "tails-mouse-footpring-switch",
+    "title": "STOP Extension"
+  });
 
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
-  if(localStorage.type === 'stop') {
+chrome.storage.get(['msg'], function(res){
+  if(res.type === 'stop') {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
-              chrome.tabs.sendMessage(
-                  tabs[0].id,
-                 {
-                        name: localStorage.pointerName,
-                        path: localStorage.pointerPath,
-                        type: 'moving'})
-              });
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {
+          name: res.msg.name,
+          path: res.msg.name,
+          type: 'moving'})
+    });
    
   } else {
-         chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
-              chrome.tabs.sendMessage(
-                  tabs[0].id,
-                 {type: 'stop'})
-              });
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        {type: 'stop'})
+    });
 
   }
 })
+})
 
 chrome.runtime.onMessage.addListener((msg) => {
+  let msgObj;
   if (msg.type === 'moving') {
-      localStorage.pointerName = msg.name;      
-      localStorage.pointerPath = msg.path;
-      localStorage.type = 'check';
+    msgObj = {
+      name: msg.name,
+      path: msg.path,
+      type: 'check'
+    }
+    chrome.storage.local.set({msg: msgObj})
 
-      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.tabs.executeScript(
-          tabs[0].id,
-          {file: './functions/' + msg.name + '.js'} );
-      });
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {      
+      chrome.scripting.executeScript(
+        { target: {tabId: tabs[0].id},
+        files: ['./functions/' + msg.name + '.js'] });
+    });
     
-      chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
+    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
 
-    } else if (msg.type === 'stop') {
-      localStorage.type = 'stop';
+  } else if (msg.type === 'stop') {
+    msgObj = {
+      type: 'stop'
+    }
+    chrome.storage.local.set({msg: msgObj})
 
-      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.tabs.executeScript(
-          tabs[0].id,
-          {file: './functions/' + 'stop' + '.js'} );
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      chrome.scripting.executeScript(
+        { target: { tabId : tabs[0].id},
+        files: ['./functions/' + 'stop' + '.js'] });
     });
 
-      chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
+    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
 
-    } else if (msg.type === 'check') {
-            chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+  } else if (msg.type === 'check') {
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+      chrome.storage.local.get(['msg'], function(res){
+      chrome.tabs.sendMessage(
+        tabs[0].id,
+        { name: res.msg.name,
+          path: res.msg.path,
+	 	    type: res.type === 'stop' ? 'stop' : 'moving',
+          sender: 'background'}
+      );
 
-              chrome.tabs.sendMessage(
-                  tabs[0].id,
-                  { name:localStorage.pointerName,
-                    path: localStorage.pointerPath,
-	 	    type: localStorage.type === 'stop' ? 'stop' : 'moving',
-                    sender: 'background'}
-                );
-
-                chrome.pageAction.setIcon({
-                  path: localStorage.pointerPath,
-                  tabId: tabs[0].id});
-              });
+      chrome.action.setIcon({
+        path: res.msg.path,
+        tabId: tabs[0].id});
+      })
+    });
        
-    }
+  }
     
 })
