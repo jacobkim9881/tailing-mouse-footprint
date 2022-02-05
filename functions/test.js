@@ -2,7 +2,9 @@
 function mouseEvent(e) {
 
   let xSize = 200;
-  let squareWid = 0.1;
+  let squareWid = Math.random() * 0.4 + 0.1;
+  let pOrM = Math.random() >= 0.5 ? 1 : -1;
+
   function trigger(e) {
   let obj = document.createElement('div');
   let ballSize = window.innerWidth/100;
@@ -34,10 +36,11 @@ function mouseEvent(e) {
    for (let i = -xSize; i <= xSize; i++) {     
      let t = i >= 0 ? 100 + i : 100 + i;
      setTimeout(() => {
-      let newX = i / 2 + ballPos.x;
-      let newY;       
-       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
-       console.log(newY)
+      let newX = pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
+      let newY;             
+      newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
+      
+      console.log(newY)
        //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
