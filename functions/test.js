@@ -1,11 +1,13 @@
 //test.js
 function mouseEvent(e) {
 
+  let xSize = 200;
+  let squareWid = 0.1;
   function trigger(e) {
   let obj = document.createElement('div');
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
-  let ranXpos = 200 + parseInt(e.clientX, 10);
+  let ranXpos = parseInt(e.clientX, 10);
   let ranYpos = parseInt(e.clientY, 10);
   let ranH = Math.trunc(Math.random() * 360);
   let ranH2 =  Math.trunc(Math.random() * 360); 
@@ -18,7 +20,7 @@ function mouseEvent(e) {
   obj.style.borderRadius = '50%';
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 4020);
+  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
   return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
@@ -29,23 +31,19 @@ function mouseEvent(e) {
   let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
     let obj = trigger(e);
-   for (let i = -100; i <= 100; i++) {     
+   for (let i = -xSize; i <= xSize; i++) {     
      let t = i >= 0 ? 100 + i : 100 + i;
      setTimeout(() => {
-      let newX = 200 + i * 2 + ballPos.x;
-      let newY;
-       if (i >= 0) {       
-       newY = Math.pow(i, 2)/50 + ballPos.y;
-       } else {
-      newY = Math.pow(i, 2)/50 + ballPos.y;
-       }
+      let newX = i / 2 + ballPos.x;
+      let newY;       
+       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
        console.log(newY)
        //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
     //ballPos.x = newX;
     //ballPos.y = newY;
-     }, (101 + i) * 20)
+     }, (xSize + 1 + i) * (600/xSize))
    }
   }
 }
