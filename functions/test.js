@@ -1,4 +1,5 @@
 //test.js
+localStorage.tmfBallOn = '1';
 function mouseEvent(e) {
 
   let xSize = 200;
@@ -9,7 +10,7 @@ function mouseEvent(e) {
   function trigger(e) {
   let obj = document.createElement('div');
   let ballSize = window.innerWidth/100;
-  let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
+  let randomBallSize = Math.trunc(Math.random() * ballSize);
   let ranXpos = parseInt(e.clientX, 10);
   let ranYpos = parseInt(e.clientY, 10);
   let ranH = Math.trunc(Math.random() * 360);
@@ -18,8 +19,8 @@ function mouseEvent(e) {
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
   obj.style.top = ranYpos + 'px'
-  obj.style.width = randomBallSize + 'px';
-  obj.style.height = randomBallSize + 'px';
+  obj.style.width = ballSize + 'px';
+  obj.style.height = ballSize + 'px';
   obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   obj.style.borderRadius = '50%';
   
@@ -29,7 +30,7 @@ function mouseEvent(e) {
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;  
-  if (num %  23 === 0) {  
+  if (num %  23 === 0 && localStorage.tmfBallOn === '1') {  
   let ballRad = 100;
   //Math.trunc(Math.random() * 100)
   let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
@@ -47,22 +48,29 @@ function mouseEvent(e) {
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
     if (i === - xSize) {
+      localStorage.tmfBallOn = '0';
       obj.id = 'tmf-ball-start'
       let expX = pOrM === 1 ? xSize / 2 + ballPos.x : xSize * pOrM / 2 - xSize + ballPos.x;
       let expY = Math.pow(xSize, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
+      let holeYPos = expY - 5;
+      let holeXPos = pOrM === 1 ? expX - 10 : expX - 20;
+      //console.log(pOrM === 1 ? "1" : '-1')
       tObj.animate([
         {top: localStorage.yMousePos + 'px',
          left: localStorage.xMousePos + 'px'
         },
-        {top: expY + 'px',
-          left: expX + 'px'
+        {top: holeYPos + 'px',
+          left: holeXPos + 'px'
          }
-      ], 1000)
+      ], (xSize * 2 + 1) * (600/xSize))
     } else if (i === xSize) {
+      let holeYPos = newY - 5;
+      let holeXPos = pOrM === 1 ? newX - 10 : newX - 20;
       localStorage.xMousePos = newX;
       localStorage.yMousePos = newY;
-      tObj.style.left = newX + 'px';
-      tObj.style.top = newY + 'px';
+      localStorage.tmfBallOn = '1';
+      tObj.style.left = holeXPos + 'px';
+      tObj.style.top = holeYPos + 'px';
       obj.id = 'tmf-ball'
       console.log(newX, newY)
     }    
@@ -76,8 +84,8 @@ function mouseEvent(e) {
 function setObjs() {
   let oClass = {
    class: 'objs-test',
-   width: '15px',
-   height: '45px',
+   width: '50px',
+   height: '20px',
    border: '1px solid white',	  
    backgroundColor : 'none',
    top: (window.innerHeight -100) + 'px'
@@ -89,28 +97,31 @@ function setObjs() {
     oneObj.className = 'off';	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
-    //oneObj.style.backgroundColor = oClass.backgroundColor;
+    oneObj.style.backgroundColor = 'black';
     //oneObj.style.top = oClass.top;
     //oneObj.style.left = 50 + i * 45 + 'px';
     oneObj.style.display = 'block';
     oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;	
+    oneObj.style.borderRadius = '50%'
+    //oneObj.style.border = oClass.border;	
     document.body.appendChild(oneObj);	  
   //}
 
 }
 
-function deleteObjs() {
+function deleteObjs() {  
+  /*
   let cntWidth = Math.trunc(window.innerWidth / 45);
   for (let i = 0; i < cntWidth; i++) {
   if (!document.getElementById(`objs-test${i}`)) {continue;}
   document.getElementById(`objs-test${i}`).remove();
   }
+  */
 }
 
 
 document.body.addEventListener('mousemove', mouseEvent);
-
+setObjs();
 chrome.runtime.onMessage.addListener((msg) => {
   setObjs();
 document.body.removeEventListener('mousemove', mouseEvent);
