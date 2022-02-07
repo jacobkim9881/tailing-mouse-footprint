@@ -3,7 +3,7 @@ localStorage.tmfBallOn = '1';
 function mouseEvent(e) {
 
   let xSize = 200;
-  let squareWid = Math.random() * 0.4 + 0.1;
+  let squareWid = Math.random() * 0.3 + 0.2;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
   let tObj = document.getElementById('objs-test1');
 
@@ -25,17 +25,31 @@ function mouseEvent(e) {
   obj.style.borderRadius = '50%';
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
+  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize) + 800);
   return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;  
-  if (num %  23 === 0 && localStorage.tmfBallOn === '1') {  
+  if (num %  23 === 0 && localStorage.tmfBallOn === '1') {      
+  localStorage.tmfBallOn = '0';
   let ballRad = 100;
   //Math.trunc(Math.random() * 100)
   let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
     let obj = trigger(e);
+
+    obj.animate([
+      {top: (ballPos.y) + 'px'},
+      {top: (ballPos.y - 10 )+ 'px'},
+      {top: (ballPos.y) + 'px'},
+      {top: (ballPos.y + 200 ) + 'px'}
+    ], {duration: 810,
+      timing(timeFraction) {
+        return 1 - Math.sin(Math.acos(timeFraction))}
+    })
+
+    ballPos.y = ballPos.y + 200;
+
    for (let i = -xSize; i <= xSize; i++) {     
      let t = i >= 0 ? 100 + i : 100 + i;
      setTimeout(() => {
@@ -48,11 +62,10 @@ function mouseEvent(e) {
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
     if (i === - xSize) {
-      localStorage.tmfBallOn = '0';
       obj.id = 'tmf-ball-start'
       let expX = pOrM === 1 ? xSize / 2 + ballPos.x : xSize * pOrM / 2 - xSize + ballPos.x;
       let expY = Math.pow(xSize, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
-      let holeYPos = expY - 5;
+      let holeYPos = expY - 5 + 1/squareWid;
       let holeXPos = pOrM === 1 ? expX - 10 : expX - 20;
       //console.log(pOrM === 1 ? "1" : '-1')
       tObj.animate([
@@ -64,7 +77,7 @@ function mouseEvent(e) {
          }
       ], (xSize * 2 + 1) * (600/xSize))
     } else if (i === xSize) {
-      let holeYPos = newY - 5;
+      let holeYPos = newY - 5 + 1/squareWid;
       let holeXPos = pOrM === 1 ? newX - 10 : newX - 20;
       localStorage.xMousePos = newX;
       localStorage.yMousePos = newY;
@@ -76,7 +89,7 @@ function mouseEvent(e) {
     }    
     //ballPos.x = newX;
     //ballPos.y = newY;
-     }, (xSize + 1 + i) * (600/xSize))
+     }, (xSize + 1 + i) * (600/xSize) + 800)
    }
   }
 }
