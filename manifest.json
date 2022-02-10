@@ -1,6 +1,6 @@
 {
     "name": "__MSG_appName__",
-    "version": "0.2.5.2",
+    "version": "0.2.5.4",
     "permissions": ["activeTab", "declarativeContent", "contextMenus", "storage", "scripting"],
     "host_permissions": ["https://*/*"],
     "content_scripts": [
