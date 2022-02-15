@@ -26,7 +26,7 @@ function mouseEvent(e) {
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  11 === 0 ) {  
+  if (num %  3 === 0 ) {  
   let ballRad = 100;
   //Math.trunc(Math.random() * 100)
   let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
