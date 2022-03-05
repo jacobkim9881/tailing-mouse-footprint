@@ -1,6 +1,6 @@
 function mouseEvent(e) {
 
-  let xSize = 360;
+  let xSize = 180;
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
 
@@ -36,10 +36,10 @@ function mouseEvent(e) {
      let t = i >= 0 ? 100 + i : 100 + i;
      setTimeout(() => {
 
-      let newX = (Math.cos(i/360 * Math.PI)*ballRad) + ballPos.x; 
+      let newX = (Math.cos(i/180 * Math.PI)*ballRad) + ballPos.x; 
 		     //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
       let newY;             
-      newY = ballPos.y + (Math.sin(i/360 * Math.PI) * ballRad); 
+      newY = ballPos.y + (Math.sin(i/180 * Math.PI) * ballRad); 
 		     //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
 
        //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
