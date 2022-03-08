@@ -2,8 +2,8 @@
 	node_modules/
 	package-lock.json
 	package.json
-        **/test.js
-	.vscode/
-	script.js
-	/localization-manager/
-
+**/test.js
+.vscode/
+script.js
+localization-manager/
+deploy/

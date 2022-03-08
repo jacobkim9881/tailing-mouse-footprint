@@ -1,7 +1,8 @@
 {
     "name": "__MSG_appName__",
-    "version": "0.2.5.1",
-    "permissions": ["activeTab", "declarativeContent", "contextMenus", "https://*/*"],
+    "version": "0.2.5.5",
+    "permissions": ["activeTab", "declarativeContent", "contextMenus", "storage", "scripting"],
+    "host_permissions": ["https://*/*"],
     "content_scripts": [
       {
         "matches": ["https://*/*"],
@@ -9,10 +10,9 @@
       }
     ],
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "service_worker": "background.js"
       },
-      "page_action": {
+      "action": {
         "default_popup": "popup.html",
         "default_icon": {
           "16": "images/icon16.png",
@@ -28,5 +28,5 @@
         },
     "description": "__MSG_appDesc__",
     "default_locale": "en",
-    "manifest_version": 2
+    "manifest_version": 3
 }
