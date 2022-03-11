@@ -1,6 +1,6 @@
 function mouseEvent(e) {
 
-  let xSize = 180;
+  let xSize = 200;
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
 
@@ -12,54 +12,40 @@ function mouseEvent(e) {
   let ranYpos = parseInt(e.clientY, 10);
   let ranH = Math.trunc(Math.random() * 360);
   let ranH2 =  Math.trunc(Math.random() * 360); 
-  obj.style.display = 'none';	  
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
   obj.style.top = ranYpos + 'px'
-  obj.style.width = (window.innerWidth/60) + 'px';
-  obj.style.height = (window.innerHeight*5/1000) + 'px';
-  obj.style.backgroundColor = `hsl(${localStorage.mouseCounter % 360}, 100%, 50%)`;
-  //obj.style.borderRadius = '50%';
+  obj.style.width = randomBallSize + 'px';
+  obj.style.height = randomBallSize + 'px';
+  obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+  obj.style.borderRadius = '50%';
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), xSize * 1 * (300/xSize));
+  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
   return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num % 8 === 0 ) {  
+  if (num %  3 === 0 ) {  
   let ballRad = 100;
-  let barLen = window.innerWidth/60;  
   //Math.trunc(Math.random() * 100)
-  let ballPos = {x: e.clientX , y: e.clientY};  
+  let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
     let obj = trigger(e);
-    let roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1;	     
-
-   for (let i = - xSize; i <= 0; i++) {     
+   for (let i = -xSize; i <= xSize; i++) {     
      let t = i >= 0 ? 100 + i : 100 + i;
      setTimeout(() => {
 
-		     //(Math.cos(i/180 * Math.PI)*ballRad) + ballPos.x; 
-		     //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
-      let newY
-      , newX = ballPos.x + i/xSize * roDeg * (barLen);
-      newY = ballPos.y + (Math.sin(i/xSize * Math.PI) * barLen);
-	     
-		     //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
+      let newX = pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
+      let newY;             
+      newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
 
        //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
-    obj.style.display = 'block';
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
-    obj.style.transform = `rotate(${i * roDeg}deg)`;	   
-   //console.log(localStorage.xMousePos, e.clientX)	     
-    localStorage.xMousePos = e.clientX;	
-  if (num %  11 === 0 ) {  
     //ballPos.x = newX;
     //ballPos.y = newY;
-  }
-     }, (xSize + 1 + i) * (300/xSize))
+     }, (xSize + 1 + i) * (600/xSize))
    }
   }
 }
