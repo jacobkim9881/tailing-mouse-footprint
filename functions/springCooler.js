@@ -6,28 +6,24 @@ function mouseEvent(e) {
 
   function trigger(e) {
   let obj = document.createElement('div');
-  let ballSize = window.innerWidth/150;
-  let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
   let ranXpos = parseInt(e.clientX, 10);
   let ranYpos = parseInt(e.clientY, 10);
-  let ranH = Math.trunc(Math.random() * 360);
-  let ranH2 =  Math.trunc(Math.random() * 360); 
   obj.style.display = 'none';	  
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
   obj.style.top = ranYpos + 'px'
   obj.style.width = (window.innerWidth/60) + 'px';
-  obj.style.height = (window.innerHeight*5/1000) + 'px';
+  obj.style.height = (window.innerHeight*1/400) + 'px';
   obj.style.backgroundColor = `hsl(${localStorage.mouseCounter % 360}, 100%, 50%)`;
   //obj.style.borderRadius = '50%';
   
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), xSize * 1 * (300/xSize));
+  setTimeout(() => obj.remove(), xSize * 2 * (300/xSize));
   return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num % 8 === 0 ) {  
+  if (num % 4 === 0 ) {  
   let ballRad = 100;
   let barLen = window.innerWidth/60;  
   //Math.trunc(Math.random() * 100)
@@ -36,15 +32,16 @@ function mouseEvent(e) {
     let obj = trigger(e);
     let roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1;	     
 
-   for (let i = - xSize; i <= 0; i++) {     
+   for (let i = - xSize; i <= xSize; i++) {     
      let t = i >= 0 ? 100 + i : 100 + i;
+     let i2 = i >= 0 ? i - 180 : i;	   
      setTimeout(() => {
 
 		     //(Math.cos(i/180 * Math.PI)*ballRad) + ballPos.x; 
 		     //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
       let newY
-      , newX = ballPos.x + i/xSize * roDeg * (barLen);
-      newY = ballPos.y + (Math.sin(i/xSize * Math.PI) * barLen);
+      , newX = ballPos.x - (i2/xSize) * roDeg * (barLen) * 0.2;
+      newY = ballPos.y + (Math.sin(i2/xSize * Math.PI) * barLen);
 	     
 		     //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
 
@@ -52,7 +49,7 @@ function mouseEvent(e) {
     obj.style.display = 'block';
     obj.style.left = newX + 'px';
     obj.style.top = newY + 'px';        
-    obj.style.transform = `rotate(${i * roDeg}deg)`;	   
+    obj.style.transform = `rotate(${i2 * roDeg}deg)`;	   
    //console.log(localStorage.xMousePos, e.clientX)	     
     localStorage.xMousePos = e.clientX;	
   if (num %  11 === 0 ) {  
