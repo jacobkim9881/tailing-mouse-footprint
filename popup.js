@@ -27,7 +27,7 @@ function addClickEvent(func, targetId, targetUrl, type) {
       );
       
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
-        chrome.pageAction.setIcon({path: targetUrl,
+        chrome.action.setIcon({path: targetUrl,
           tabId: tabs[0].id
         });
       });
@@ -62,7 +62,7 @@ function triggerStop(func, targetId) {
           sender: 'popup'}
       );
 
-      });
+    });
 	  
   });
 }
@@ -72,25 +72,37 @@ function stopEvent(func, targetId) {
   stopButton.innerHTML === 'STOP Extension' ? 
     stopButton.innerHTML = 'START Extension' : 
     stopButton.innerHTML = 'STOP Extension';
-    return stopButton.innerHTML;
+  return stopButton.innerHTML;
 }
 
 let bubble = './images/bubble/bubble32.png'
 let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
 let heart = './images/heart/heart32.png'
+let heart1 = './images/heart1/heart132.png'
 let colorfulBall = './images/co/colorfulBall32.png'
+let strawblueberry = './images/strawblueberry/strawblueberry32.png'
 let bunny = './images/bunny/bunny32.png';
 let dna = './images/dna/dna32.png';
-let test = './images/bubble/bubble32.png';
+let card = './images/card/card32.png';
+let atom = './images/atom/atom32.png';
+let petal = './images/petal/petal32.png';
+let float = './images/float/float32.png';
+let springCooler = './images/spring/springCooler32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
 startPointerFunction('heart', heart, 'moving');
+startPointerFunction('heart1', heart1, 'moving');
 startPointerFunction('colorfulBall', colorfulBall, 'moving');
+startPointerFunction('strawblueberry', strawblueberry, 'moving');
 startPointerFunction('bunny', bunny, 'moving');
 startPointerFunction('dna', dna, 'moving');
-startPointerFunction('test', test, 'moving');
+startPointerFunction('card', card, 'moving');
+startPointerFunction('atom', atom, 'moving');
+startPointerFunction('petal', petal, 'moving');
+startPointerFunction('float', float, 'moving');
+startPointerFunction('springCooler', springCooler, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';

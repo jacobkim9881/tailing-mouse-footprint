@@ -3,61 +3,62 @@
 function mouseEvent(e) {
 
   function trigger(e, moveX) {
-  let mouseMoveCounter = localStorage.mouseCounter;
-  let obj = document.createElement('div');
-  let ranXpos = Math.trunc(Math.random() * 15) + parseInt(e.clientX, 10);
-  let ranYpos = Math.trunc(Math.random() * 10) + parseInt(e.clientY, 10);
-  let ran10 = Math.trunc(Math.random() * 5) + window.innerWidth/100;
-  let ranYpos2 = ranYpos + ran10;
-  let secLeft = ranXpos + ran10/2; 
-  obj.style.position = 'fixed';
-  if (moveX === 1) { 
-    obj.style.left = - secLeft + 'px';
-  } else {
-    obj.style.left = ranXpos + 'px';
-  }  
-  obj.style.width = ran10 + 'px';
-  obj.style.height = ran10 + 'px';
-  obj.style.backgroundColor = `hsl(0, 100%, 50%)`;
-  obj.style.borderRadius = '50%';  
-  obj.style.transform = 'skewY(25deg)';
+    let mouseMoveCounter = localStorage.mouseCounter;
+    let halfHeart = document.createElement('div');
+    let ran7 = Math.trunc(Math.random() * 7);  
+    let colorArr = ['#ff0000', '#ff7700', '#fbff00', '#08ff00', '#0011ff', '#5900ff', '#ff00e1'];
+    let randomColor = colorArr[ran7];
+    let ranXpos = Math.trunc(Math.random() * 15) + parseInt(e.clientX, 10);
+    let ranYpos = Math.trunc(Math.random() * 20) + parseInt(e.clientY, 10);
+    let ran10 = Math.trunc(Math.random() * 8) + window.innerWidth/200;
+    let ranYpos2 = ranYpos + ran10;
+    let secLeft = ranXpos + ran10/2; 
+    halfHeart.style.position = 'fixed';
+    if (moveX === 1) { 
+      halfHeart.style.left = - secLeft + 'px';
+    } else {
+      halfHeart.style.left = ranXpos + 'px';
+    }  
+    halfHeart.style.width = ran10 + 'px';
+    halfHeart.style.height = ran10 + 'px';
+    halfHeart.style.backgroundColor = randomColor;	  
+    halfHeart.style.borderRadius = '50%';  
+    halfHeart.style.transform = 'skewY(25deg)';
 
-  obj.animate([
-    {top: ranYpos2 + 'px',
-  transform: 'skewY(25deg)'},
-    {top: ranYpos + 'px',
-    transform: 'skewY(30deg)'}
-  ], 500);
+    halfHeart.animate([
+      {top: ranYpos2 + 'px',
+        transform: 'skewY(25deg)'},
+      {top: ranYpos + 'px',
+        transform: 'skewY(30deg)'}
+    ], 500);
   
-  document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 500);
+    document.body.appendChild(halfHeart);
+    setTimeout(() => halfHeart.remove(), 490);
   
-  let obj1 = document.createElement('div');
-  obj1.style.position = 'fixed';
-  obj1.style.left = secLeft + 'px';
-  obj1.style.width = ran10 + 'px';
-  obj1.style.height = ran10 + 'px';
-  obj1.style.backgroundColor = `hsl(0, 100%, 50%)`;
-  obj1.style.borderRadius = '50%';  
-  obj1.style.transform = 'skewY(25deg)';
+    let OtherHalfHeart = document.createElement('div');
+    OtherHalfHeart.style.position = 'fixed';
+    OtherHalfHeart.style.left = secLeft + 'px';
+    OtherHalfHeart.style.width = ran10 + 'px';
+    OtherHalfHeart.style.height = ran10 + 'px';
+    OtherHalfHeart.style.backgroundColor = randomColor;
+    OtherHalfHeart.style.borderRadius = '50%';  
+    OtherHalfHeart.style.transform = 'skewY(25deg)';
 
-  obj1.animate([
-    {top: ranYpos2 + 'px',
-  transform: 'skewY(-25deg)'},
-    {top: ranYpos + 'px',
-    transform: 'skewY(-30deg)'}
+    OtherHalfHeart.animate([
+      {top: ranYpos2 + 'px',
+        transform: 'skewY(-25deg)'},
+      {top: ranYpos + 'px',
+        transform: 'skewY(-30deg)'}
 
-  ], 500);
+    ], 500);
   
-  document.body.appendChild(obj1);
-  setTimeout(() => obj1.remove(), 500);
+    document.body.appendChild(OtherHalfHeart);
+    setTimeout(() => OtherHalfHeart.remove(), 490);
  
-  return;
+    return;
   }
-  let num = parseInt(localStorage.mouseCounter);
-  localStorage.mouseCounter = num + 1;
-  if (num %  5 === 0 ) {
-   trigger(e, 0);
+  if (new Date().getTime() %  13 === 0 ) {
+    trigger(e, 0);
   }
 }
 
