@@ -22,9 +22,9 @@ function animateBar(obj, top, cls) {
       },        
     ], secnd)
   obj.style.backgroundColor = 'white';
+  obj.style.opacity = '1';	
   setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
-console.log('hi')
 }
 
 function mouseEvent(e) {
@@ -37,6 +37,32 @@ function mouseEvent(e) {
   
 }
 
+function onLoadEvent(obj, e) {
+  obj.animate([
+      {
+    transform: `rotateY(${0}deg)`,
+      }, 
+       {
+    transform: `rotateY(${360}deg)`,
+      },
+     {
+    transform: `rotateY(${0}deg)`,
+      },        
+      {
+    transform: `rotateY(${360}deg)`,
+      },        
+    ], {duration:2000})
+  obj.animate([
+      {
+    opacity: `1`	      
+      }, 
+      {
+    opacity: `0`	      
+      },        
+    ], {duration:1000})
+  obj.style.opacity = '0';
+}
+
 function setObjs() {
   let oClass = {
    class: 'objs-test',
@@ -47,7 +73,7 @@ function setObjs() {
    where: window.innerHeight * Math.random() + 'px'
   },
   cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
+  for (let i = 0; i < cntWidth * 2; i++) {
     let oneObj = document.createElement('div');
     let oneTop = Math.trunc(window.innerHeight * Math.random());
     let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
@@ -62,12 +88,14 @@ function setObjs() {
     oneObj.style.border = oClass.border;
     oneObj.style.borderRadius = '50%';	 
     oneObj.style.zIndex = '999999999';	  
+    onLoadEvent(oneObj);
+
     document.body.appendChild(oneObj);	 
+	 
     oneObj.onmouseover = function(e) {
 animateBar(oneObj, oneTop);	
-    }
-  }
-
+    }  
+}
 }
 
 function deleteObjs() {
