@@ -14,7 +14,7 @@ function mouseEvent(e) {
     obj.style.top = ranYpos + 'px'
     obj.style.width = (window.innerWidth/60) + 'px';
     obj.style.height = (window.innerHeight*1/400) + 'px';
-    obj.style.backgroundColor = `hsl(${(localStorage.mouseCounter * 1) % 360}, 100%, 50%)`;
+    obj.style.backgroundColor = `hsl(${(localStorage.mouseCounter * 10) % 360}, 100%, 50%)`;
     //obj.style.borderRadius = '50%';
   
     document.body.appendChild(obj);
