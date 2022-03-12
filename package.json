@@ -1,0 +1,24 @@
+{
+  "name": "tailing-mouse-footprint",
+  "version": "1.0.0",
+  "description": "![Boggling mouse pointer](./docs/mousefootprint.gif \"mouse pointer\")",
+  "main": "background.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -r deploy/* &&"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobkim9881/tailing-mouse-footprint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobkim9881/tailing-mouse-footprint/issues"
+  },
+  "homepage": "https://github.com/jacobkim9881/tailing-mouse-footprint#readme"
+}
