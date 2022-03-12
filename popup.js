@@ -88,6 +88,7 @@ let card = './images/card/card32.png';
 let atom = './images/atom/atom32.png';
 let petal = './images/petal/petal32.png';
 let float = './images/float/float32.png';
+let test = './images/float/float32.png';
 let springCooler = './images/spring/springCooler32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
@@ -103,6 +104,7 @@ startPointerFunction('atom', atom, 'moving');
 startPointerFunction('petal', petal, 'moving');
 startPointerFunction('float', float, 'moving');
 startPointerFunction('springCooler', springCooler, 'moving');
+startPointerFunction('test', test, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
