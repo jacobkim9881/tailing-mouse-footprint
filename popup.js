@@ -90,6 +90,7 @@ let petal = './images/petal/petal32.png';
 let float = './images/float/float32.png';
 let springCooler = './images/spring/springCooler32.png';
 let colorSpring = './images/colorSpring/colorSpring32.png';
+let coins = './images/colorSpring/colorSpring32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
@@ -105,6 +106,7 @@ startPointerFunction('petal', petal, 'moving');
 startPointerFunction('float', float, 'moving');
 startPointerFunction('springCooler', springCooler, 'moving');
 startPointerFunction('colorSpring', colorSpring, 'moving');
+startPointerFunction('coins', coins, 'moving');
 triggerStop(buttonElement, 'stop');
 
 if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';

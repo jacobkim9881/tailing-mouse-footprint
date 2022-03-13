@@ -1,0 +1,156 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+        body {
+          width: 270px;
+        }
+
+	#icons {
+          width: 100%;
+	}
+        button {
+          height: 32px;
+          width: 32px;
+          outline: none;
+          padding: 5px;
+          border: none;
+        }
+        .buttonDiv :hover {
+          cursor: pointer;
+        }
+        h4 {
+          border-bottom: 1px solid black;
+          padding-bottom: 10px; 
+        }
+        .buttonDiv {
+          margin: 5px;
+          padding: 0px;
+        }
+        .test {
+          display: none;
+        }
+        #bubble {
+          background-image: url('./images/bubble/bubble32.png');
+        }
+        #letter {
+          background-image: url('./images/letter/letter32.png');
+        }
+        #colorfulSquare {
+          background-image: url('./images/csquare/colofulSquare32.png');
+        }
+        #colorfulBall {
+          background-image: url('./images/co/colofulBall32.png');
+        }
+        #strawblueberry {
+          background-image: url('./images/strawblueberry/strawblueberry32.png');
+        }
+        #snowflake {
+          background-image: url('./images/snow/snowflake32.png');
+        }
+	#bunny {
+          background-image: url('./images/bunny/bunny32.png');
+        }
+        #waterWave {
+          background-image: url('./images/snow/snowflake32.png');
+        }
+        #heart {
+          background-image: url('./images/heart/heart32.png');
+        }
+        #heart1 {
+          background-image: url('./images/heart/heart132.png');
+        }
+        #leaf {
+          background-image: url('./images/leaf/leaf32.png');
+        }
+        #dna {
+          background-image: url('./images/dna/dna32.png');
+        }
+        #card {
+          background-image: url('./images/card/card32.png');
+        }
+        #atom {
+          background-image: url('./images/atom/atom32.png');
+        }
+        #petal {
+          background-image: url('./images/petal/petal32.png');
+        }      
+        #float {
+          background-image: url('./images/dna/float32.png');
+        }        
+        #springCooler {
+          background-image: url('./images/spring/springCooler32.png');
+        }
+       #stop {
+          width: 100%;
+ 	  height: 30px;
+	  margin-top: 10px;
+	}
+
+      </style>
+    </head>
+    <body>
+      <h4>Choose your mouse effect</h4>
+
+      <div id="icons">
+      <span class= "buttonDiv" >
+        <button id="bubble" class="mousemove"></button>
+      </span>
+      <span class= "buttonDiv" >
+        <button id="letter" class="mousemove"></button>
+      </span>
+      <span class= "test" >
+      <button id="colorfulSquare" class="mousemove"></button>
+    </span>
+    <span class= "buttonDiv" >
+    <button id="colorfulBall" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+  <button id="strawblueberry" class="mousemove"></button>
+</span>
+  <span class= "buttonDiv" >
+    <button id="snowflake" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="bunny" class="mousemove"></button>
+  </span>
+  <span class= "test" >
+    <button id="waterWave"></button>
+  </span> 
+  <br/><br/> 
+  <span class= "buttonDiv" >
+    <button id="heart" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="heart1" class="mousemove"></button>
+  </span>
+  <span class= "test" >
+    <button id="leaf"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="dna" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="atom" class="mousemove"></button>
+  </span>
+ <span class= "buttonDiv" >
+    <button id="petal" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="float" class="mousemove"></button>
+  </span>
+  <br/><br/> 
+  <span class= "buttonDiv" >
+    <button id="card" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="springCooler" class="mousemove"></button>
+  </span>
+  </div>
+
+  <span class= "stopButton" >
+    <button id="stop">STOP Extension</button>
+  </span>
+      <script src="popup.js"></script>
+    </body>
+  </html>
