@@ -11,9 +11,9 @@ function mouseEvent(e) {
     obj.style.display = 'none';	  
     obj.style.position = 'fixed';
     obj.style.left = ranXpos + 'px';
-    obj.style.top = ranYpos + 'px'
+    obj.style.top = (ranYpos - 10) + 'px'
     obj.style.width = (window.innerWidth/60) + 'px';
-    obj.style.height = (window.innerHeight*1/400) + 'px';
+    obj.style.height = (window.innerHeight*1/800) + 'px';
     obj.style.backgroundColor = `hsl(${(localStorage.mouseCounter * 10) % 360}, 100%, 50%)`;
     //obj.style.borderRadius = '50%';
   
@@ -41,7 +41,7 @@ function mouseEvent(e) {
 		     //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
         let newY
           , newX = ballPos.x - (i2/xSize) * roDeg * (barLen) * 0.2;
-        newY = ballPos.y + (Math.sin(i2/xSize * Math.PI) * barLen);
+        newY = ballPos.y - 10 + (Math.sin(i2/xSize * Math.PI) * barLen);
 	     
 		     //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
 
