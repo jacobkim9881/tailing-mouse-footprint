@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "find ./ -type d -type f ! -name docs ! -name etc ! -name localization-manager -exec cp -t deploy/tmf {} \";\""
+    "build": "rm -r deploy/tmf/* || ls && cp -r _locales deploy/tmf/ && cp -r functions deploy/tmf/ && cp -r images deploy/tmf/ && cp * deploy/tmf/"
   },
   "repository": {
     "type": "git",

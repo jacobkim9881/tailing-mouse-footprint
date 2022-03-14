@@ -1,8 +1,7 @@
 	.eslintrc.json
 	node_modules/
 	package-lock.json
-	package.json
 .vscode/
 script.js
 localization-manager/*
-deploy/
+deploy
