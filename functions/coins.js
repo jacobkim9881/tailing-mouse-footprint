@@ -33,7 +33,8 @@ function mouseEvent(e) {
 }
 
 function onLoadEvent(obj, e) {
-  obj.animate([
+  let pop = Math.random() < 0.1 ? `0.3`: `0`;	
+ obj.animate([
       {
     transform: `rotateY(${0}deg)`,
       }, 
@@ -46,15 +47,16 @@ function onLoadEvent(obj, e) {
       {
     transform: `rotateY(${360}deg)`,
       },        
-    ], {duration:2000})
-  obj.animate([
+    ], {duration:2000});
+obj.animate([
       {
-    opacity: `0.3`	      
+    opacity: pop	      
       }, 
       {
     opacity: `0`	      
       },        
-    ], {duration:1000})
+    ], {duration:1000}) 
+   
   obj.style.opacity = '0';
 }
 
@@ -83,7 +85,7 @@ function setObjs() {
     oneObj.style.border = oClass.border;
     oneObj.style.borderRadius = '50%';	 
     oneObj.style.zIndex = '999999999';	  
-    onLoadEvent(oneObj);
+    onLoadEvent(oneObj);	   
 
     document.body.appendChild(oneObj);	 
 	 

@@ -8,11 +8,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r deploy/* &&"
+    "build": "find ./ -type d -type f ! -name docs ! -name etc ! -name localization-manager -exec cp -t deploy/tmf {} \";\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jacobkim9881/tailing-mouse-footprint.git"
+    "url": "git+https:/github.com/jacobkim9881/tailing-mouse-footprint.git"
   },
   "keywords": [],
   "author": "",
