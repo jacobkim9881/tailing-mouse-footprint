@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "GREEN='\033[0;32m' RED='\033[0;33m' BLUE='\033[0;36m' NC='\033[0m' && rm deploy/*.zip || echo -e any ${BLUE}.zip${NC} file isn't ${RED}deleted${NC} && rm -r deploy/tmf/* || echo -e ${RED}build started${NC} && cp -r _locales deploy/tmf/ && cp -r functions deploy/tmf/ && cp -r images deploy/tmf/ && cp background.js deploy/tmf/ && cp contents.js deploy/tmf/ && cp manifest.json deploy/tmf/ && cp popup.html deploy/tmf/ && cp popup.js deploy/tmf/ && echo -e ${GREEN}build is complete${NC}"
+    "build": "rm deploy/*.zip || echo any .zip file isn't deleted && rm -r deploy/tmf/* || echo build started && cp -r _locales deploy/tmf/ && cp -r functions deploy/tmf/ && cp -r images deploy/tmf/ && cp background.js deploy/tmf/ && cp contents.js deploy/tmf/ && cp manifest.json deploy/tmf/ && cp popup.html deploy/tmf/ && cp popup.js deploy/tmf/ && echo build is complete"
   },
   "repository": {
     "type": "git",
