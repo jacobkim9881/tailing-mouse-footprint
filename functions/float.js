@@ -9,6 +9,8 @@ function mouseEvent(e) {
   let randomBallSize = Math.trunc(Math.random() * ballSize);
   let ranXpos = parseInt(e.clientX, 10);
   let ranYpos = parseInt(e.clientY, 10);
+  let yHeight = parseInt(window.innerHeight);	  
+  let awayFromCursor = - 30 * (yHeight - ranYpos) /yHeight;
 //  let ranH = Math.trunc(Math.random() * 360);
   obj.className = 'flubbers'	  
   obj.style.position = 'fixed';
@@ -21,7 +23,7 @@ obj.style.top= ranYpos + 'px';
 
 
   obj.animate([
-    {top: (ranYpos * 0.96) + 'px',
+    {top: (ranYpos * 0.96 + awayFromCursor) + 'px',
 	    transform: 'scale(1,1)',
 	    width: (ballSize * 1.1) + 'px',
 	    borderRadius: '70% 70% 50% 50%',
