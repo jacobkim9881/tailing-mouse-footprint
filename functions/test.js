@@ -77,10 +77,13 @@ function mouseEvent(e) {
       let holeXPos = pOrM === 1 ? expX - 10 : expX - 20;
       //console.log(pOrM === 1 ? "1" : '-1')
 
+      let ranPosY1 = Math.trunc(parseInt(e.clientY, 10) + ((Math.random() * 30) + 50) * pOrM);
+      let ranPosX1 = Math.trunc(parseInt(e.clientX, 10) + (Math.random() * 30 + 200) * pOrM);
+    console.log(ranPosY1, ranPosX1)
       // hole animation
       tObj.animate([
-        {top: (parseInt(localStorage.yMousePos)) + 'px',
-         left: localStorage.xMousePos + 'px',
+        {top: ranPosY1 + 'px',
+         left: ranPosX1 + 'px',
          width: '0px',
          height: '0px'
         },
@@ -100,8 +103,8 @@ function mouseEvent(e) {
       //1203
 
       t2Obj.animate([
-        {top: localStorage.yMousePos + 'px',
-         left: localStorage.xMousePos + 'px',
+        {top: ranPosY1 + 'px',
+         left: ranPosX1 + 'px',
          width: '0px',
          height: '0px',
         },
