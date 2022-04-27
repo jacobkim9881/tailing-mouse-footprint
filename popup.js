@@ -35,10 +35,9 @@ function addClickEvent(func, targetId, targetUrl, type) {
       });
       
     });
-    chrome.storage.sync.set({name: targetId}, async function() {
-      console.log(JSON.stringify(reqData))	
-	  console.log('Value is set to ' + targetId);
-      console.log(reqData);
+    chrome.storage.sync.set({name: targetId}, function() {
+	  //console.log('Value is set to ' + targetId);
+	  requestToVote(reqUrl, targetId)
 
 
     });
@@ -60,13 +59,15 @@ function requestToVote(reqUrl, targetId) {
 
 	    req.onreadystatechange = function(e) { 
 		            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-				                console.log("Got response 200!");
+				                //console.log("Got response 200!");
 				    let res = e.target.response
 				    res = JSON.parse(res)
 				            } else {
-      console.log('Got an error while getting response')
+      //console.log('Got an error while getting response')
 					    }
+		    return
 		        }
+	return
 }
 
 function startPointerFunction(targetId, targetUrl, type) {
@@ -106,29 +107,30 @@ function stopEvent(func, targetId) {
   return stopButton.innerHTML;
 }
 
-async function getVoteFromServer() {
-  const reqUrl = 'http://localhost:80/vote';	
+function getVoteFromServer() {
+  const reqUrl = 'http://localhost:80/vote/show_vote';	
   const req = new XMLHttpRequest();
-  console.log('req')
 		   req.open("GET", reqUrl, true);
   req.send();
 	    req.onreadystatechange = function(e) { 
 		            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-				                console.log("Got response 200!");
+				                //console.log("Got response 200!");
 				    let res = e.target.response
 				    res = JSON.parse(res)
-				    console.log(res)
+				    //console.log(res)
 				            } else {
-      console.log('Got an error while getting response')
+      //console.log('Got an error while getting response')
 					    }
 		        }
 }
 
 getVoteFromServer();
 
+/*
 chrome.storage.sync.get(['name'], function(result) {
 	  console.log('Value currently is ' + JSON.stringify(result));
 });
+*/
 
 let bubble = './images/bubble/bubble32.png'
 let letter = './images/letter/letter32.png'
