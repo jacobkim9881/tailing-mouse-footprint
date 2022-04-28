@@ -1,6 +1,6 @@
-	.eslintrc.json
-	node_modules/
-	package-lock.json
+.eslintrc.json
+node_modules/
+package-lock.json
 .vscode/
 script.js
 localization-manager/
