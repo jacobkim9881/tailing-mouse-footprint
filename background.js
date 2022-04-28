@@ -87,7 +87,7 @@ chrome.runtime.onMessage.addListener((msg) => {
         tabs[0].id,
         { name: res.msg.name,
           path: res.msg.path,
-	 	    type: res.type === 'stop' ? 'stop' : 'moving',
+	 	    type: res.msg.type === 'stop' ? 'stop' : 'moving',
           sender: 'background'}
       );
 
