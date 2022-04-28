@@ -3,5 +3,5 @@
 	package-lock.json
 .vscode/
 script.js
-localization-manager/*
+localization-manager/
 deploy

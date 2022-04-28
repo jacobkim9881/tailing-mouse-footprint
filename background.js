@@ -18,8 +18,8 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
-chrome.storage.get(['msg'], function(res){
-  if(res.type === 'stop') {
+chrome.storage.local.get(['msg'], function(res){
+  if(res.msg.type === 'stop') {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
       chrome.tabs.sendMessage(
@@ -35,7 +35,11 @@ chrome.storage.get(['msg'], function(res){
 
       chrome.tabs.sendMessage(
         tabs[0].id,
-        {type: 'stop'})
+        {
+		type: 'stop',
+		name: res.msg.name,
+		path: res.msg.name
+	})
     });
 
   }
@@ -62,7 +66,9 @@ chrome.runtime.onMessage.addListener((msg) => {
 
   } else if (msg.type === 'stop') {
     msgObj = {
-      type: 'stop'
+      type: 'stop',
+      name: msg.name,
+      path: msg.path	    
     }
     chrome.storage.local.set({msg: msgObj})
 
