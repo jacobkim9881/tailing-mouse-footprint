@@ -7,14 +7,15 @@ chrome.runtime.onInstalled.addListener(() => {
       })
       ],
       actions: [new chrome.declarativeContent.ShowPageAction()]
-    }])     
+    }])    
+	  return
   });
 
   chrome.contextMenus.create({
     "id": "tails-mouse-footpring-switch",
     "title": "STOP Extension"
   });
-
+  return
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
@@ -28,6 +29,7 @@ chrome.storage.local.get(['msg'], function(res){
           name: res.msg.name,
           path: res.msg.name,
           type: 'moving'})
+	    return
     });
    
   } else {
@@ -40,9 +42,11 @@ chrome.storage.local.get(['msg'], function(res){
 		name: res.msg.name,
 		path: res.msg.name
 	})
+	    return
     });
 
   }
+	return
 })
 })
 
@@ -60,6 +64,7 @@ chrome.runtime.onMessage.addListener((msg) => {
       chrome.scripting.executeScript(
         { target: {tabId: tabs[0].id},
         files: ['./functions/' + msg.name + '.js'] });
+	    return
     });
     
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
@@ -76,6 +81,7 @@ chrome.runtime.onMessage.addListener((msg) => {
       chrome.scripting.executeScript(
         { target: { tabId : tabs[0].id},
         files: ['./functions/' + 'stop' + '.js'] });
+	    return
     });
 
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
@@ -90,7 +96,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 	 	    type: res.msg.type === 'stop' ? 'stop' : 'moving',
           sender: 'background'}
       );
-
+console.log(res)
       chrome.action.setIcon({
         path: res.msg.path,
         tabId: tabs[0].id});
@@ -98,5 +104,5 @@ chrome.runtime.onMessage.addListener((msg) => {
     });
        
   }
-    
+    return
 })
