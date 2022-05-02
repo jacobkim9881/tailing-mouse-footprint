@@ -1,76 +1,269 @@
+//test.js
+
+function getObj() {
+  let obj = document.createElement('div');
+  obj.id = 'test-obj';  
+  obj.style.width = 60 + 'px'; 
+  obj.style.height = 45 + 'px'; 
+  document.body.appendChild(obj);	
+
+  let obj1 = document.createElement('div');
+  obj1.id = 'test-obj1';  
+  obj1.style.width = 70 + 'px'; 
+  obj1.style.height = 50 + 'px'; 
+  document.body.appendChild(obj1);	
+
+  let obj2 = document.createElement('div');
+  obj2.id = 'test-obj2';  
+  obj2.style.width = 70 + 'px'; 
+  obj2.style.height = 50 + 'px'; 
+  document.body.appendChild(obj2);	
+
+  let sub = document.createElement('div');
+  sub.id = 'test-sub';  
+  sub.style.width = 10 + 'px'; 
+  sub.style.height = 10 + 'px'; 
+  document.body.appendChild(sub);	
+
+  let sub1 = document.createElement('div');
+  sub1.id = 'test-sub1';  
+  sub1.style.width = 10 + 'px'; 
+  sub1.style.height = 10 + 'px'; 
+  document.body.appendChild(sub1);	
+
+  let sub2 = document.createElement('div');
+  sub2.id = 'test-sub2';  
+  sub2.style.width = 10 + 'px'; 
+  sub2.style.height = 10 + 'px'; 
+  document.body.appendChild(sub2);	
+
+  localStorage.mouseEventOn = false;
+  localStorage.mouseLazy = true;
+
+  obj.style.display = 'block';
+  obj1.style.display = 'block';
+  obj2.style.display = 'block';
+
+  sub.style.display = 'block';
+  sub1.style.display = 'block';
+  sub2.style.display = 'block';	
+  // sub.style.display = 'none';
+// sub1.style.display = 'none';
+// sub2.style.display = 'none';
+// return obj;
+}
+getObj();
+
+function ballStyle(ball) {	
+  ball.style.position = 'fixed';
+  ball.style.borderRadius = '50%';	
+  //    ball.style.border = '1px solid black';	
+  ball.style.boxShadow = '0px 0px 2px 1px #d37e04';    
+  ball.style.zIndex = '1';	
+  ball.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
+}
+
+function orbitStyle(orbit) {	
+  orbit.style.position = 'fixed';
+  orbit.style.borderRadius = '50%';	
+  orbit.style.border = '1px solid red';	
+  orbit.style.zIndex = '1';	
+  //   orbit.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
+  orbit.style.borderRadius = '50%';
+}
+
 function mouseEvent(e) {
+// object for styling
+  let obj = document.getElementById('test-obj');
+  let obj1 = document.getElementById('test-obj1');
+  let obj2 = document.getElementById('test-obj2');
 
-  let xSize = 186;
-  let squareWid = Math.random() * 0.4 + 0.1;
-  let pOrM = Math.random() >= 0.5 ? 1 : -1;
+  let sub = document.getElementById('test-sub');
+  let sub1 = document.getElementById('test-sub1');
+  let sub2 = document.getElementById('test-sub2');
 
-  function trigger(e) {
-    let obj = document.createElement('div');
-    let ranXpos = parseInt(e.clientX, 10);
-    let ranYpos = parseInt(e.clientY, 10);
-    obj.style.position = 'fixed';
-    obj.style.width = (window.innerWidth/60) + 'px';
-    obj.style.height = (window.innerHeight*1/300) + 'px';
-    obj.style.backgroundColor = `hsl(${(localStorage.mouseCounter * 10) % 360}, 100%, 50%)`;
-    //obj.style.borderRadius = '50%';
-  
-    document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), xSize * 2 * (300/xSize));
-    return obj;
-  }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num % 3 === 0 ) {  
-    let barLen = window.innerWidth/40  
-    , ballPos = {x: e.clientX , y: e.clientY}  
-    , obj = trigger(e)
-    , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1;	     
 
-    for (let i = - xSize; i <= xSize; i++) {     
-      let i2 = i >= 0 ? i - 180 : i;	   
+  obj.style.display = 'block';
+  obj1.style.display = 'block';
+  obj2.style.display = 'block';
+
+  sub.style.display = 'block';
+  sub1.style.display = 'block';
+  sub2.style.display = 'block';	
+
+
+  let num0 = num % 315 / 10;
+  let wid = 30;
+  let hei = 10;
+  let farX = -30;
+  let farY = -30;	
+  let num1 = (num + 60)% 252 / 20;	
+  let x1 = Math.sin(num1 - 45) * wid;
+  let y1 = Math.cos(num1 + 45) * (wid);
+  let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
+	
+  x = Math.sin(num1 + 45) * wid;
+  y = Math.cos(num1 - 45) * (wid);
+
+  let num2 = (num + 120) % 315 / 10;	
+  let x2 = Math.sin(num2) * hei;
+  let y2 = Math.cos(num2) * wid;
+
+  sub.style.top = (e.clientY -farX) + x + 'px';
+  sub.style.left = (e.clientX - farY) + y + 'px';
+  sub.style.transform = `translateZ(${num0}deg)`	
+
+  sub1.style.top = (e.clientY -farX) + x1 + 'px';
+  sub1.style.left = (e.clientX - farY) + y1 + 'px';
+  sub1.style.transform = `translateZ(${num1}deg)`
+
+  sub2.style.top = (e.clientY -farY) + x2 + 'px';
+  sub2.style.left = (e.clientX - farX) + y2 + 'px';
+  sub2.style.transform = `translateZ(${num2}deg)`
+
+  ballStyle(sub);	
+  ballStyle(sub1);	
+  ballStyle(sub2);	
+
+  obj.style.top = (e.clientY + 13) + 'px';
+  obj.style.left = (e.clientX + 5) + 'px';
+  obj.style.transform = 'rotateX(60deg)';	
+
+  obj1.style.top = (e.clientY + 10) + 'px';
+  obj1.style.left = (e.clientX ) + 'px';
+  obj1.style.transform = 'rotate(45deg) rotateX(60deg)';
+
+  obj2.style.top = (e.clientY + 10) + 'px';
+  obj2.style.left = (e.clientX + 2) + 'px';
+  obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';	
+
+  orbitStyle(obj);
+  orbitStyle(obj1);
+  orbitStyle(obj2);
+
+  localStorage.xMousePos = e.clientX;
+  localStorage.yMousePos = e.clientY;	  
+
+  function turnonEvent() {
+    new Promise((resolve, reject) => {
       setTimeout(() => {
-        let newX = ballPos.x - (i2/xSize) * roDeg * (barLen) * 0.2
-        , newY = ballPos.y - 10 + (Math.sin(i2/xSize * Math.PI) * barLen);
-        obj.style.left = newX + 'px';
-        obj.style.top = newY + 'px';        
-        obj.style.transform = `rotate(${i2 * roDeg}deg)`;	   
-        localStorage.xMousePos = e.clientX;	
-      }, (xSize + 1 + i) * (300/xSize))
+        localStorage.mouseLazy = true;
+        localStorage.mouseEventOn = false;	
+        //  console.log('3 sec');	
+        resolve();
+      }, 3000)
+    })
+    ;
+
+  }
+  if (localStorage.mouseEventOn == 'false' && localStorage.mouseLazy === 'true') {		   
+    //  console.log('false');	  
+    turnonEvent()
+    localStorage.mouseLazy = false;
+  }
+  return;
+}
+
+function lazyEvent(clientX, clientY) {
+  clientX = parseInt(clientX);
+  clientY = parseInt(clientY);
+  // object for styling
+  let obj = document.getElementById('test-obj');
+  let obj1 = document.getElementById('test-obj1');
+  let obj2 = document.getElementById('test-obj2');
+
+  let sub = document.getElementById('test-sub');
+  let sub1 = document.getElementById('test-sub1');
+  let sub2 = document.getElementById('test-sub2');
+
+  let num = parseInt(localStorage.mouseCounter);
+  localStorage.mouseCounter = num + 1;
+
+  let num0 = num % 315 / 10;
+  let wid = 30;
+  let hei = 10;
+  let farX = -30;
+  let farY = -30;	
+  let num1 = (num + 60)% 252 / 20;	
+  let x1 = Math.sin(num1 - 45) * wid;
+  let y1 = Math.cos(num1 + 45) * (wid);
+  let rad = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));	
+	
+  x = Math.sin(num1 + 45) * wid;
+  y = Math.cos(num1 - 45) * (wid);
+
+  let num2 = (num + 120) % 315 / 10;	
+  let x2 = Math.sin(num2) * hei;
+  let y2 = Math.cos(num2) * wid;
+  sub.style.top = (clientY -farX) + x + 'px';
+  sub.style.left = (clientX - farY) + y + 'px';
+  sub.style.transform = `translateZ(${num0}deg)`
+
+  sub1.style.top = (clientY -farX) + x1 + 'px';
+  sub1.style.left = (clientX - farY) + y1 + 'px';
+  sub1.style.transform = `translateZ(${num1}deg)`	
+
+  sub2.style.top = (clientY -farY) + x2 + 'px';
+  sub2.style.left = (clientX - farX) + y2 + 'px';
+  sub2.style.transform = `translateZ(${num2}deg)`	
+
+  ballStyle(sub);	
+  ballStyle(sub1);	
+  ballStyle(sub2);	
+
+  obj.style.top = (clientY + 13) + 'px';
+  obj.style.left = (clientX + 5) + 'px';
+  obj.style.transform = 'rotateX(60deg)';	
+
+  obj1.style.top = (clientY + 10) + 'px';
+  obj1.style.left = (clientX ) + 'px';
+  obj1.style.transform = 'rotate(45deg) rotateX(60deg)';	
+
+  obj2.style.top = (clientY + 10) + 'px';
+  obj2.style.left = (clientX + 2) + 'px';
+  obj2.style.transform = 'rotate(-45deg) rotateX(60deg)';
+
+  orbitStyle(obj);
+  orbitStyle(obj1);
+  orbitStyle(obj2);
+
+  return;
+}
+
+function displayToggleObj(stat) {
+  let obj = document.getElementById('test-obj');
+  let obj1 = document.getElementById('test-obj1');
+  let obj2 = document.getElementById('test-obj2');
+
+  let sub = document.getElementById('test-sub');
+  let sub1 = document.getElementById('test-sub1');
+  let sub2 = document.getElementById('test-sub2');
+
+  obj.style.display = stat;
+  obj1.style.display = stat;
+  obj2.style.display = stat;
+
+  sub.style.display = stat;
+  sub1.style.display = stat;
+  sub2.style.display = stat;	
+}
+
+function numCount() {
+  setInterval(() => {
+    if(localStorage.mouseLazy == 'true') {	 
+      lazyEvent(localStorage.xMousePos, localStorage.yMousePos);  	  
+    } else {
     }
-  }
+  },50)
 }
-function setObjs() {
-  let oClass = {
-      class: 'objs-test',
-      width: '15px',
-      height: '45px',
-      border: '1px solid white',	  
-      backgroundColor : 'none',
-      top: (window.innerHeight -100) + 'px'
-    },
-    cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
-    let oneObj = document.createElement('div');
-    oneObj.id = oClass.class + i;
-    oneObj.className = 'off';	  
-    oneObj.style.width = oClass.width;
-    oneObj.style.height = oClass.height;
-    //    oneObj.style.backgroundColor = oClass.backgroundColor;
-    oneObj.style.top = oClass.top;
-    oneObj.style.left = 50 + i * 45 + 'px';
-    oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;	
-    document.body.appendChild(oneObj);	  
-  }
-}
-function deleteObjs() {
-  let cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
-    if (!document.getElementById(`objs-test${i}`)) {continue;}
-    document.getElementById(`objs-test${i}`).remove();
-  }
-}
+ 
+numCount()
 document.body.addEventListener('mousemove', mouseEvent);
+
 chrome.runtime.onMessage.addListener((msg) => {
   document.body.removeEventListener('mousemove', mouseEvent);
+  displayToggleObj('none');
 });
+

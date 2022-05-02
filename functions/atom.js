@@ -19,32 +19,6 @@ function getObj() {
   obj2.style.height = 50 + 'px'; 
   document.body.appendChild(obj2);	
 
-  let nuc1 = document.createElement('div');
-  nuc1.id = 'test-nuc1';  
-  nuc1.style.width = 10 + 'px'; 
-  nuc1.style.height = 10 + 'px'; 
-  document.body.appendChild(nuc1);	
-
-  let nuc2 = document.createElement('div');
-  nuc2.id = 'test-nuc2';  
-  nuc2.style.width = 10 + 'px'; 
-  nuc2.style.height = 10 + 'px'; 
-  document.body.appendChild(nuc2);	
-
-  let nuc3 = document.createElement('div');
-  nuc3.id = 'test-nuc3';  
-  nuc3.style.width = 10 + 'px'; 
-  nuc3.style.height = 10 + 'px'; 
-  document.body.appendChild(nuc3);	
-
-  let nuc4 = document.createElement('div');
-  nuc4.id = 'test-nuc4';  
-  nuc4.style.width = 10 + 'px'; 
-  nuc4.style.height = 10 + 'px'; 
-  document.body.appendChild(nuc4);	
-
-
-
   let sub = document.createElement('div');
   sub.id = 'test-sub';  
   sub.style.width = 10 + 'px'; 
@@ -103,11 +77,6 @@ function mouseEvent(e) {
   let obj = document.getElementById('test-obj');
   let obj1 = document.getElementById('test-obj1');
   let obj2 = document.getElementById('test-obj2');
-
-  let nuc1 = document.getElementById('test-nuc1');
-  let nuc2 = document.getElementById('test-nuc2');
-  let nuc3 = document.getElementById('test-nuc3');
-  let nuc4 = document.getElementById('test-nuc4');
 
   let sub = document.getElementById('test-sub');
   let sub1 = document.getElementById('test-sub1');
@@ -205,11 +174,6 @@ function lazyEvent(clientX, clientY) {
   let obj1 = document.getElementById('test-obj1');
   let obj2 = document.getElementById('test-obj2');
 
-  let nuc1 = document.getElementById('test-nuc1');
-  let nuc2 = document.getElementById('test-nuc2');
-  let nuc3 = document.getElementById('test-nuc3');
-  let nuc4 = document.getElementById('test-nuc4');
-
   let sub = document.getElementById('test-sub');
   let sub1 = document.getElementById('test-sub1');
   let sub2 = document.getElementById('test-sub2');
@@ -272,11 +236,6 @@ function displayToggleObj(stat) {
   let obj = document.getElementById('test-obj');
   let obj1 = document.getElementById('test-obj1');
   let obj2 = document.getElementById('test-obj2');
-
-  let nuc1 = document.getElementById('test-nuc1');
-  let nuc2 = document.getElementById('test-nuc2');
-  let nuc3 = document.getElementById('test-nuc3');
-  let nuc4 = document.getElementById('test-nuc4');
 
   let sub = document.getElementById('test-sub');
   let sub1 = document.getElementById('test-sub1');
