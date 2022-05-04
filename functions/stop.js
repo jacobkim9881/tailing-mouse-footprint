@@ -1,5 +1,5 @@
 //stop.js
-
+console.log('stoped')
 function mouseEvent(e) {
   return;
 }

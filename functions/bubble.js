@@ -28,7 +28,8 @@ function mouseEvent(e) {
 }
 
 document.body.addEventListener('mousemove', mouseEvent);
-
+setInterval(() => console.log('content'), 1000);
 chrome.runtime.onMessage.addListener((msg) => {
+	console.log('remove event', msg)
   document.body.removeEventListener('mousemove', mouseEvent)
 });

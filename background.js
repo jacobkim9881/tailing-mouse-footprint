@@ -51,6 +51,7 @@ chrome.storage.local.get(['msg'], function(res){
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
+	console.log(msg)
   let msgObj;
   if (msg.type === 'moving') {
     msgObj = {
@@ -60,7 +61,8 @@ chrome.runtime.onMessage.addListener((msg) => {
     }
     chrome.storage.local.set({msg: msgObj})
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {      
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {     
+	    console.log(tabs)
       chrome.scripting.executeScript(
         { target: {tabId: tabs[0].id},
         files: ['./functions/' + msg.name + '.js'] });
@@ -78,6 +80,7 @@ chrome.runtime.onMessage.addListener((msg) => {
     chrome.storage.local.set({msg: msgObj})
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+	    console.log(tabs)
       chrome.scripting.executeScript(
         { target: { tabId : tabs[0].id},
         files: ['./functions/' + 'stop' + '.js'] });
