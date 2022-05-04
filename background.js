@@ -83,8 +83,8 @@ chrome.runtime.onMessage.addListener((msg) => {
 
   } else if (msg.type === 'check') {
 
-      chrome.storage.local.get(['msg'], function(res){
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+      chrome.storage.local.get(['msg'], function(res){
 	    console.log(tabs)
       chrome.tabs.sendMessage(
         tabs[0].id,
