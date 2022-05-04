@@ -1,5 +1,4 @@
 //stop.js
-
 function mouseEvent(e) {
   return;
 }

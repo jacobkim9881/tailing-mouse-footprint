@@ -47,21 +47,25 @@ function startPointerFunction(targetId, targetUrl, type) {
 
 function triggerStop(func, targetId) {
   func(targetId).addEventListener('click', () => {
-    
+ 
+
     let buttonName = ''
     if (targetId === 'stop') buttonName = stopEvent(func, targetId);
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
+      chrome.storage.local.get(['msg'], function(res){
+	      console.log(res)
+	      console.log(targetId)
       chrome.tabs.sendMessage(
         tabs[0].id,
         {
-	  name: buttonName === 'STOP Extension' ? localStorage.pointerName : targetId,
-          path: buttonName === 'STOP Extension' ? localStorage.pointerPath : '',
-          type: buttonName === 'STOP Extension' ? 'moving' : targetId,
+	  name: res.msg.name,
+          path: res.msg.path,
+          type: buttonName !== 'STOP Extension' ? targetId : 'moving',
           sender: 'popup'}
       );
-
+      })
     });
 	  
   });
@@ -109,4 +113,8 @@ startPointerFunction('colorSpring', colorSpring, 'moving');
 startPointerFunction('coins', coins, 'moving');
 triggerStop(buttonElement, 'stop');
 
-if (localStorage.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
+      chrome.storage.local.get(['msg'], function(res){
+	if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
+
+console.log(res)
+      })
