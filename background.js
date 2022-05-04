@@ -19,6 +19,7 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
+
 chrome.storage.local.get(['msg'], function(res){
   if(res.msg.type === 'stop') {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -51,6 +52,13 @@ chrome.storage.local.get(['msg'], function(res){
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
+
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+      chrome.storage.local.get(['msg'], function(res){
+      console.log(tabs);
+      })
+    });
+	/*
   let msgObj;
   if (msg.type === 'moving') {
     msgObj = {
@@ -104,5 +112,6 @@ chrome.runtime.onMessage.addListener((msg) => {
     });
        
   }
+	*/
     return
 })
