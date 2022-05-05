@@ -95,6 +95,7 @@ let float = './images/float/float32.png';
 let springCooler = './images/spring/springCooler32.png';
 let colorSpring = './images/colorSpring/colorSpring32.png';
 let coins = './images/coins/coins32.png';
+let digital = './images/digital/digital32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');
@@ -111,6 +112,7 @@ startPointerFunction('float', float, 'moving');
 startPointerFunction('springCooler', springCooler, 'moving');
 startPointerFunction('colorSpring', colorSpring, 'moving');
 startPointerFunction('coins', coins, 'moving');
+startPointerFunction('digital', digital, 'moving');
 triggerStop(buttonElement, 'stop');
 
       chrome.storage.local.get(['msg'], function(res){
