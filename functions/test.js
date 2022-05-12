@@ -48,6 +48,19 @@ obj.style.top= ranYpos + 'px';
   ], 5000)
  
   let flubAni = new Animation(newKeyframe, document.timeline); 
+  flubAni.play()
+  
+  let testInt = setInterval(() => {	 
+  console.log(localStorage.fYMousePos === localStorage.yMousePos )
+//console.log('check interval')	  
+  if(localStorage.yMousePos === e.clientY ) {
+
+  } else {
+  console.log('mouse stop')  
+  flubAni.cancel()	  
+  clearInterval(testInt)	  
+  } 
+  }, 50)
 
   document.body.appendChild(obj);
   setTimeout(() => obj.remove(), 4900);
@@ -75,6 +88,8 @@ function mouseEvent(e) {
 && allObj.length > 0 ) {
 //OA	  console.log(allObj)
  for (let i = 0; i < allObj.length; i++){
+	 /*
+ 
  let obj = allObj[i]	
  , ranYpos = localStorage.fYMousePos 	 
       obj.animate([
@@ -93,12 +108,13 @@ function mouseEvent(e) {
 
 
   ], 5000)	    
+	 */
     }	  
   }
   localStorage.fYMousePos = localStorage.yMousePos  
   localStorage.fXMousePos = localStorage.xMousePos 
 
-  localStorage.fYMousePos = localStorage.fYMousePos + 1  
+//  localStorage.fYMousePos = parseInt(localStorage.fYMousePos) + 1  
 },50)
 
 document.body.addEventListener('mousemove', mouseEvent);
