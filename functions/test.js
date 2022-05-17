@@ -17,53 +17,9 @@
   obj.style.borderRadius = '50%';
 obj.style.top= ranYpos + 'px';
 //https://codepen.io/rachelnabors/pen/eJyWzm/?editors=0010
-  let newKeyframe = new KeyframeEffect(obj, [
-    {top: (ranYpos * 0.96 + awayFromCursor) + 'px',
-	    transform: 'scale(1,1)',
-	    width: (ballSize * 1.1) + 'px',
-	    borderRadius: '70% 70% 50% 50%',
-	    opacity: '1',
-     backgroundColor: `hsl(${ranH}, 100%, 50%)`},
-    {top: (ranYpos * 0.8 )+ 'px',
-    transform: 'scale(0.95, 0.95)',
-	    width: (ballSize * 0.95) + 'px',
-	    borderRadius: '50% 50% 50% 50%',
-	    opacity: '1',
-
-    backgroundColor: `hsl(${ranH + 10}, 100%, 50%)`},
-    {top: (ranYpos * 0.6) + 'px',
-    transform: 'scale(1,1)',
-	    width: (ballSize * 1.05) + 'px',
- borderRadius: '60% 60% 50% 50%',
-	    opacity: '0.8',
-
-    backgroundColor: `hsl(${ranH + 20}, 100%, 50%)`},
-    {top: (ranYpos * 0.3) + 'px',
-    transform: 'scale(0.95, 0.95)',
-    width: (ballSize * 1) + 'px',
- borderRadius: '50% 50% 50% 50%',
-	    opacity: '0.3',
-
-    backgroundColor: `hsl(${ranH + 30}, 100%, 50%)`},
-  ], 5000)
- 
-  let flubAni = new Animation(newKeyframe, document.timeline); 
-  flubAni.play()
-  
-  let testInt = setInterval(() => {	 
-  console.log(localStorage.fYMousePos === localStorage.yMousePos )
-//console.log('check interval')	  
-  if(localStorage.yMousePos === e.clientY ) {
-
-  } else {
-  console.log('mouse stop')  
-  flubAni.cancel()	  
-  clearInterval(testInt)	  
-  } 
-  }, 50)
 
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 4900);
+  setTimeout(() => obj.remove(), 9900);
   return;
   }
 
@@ -75,7 +31,8 @@ function mouseEvent(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
- localStorage.mouseLazy  
+ localStorage.mouseLazy = 'false'
+ localStorage.mouseMove = 0	
   if (num %  7 === 0 ) {
    trigger(e, ranH);
 
@@ -87,28 +44,14 @@ function mouseEvent(e) {
   if ( localStorage.fYMousePos = localStorage.yMousePos
 && allObj.length > 0 ) {
 //OA	  console.log(allObj)
- for (let i = 0; i < allObj.length; i++){
-	 /*
- 
+ for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
  , ranYpos = localStorage.fYMousePos 	 
-      obj.animate([
-    {top: (ranYpos ) + 'px',
-    transform: 'scale(0.95, 0.95)',
- borderRadius: '50% 50% 50% 50%',
-},
-    {top: (ranYpos * 1.2 )+ 'px',
-    transform: 'scale(0.95, 0.95)',
-	    borderRadius: '50% 50% 50% 50%',
-},
-    {top: (ranYpos * 1.4) + 'px',
-    transform: 'scale(1,1)',
- borderRadius: '60% 60% 50% 50%',
-},
-
-
-  ], 5000)	    
-	 */
+// console.log(obj.style.top)	    
+ let move = parseInt(localStorage.mouseLazy) > 100 ? 3 : -1	 
+obj.style.top = (parseInt(obj.style.top.split('px')[0]) + move ) + 'px' 
+	 console.log(localStorage.mouseLazy)
+localStorage.mouseLazy = parseInt(localStorage.mouseLazy) + 50 	 
     }	  
   }
   localStorage.fYMousePos = localStorage.yMousePos  
