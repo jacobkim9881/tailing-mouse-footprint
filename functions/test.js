@@ -19,7 +19,7 @@ obj.style.top= ranYpos + 'px';
 //https://codepen.io/rachelnabors/pen/eJyWzm/?editors=0010
 
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 9900);
+//  setTimeout(() => obj.remove(), 9900);
   return;
   }
 
@@ -31,8 +31,9 @@ function mouseEvent(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
- localStorage.mouseLazy = 'false'
- localStorage.mouseMove = 0	
+localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50 	 
+// localStorage.mouseLazy = 'false'
+// localStorage.mouseMove = 0	
   if (num %  7 === 0 ) {
    trigger(e, ranH);
 
@@ -47,18 +48,35 @@ function mouseEvent(e) {
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
  , ranYpos = localStorage.fYMousePos 	 
-// console.log(obj.style.top)	    
- let move = parseInt(localStorage.mouseLazy) > 100 ? 3 : -1	 
-obj.style.top = (parseInt(obj.style.top.split('px')[0]) + move ) + 'px' 
-	 console.log(localStorage.mouseLazy)
-localStorage.mouseLazy = parseInt(localStorage.mouseLazy) + 50 	 
+// console.log(obj.style.top)	   
+//parseInt(localStorage.mouseLazy) > 100 ? 3 : -1	 
+if (localStorage.mouseMove === localStorage.fMouseMove) {
+  obj.classList.add('used')
+}
+
+let move
+
+if (obj.classList.contains('used')) move = 10 
+else move = parseInt(localStorage.mMoveLen)
+
+console.log(obj.className)
+ obj.style.top = (parseInt(obj.style.top.split('px')[0]) + move ) + 'px'
+//obj.className = 'usedFlubbers'	 
+//	 console.log(localStorage.mouseLazy)
     }	  
   }
   localStorage.fYMousePos = localStorage.yMousePos  
-  localStorage.fXMousePos = localStorage.xMousePos 
-
+  localStorage.fXMousePos = localStorage.xMousePos
 //  localStorage.fYMousePos = parseInt(localStorage.fYMousePos) + 1  
 },50)
+
+setInterval(() => {
+if (localStorage.mouseMove === localStorage.fMouseMove) {
+  localStorage.mMoveLen = 10 
+} else localStorage.mMoveLen = -1
+
+  localStorage.fMouseMove = localStorage.mouseMove
+}, 500)
 
 document.body.addEventListener('mousemove', mouseEvent);
 
