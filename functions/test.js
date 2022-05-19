@@ -32,6 +32,7 @@ function mouseEvent(e) {
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
 localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50 	 
+localStorage.mSwitch = 1	
 // localStorage.mouseLazy = 'false'
 // localStorage.mouseMove = 0	
   if (num %  7 === 0 ) {
@@ -52,6 +53,8 @@ localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50
 //parseInt(localStorage.mouseLazy) > 100 ? 3 : -1	 
 if (localStorage.mouseMove === localStorage.fMouseMove) {
   obj.classList.add('used')
+  localStorage.mSwitch = localStorage.mSwitch * -1	
+  obj.style.left = (parseInt(obj.style.left.split('px')[0]) + localStorage.mSwitch * 5) + 'px'
 }
 
 let move
