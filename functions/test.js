@@ -41,58 +41,33 @@ localStorage.mSwitch = 1
   }
 }
 
- setInterval(() => {
-    let allObj = document.getElementsByClassName('flubbers')	 
+setInterval(() => {
+    let allObj = document.getElementsByClassName('flubbers')	
+  if ( allObj.length > 0 ) {
   if (
- allObj.length > 0 ) {
-//	  console.log(allObj)
+  localStorage.fMouseMove !== localStorage.mouseMove 
+ ) {
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
- , ranYpos = localStorage.fYMousePos 	 
-// console.log(obj.style.top)	   
-//parseInt(localStorage.mouseLazy) > 100 ? 3 : -1	
-
-//console.log(obj.style.top, obj.className)
-if (localStorage.mouseMove === localStorage.fMouseMove) {
-if (obj.classList.contains('used')) localStorage.mSwitch = 0
-	else localStorage.mSwitch = localStorage.mSwitch * -1	
-  obj.style.left = (parseInt(obj.style.left.split('px')[0]) + localStorage.mSwitch * 5) + 'px'
-
-}
-setTimeout(() => {
-if (obj.classList.contains('used')) return; 
-if (localStorage.mouseMove === localStorage.fMouseMove) {
+console.log('mouse move') 
+ obj.style.top = (parseInt(obj.style.top.split('px')[0]) + -1 ) + 'px'
+ }} else {
+ for (let i = 0; i < allObj.length; i++){ 
+ let obj = allObj[i]	
+if (obj.classList.contains('used')) continue; 
+console.log('mouse not move') 
 let animTime = 500
-let animTop = parseInt(obj.style.top.split('px')[0]) + 300
 obj.animate([
       {top: obj.style.top,
        },
       {top: (parseInt(obj.style.top.split('px')[0]) + 300) + 'px',
        }
     ], animTime);
-}
-//console.log(obj.className, parseInt(obj.style.top.split('px')[0]))
 obj.style.top = (parseInt(obj.style.top.split('px')[0]) + 300) + 'px'
 obj.classList.add('used')
-setTimeout(() => obj.remove(), 490 - 10)
-//console.log(obj)
-}, 1000)
-
-let move
-
-if (obj.classList.contains('used')) continue 
-else move = parseInt(localStorage.mMoveLen)
-
-//console.log(obj.className)
- obj.style.top = (parseInt(obj.style.top.split('px')[0]) + move ) + 'px'
-//obj.className = 'usedFlubbers'	 
-//	 console.log(localStorage.mouseLazy)
-    }	  
-  }
-//  localStorage.fYMousePos = localStorage.yMousePos  
-//  localStorage.fXMousePos = localStorage.xMousePos
-//  localStorage.fYMousePos = parseInt(localStorage.fYMousePos) + 1  
-},50)
+ }}
+  }  
+}, 50)
 
 setInterval(() => {
 if (localStorage.mouseMove === localStorage.fMouseMove) {
