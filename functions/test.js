@@ -47,11 +47,26 @@ setInterval(() => {
   if (
   localStorage.fMouseMove !== localStorage.mouseMove 
  ) {
+// obj moves up by mouse move
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
 console.log('mouse move') 
+ if (parseInt(obj.style.top.split('px')[0]) < 300) {
+if (obj.classList.contains('used')) continue; 
+let animTime = 500
+obj.animate([
+      {top: obj.style.top,
+       },
+      {top: (parseInt(obj.style.top.split('px')[0]) - 50) + 'px',
+       }
+    ], animTime);
+obj.style.top = (parseInt(obj.style.top.split('px')[0]) - 50) + 'px'
+obj.classList.add('used')
+ } else {	 
  obj.style.top = (parseInt(obj.style.top.split('px')[0]) + -1 ) + 'px'
+ }
  }} else {
+//obj falling 
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
 if (obj.classList.contains('used')) continue; 
@@ -63,6 +78,7 @@ obj.animate([
       {top: (parseInt(obj.style.top.split('px')[0]) + 300) + 'px',
        }
     ], animTime);
+setTimeout(() => obj.remove(), 490 - 10)
 obj.style.top = (parseInt(obj.style.top.split('px')[0]) + 300) + 'px'
 obj.classList.add('used')
  }}
