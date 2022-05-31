@@ -1,6 +1,6 @@
 //colofulBall.js
-  function trigger(e, ranH) {
-  let obj = document.createElement('div');  	  
+
+function objCss(obj, e) {
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize);
   let ranXpos = parseInt(e.clientX, 10);
@@ -13,11 +13,16 @@
   obj.style.left = ranXpos + 'px';
   obj.style.width = ballSize + 'px';
   obj.style.height = ballSize + 'px';
-  obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   obj.style.borderRadius = '50%';
 obj.style.top= ranYpos + 'px';
-//https://codepen.io/rachelnabors/pen/eJyWzm/?editors=0010
 
+}
+
+  function trigger(e, ranH) {
+  let obj = document.createElement('div');  	  
+//https://codepen.io/rachelnabors/pen/eJyWzm/?editors=0010
+  objCss(obj, e)
+  obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   document.body.appendChild(obj);
 //  setTimeout(() => obj.remove(), 9900);
   return;
@@ -39,6 +44,47 @@ localStorage.mSwitch = 1
    trigger(e, ranH);
 
   }
+}
+
+function drawHalfRound(obj, x, y) {
+  let xSize = 200;
+  let pOrM = Math.random() >= 0.5 ? 1 : -1;
+   for (let i = -xSize; i <= xSize; i++) {     
+     let t = i >= 0 ? 100 + i : 100 + i;
+     setTimeout(() => {
+
+      let newX = pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + x;
+      let newY;             
+      newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
+
+       //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
+    obj.style.left = newX + 'px';
+    obj.style.top = newY + 'px';        
+    //ballPos.x = newX;
+    //ballPos.y = newY;
+     }, (xSize + 1 + i) * (600/xSize))
+   }
+}
+
+function setObjs(x, y) {
+  for (let i = 0; i < 5; i++) {
+    let oneObj = document.createElement('div');
+//    oneObj.id = oClass.class + i;
+//    oneObj.className = 'off';	  
+  let ballSize = window.innerWidth/100;
+  let randomBallSize = Math.trunc(Math.random() * ballSize);
+//  let ranH = Math.trunc(Math.random() * 360);
+//  oneObj.className = 'flubbers'	  
+  oneObj.style.position = 'fixed';
+  //  oneObj.style.top = oClass.top;
+  //  oneObj.style.left = 50 + i * 45 + 'px';
+  oneObj.style.height = ballSize + 'px';
+  oneObj.style.borderRadius = '50%';
+  drawHalfRound(oneObj, x, y)	  
+  document.body.appendChild(oneObj);	  
+  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
+  }
+
 }
 
 setInterval(() => {
@@ -68,18 +114,23 @@ obj.classList.add('used')
  }} else {
 //obj falling 
  for (let i = 0; i < allObj.length; i++){ 
- let obj = allObj[i]	
+ let obj = allObj[i]
+ let objX = parseInt(obj.style.top.split('px')[0])	 
+ , objY = parseInt(obj.style.left.split('px')[0])	 
 if (obj.classList.contains('used')) continue; 
 console.log('mouse not move') 
 let animTime = 500
 obj.animate([
       {top: obj.style.top,
        },
-      {top: (parseInt(obj.style.top.split('px')[0]) + 300) + 'px',
+      {top: (objX + 300) + 'px',
        }
     ], animTime);
-setTimeout(() => obj.remove(), 490 - 10)
-obj.style.top = (parseInt(obj.style.top.split('px')[0]) + 300) + 'px'
+setTimeout(() => {
+	obj.remove()
+	setObjs(objX, objY)
+}, 490 - 10)
+obj.style.top = (objX + 300) + 'px'
 obj.classList.add('used')
  }}
   }  
