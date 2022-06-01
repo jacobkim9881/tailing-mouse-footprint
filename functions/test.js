@@ -66,7 +66,7 @@ function drawHalfRound(obj, x, y, xSize) {
    }
 }
 
-function setObjs(x, y) {
+function setObjs(x, y, col) {
   for (let i = 0; i < 2; i++) {
   let xSize = Math.trunc(Math.random() * 150) + 50;
     let oneObj = document.createElement('div');
@@ -79,9 +79,10 @@ function setObjs(x, y) {
   oneObj.style.position = 'fixed';
   //  oneObj.style.top = oClass.top;
   //  oneObj.style.left = 50 + i * 45 + 'px';
-  oneObj.style.height = ballSize + 'px';
-  oneObj.style.width = ballSize + 'px';
-  oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+  oneObj.style.height = ballSize/1.5 + 'px';
+  oneObj.style.width = ballSize/1.5 + 'px';
+  oneObj.style.backgroundColor = col
+		  //`hsl(${ranH}, 100%, 50%)`;
   oneObj.style.borderRadius = '50%';
   drawHalfRound(oneObj, x, y, xSize)	 
   document.body.appendChild(oneObj);	  
@@ -132,7 +133,7 @@ obj.animate([
     ], animTime);
 setTimeout(() => {
 	obj.remove()
-	setObjs(objX, objY + 300)
+	setObjs(objX, objY + 300, obj.style.backgroundColor)
 }, 490 - 10)
 obj.style.top = (objY + 300) + 'px'
 obj.classList.add('used')
