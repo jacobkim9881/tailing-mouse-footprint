@@ -24,7 +24,7 @@ obj.style.top= ranYpos + 'px';
   objCss(obj, e)
   obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   document.body.appendChild(obj);
-//  setTimeout(() => obj.remove(), 9900);
+  setTimeout(() => obj.remove(), 1900);
   return;
   }
 
@@ -40,26 +40,26 @@ localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50
 localStorage.mSwitch = 1	
 // localStorage.mouseLazy = 'false'
 // localStorage.mouseMove = 0	
-  if (num %  7 === 0 ) {
+  if (num %  13 === 0 ) {
    trigger(e, ranH);
 
   }
 }
 
-function drawHalfRound(obj, x, y) {
-  let xSize = 200;
+function drawHalfRound(obj, x, y, xSize) {
+	console.log('child x, y:',x,y)
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
-   for (let i = -xSize; i <= xSize; i++) {     
-     let t = i >= 0 ? 100 + i : 100 + i;
+  let squareWid = Math.random() * 0.4 + 0.1;
+   for (let i = -xSize; i <= xSize; i++) {    
+     let t = i;
      setTimeout(() => {
-
-      let newX = pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + x;
+      let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x;
       let newY;             
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
 
        //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
-    obj.style.left = newX + 'px';
-    obj.style.top = newY + 'px';        
+    obj.style.left = (newX + xSize/2) + 'px';
+    obj.style.top = newY + 'px';      
     //ballPos.x = newX;
     //ballPos.y = newY;
      }, (xSize + 1 + i) * (600/xSize))
@@ -67,22 +67,25 @@ function drawHalfRound(obj, x, y) {
 }
 
 function setObjs(x, y) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 2; i++) {
+  let xSize = Math.trunc(Math.random() * 150) + 50;
     let oneObj = document.createElement('div');
 //    oneObj.id = oClass.class + i;
 //    oneObj.className = 'off';	  
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize);
-//  let ranH = Math.trunc(Math.random() * 360);
+  let ranH = Math.trunc(Math.random() * 360);
 //  oneObj.className = 'flubbers'	  
   oneObj.style.position = 'fixed';
   //  oneObj.style.top = oClass.top;
   //  oneObj.style.left = 50 + i * 45 + 'px';
   oneObj.style.height = ballSize + 'px';
+  oneObj.style.width = ballSize + 'px';
+  oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   oneObj.style.borderRadius = '50%';
-  drawHalfRound(oneObj, x, y)	  
+  drawHalfRound(oneObj, x, y, xSize)	 
   document.body.appendChild(oneObj);	  
-  setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
+ setTimeout(() => oneObj.remove(), xSize * 2 * (600/xSize));
   }
 
 }
@@ -115,22 +118,23 @@ obj.classList.add('used')
 //obj falling 
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]
- let objX = parseInt(obj.style.top.split('px')[0])	 
- , objY = parseInt(obj.style.left.split('px')[0])	 
+ let objY = parseInt(obj.style.top.split('px')[0])	 
+ , objX = parseInt(obj.style.left.split('px')[0])	
+	 console.log('parent x, y: ',objX, objY)
 if (obj.classList.contains('used')) continue; 
 console.log('mouse not move') 
 let animTime = 500
 obj.animate([
       {top: obj.style.top,
        },
-      {top: (objX + 300) + 'px',
+      {top: (objY + 300) + 'px',
        }
     ], animTime);
 setTimeout(() => {
 	obj.remove()
-	setObjs(objX, objY)
+	setObjs(objX, objY + 300)
 }, 490 - 10)
-obj.style.top = (objX + 300) + 'px'
+obj.style.top = (objY + 300) + 'px'
 obj.classList.add('used')
  }}
   }  
