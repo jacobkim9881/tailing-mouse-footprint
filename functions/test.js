@@ -101,15 +101,20 @@ setInterval(() => {
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
 console.log('mouse move') 
- if (parseInt(obj.style.top.split('px')[0]) < 300) {
-if (obj.classList.contains('used')) continue; 
+// if (parseInt(obj.style.top.split('px')[0]) < 300) {
+if (parseInt(localStorage.moved) < 2000) {	 
+console.log(parseInt(localStorage.moved))
+	if (obj.classList.contains('used')) continue; 
 let animTime = 500
 obj.animate([
       {top: obj.style.top,
        },
       {top: (parseInt(obj.style.top.split('px')[0]) - 50) + 'px',
        }
-    ], animTime);
+    ], {
+	    duration: animTime,
+	easing: 'cubic-bezier(0.7, 0, 1, 0)'	
+    });
 obj.style.top = (parseInt(obj.style.top.split('px')[0]) - 50) + 'px'
 obj.classList.add('used')
  } else {	 
@@ -121,7 +126,7 @@ obj.classList.add('used')
  let obj = allObj[i]
  let objY = parseInt(obj.style.top.split('px')[0])	 
  , objX = parseInt(obj.style.left.split('px')[0])	
-	 console.log('parent x, y: ',objX, objY)
+//	 console.log('parent x, y: ',objX, objY)
 if (obj.classList.contains('used')) continue; 
 console.log('mouse not move') 
 let animTime = 500
@@ -142,9 +147,15 @@ obj.classList.add('used')
 }, 50)
 
 setInterval(() => {
+//if mouse not moved
 if (localStorage.mouseMove === localStorage.fMouseMove) {
+ localStorage.moved = 0	
  localStorage.mMoveLen = 0 
-} else localStorage.mMoveLen = -1
+} else {
+// if mouse still move	
+ localStorage.moved = parseInt(localStorage.moved) + 500
+	localStorage.mMoveLen = -1
+}
 
   localStorage.fMouseMove = localStorage.mouseMove
 }, 500)
