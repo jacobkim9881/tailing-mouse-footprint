@@ -164,7 +164,7 @@ if (localStorage.mouseMove === localStorage.fMouseMove) {
   localStorage.fMouseMove = localStorage.mouseMove
 }, 500);
 // This semicolon shoul not be deleted!
-(function () {
+(function ifMouseMoveIsNaNThenSet0 () {
 if (isNaN(parseInt(localStorage.mouseMove))) localStorage.mouseMove = 0
 return	
 })()
