@@ -22,15 +22,15 @@ function mouseEvent(e) {
   localStorage.mouseCounter = num + 1;
   if (num % 3 === 0 ) {  
     let barLen = window.innerWidth/40  
-    , ballPos = {x: e.clientX , y: e.clientY}  
-    , obj = trigger(e)
-    , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1;	     
+      , ballPos = {x: e.clientX , y: e.clientY}  
+      , obj = trigger(e)
+      , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1;	     
 
     for (let i = - xSize; i <= xSize; i++) {     
       let i2 = i >= 0 ? i - 180 : i;	   
       setTimeout(() => {
         let newX = ballPos.x - (i2/xSize) * roDeg * (barLen) * 0.2
-        , newY = ballPos.y - 10 + (Math.sin(i2/xSize * Math.PI) * barLen);
+          , newY = ballPos.y - 10 + (Math.sin(i2/xSize * Math.PI) * barLen);
         obj.style.left = newX + 'px';
         obj.style.top = newY + 'px';        
         obj.style.transform = `rotate(${i2 * roDeg}deg)`;	   
