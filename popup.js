@@ -91,7 +91,7 @@ let float = './images/float/float32.png';
 let springCooler = './images/spring/springCooler32.png';
 let colorSpring = './images/colorSpring/colorSpring32.png';
 let coins = './images/coins/coins32.png';
-let particleMagnet = './images/coins/coins32.png';
+let particleMagnet = './images/particleMagnet/particleMagnet32.png';
 startPointerFunction('bubble', bubble, 'moving');
 startPointerFunction('letter', letter, 'moving');
 startPointerFunction('snowflake', snowflake, 'moving');

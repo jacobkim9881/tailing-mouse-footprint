@@ -31,7 +31,7 @@ function mouseEvent(e) {
     })
   
     document.body.appendChild(obj);
-   setTimeout(() => obj.remove(), 700);
+    setTimeout(() => obj.remove(), 700);
     return;
   }
   let num = parseInt(localStorage.mouseCounter);
