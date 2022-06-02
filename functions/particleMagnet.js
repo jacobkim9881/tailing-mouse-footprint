@@ -3,7 +3,7 @@
 function objCss(obj, e) {
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize);
-  let ranXpos = parseInt(e.clientX, 10);
+  let ranXpos = parseInt(e.clientX, 10) + 20;
   let ranYpos = parseInt(e.clientY, 10);
   let yHeight = parseInt(window.innerHeight);	  
   let awayFromCursor = - 30 * (yHeight - ranYpos) /yHeight;
@@ -49,7 +49,7 @@ function drawHalfRound(obj, x, y, xSize) {
       let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x;
       let newY;             
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
-      obj.style.left = (newX + xSize/2) + 'px';
+      obj.style.left = (newX + xSize/2 + 20/2) + 'px';
       obj.style.top = newY + 'px';      
     }, (xSize + 1 + i) * (600/xSize))
   }
