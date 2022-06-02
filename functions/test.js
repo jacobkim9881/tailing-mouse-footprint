@@ -36,7 +36,8 @@ function mouseEvent(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
-localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50 	 
+localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50 
+//	console.log(typeof parseInt(localStorage.mouseMove) )
 localStorage.mSwitch = 1	
 // localStorage.mouseLazy = 'false'
 // localStorage.mouseMove = 0	
@@ -94,6 +95,9 @@ function setObjs(x, y, col) {
 setInterval(() => {
     let allObj = document.getElementsByClassName('flubbers')	
   if ( allObj.length > 0 ) {
+//	  console.log(localStorage.fMouseMove)
+//	  console.log(localStorage.mouseMove) 
+
   if (
   localStorage.fMouseMove !== localStorage.mouseMove 
  ) {
@@ -102,7 +106,7 @@ setInterval(() => {
  let obj = allObj[i]	
 console.log('mouse move') 
 // if (parseInt(obj.style.top.split('px')[0]) < 300) {
-if (parseInt(localStorage.moved) < 2000) {	 
+if (parseInt(localStorage.moved) > 2000) {	 
 console.log(parseInt(localStorage.moved))
 	if (obj.classList.contains('used')) continue; 
 let animTime = 500
@@ -158,7 +162,12 @@ if (localStorage.mouseMove === localStorage.fMouseMove) {
 }
 
   localStorage.fMouseMove = localStorage.mouseMove
-}, 500)
+}, 500);
+// This semicolon shoul not be deleted!
+(function () {
+if (isNaN(parseInt(localStorage.mouseMove))) localStorage.mouseMove = 0
+return	
+})()
 
 document.body.addEventListener('mousemove', mouseEvent);
 
