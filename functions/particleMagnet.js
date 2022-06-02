@@ -1,4 +1,4 @@
-//colofulBall.js
+//particleMagnet.js
 
 function objCss(obj, e) {
   let ballSize = window.innerWidth/100;
@@ -7,8 +7,7 @@ function objCss(obj, e) {
   let ranYpos = parseInt(e.clientY, 10);
   let yHeight = parseInt(window.innerHeight);	  
   let awayFromCursor = - 30 * (yHeight - ranYpos) /yHeight;
-//  let ranH = Math.trunc(Math.random() * 360);
-  obj.className = 'flubbers'	  
+  obj.className = 'tmf-obj'	  
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
   obj.style.width = ballSize + 'px';
@@ -20,7 +19,6 @@ obj.style.top= ranYpos + 'px';
 
   function trigger(e, ranH) {
   let obj = document.createElement('div');  	  
-//https://codepen.io/rachelnabors/pen/eJyWzm/?editors=0010
   objCss(obj, e)
   obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
   document.body.appendChild(obj);
@@ -29,18 +27,13 @@ obj.style.top= ranYpos + 'px';
   }
 
 function mouseEvent(e) {
-//let ranH = num %  360;
-
         localStorage.yMousePos = e.clientY;	
         localStorage.xMousePos = e.clientX;	
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   let ranH = num %  360;
 localStorage.mouseMove = parseInt(localStorage.mouseMove) + 50 
-//	console.log(typeof parseInt(localStorage.mouseMove) )
 localStorage.mSwitch = 1	
-// localStorage.mouseLazy = 'false'
-// localStorage.mouseMove = 0	
   if (num %  13 === 0 ) {
    trigger(e, ranH);
 
@@ -48,7 +41,6 @@ localStorage.mSwitch = 1
 }
 
 function drawHalfRound(obj, x, y, xSize) {
-	console.log('child x, y:',x,y)
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
   let squareWid = Math.random() * 0.4 + 0.1;
    for (let i = -xSize; i <= xSize; i++) {    
@@ -57,12 +49,8 @@ function drawHalfRound(obj, x, y, xSize) {
       let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x;
       let newY;             
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
-
-       //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
     obj.style.left = (newX + xSize/2) + 'px';
     obj.style.top = newY + 'px';      
-    //ballPos.x = newX;
-    //ballPos.y = newY;
      }, (xSize + 1 + i) * (600/xSize))
    }
 }
@@ -71,19 +59,13 @@ function setObjs(x, y, col) {
   for (let i = 0; i < 2; i++) {
   let xSize = Math.trunc(Math.random() * 150) + 50;
     let oneObj = document.createElement('div');
-//    oneObj.id = oClass.class + i;
-//    oneObj.className = 'off';	  
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize);
   let ranH = Math.trunc(Math.random() * 360);
-//  oneObj.className = 'flubbers'	  
   oneObj.style.position = 'fixed';
-  //  oneObj.style.top = oClass.top;
-  //  oneObj.style.left = 50 + i * 45 + 'px';
   oneObj.style.height = ballSize/1.5 + 'px';
   oneObj.style.width = ballSize/1.5 + 'px';
   oneObj.style.backgroundColor = col
-		  //`hsl(${ranH}, 100%, 50%)`;
   oneObj.style.borderRadius = '50%';
   drawHalfRound(oneObj, x, y, xSize)	 
   document.body.appendChild(oneObj);	  
@@ -93,10 +75,8 @@ function setObjs(x, y, col) {
 }
 
 setInterval(() => {
-    let allObj = document.getElementsByClassName('flubbers')	
+    let allObj = document.getElementsByClassName('tmf-obj')	
   if ( allObj.length > 0 ) {
-//	  console.log(localStorage.fMouseMove)
-//	  console.log(localStorage.mouseMove) 
 
   if (
   localStorage.fMouseMove !== localStorage.mouseMove 
@@ -104,10 +84,7 @@ setInterval(() => {
 // obj moves up by mouse move
  for (let i = 0; i < allObj.length; i++){ 
  let obj = allObj[i]	
-console.log('mouse move') 
-// if (parseInt(obj.style.top.split('px')[0]) < 300) {
 if (parseInt(localStorage.moved) > 2000) {	 
-console.log(parseInt(localStorage.moved))
 	if (obj.classList.contains('used')) continue; 
 let animTime = 500
 obj.animate([
@@ -130,9 +107,7 @@ obj.classList.add('used')
  let obj = allObj[i]
  let objY = parseInt(obj.style.top.split('px')[0])	 
  , objX = parseInt(obj.style.left.split('px')[0])	
-//	 console.log('parent x, y: ',objX, objY)
 if (obj.classList.contains('used')) continue; 
-console.log('mouse not move') 
 let animTime = 500
 obj.animate([
       {top: obj.style.top,
