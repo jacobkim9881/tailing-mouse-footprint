@@ -51,7 +51,7 @@ function drawHalfRound(obj, x, y, xSize) {
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
       obj.style.left = (newX + xSize/2 + 20/2) + 'px';
       obj.style.top = newY + 'px';      
-    }, (xSize + 1 + i) * (600/xSize))
+    }, (xSize + 1 + i) * 2 )
   }
 }
 
@@ -69,7 +69,7 @@ function setObjs(x, y, col) {
     oneObj.style.borderRadius = '50%';
     drawHalfRound(oneObj, x, y, xSize)	 
     document.body.appendChild(oneObj);	  
-    setTimeout(() => oneObj.remove(), xSize * 2 * (600/xSize));
+    setTimeout(() => oneObj.remove(), xSize * 2 * 2);
   }
 
 }
