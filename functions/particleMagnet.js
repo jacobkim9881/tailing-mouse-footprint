@@ -16,7 +16,7 @@ function objCss(obj, e) {
   obj.style.height = ballSize + 'px';
   obj.style.borderRadius = '50%';
   obj.style.top= ranYpos + 'px';
-
+  return
 }
 
 function trigger(e, ranH) {
@@ -38,8 +38,8 @@ function mouseEvent(e) {
   localStorage.mSwitch = 1	
   if (num %  13 === 0 ) {
     trigger(e, ranH);
-
   }
+  return	
 }
 
 function drawHalfRound(obj, x, y, xSize) {
@@ -47,16 +47,15 @@ function drawHalfRound(obj, x, y, xSize) {
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
   let squareWid = Math.random() * 0.4 + 0.1;
   for (let i = -xSize; i <= xSize; i++) {    
-    let t = i
-      , time2 = (xSize + 1 + i) * 2    
-//    ranH = (ranH - (xSize + i)) % 360	  
+    let time2 = (xSize + 1 + i) * 2    
+    //    ranH = (ranH - (xSize + i)) % 360	  
     setTimeout(() => {
       let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x
-      , newY
+        , newY
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
       obj.style.left = (newX + xSize/2 + 20/2) + 'px';
       obj.style.top = newY + 'px';     
-//      obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`; 	    
+      //      obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`; 	    
     }, time2)
   }
 }
@@ -66,17 +65,14 @@ function setObjs(x, y, col) {
     let xSize = Math.trunc(Math.random() * 150) + 50;
     let oneObj = document.createElement('div');
     let ballSize = (Math.random() * window.innerWidth/100)/2 + window.innerWidth/150;
-    let randomBallSize = Math.trunc(Math.random() * ballSize);
-//    let num = parseInt(localStorage.mouseCounter);
-//    let ranH = num % 360	     	  
-//  , ranH2= num + 300 % 360
+
     let time1 = xSize * 2 * 2	  
     oneObj.style.position = 'fixed';
     oneObj.style.height = ballSize/1.5 + 'px';
     oneObj.style.width = ballSize/1.5 + 'px';
     oneObj.style.backgroundColor = `hsl(${col}, 100%, 50%)`;
     oneObj.style.borderRadius = '50%';
-/* fade and larger
+    /* fade and larger
 	  oneObj.animate([
           {width: oneObj.style.width,
 	  height: oneObj.style.height,
@@ -108,7 +104,6 @@ setInterval(() => {
         if (parseInt(localStorage.moved) > 2000) {	 
           if (obj.classList.contains('used')) continue; 
           let ballSize = window.innerWidth/100;
-          let ballSize1 = window.innerWidth/(90 * 1.5);
           let animTime = 500
           obj.animate([
             {top: obj.style.top,
@@ -191,14 +186,17 @@ setInterval(() => {
       //obj falling 
       for (let i = 0; i < allObj.length; i++){ 
         let obj = allObj[i]
+	if (obj.classList.contains('used')) continue; 
+        obj.classList.add('used')
         let objY = parseInt(obj.style.top.split('px')[0])	 
           , objX = parseInt(obj.style.left.split('px')[0])	
-    //  let num = parseInt(localStorage.mouseCounter);	      
-    	      let col = allObj[i].id.match(/\d+/)[0]
-let ranH = col % 360
-	      , ranH2= col + 300 % 360
+        //  let num = parseInt(localStorage.mouseCounter);	      
+	//      console.log(i)
+   	let col = allObj[i].id.match(/\d+/)[0]
+	      console.log(col)
+        let ranH = col % 360
+	, ranH2= col + 300 % 360
  	allObj[i].id = ''
-        if (obj.classList.contains('used')) continue; 
         let animTime = 500
         obj.animate([
           {top: obj.style.top,
@@ -213,7 +211,6 @@ let ranH = col % 360
           setObjs(objX, objY + 300, ranH2)
         }, 490 - 10)
         obj.style.top = (objY + 300) + 'px'
-        obj.classList.add('used')
       }}
   }  
 }, 50)
