@@ -92,17 +92,16 @@ function setObjs(x, y, col) {
 }
 
 setInterval(() => {
-  let allObj = document.getElementsByClassName('tmf-obj')	
-  if ( allObj.length > 0 ) {
+  let allObj = document.getElementsByClassName('tmf-obj')
 
-    if (
-      localStorage.fMouseMove !== localStorage.mouseMove 
-    ) {
+  if ( allObj.length > 0 ) {
+    if (localStorage.fMouseMove !== localStorage.mouseMove) {
       // obj moves up by mouse move
       for (let i = 0; i < allObj.length; i++){ 
         let obj = allObj[i]	
+        if (obj.classList.contains('used')) continue; 
         if (parseInt(localStorage.moved) > 2000) {	 
-          if (obj.classList.contains('used')) continue; 
+          obj.classList.add('used')
           let ballSize = window.innerWidth/100;
           let animTime = 500
           obj.animate([
@@ -177,8 +176,6 @@ setInterval(() => {
           obj.style.top = (parseInt(obj.style.top.split('px')[0]) - 50) + 'px'
 	  obj.style.width = ballSize + 'px'
           obj.style.height = ballSize + 'px'
-
-          obj.classList.add('used')
         } else {	 
           obj.style.top = (parseInt(obj.style.top.split('px')[0]) + -1 ) + 'px'
         }
@@ -212,7 +209,8 @@ setInterval(() => {
         }, 490 - 10)
         obj.style.top = (objY + 300) + 'px'
       }}
-  }  
+  }
+  return	
 }, 50)
 
 setInterval(() => {
