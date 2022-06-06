@@ -76,6 +76,18 @@ function setObjs(x, y, col) {
     oneObj.style.width = ballSize/1.5 + 'px';
     oneObj.style.backgroundColor = `hsl(${col}, 100%, 50%)`;
     oneObj.style.borderRadius = '50%';
+/* fade and larger
+	  oneObj.animate([
+          {width: oneObj.style.width,
+	  height: oneObj.style.height,
+	  opacity: `1`
+          },
+          {width: (parseInt(oneObj.style.width.split('px')[0]) * 3) + 'px',
+	  height: (parseInt(oneObj.style.height.split('px')[0]) * 3) + 'px',
+		  opacity: `0`
+          }
+        ], time1);
+*/
     drawHalfRound(oneObj, x, y, xSize)	 
     document.body.appendChild(oneObj);	  
     setTimeout(() => oneObj.remove(), time1);
