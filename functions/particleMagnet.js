@@ -7,6 +7,8 @@ function objCss(obj, e) {
   let ranYpos = parseInt(e.clientY, 10);
   let yHeight = parseInt(window.innerHeight);	  
   let awayFromCursor = - 30 * (yHeight - ranYpos) /yHeight;
+  let num = parseInt(localStorage.mouseCounter);
+  obj.id = `tmf${num % 360}`	
   obj.className = 'tmf-obj'	  
   obj.style.position = 'fixed';
   obj.style.left = ranXpos + 'px';
@@ -40,40 +42,43 @@ function mouseEvent(e) {
   }
 }
 
-function drawHalfRound(obj, x, y, xSize, ranH) {
+function drawHalfRound(obj, x, y, xSize) {
+//animation for breaking objs
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
   let squareWid = Math.random() * 0.4 + 0.1;
   for (let i = -xSize; i <= xSize; i++) {    
-    let t = i;
+    let t = i
+      , time2 = (xSize + 1 + i) * 2    
 //    ranH = (ranH - (xSize + i)) % 360	  
     setTimeout(() => {
-      let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x;
-      let newY;             
+      let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x
+      , newY
       newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
       obj.style.left = (newX + xSize/2 + 20/2) + 'px';
       obj.style.top = newY + 'px';     
 //      obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`; 	    
-    }, (xSize + 1 + i) * 2 )
+    }, time2)
   }
 }
 
 function setObjs(x, y, col) {
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 4; i++) {
     let xSize = Math.trunc(Math.random() * 150) + 50;
     let oneObj = document.createElement('div');
-    let ballSize = window.innerWidth/100;
+    let ballSize = (Math.random() * window.innerWidth/100)/2 + window.innerWidth/150;
     let randomBallSize = Math.trunc(Math.random() * ballSize);
-    let num = parseInt(localStorage.mouseCounter);
-    let ranH = num % 360	      
-  , ranH2= num + 300 % 360
+//    let num = parseInt(localStorage.mouseCounter);
+//    let ranH = num % 360	     	  
+//  , ranH2= num + 300 % 360
+    let time1 = xSize * 2 * 2	  
     oneObj.style.position = 'fixed';
     oneObj.style.height = ballSize/1.5 + 'px';
     oneObj.style.width = ballSize/1.5 + 'px';
-    oneObj.style.backgroundColor = `hsl(${ranH2}, 100%, 50%)`;
+    oneObj.style.backgroundColor = `hsl(${col}, 100%, 50%)`;
     oneObj.style.borderRadius = '50%';
-    drawHalfRound(oneObj, x, y, xSize, num)	 
+    drawHalfRound(oneObj, x, y, xSize)	 
     document.body.appendChild(oneObj);	  
-    setTimeout(() => oneObj.remove(), xSize * 2 * 2);
+    setTimeout(() => oneObj.remove(), time1);
   }
 
 }
@@ -176,10 +181,11 @@ setInterval(() => {
         let obj = allObj[i]
         let objY = parseInt(obj.style.top.split('px')[0])	 
           , objX = parseInt(obj.style.left.split('px')[0])	
-      let num = parseInt(localStorage.mouseCounter);
-    let ranH = num % 360
-	      , ranH2= num + 300 % 360
-
+    //  let num = parseInt(localStorage.mouseCounter);	      
+    	      let col = allObj[i].id.match(/\d+/)[0]
+let ranH = col % 360
+	      , ranH2= col + 300 % 360
+ 	allObj[i].id = ''
         if (obj.classList.contains('used')) continue; 
         let animTime = 500
         obj.animate([
@@ -192,7 +198,7 @@ setInterval(() => {
         ], animTime);
         setTimeout(() => {
           obj.remove()
-          setObjs(objX, objY + 300, obj.style.backgroundColor)
+          setObjs(objX, objY + 300, ranH2)
         }, 490 - 10)
         obj.style.top = (objY + 300) + 'px'
         obj.classList.add('used')
