@@ -4,7 +4,7 @@ function objCss(obj, e) {
   let ballSize = window.innerWidth/100;
   let randomBallSize = Math.trunc(Math.random() * ballSize);
   let ranXpos = parseInt(e.clientX, 10) + 20;
-  let ranYpos = parseInt(e.clientY, 10);
+  let ranYpos = parseInt(e.clientY, 10) - 20;
   let yHeight = parseInt(window.innerHeight);	  
   let awayFromCursor = - 30 * (yHeight - ranYpos) /yHeight;
   let num = parseInt(localStorage.mouseCounter);
