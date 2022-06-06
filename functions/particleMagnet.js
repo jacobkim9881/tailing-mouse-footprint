@@ -105,12 +105,9 @@ setInterval(() => {
           let ballSize = window.innerWidth/100;
           let animTime = 500
           obj.animate([
-            {top: obj.style.top,
-            },
-  	    {top: (parseInt(obj.style.top.split('px')[0]) - 25) + 'px',
-            },
-            {top: (parseInt(obj.style.top.split('px')[0]) - 50) + 'px',
-            }
+            {top: obj.style.top},
+  	    {top: (parseInt(obj.style.top.split('px')[0]) - 25) + 'px'},
+            {top: (parseInt(obj.style.top.split('px')[0]) - 50) + 'px'}
           ], {
 	    duration: animTime,
             easing: 'cubic-bezier(0.7, 0, 1, 0)'	
@@ -178,7 +175,7 @@ setInterval(() => {
           obj.style.height = ballSize + 'px'
         } else {	 
           obj.style.top = (parseInt(obj.style.top.split('px')[0]) + -1 ) + 'px'
-        }
+	}
       }} else {
       //obj falling 
       for (let i = 0; i < allObj.length; i++){ 
@@ -223,8 +220,8 @@ setInterval(() => {
     localStorage.moved = parseInt(localStorage.moved) + 500
     localStorage.mMoveLen = -1
   }
-
   localStorage.fMouseMove = localStorage.mouseMove
+  return	
 }, 500);
 // This semicolon shoul not be deleted!
 (function ifMouseMoveIsNaNThenSet0 () {
@@ -235,5 +232,6 @@ setInterval(() => {
 document.body.addEventListener('mousemove', mouseEvent);
 
 chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent);
+  document.body.removeEventListener('mousemove', mouseEvent)
+  return	
 });
