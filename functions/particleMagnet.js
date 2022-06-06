@@ -185,9 +185,7 @@ setInterval(() => {
         let objY = parseInt(obj.style.top.split('px')[0])	 
           , objX = parseInt(obj.style.left.split('px')[0])	
         //  let num = parseInt(localStorage.mouseCounter);	      
-	//      console.log(i)
    	let col = allObj[i].id.match(/\d+/)[0]
-	      console.log(col)
         let ranH = col % 360
 	, ranH2= col + 300 % 360
  	allObj[i].id = ''
