@@ -39,12 +39,14 @@ function mouseEvent(e) {
   if (num %  13 === 0 ) {
     trigger(e, ranH);
   }
-
+//console.log('mouse counter: ',localStorage.mouseCounter) 
   let allObj = document.getElementsByClassName('tmf-obj')
-console.log('tmf interval: ',localStorage.tmfInterval)
-if ( allObj.length > 0 
+//console.log('typeof tmf interval: ',typeof localStorage.tmfInterval)
+if ( allObj.length === 1
+	&& num %  13 === 0 
 	&& localStorage.tmfInterval === 'false'
 ) {
+	console.log('start setInterval')
   localStorage.tmfInterval = true
 let executer = setInterval(() => {
 if ( allObj.length > 0) { 
@@ -140,7 +142,7 @@ if ( allObj.length > 0) {
         //  let num = parseInt(localStorage.mouseCounter);	      
 	//      console.log(i)
    	let col = allObj[i].id.match(/\d+/)[0]
-	      console.log(col)
+//	      console.log(col)
         let ranH = col % 360
 	, ranH2= col + 300 % 360
  	allObj[i].id = ''
