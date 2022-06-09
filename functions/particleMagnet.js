@@ -41,13 +41,13 @@ function mouseEvent(e) {
   }
 
   let allObj = document.getElementsByClassName('tmf-obj')
-console.log(localStorage.tmfInterval)
+console.log('tmf interval: ',localStorage.tmfInterval)
 if ( allObj.length > 0 
-//	&& localStorage.tmfInterval === 'false'
+	&& localStorage.tmfInterval === 'false'
 ) {
   localStorage.tmfInterval = true
 let executer = setInterval(() => {
-
+if ( allObj.length > 0) { 
     if (localStorage.fMouseMove !== localStorage.mouseMove) {
       // obj moves up by mouse move
       for (let i = 0; i < allObj.length; i++){ 
@@ -159,10 +159,15 @@ let executer = setInterval(() => {
         }, 490 - 10)
         obj.style.top = (objY + 300) + 'px'
       }}
+} else {
+	console.log('interval cleared for executer:')
+ clearInterval(executer)
+}
   return	
 }, 50)
 
 let checker = setInterval(() => {
+if ( allObj.length > 0) { 
 //if mouse not moved
   if (localStorage.mouseMove === localStorage.fMouseMove) {
     localStorage.moved = 0	
@@ -173,13 +178,15 @@ let checker = setInterval(() => {
     localStorage.mMoveLen = -1
   }
   localStorage.fMouseMove = localStorage.mouseMove
-	
+} else {
+ console.log('cleared interval for checker')	
+ clearInterval(checker)
+
+}
   return	
 }, 500);
 } else {
  localStorage.tmfInterval = false
-// clearInterval(executer)
-// clearInterval(checker)
 }
   return	
 }
