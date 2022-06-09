@@ -39,62 +39,15 @@ function mouseEvent(e) {
   if (num %  13 === 0 ) {
     trigger(e, ranH);
   }
-  return	
-}
 
-function drawHalfRound(obj, x, y, xSize) {
-//animation for breaking objs
-  let pOrM = Math.random() >= 0.5 ? 1 : -1;
-  let squareWid = Math.random() * 0.4 + 0.1;
-  for (let i = -xSize; i <= xSize; i++) {    
-    let time2 = (xSize + 1 + i) * 2    
-    //    ranH = (ranH - (xSize + i)) % 360	  
-    setTimeout(() => {
-      let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x
-        , newY
-      newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
-      obj.style.left = (newX + xSize/2 + 20/2) + 'px';
-      obj.style.top = newY + 'px';     
-      //      obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`; 	    
-    }, time2)
-  }
-}
-
-function setObjs(x, y, col) {
-  for (let i = 0; i < 4; i++) {
-    let xSize = Math.trunc(Math.random() * 150) + 50;
-    let oneObj = document.createElement('div');
-    let ballSize = (Math.random() * window.innerWidth/100)/2 + window.innerWidth/150;
-
-    let time1 = xSize * 2 * 2	  
-    oneObj.style.position = 'fixed';
-    oneObj.style.height = ballSize/1.5 + 'px';
-    oneObj.style.width = ballSize/1.5 + 'px';
-    oneObj.style.backgroundColor = `hsl(${col}, 100%, 50%)`;
-    oneObj.style.borderRadius = '50%';
-    /* fade and larger
-	  oneObj.animate([
-          {width: oneObj.style.width,
-	  height: oneObj.style.height,
-	  opacity: `1`
-          },
-          {width: (parseInt(oneObj.style.width.split('px')[0]) * 3) + 'px',
-	  height: (parseInt(oneObj.style.height.split('px')[0]) * 3) + 'px',
-		  opacity: `0`
-          }
-        ], time1);
-*/
-    drawHalfRound(oneObj, x, y, xSize)	 
-    document.body.appendChild(oneObj);	  
-    setTimeout(() => oneObj.remove(), time1);
-  }
-
-}
-
-setInterval(() => {
   let allObj = document.getElementsByClassName('tmf-obj')
+console.log(localStorage.tmfInterval)
+if ( allObj.length > 0 
+//	&& localStorage.tmfInterval === 'false'
+) {
+  localStorage.tmfInterval = true
+let executer = setInterval(() => {
 
-  if ( allObj.length > 0 ) {
     if (localStorage.fMouseMove !== localStorage.mouseMove) {
       // obj moves up by mouse move
       for (let i = 0; i < allObj.length; i++){ 
@@ -206,11 +159,10 @@ setInterval(() => {
         }, 490 - 10)
         obj.style.top = (objY + 300) + 'px'
       }}
-  }
   return	
 }, 50)
 
-setInterval(() => {
+let checker = setInterval(() => {
 //if mouse not moved
   if (localStorage.mouseMove === localStorage.fMouseMove) {
     localStorage.moved = 0	
@@ -221,8 +173,65 @@ setInterval(() => {
     localStorage.mMoveLen = -1
   }
   localStorage.fMouseMove = localStorage.mouseMove
+	
   return	
 }, 500);
+} else {
+ localStorage.tmfInterval = false
+// clearInterval(executer)
+// clearInterval(checker)
+}
+  return	
+}
+function drawHalfRound(obj, x, y, xSize) {
+//animation for breaking objs
+  let pOrM = Math.random() >= 0.5 ? 1 : -1;
+  let squareWid = Math.random() * 0.4 + 0.1;
+  for (let i = -xSize; i <= xSize; i++) {    
+    let time2 = (xSize + 1 + i) * 2    
+    //    ranH = (ranH - (xSize + i)) % 360	  
+    setTimeout(() => {
+      let newX = pOrM === 1 ? i / 2 + x : i * pOrM / 2 - xSize + x
+        , newY
+      newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + y;       
+      obj.style.left = (newX + xSize/2 + 20/2) + 'px';
+      obj.style.top = newY + 'px';     
+      //      obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`; 	    
+    }, time2)
+  }
+}
+
+function setObjs(x, y, col) {
+  for (let i = 0; i < 4; i++) {
+    let xSize = Math.trunc(Math.random() * 150) + 50;
+    let oneObj = document.createElement('div');
+    let ballSize = (Math.random() * window.innerWidth/100)/2 + window.innerWidth/150;
+
+    let time1 = xSize * 2 * 2	  
+    oneObj.style.position = 'fixed';
+    oneObj.style.height = ballSize/1.5 + 'px';
+    oneObj.style.width = ballSize/1.5 + 'px';
+    oneObj.style.backgroundColor = `hsl(${col}, 100%, 50%)`;
+    oneObj.style.borderRadius = '50%';
+    /* fade and larger
+	  oneObj.animate([
+          {width: oneObj.style.width,
+	  height: oneObj.style.height,
+	  opacity: `1`
+          },
+          {width: (parseInt(oneObj.style.width.split('px')[0]) * 3) + 'px',
+	  height: (parseInt(oneObj.style.height.split('px')[0]) * 3) + 'px',
+		  opacity: `0`
+          }
+        ], time1);
+*/
+    drawHalfRound(oneObj, x, y, xSize)	 
+    document.body.appendChild(oneObj);	  
+    setTimeout(() => oneObj.remove(), time1);
+  }
+
+};
+
 // This semicolon shoul not be deleted!
 (function ifMouseMoveIsNaNThenSet0 () {
   if (isNaN(parseInt(localStorage.mouseMove))) localStorage.mouseMove = 0
