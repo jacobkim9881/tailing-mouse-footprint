@@ -75,7 +75,7 @@ let aniEvent = setInterval(() => {
 	
 		console.log(functionObj[targetId].mouse.mousemove) 
 	ele.addEventListener('mouseover', () => {
-		console.log('moved')
+		console.log('moved', targetId)
 		ele.addEventListener('mousemove', functionObj[targetId].mouse.mousemove);
     clearInterval(aniEvent)
 	});

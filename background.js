@@ -41,6 +41,29 @@ chrome.contextMenus.onClicked.addListener(() => {
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
+console.log('background: ', msg)	
+// load function for execute
+	fetch('./functions/' + 'bubble' + '.js')
+	.then((res) => res.text())
+	.then((func) => {
+// load js file for running event listener
+	fetch('./test.js')
+	.then((res1) => res1.text())
+	.then((func1) => {
+		
+	console.log(func + func1)
+
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+	      chrome.tabs.executeScript(
+        tabs[0].id,
+// code execute with executeScript method		      
+        {code: func + func1} );
+//        {file: './functions/' + 'bubble' + '.js'} );
+//        {file: './functions/' + msg.name + '.js'} );
+	})
+	})
+	})
+
 /*	
   if (msg.type === 'moving') {
     localStorage.pointerName = msg.name;      
@@ -84,5 +107,5 @@ chrome.runtime.onMessage.addListener((msg) => {
     });
        
   }
-*/    
+   */ 
 })
