@@ -1,6 +1,6 @@
-//bubble.js
+//digital.js
 
-function trigger(e) {
+function triggerDigital(e) {
   let obj = document.createElement('div');
   let ran50 = Math.trunc(Math.random() * 25) + 5;
   let ranXpos = Math.trunc(Math.random() * 10) + parseInt(e.clientX, 10);
@@ -34,16 +34,11 @@ function trigger(e) {
 
 }
 
-function mouseEvent(e) {
+function mouseEventDigital(e) {
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  3 === 0 ) {
-    trigger(e);
+    triggerDigital(e);
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

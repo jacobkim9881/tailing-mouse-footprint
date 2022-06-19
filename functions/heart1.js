@@ -1,6 +1,6 @@
-//snowflake.js
+//heart1.js
 
-function mouseEvent(e) {
+function mouseEventHeart1(e) {
 
   function trigger(e, moveX) {
     let halfHeart = document.createElement('div');
@@ -58,8 +58,4 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
 
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

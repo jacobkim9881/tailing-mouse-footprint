@@ -1,6 +1,6 @@
-//colofulBall.js
+//float.js
 
-function mouseEvent(e) {
+function mouseEventFloat(e) {
 //let ranH = num %  360;
 
   function trigger(e) {
@@ -65,16 +65,7 @@ obj.style.top= ranYpos + 'px';
 
   }
 }
-
-function clickEvent() {
-let objs = document.getElementsByClassName('flubbers');
-console.log(objs[0].backgroundColor)
-}
-
-document.body.addEventListener('mousemove', mouseEvent);
-document.body.addEventListener('click', clickEvent);
-
+document.body.addEventListener('mousemove', mouseEventFloat);
 chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent);
-  document.body.removeEventListener('click', clickEvent);
+  document.body.removeEventListener('mousemove', mouseEventFloat);
 });

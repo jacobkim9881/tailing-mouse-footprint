@@ -1,6 +1,6 @@
 //dna.js
 
-function mouseEvent(e) {
+function mouseEventDna(e) {
   let pxByScreenWidth = window.innerWidth/100;
   let basicSize = 10;
   let randomBallSize = Math.trunc(Math.random() * (pxByScreenWidth -15)) + basicSize;
@@ -122,8 +122,3 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

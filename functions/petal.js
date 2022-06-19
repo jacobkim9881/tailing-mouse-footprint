@@ -1,6 +1,6 @@
-//test.js
+//petal.js
 
-function objAnimate(obj, e, randomBallSize, top, left) {
+function objAnimatePetal(obj, e, randomBallSize, top, left) {
     obj.animate([
       {top: (e.clientY + top + randomBallSize * 1) + 'px',
        left: (e.clientX + left + (randomBallSize*0)) + 'px',
@@ -17,8 +17,6 @@ function objAnimate(obj, e, randomBallSize, top, left) {
       {top: (e.clientY + top + randomBallSize * 1) + 'px',
        left: (e.clientX + left + (randomBallSize*3)) + 'px',
        opacity: 0}
-
- 
     ], {duration: 800,
       timing(timeFraction) {
         return 1 - Math.sin(Math.acos(timeFraction))}
@@ -26,7 +24,7 @@ function objAnimate(obj, e, randomBallSize, top, left) {
 
 }
 
-function petal(e, top, left, upside = true, randomBallSize) {
+function petalObj(e, top, left, upside = true, randomBallSize) {
     let obj = document.createElement('div');
     let ballSize = window.innerWidth/160;
     obj.style.position = 'fixed';
@@ -37,28 +35,14 @@ function petal(e, top, left, upside = true, randomBallSize) {
     obj.style.backgroundColor = `hsl(300, 60%, 80%)`;
     obj.style.borderRadius = upside ? '50% 50%' : '50% 50%';
 obj.style.zIndex = '-2';
-//    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
-//    randomBallSize = upside ? randomBallSize * -1 : randomBallSize * 1	
    obj.style.position = 'fixed';
-   objAnimate(obj, e, randomBallSize, top, left)
-/*	
-    obj.animate([
-      {top: (e.clientY + top + randomBallSize) + 'px'},
-	    {top: (e.clientY + top + (randomBallSize*1.3)) + 'px'},
-	    {top: (e.clientY + top + (randomBallSize*1)) + 'px'}
-
-    ], {duration: 800,
-      timing(timeFraction) {
-        return 1 - Math.sin(Math.acos(timeFraction))}
-    })
-*/    
+   objAnimatePetal(obj, e, randomBallSize, top, left)
     return obj;	 
 }
 
-function center(e, randomBallSize) {
+function centerObj(e, randomBallSize) {
     let obj = document.createElement('div');
     let ballSize = window.innerWidth/200;
-//    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
     obj.style.position = 'fixed';
     obj.style.top = (e.clientY) + 'px';	
     obj.style.left = (e.clientX) + 'px';
@@ -67,7 +51,7 @@ function center(e, randomBallSize) {
     obj.style.backgroundColor = `hsl(60, 100%, 50%)`;
     obj.style.borderRadius = '50%';
     obj.style.zIndex = '-1';
-    objAnimate(obj, e, randomBallSize, 0, 0)
+    objAnimatePetal(obj, e, randomBallSize, 0, 0)
      return obj;	 
 }
 
@@ -76,17 +60,17 @@ function objProtoType(e) {
     let ballSize = window.innerWidth/200;
     let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
    obj.style.position = 'fixed';
-    obj.appendChild(petal(e,(ballSize * 0.5),(ballSize * 0.5), true, randomBallSize));	  
-   obj.appendChild(petal(e,-(ballSize * 0.6),(ballSize * 0.5), false, randomBallSize));	
-   obj.appendChild(petal(e,(ballSize * 0.5),-(ballSize * 0.6), false, randomBallSize));	
-   obj.appendChild(petal(e,-(ballSize * 0.6),-(ballSize * 0.6), true, randomBallSize));	
+    obj.appendChild(petalObj(e,(ballSize * 0.5),(ballSize * 0.5), true, randomBallSize));	  
+   obj.appendChild(petalObj(e,-(ballSize * 0.6),(ballSize * 0.5), false, randomBallSize));	
+   obj.appendChild(petalObj(e,(ballSize * 0.5),-(ballSize * 0.6), false, randomBallSize));	
+   obj.appendChild(petalObj(e,-(ballSize * 0.6),-(ballSize * 0.6), true, randomBallSize));	
 
-    obj.appendChild(center(e, randomBallSize));
+    obj.appendChild(centerObj(e, randomBallSize));
 
     return obj;	 
 }
 
-function mouseEvent(e) {
+function mouseEventPetal(e) {
 // object for styling
    function trigger(e) {
     let obj = objProtoType(e);    	  
@@ -118,9 +102,4 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
 
-chrome.runtime.onMessage.addListener((msg) => {
-document.body.removeEventListener('mousemove', mouseEvent);
-
-});

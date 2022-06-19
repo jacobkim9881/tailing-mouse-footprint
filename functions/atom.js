@@ -1,6 +1,6 @@
-//test.js
+//atom.js
 
-function getObj() {
+function getObjAtom() {
   let obj = document.createElement('div');
   obj.id = 'test-obj';  
   obj.style.width = 60 + 'px'; 
@@ -73,12 +73,9 @@ function getObj() {
   sub.style.display = 'block';
   sub1.style.display = 'block';
   sub2.style.display = 'block';	
-  // sub.style.display = 'none';
-// sub1.style.display = 'none';
-// sub2.style.display = 'none';
-// return obj;
 }
-getObj();
+
+getObjAtom();
 
 function ballStyle(ball) {	
   ball.style.position = 'fixed';
@@ -98,7 +95,7 @@ function orbitStyle(orbit) {
   orbit.style.borderRadius = '50%';
 }
 
-function mouseEvent(e) {
+function mouseEventAtom(e) {
 // object for styling
   let obj = document.getElementById('test-obj');
   let obj1 = document.getElementById('test-obj1');
@@ -197,7 +194,7 @@ function mouseEvent(e) {
   return;
 }
 
-function lazyEvent(clientX, clientY) {
+function lazyEventAtom(clientX, clientY) {
   clientX = parseInt(clientX);
   clientY = parseInt(clientY);
   // object for styling
@@ -291,20 +288,14 @@ function displayToggleObj(stat) {
   sub2.style.display = stat;	
 }
 
-function numCount() {
+function numCountAtom() {
   setInterval(() => {
     if(localStorage.mouseLazy == 'true') {	 
-      lazyEvent(localStorage.xMousePos, localStorage.yMousePos);  	  
+      lazyEventAtom(localStorage.xMousePos, localStorage.yMousePos);  	  
     } else {
     }
   },50)
 }
  
-numCount()
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent);
-  displayToggleObj('none');
-});
+numCountAtom()
 

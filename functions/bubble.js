@@ -1,5 +1,5 @@
 //bubble.js
-function mouseEvent(e) {
+function bubble(e) {
   let obj = document.createElement('div');
   
   let ran10 = Math.trunc(Math.random() * 10) + 5;
@@ -27,8 +27,3 @@ function mouseEvent(e) {
   return;
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
-setInterval(() => console.log('content'), 1000);
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

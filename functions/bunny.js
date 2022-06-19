@@ -407,19 +407,19 @@ function heartEmoj(num) {
   }
 }
 
-function dragEndEvent(e) {
+function dragEndEventBunny(e) {
   getId('mouth').style.backgroundColor = 'hsl(0, 100%, 50%)';
 
 }
 
-function dragEvent(e) {
+function dragEventBunny(e) {
   stylingEye({id: 'eye1', left: 114});
   stylingEye({id: 'eye2', left: 170});
   getId('mouth').style.backgroundColor = 'hsl(0, 0%, 0%, 0)';
   questionEmoj();
 }
 
-function dblclickEvent(e) {
+function dblclickEventBunny(e) {
   let none = null;	
   heartEmoj(none);
 
@@ -434,7 +434,7 @@ function dblclickEvent(e) {
 
 }
 
-function mousedownEvent(e) {
+function mousedownEventBunny(e) {
   questionEmoj();
 
   sleepyEyes();
@@ -444,7 +444,7 @@ function mousedownEvent(e) {
 
 }
 
-function mouseupEvent(e) {
+function mouseupEventBunny(e) {
   sleepyEyes();
 
   getId('mouth').style.backgroundColor = 'hsl(0, 100%, 50%)';
@@ -452,7 +452,7 @@ function mouseupEvent(e) {
   sighEmoj();
 }
 
-function onScrollEvent(e) {
+function onScrollEventBunny(e) {
   let typeOfEmoj = Math.ceil((window.scrollY% 300)/100);
 
   getId('emotion6').style.display = 'none';
@@ -467,7 +467,7 @@ function onScrollEvent(e) {
   heartEmoj(typeOfEmoj);
 }
 
-function mouseEvent(e) {
+function mouseEventBunny(e) {
 
   function trigger(e, moveX) {
     let none = null;
@@ -511,26 +511,3 @@ function mouseEvent(e) {
 //createObj
 createObjs();
 
-document.body.addEventListener('mousemove', mouseEvent);
-document.body.addEventListener('mousedown', mousedownEvent);
-document.body.addEventListener('mouseup', mouseupEvent);
-document.body.addEventListener('dblclick', dblclickEvent);
-document.body.addEventListener('drag', dragEvent);
-document.body.addEventListener('dragend', dragEndEvent);
-
-window.addEventListener('scroll', onScrollEvent);
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.name === 'bunny') {
-    document.getElementById('grpDivs').style.display = 'block'; 
-  } else {
-    document.getElementById('grpDivs').style.display = 'none';
-    document.body.removeEventListener('mousemove', mouseEvent);
-    document.body.removeEventListener('mousedown', mousedownEvent);
-    document.body.removeEventListener('mouseup', mouseupEvent);
-    document.body.removeEventListener('scroll', onScrollEvent);
-    document.body.removeEventListener('dblclick', dblclickEvent);
-    document.body.removeEventListener('drag', dragEvent);
-    document.body.removeEventListener('dragend', dragEvent);
-
-  }
-});

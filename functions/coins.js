@@ -1,6 +1,6 @@
 //test.js
 
-function animateBar(obj, top, cls) {
+function animateCoins(obj, top, cls) {
  let secnd = 500;	
   obj.animate([
       {
@@ -22,7 +22,7 @@ function animateBar(obj, top, cls) {
   //obj.style.transform = `rotate(${d2}deg)`
 }
 
-function mouseEvent(e) {
+function mouseEventCoins(e) {
   let num = Math.trunc(e.clientX / 45),
   preNum = localStorage.getItem('tmf-cnt') ? localStorage.getItem('tmf-cnt') : num,	
   obj = document.getElementById(`objs-test${num}`),
@@ -32,7 +32,7 @@ function mouseEvent(e) {
   
 }
 
-function onLoadEvent(obj, e) {
+function onLoadEventCoins(obj, e) {
   let pop = Math.random() < 0.1 ? `0.3`: `0`;	
  obj.animate([
       {
@@ -60,7 +60,7 @@ obj.animate([
   obj.style.opacity = '0';
 }
 
-function setObjs() {
+function setObjsCoins() {
   let oClass = {
    class: 'objs-test',
    width: '30px',
@@ -85,26 +85,20 @@ function setObjs() {
     oneObj.style.border = oClass.border;
     oneObj.style.borderRadius = '50%';	 
     oneObj.style.zIndex = '999999999';	  
-    onLoadEvent(oneObj);	   
+    onLoadEventCoins(oneObj);	   
 
     document.body.appendChild(oneObj);	 
 	 
     oneObj.onmouseover = function(e) {
-animateBar(oneObj, oneTop);	
+animateCoins(oneObj, oneTop);	
     }  
 }
 }
 
-function deleteObjs() {
+function deleteObjsCoins() {
   let objs = document.querySelectorAll('.tmf-objs');
   objs.forEach(ele => ele.remove());	
 }
-deleteObjs();
-setObjs();	
+deleteObjsCoins();
+setObjsCoins();	
 
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-document.body.removeEventListener('mousemove', mouseEvent);
-deleteObjs();	
-});

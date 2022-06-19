@@ -1,6 +1,6 @@
 //snowflake.js
 
-function mouseEvent(e) {
+function mouseEventSnowflake(e) {
 
   function trigger(e, background) {
     let obj = document.createElement('div');
@@ -37,8 +37,3 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

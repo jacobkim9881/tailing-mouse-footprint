@@ -60,11 +60,15 @@ chrome.runtime.onMessage.addListener((msg) => {
     }
     chrome.storage.local.set({msg: msgObj})
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {     
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+
       chrome.scripting.executeScript(
         { target: {tabId: tabs[0].id},
-        files: ['./functions/' + msg.name + '.js'] });
+        files: ['./functions/' + msg.name + '.js',
+	       './eventHandler/'+ msg.name + '.js'
+	] });
 	    return
+
     });
     
     chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});

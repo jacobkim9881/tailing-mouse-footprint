@@ -1,5 +1,5 @@
-//test.js
-function mouseEvent(e) {
+//strawblueberry.js
+function mouseEventStrawblueberry(e) {
 
     function trigger(e) {
     let obj = document.createElement('div');
@@ -44,10 +44,4 @@ function mouseEvent(e) {
      trigger(e);
     }
   }
-  
-  document.body.addEventListener('mousemove', mouseEvent);
-  
-  chrome.runtime.onMessage.addListener((msg) => {
-    document.body.removeEventListener('mousemove', mouseEvent)
-  });
-  
+ 

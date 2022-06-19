@@ -1,6 +1,6 @@
-//snowflake.js
+//heart.js
 
-function mouseEvent(e) {
+function mouseEventHeart(e) {
 
   function trigger(e, moveX) {
     let mouseMoveCounter = localStorage.mouseCounter;
@@ -62,8 +62,4 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
 
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

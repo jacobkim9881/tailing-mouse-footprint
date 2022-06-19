@@ -1,6 +1,6 @@
 //card.js
 
-function getObj() {
+function getObjCard() {
  let obj = document.createElement('div');
  obj.id = 'card-obj-playing';  
  obj.style.width = 0 + 'px'; 
@@ -9,9 +9,9 @@ function getObj() {
  document.body.appendChild(obj);	
 // return obj;
 }
-getObj();
+getObjCard();
 
-function mouseEvent(e) {
+function mouseEventCard(e) {
 // object for styling
   let obj = document.getElementById('card-obj-playing');
   let ran10 = Math.trunc(Math.random() * 10) + 5;
@@ -39,7 +39,7 @@ setInterval(() => {
     obj.style.color = txtColor;	    
     obj.innerText = ran.toString()[2] + ran.toString()[3] === '03' ? '★' :txtArr[ran4];
     }, 1500);	    
-function animateObj() {
+function animateObjCard() {
     let obj = document.getElementById('card-obj-playing');
     obj.innerText = '♠';
     obj.style.color = 'black';	    
@@ -54,11 +54,5 @@ function animateObj() {
     })
 
 }
-animateObj();
-document.body.addEventListener('mousemove', mouseEvent);
+animateObjCard();
 
-chrome.runtime.onMessage.addListener((msg) => {
-document.body.removeEventListener('mousemove', mouseEvent)
-document.getElementById('card-obj-playing').remove();
-
-});

@@ -1,6 +1,6 @@
 //colofulBall.js
 
-function mouseEvent(e) {
+function mouseEventColorfulBall(e) {
 
   function trigger(e) {
     let obj = document.createElement('div');
@@ -41,8 +41,3 @@ function mouseEvent(e) {
   }
 }
 
-document.body.addEventListener('mousemove', mouseEvent);
-
-chrome.runtime.onMessage.addListener((msg) => {
-  document.body.removeEventListener('mousemove', mouseEvent)
-});

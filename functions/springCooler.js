@@ -1,4 +1,4 @@
-function mouseEvent(e) {
+function mouseEventSpringCooler(e) {
 
   let xSize = 200;
   let squareWid = Math.random() * 0.4 + 0.1;
@@ -49,38 +49,4 @@ function mouseEvent(e) {
    }
   }
 }
-function setObjs() {
-  let oClass = {
-   class: 'objs-test',
-   width: '15px',
-   height: '45px',
-   border: '1px solid white',	  
-   backgroundColor : 'none',
-   top: (window.innerHeight -100) + 'px'
-  },
-  cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
-    let oneObj = document.createElement('div');
-    oneObj.id = oClass.class + i;
-    oneObj.className = 'off';	  
-    oneObj.style.width = oClass.width;
-    oneObj.style.height = oClass.height;
-//    oneObj.style.backgroundColor = oClass.backgroundColor;
-    oneObj.style.top = oClass.top;
-    oneObj.style.left = 50 + i * 45 + 'px';
-    oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;	
-    document.body.appendChild(oneObj);	  
-  }
-}
-function deleteObjs() {
-  let cntWidth = Math.trunc(window.innerWidth / 45);
-  for (let i = 0; i < cntWidth; i++) {
-  if (!document.getElementById(`objs-test${i}`)) {continue;}
-  document.getElementById(`objs-test${i}`).remove();
-  }
-}
-document.body.addEventListener('mousemove', mouseEvent);
-chrome.runtime.onMessage.addListener((msg) => {
-document.body.removeEventListener('mousemove', mouseEvent);
-});
+
