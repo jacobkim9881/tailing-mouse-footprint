@@ -1,5 +1,5 @@
 //bubble.js
-function bubble(e) {
+function mouseEventBubble(e) {
   let obj = document.createElement('div');
   
   let ran10 = Math.trunc(Math.random() * 10) + 5;
