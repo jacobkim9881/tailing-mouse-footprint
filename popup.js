@@ -1,5 +1,14 @@
 function buttonElement(targetId) {
-  return document.getElementById(targetId);
+ //OB return document.getElementById(targetId);
+	console.log(targetId)
+  let buttonTag = document.createElement('button')
+, spanTag = document.createElement('span');	
+ buttonTag.id = targetId + '-button';
+ buttonTag.className = 'mousemove';	
+ spanTag.className = 'buttonDiv';
+ spanTag.appendChild(buttonTag);
+ icons.appendChild(spanTag);	
+ return buttonTag		
 }
 
 function setButtonImage(targetId, targetUrl) {
@@ -7,9 +16,10 @@ function setButtonImage(targetId, targetUrl) {
   return
 }
 
-function addClickEvent(func, targetId, targetUrl, type) {
-  func(targetId).addEventListener('click', () => {
-    
+function addClickEvent(ele, targetId, targetUrl, type) {
+//  func(targetId).addEventListener('click', () => {
+  
+  ele.addEventListener('click', () => {  
     let stopButton = buttonElement('stop');
     if (stopButton.innerHTML === 'START Extension') {
 	  stopButton.innerHTML= 'STOP Extension'};
@@ -38,10 +48,47 @@ function addClickEvent(func, targetId, targetUrl, type) {
   return;  
 }
 
-function startPointerFunction(targetId, targetUrl, type) {
+
+function addHoverEventInPopup(ele, targetId, eve) {
+//console.log(functionObj)
+//console.log(ele)
+console.log(eve)
+let eObj = {
+"clientX": ele.offsetLeft + 50,
+"clientY": ele.offsetTop + 38	
+}
+console.log(eObj)
+let aniEvent = setInterval(() => {
+//    functionObj[targetId].mouse.mousemove(eObj)	   
+  eve(eObj)
+  }, 200)	 
+  //setInterval, addEvent, removeEvent
+	
+	ele.addEventListener('mouseover', () => {
+		console.log('moved', targetId)
+		ele.addEventListener('mousemove', eve);
+		//ele.addEventListener('mousemove', functionObj[targetId].mouse.mousemove);
+    clearInterval(aniEvent)
+	});
+
+		//functionObj[targetId].mouse.mousemove) 
+  ele.addEventListener('mouseout', (e) => {  
+     ele.removeEventListener('mousemove', eve);
+     //ele.removeEventListener('mousemove', functionObj[targetId].mouse.mousemove);
+     aniEvent = setInterval(() => {
+     eve(eObj)
+      //functionObj[targetId].mouse.mousemove(eObj)	   
+    }, 200)	 
+  })
+}
+
+function startPointerFunction(targetId, targetUrl, type, eventFunction) {
+  let buttonEle = buttonElement(targetId);
   buttonElement(targetId);
-  setButtonImage(targetId, targetUrl);
-  addClickEvent(buttonElement, targetId, targetUrl, type);
+//  setButtonImage(targetId, targetUrl);
+//  addClickEvent(buttonElement, targetId, targetUrl, type);	
+  addClickEvent(buttonEle, targetId, type);
+  addHoverEventInPopup(buttonEle, targetId, eventFunction);	
   return;
 }
 
@@ -78,7 +125,7 @@ function stopEvent(func, targetId) {
     stopButton.innerHTML = 'STOP Extension';
   return stopButton.innerHTML;
 }
-
+/*
 let bubble = './images/bubble/bubble32.png'
 let letter = './images/letter/letter32.png'
 let snowflake = './images/snow/snowflake32.png'
@@ -113,6 +160,33 @@ startPointerFunction('springCooler', springCooler, 'moving');
 startPointerFunction('colorSpring', colorSpring, 'moving');
 startPointerFunction('coins', coins, 'moving');
 startPointerFunction('digital', digital, 'moving');
+*/
+
+let targets = [ // add new feature name here 
+	/*
+		'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
+		'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
+		'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
+		'coins', 'digital'i
+	*/
+	{"bubble" : mouseEventBubble}
+		]
+for (let i = 0; i < targets.length; i++ ){
+
+//for (const [key, val] of Object.entries(targets)){
+let key = Object.keys(targets[i])[0]
+, val = Object.values(targets[i])[0]
+console.log(i)	
+let path = `./images/${targets[i]}/${targets[i]}32.png`
+//let path = `./images/${key}/${key}32.png`
+let functionScript = document.createElement('script');	
+
+//functionScript.src = `/functions/${key}.js`
+startPointerFunction(key, path, 'moving', val);
+}
+
+
+
 triggerStop(buttonElement, 'stop');
 
       chrome.storage.local.get(['msg'], function(res){

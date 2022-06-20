@@ -24,9 +24,17 @@
           padding-bottom: 10px; 
         }
         .buttonDiv {
-          margin: 5px;
-          padding: 0px;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          padding: 0px;	  
+	  height: 50px;
+	  width: 100%;
+	  display: inline-block;
         }
+	.buttonDiv button {
+	  height: 50px;
+	  width: 100%;
+	}
         .test {
           display: none; 
         }
@@ -102,6 +110,7 @@
       <h4>Choose your mouse effect</h4>
 
       <div id="icons">
+	      <!--
       <span class= "buttonDiv" >
         <button id="bubble" class="mousemove"></button>
       </span>
@@ -165,10 +174,11 @@
     <button id="digital" class="mousemove"></button>
   </span>
   </div>
-
+  -->
   <span class= "stopButton" >
     <button id="stop">STOP Extension</button>
   </span>
+      <script src="/functions/bubble.js"></script>
       <script src="popup.js"></script>
     </body>
   </html>
