@@ -1,4 +1,4 @@
-function buttonElement(targetId) {
+function createAnimationButton(targetId) {
  //OB return document.getElementById(targetId);
 	console.log(targetId)
   let buttonTag = document.createElement('button')
@@ -9,6 +9,10 @@ function buttonElement(targetId) {
  spanTag.appendChild(buttonTag);
  icons.appendChild(spanTag);	
  return buttonTag		
+}
+
+function buttonElement(targetId) {
+ return document.getElementById(targetId);  	
 }
 
 function setButtonImage(targetId, targetUrl) {
@@ -83,7 +87,7 @@ let aniEvent = setInterval(() => {
 }
 
 function startPointerFunction(targetId, targetUrl, type, eventFunction) {
-  let buttonEle = buttonElement(targetId);
+  let buttonEle = createAnimationButton(targetId);
   buttonElement(targetId);
 //  setButtonImage(targetId, targetUrl);
 //  addClickEvent(buttonElement, targetId, targetUrl, type);	
@@ -169,7 +173,23 @@ let targets = [ // add new feature name here
 		'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
 		'coins', 'digital'i
 	*/
-	{"bubble" : mouseEventBubble}
+	{"bubble" : mouseEventBubble},
+	{"letter" : mouseEventLetter},
+	{"snowflake" : mouseEventSnowflake},
+	{"heart" : mouseEventHeart}, 
+	{"heart1" : mouseEventHeart1},
+	{"colorfulBall" : mouseEventColorfulBall},
+	{"strawblueberry" : mouseEventStrawblueberry},
+	{"bunny" : mouseEventBunny},
+	{"dna" : mouseEventDna},
+	{"card" : mouseEventCard},
+	{"atom" : mouseEventAtom},
+	{"petal" : mouseEventPetal},
+	{"float" : mouseEventFloat},
+	{"springCooler" : mouseEventSpringCooler},
+	{"colorSpring" : mouseEventColorSpring},
+	{"coins" : mouseEventCoins},
+	{"digital" : mouseEventDigital}
 		]
 for (let i = 0; i < targets.length; i++ ){
 
@@ -184,8 +204,6 @@ let functionScript = document.createElement('script');
 //functionScript.src = `/functions/${key}.js`
 startPointerFunction(key, path, 'moving', val);
 }
-
-
 
 triggerStop(buttonElement, 'stop');
 
