@@ -92,7 +92,8 @@ chrome.runtime.onMessage.addListener((msg) => {
 
   } else if (msg.type === 'check') {
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {             
+	    console.log(tabs)
       chrome.storage.local.get(['msg'], function(res){
       chrome.tabs.sendMessage(
         tabs[0].id,
@@ -101,9 +102,11 @@ chrome.runtime.onMessage.addListener((msg) => {
 	 	    type: res.msg.type === 'stop' ? 'stop' : 'moving',
           sender: 'background'}
       );
+	      /*
       chrome.action.setIcon({
         path: res.msg.path,
         tabId: tabs[0].id});
+	      */
       })
     });
        

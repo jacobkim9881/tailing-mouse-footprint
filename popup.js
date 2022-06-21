@@ -20,32 +20,32 @@ function setButtonImage(targetId, targetUrl) {
   return
 }
 
-function addClickEvent(ele, targetId, targetUrl, type) {
+//function addClickEvent(ele, targetId, targetUrl, type) {
+function addClickEvent(ele, targetId, type) {
 //  func(targetId).addEventListener('click', () => {
-  
   ele.addEventListener('click', () => {  
     let stopButton = buttonElement('stop');
     if (stopButton.innerHTML === 'START Extension') {
 	  stopButton.innerHTML= 'STOP Extension'};
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      
+     
       chrome.tabs.sendMessage(
         tabs[0].id,
         {
           name: targetId, 
-          path: targetUrl, 
+//          path: targetUrl, 
 	  type: type,
-  	  eventName: func(targetId).className ,
+  	  eventName: ele.className ,
           isItOn: true,
           sender: 'popup'}
       );
-      
+      /*
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
         chrome.action.setIcon({path: targetUrl,
           tabId: tabs[0].id
         });
       });
-      
+     */ 
     });
 
   });
@@ -62,6 +62,7 @@ let eObj = {
 "clientY": ele.offsetTop + 38	
 }
 console.log(eObj)
+/*
 let aniEvent = setInterval(() => {
 //    functionObj[targetId].mouse.mousemove(eObj)	   
   eve(eObj)
@@ -84,6 +85,7 @@ let aniEvent = setInterval(() => {
       //functionObj[targetId].mouse.mousemove(eObj)	   
     }, 200)	 
   })
+*/
 }
 
 function startPointerFunction(targetId, targetUrl, type, eventFunction) {
