@@ -10,7 +10,6 @@ function getObjCard() {
 // return obj;
 }
 getObjCard();
-
 function mouseEventCard(e) {
 // object for styling
   let obj = document.getElementById('card-obj-playing');

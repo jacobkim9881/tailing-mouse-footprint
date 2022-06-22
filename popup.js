@@ -1,12 +1,18 @@
 function createAnimationButton(targetId) {
  //OB return document.getElementById(targetId);
 	console.log(targetId)
-  let buttonTag = document.createElement('button')
-, spanTag = document.createElement('span');	
+  let buttonTag = document.createElement('iframe')
+, spanTag = document.createElement('span')
+, newScript = document.createElement('script')	
  buttonTag.id = targetId + '-button';
  buttonTag.className = 'mousemove';	
+ buttonTag.style.width = '260px'
+ buttonTag.style.height = '70px'	
  spanTag.className = 'buttonDiv';
  spanTag.appendChild(buttonTag);
+ console.log(buttonTag.contentWindow) 
+ newScript.innerHTML = 'console.log("from newScript")'	
+// buttonTag.contentWindow.document.appendChild(newScript)	
  icons.appendChild(spanTag);	
  return buttonTag		
 }
@@ -23,7 +29,14 @@ function setButtonImage(targetId, targetUrl) {
 //function addClickEvent(ele, targetId, targetUrl, type) {
 function addClickEvent(ele, targetId, type) {
 //  func(targetId).addEventListener('click', () => {
-  ele.addEventListener('click', () => {  
+	
+let newScript = document.createElement('script')	
+	newScript.innerHTML = `
+document.body.style.backgroundColor = "black";
+	`;	
+ ele.contentWindow.document.body.appendChild(newScript);	
+  ele.contentWindow.document.addEventListener('click', () => { 
+	  console.log('clicked')
     let stopButton = buttonElement('stop');
     if (stopButton.innerHTML === 'START Extension') {
 	  stopButton.innerHTML= 'STOP Extension'};
