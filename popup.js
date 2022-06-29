@@ -79,42 +79,18 @@ function stopEvent(func, targetId) {
   return stopButton.innerHTML;
 }
 
-let bubble = './images/bubble/bubble32.png'
-let letter = './images/letter/letter32.png'
-let snowflake = './images/snow/snowflake32.png'
-let heart = './images/heart/heart32.png'
-let heart1 = './images/heart1/heart132.png'
-let colorfulBall = './images/co/colorfulBall32.png'
-let strawblueberry = './images/strawblueberry/strawblueberry32.png'
-let bunny = './images/bunny/bunny32.png';
-let dna = './images/dna/dna32.png';
-let card = './images/card/card32.png';
-let atom = './images/atom/atom32.png';
-let petal = './images/petal/petal32.png';
-let float = './images/float/float32.png';
-let springCooler = './images/spring/springCooler32.png';
-let colorSpring = './images/colorSpring/colorSpring32.png';
-let coins = './images/coins/coins32.png';
-let digital = './images/digital/digital32.png';
-let particleMagnet = './images/particleMagnet/particleMagnet32.png';
-startPointerFunction('bubble', bubble, 'moving');
-startPointerFunction('letter', letter, 'moving');
-startPointerFunction('snowflake', snowflake, 'moving');
-startPointerFunction('heart', heart, 'moving');
-startPointerFunction('heart1', heart1, 'moving');
-startPointerFunction('colorfulBall', colorfulBall, 'moving');
-startPointerFunction('strawblueberry', strawblueberry, 'moving');
-startPointerFunction('bunny', bunny, 'moving');
-startPointerFunction('dna', dna, 'moving');
-startPointerFunction('card', card, 'moving');
-startPointerFunction('atom', atom, 'moving');
-startPointerFunction('petal', petal, 'moving');
-startPointerFunction('float', float, 'moving');
-startPointerFunction('springCooler', springCooler, 'moving');
-startPointerFunction('colorSpring', colorSpring, 'moving');
-startPointerFunction('coins', coins, 'moving');
-startPointerFunction('digital', digital, 'moving');
-startPointerFunction('particleMagnet', particleMagnet, 'moving');
+let targets = [ // add new feature name here 
+		'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
+		'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
+		'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
+		'coins', 'digital', 'particleMagnet'
+		]
+for (let i = 0; i < targets.length; i++ ){
+
+let path = `./images/${targets[i]}/${targets[i]}32.png`
+
+startPointerFunction(targets[i], path, 'moving');
+}
 triggerStop(buttonElement, 'stop');
 
       chrome.storage.local.get(['msg'], function(res){
