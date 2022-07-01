@@ -23,13 +23,10 @@
     obj.style.top = (ranYpos + addY) + 'px';
     obj.style.width = randomBallSize + 'px';
     obj.style.height = randomBallSize + 'px';
-    //obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`
     obj.style.borderTop = `2px solid ${colors[num % 7]}`
     //obj.style.borderTop = `2px solid ${colors[num % 5]}`
-    //obj.style.borderLeft = `2px solid hsl(${ranH}, 100%, 50%)`
     obj.style.borderRadius = '50%';
     let animateColor = setInterval(() => {
-//console.log('animate')
     obj.style.borderTop = `2px solid ${colors[num % 7]}`
     //obj.style.borderTop = `2px solid ${colors[num % 5]}`
 	    num = num + 1
@@ -50,7 +47,6 @@
     setTimeout(() => {
 	    obj.remove()
 	    clearInterval(animateColor)
-	    //console.log(animateColor)
     }, 700);
     return;
   }
@@ -64,9 +60,9 @@ function mouseEvent(e) {
     trigger(e, num + 1, 2);
     trigger(e, num + 2, 4);
     trigger(e, num + 3, 6);
-//    trigger(e, num + 4, 8);
-//    trigger(e, num + 5, 10);
-//    trigger(e, num + 6, 12);
+//trigger(e, num + 4, 8);
+//trigger(e, num + 5, 10);
+//trigger(e, num + 6, 12);
   }
 }
 
