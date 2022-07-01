@@ -1,37 +1,37 @@
 //rainbow.js
-  function trigger(e, num, addY = 0) {
-    let obj = document.createElement('div');
-    let ballSize = window.innerHeight/50;
-    let randomBallSize = ballSize + 5;
-    let ranXpos = ballSize + parseInt(e.clientX, 10);
-    let ranYpos = ballSize + parseInt(e.clientY, 10);
-    let ranH = Math.trunc(Math.random() * 360);
-    let ranH2 =  Math.trunc(Math.random() * 360);  
-    let colors =[
-'#ed0000', 
-'#f19d00',
-'#f2f201',
-'#007a01',
-'#01f2f2',
-'#0000f0',
-'#7a0079'
-    ]
+function trigger(e, num, addY = 0) {
+  let obj = document.createElement('div');
+  let ballSize = window.innerHeight/50;
+  let randomBallSize = ballSize + 5;
+  let ranXpos = ballSize + parseInt(e.clientX, 10);
+  let ranYpos = ballSize + parseInt(e.clientY, 10);
+  let ranH = Math.trunc(Math.random() * 360);
+  let ranH2 =  Math.trunc(Math.random() * 360);  
+  let colors =[
+    '#ed0000', 
+    '#f19d00',
+    '#f2f201',
+    '#007a01',
+    '#01f2f2',
+    '#0000f0',
+    '#7a0079'
+  ]
 		  // ['violet', 'blue', 'yellow', 'orange', 'red']
-    //let colors = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
-    obj.style.position = 'fixed';
-    obj.style.left = ranXpos + 'px';
-    obj.style.top = (ranYpos + addY) + 'px';
-    obj.style.width = randomBallSize + 'px';
-    obj.style.height = randomBallSize + 'px';
-    obj.style.borderTop = `4px solid ${colors[num % 7]}`
-    //obj.style.borderTop = `2px solid ${colors[num % 5]}`
-    obj.style.borderRadius = '40%';
-    let animateColor = setInterval(() => {
+  //let colors = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+  obj.style.position = 'fixed';
+  obj.style.left = ranXpos + 'px';
+  obj.style.top = (ranYpos + addY) + 'px';
+  obj.style.width = randomBallSize + 'px';
+  obj.style.height = randomBallSize + 'px';
+  obj.style.borderTop = `4px solid ${colors[num % 7]}`
+  //obj.style.borderTop = `2px solid ${colors[num % 5]}`
+  obj.style.borderRadius = '40%';
+  let animateColor = setInterval(() => {
     obj.style.borderTop = `3px solid ${colors[num % 7]}`
     //obj.style.borderTop = `2px solid ${colors[num % 5]}`
 	    num = num + 1
-    }, 100)
-/*
+  }, 100)
+  /*
     obj.animate([
 	    {borderTop: `2px solid ${colors[num % 7]}`},
 	    {borderTop: `2px solid ${colors[num + 1 % 7]}`},
@@ -43,13 +43,13 @@
         return 1 - Math.sin(Math.acos(timeFraction))}
     })
  */ 
-    document.body.appendChild(obj);
-    setTimeout(() => {
+  document.body.appendChild(obj);
+  setTimeout(() => {
 	    obj.remove()
 	    clearInterval(animateColor)
-    }, 700);
-    return;
-  }
+  }, 700);
+  return;
+}
 
 function mouseEvent(e) {
 
@@ -60,9 +60,9 @@ function mouseEvent(e) {
     trigger(e, num + 1, 2);
     trigger(e, num + 2, 4);
     trigger(e, num + 3, 6);
-//trigger(e, num + 4, 8);
-//trigger(e, num + 5, 10);
-//trigger(e, num + 6, 12);
+    //trigger(e, num + 4, 8);
+    //trigger(e, num + 5, 10);
+    //trigger(e, num + 6, 12);
   }
 }
 

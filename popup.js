@@ -57,14 +57,14 @@ function triggerStop(func, targetId) {
       chrome.storage.local.get(['msg'], function(res){
 	      console.log(res)
 	      console.log(targetId)
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        {
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          {
 	  name: res.msg.name,
-          path: res.msg.path,
-          type: buttonName !== 'STOP Extension' ? targetId : 'moving',
-          sender: 'popup'}
-      );
+            path: res.msg.path,
+            type: buttonName !== 'STOP Extension' ? targetId : 'moving',
+            sender: 'popup'}
+        );
       })
     });
 	  
@@ -80,21 +80,21 @@ function stopEvent(func, targetId) {
 }
 
 let targets = [ // add new feature name here 
-		'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
-		'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
-		'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
-		'coins', 'digital', 'particleMagnet', 'rainbow'
-		]
+  'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
+  'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
+  'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
+  'coins', 'digital', 'particleMagnet', 'rainbow'
+]
 for (let i = 0; i < targets.length; i++ ){
 
-let path = `./images/${targets[i]}/${targets[i]}32.png`
+  let path = `./images/${targets[i]}/${targets[i]}32.png`
 
-startPointerFunction(targets[i], path, 'moving');
+  startPointerFunction(targets[i], path, 'moving');
 }
 triggerStop(buttonElement, 'stop');
 
-      chrome.storage.local.get(['msg'], function(res){
-	if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
+chrome.storage.local.get(['msg'], function(res){
+  if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
 
-console.log(res)
-      })
+  console.log(res)
+})
