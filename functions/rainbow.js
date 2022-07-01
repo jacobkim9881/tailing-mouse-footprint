@@ -23,11 +23,11 @@
     obj.style.top = (ranYpos + addY) + 'px';
     obj.style.width = randomBallSize + 'px';
     obj.style.height = randomBallSize + 'px';
-    obj.style.borderTop = `2px solid ${colors[num % 7]}`
+    obj.style.borderTop = `4px solid ${colors[num % 7]}`
     //obj.style.borderTop = `2px solid ${colors[num % 5]}`
-    obj.style.borderRadius = '50%';
+    obj.style.borderRadius = '40%';
     let animateColor = setInterval(() => {
-    obj.style.borderTop = `2px solid ${colors[num % 7]}`
+    obj.style.borderTop = `3px solid ${colors[num % 7]}`
     //obj.style.borderTop = `2px solid ${colors[num % 5]}`
 	    num = num + 1
     }, 100)

@@ -83,7 +83,7 @@ let targets = [ // add new feature name here
 		'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
 		'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
 		'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
-		'coins', 'digital', 'particleMagnet', 'test'
+		'coins', 'digital', 'particleMagnet', 'rainbow'
 		]
 for (let i = 0; i < targets.length; i++ ){
 
