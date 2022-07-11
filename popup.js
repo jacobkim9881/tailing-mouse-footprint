@@ -79,6 +79,34 @@ function stopEvent(func, targetId) {
   return stopButton.innerHTML;
 }
 
+chrome.storage.local.get(['advertised'], function(res1) { 
+chrome.storage.local.get(['stamp'], function(res) { 
+console.log(res)
+let stamps = Object.keys(res.stamp)
+, advertised = res1.advertised	
+if (stamps.length < 3 && !advertised) {	
+let lastStamp = stamps[stamps.length -1]	
+let aDay = 1000 * 60 * 60 * 24
+ today = new Date()	
+	console.log(lastStamp)
+lastStamp = Date.parse(lastStamp)	
+
+	console.log(lastStamp)
+let aDayOver = lastStamp + today > today || isNaN(lastStamp) 	
+let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
+if (aDayOver) {
+stampObj.stamp[today] = 1	
+	console.log(stampObj)
+chrome.storage.local.set(stampObj)
+}
+} else {
+	
+chrome.storage.local.set({advertised: true})
+}
+return
+})
+})
+
 let targets = [ // add new feature name here 
 		'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
 		'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
