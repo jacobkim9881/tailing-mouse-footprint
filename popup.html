@@ -8,6 +8,7 @@
 	}
         body {
           width: 270px;
+	  background-color: azure;
         }
 	#wrapper {
 	}
@@ -24,6 +25,21 @@
         .buttonDiv :hover {
           cursor: pointer;
         }
+	@keyframes slidein {
+	  from {
+	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
+	    transform: scale(0.95, 0.95);
+	  }
+
+	  35% {
+	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
+	    transform: scale(1, 1);
+	  }
+
+	  to {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;				      }
+	    transform: scale(1, 1);
+ 	  }
         h4 {
 	  padding: 10px 0 10px 0;
           font-size: 0.9rem;
@@ -34,7 +50,11 @@
           text-indent: 10px;
           background-color: #e0e0e0;
 	  font-weight: 100;
+          animation-duration: 3s;
+          animation-name: slidein;
         }
+
+	
         .buttonDiv {
           margin: 5px;
           padding: 0px;
@@ -44,6 +64,9 @@
 	  border-radius: 50%;
 	  border: 1px;
 	  background-color: #ec9d75;
+	  animation-duration: 2s;
+          animation-name: slidein;
+
 	}
         .test {
           display: none; 
@@ -116,7 +139,13 @@
           background-image: url('./images/rainbow/rainbow32');
 	  background-color: white;
         }
-
+	#rating {
+      	  margin: 10px 0 0 0;
+	}
+	#rating a {
+	  color: #383838;
+          text-decoration: none;
+	}
 	#stop {
           width: 100%;
  	  height: 40px;
@@ -129,7 +158,8 @@
           background-color: #e0e0e0;
 	  padding: 10px 0 10px 0;
           font-size: 0.9rem;
-
+          animation-duration: 2s;
+          animation-name: slidein;
 	}
 
       </style>
@@ -209,6 +239,11 @@
     <button id="rainbow" class="mousemove"></button>
   </span>
   </div>
+  <h4 id="rating">
+  <a target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
+  Go to rating	  
+  </a>
+  </h4>	  
   <span class= "stopButton" >
     <button id="stop">STOP Extension</button>
   </span>
