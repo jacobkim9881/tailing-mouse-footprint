@@ -40,6 +40,17 @@
 	    box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;				      }
 	    transform: scale(1, 1);
  	  }
+	@keyframes luminate {
+	  from {
+  	    box-shadow: 0.3rem 0.3rem 0.6rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	  50% {
+  	    box-shadow: 0.3rem 0.3rem 0.8rem #c6ffc7, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	  to {
+  	    box-shadow: 0.3rem 0.3rem 0.6rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	}
         h4 {
 	  padding: 10px 0 10px 0;
           font-size: 0.9rem;
@@ -67,6 +78,8 @@
 	  animation-duration: 2s;
           animation-name: slidein;
 
+	}
+	.mousemove:hover {
 	}
         .test {
           display: none; 
@@ -140,13 +153,15 @@
 	  background-color: white;
         }
 	#rating {
-      	  margin: 10px 0 0 0;
-	}
-	#rating a {
 	  color: #383838;
           text-decoration: none;
 	}
+	#rating h4 {
+      	  margin: 10px 0 0 0;
+	}
+
 	#stop {
+	  cursor: pointer;		
           width: 100%;
  	  height: 40px;
 	  margin-top: 10px;
@@ -239,11 +254,11 @@
     <button id="rainbow" class="mousemove"></button>
   </span>
   </div>
-  <h4 id="rating">
-  <a target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
+  <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
+  <h4 >
   Go to rating	  
-  </a>
   </h4>	  
+  </a>
   <span class= "stopButton" >
     <button id="stop">STOP Extension</button>
   </span>
