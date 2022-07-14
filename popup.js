@@ -55,8 +55,8 @@ function triggerStop(func, targetId) {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
       chrome.storage.local.get(['msg'], function(res){
-	      console.log(res)
-	      console.log(targetId)
+//	      console.log(res)
+//	      console.log(targetId)
         chrome.tabs.sendMessage(
           tabs[0].id,
           {
@@ -83,19 +83,19 @@ function stampCounter() {
 
 chrome.storage.local.get(['advertised'], function(res1) { 
 chrome.storage.local.get(['stamp'], function(res) { 
-console.log(res)
+//console.log(res)
 let stamps = res.stamp ? Object.keys(res.stamp) : []
 , advertised = res1.advertised
-, dayCount = 3	
+, dayCount = 1	
 , ratingBtn = document.getElementById('rating')
-	console.log(stamps)
+//	console.log(stamps)
 //	console.log(advertised)
 //	console.log(advertised === undefined)
 if (stamps.length < dayCount) {	
 let lastStamp = stamps[stamps.length -1]	
 let aDay = 1000 * 60 * 60 * 24
  today = new Date()	
-	console.log(lastStamp)
+	//console.log(lastStamp)
 lastStamp = Date.parse(lastStamp)	
 //console.log(lastStamp + aDay) 
 //console.log(today.getTime())
@@ -120,7 +120,7 @@ chrome.storage.local.set(stampObj)
  }
 
 } else if(advertised) {
-	console.log(advertised)
+//	console.log(advertised)
  ratingBtn.style.display = 'block'	 
  gradationBtn()
 }
@@ -143,14 +143,14 @@ grad1 = (grad1 + 1) % 360
 }, 50)
 
 chrome.storage.local.get(['rating-visited'], function(res) { 
-console.log(res)
+//console.log(res)
   if (res['rating-visited']) {
   clearInterval(ratingGradation)
   ratingH4.style.color = '#383838'	
   }
 })
 ratingH4.onclick = function() {
-	console.log('clicked')
+	//console.log('clicked')
  chrome.storage.local.set({["rating-visited"] : true})
 }
 return
@@ -173,7 +173,8 @@ for (let i = 0; i < targets.length; i++ ){
 triggerStop(buttonElement, 'stop');
 
 chrome.storage.local.get(['msg'], function(res){
+//  console.log(Object.keys(res).length)
+     if (Object.keys(res).length === 0) return; 
   if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
 
-  console.log(res)
 })

@@ -90,6 +90,8 @@ chrome.runtime.onMessage.addListener((msg) => {
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
       chrome.storage.local.get(['msg'], function(res){
+//	      console.log(res)
+     if (Object.keys(res).length === 0) return; 
       chrome.tabs.sendMessage(
         tabs[0].id,
         { name: res.msg.name,
