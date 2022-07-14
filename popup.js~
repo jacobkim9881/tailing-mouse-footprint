@@ -86,36 +86,25 @@ let stamps = Object.keys(res.stamp)
 , advertised = res1.advertised
 	console.log(stamps)
 	console.log(advertised)
-	console.log(advertised === undefined)
-if (stamps.length < 3) {	
+if (stamps.length < 3 && !advertised) {	
 let lastStamp = stamps[stamps.length -1]	
 let aDay = 1000 * 60 * 60 * 24
  today = new Date()	
 	console.log(lastStamp)
 lastStamp = Date.parse(lastStamp)	
-console.log(lastStamp + aDay) 
-console.log(today.getTime())
+
 	console.log(lastStamp)
-let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) 	
+let aDayOver = lastStamp + aDay > today || isNaN(lastStamp) 	
 let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
-	console.log(aDayOver)
+	console.log(aDayOver
 if (aDayOver) {
 stampObj.stamp[today] = 1	
 	console.log(stampObj)
 chrome.storage.local.set(stampObj)
 }
-} else if(stamps.length > 3 && !advertised) {
-
- if (confirm('Have you enjoyed the extension?') === true) {
- 	 
- chrome.storage.local.set({advertised: true})
-
- alert('thanks')
- } else {
- alert('okay')
- chrome.storage.local.set({stamp : {}})
- }
-
+} else {
+	
+chrome.storage.local.set({advertised: true})
 }
 return
 })
