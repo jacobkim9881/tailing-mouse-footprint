@@ -81,45 +81,78 @@ function stopEvent(func, targetId) {
 
 chrome.storage.local.get(['advertised'], function(res1) { 
 chrome.storage.local.get(['stamp'], function(res) { 
-console.log(res)
+//console.log(res)
 let stamps = Object.keys(res.stamp)
 , advertised = res1.advertised
-	console.log(stamps)
-	console.log(advertised)
-	console.log(advertised === undefined)
-if (stamps.length < 3) {	
+, dayCount = 3	
+, ratingBtn = document.getElementById('rating')
+//	console.log(stamps)
+//	console.log(advertised)
+//	console.log(advertised === undefined)
+if (stamps.length < dayCount) {	
 let lastStamp = stamps[stamps.length -1]	
 let aDay = 1000 * 60 * 60 * 24
  today = new Date()	
 	console.log(lastStamp)
 lastStamp = Date.parse(lastStamp)	
-console.log(lastStamp + aDay) 
-console.log(today.getTime())
-	console.log(lastStamp)
+//console.log(lastStamp + aDay) 
+//console.log(today.getTime())
+//	console.log(lastStamp)
 let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) 	
 let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
-	console.log(aDayOver)
+//	console.log(aDayOver)
 if (aDayOver) {
 stampObj.stamp[today] = 1	
-	console.log(stampObj)
+//	console.log(stampObj)
 chrome.storage.local.set(stampObj)
 }
-} else if(stamps.length > 3 && !advertised) {
+} else if(stamps.length >= dayCount && !advertised) {
 
  if (confirm('Have you enjoyed the extension?') === true) {
- 	 
+ alert('Thanks for enjoying! \nPlease rating the extension!')
+ ratingBtn.style.display = 'block'	 
  chrome.storage.local.set({advertised: true})
 
- alert('thanks')
  } else {
- alert('okay')
  chrome.storage.local.set({stamp : {}})
  }
 
+} else if(advertised) {
+	console.log(advertised)
+ ratingBtn.style.display = 'block'	 
 }
 return
 })
 })
+
+function gradationBtn() {
+let ratingH4 = document.getElementById('rating-h4')
+let grad1 = 1	
+
+ratingH4.style.color = 'white'	
+
+let ratingGradation = setInterval(() => {
+ratingH4.style.backgroundImage = `linear-gradient(hsl(${grad1}, 100%, 50%) , hsl(${grad1 + 30}, 100%, 50%))`
+ratingH4.style.boxShadow = `0.3rem 0.3rem 0.6rem hsl(${grad1}, 100%, 50%), -0.2rem -0.2rem 0.5rem #FFFFFF`
+
+grad1 = (grad1 + 1) % 360	
+}, 50)
+
+chrome.storage.local.get(['rating-visited'], function(res) { 
+console.log(res)
+  if (res['rating-visited']) {
+  clearInterval(ratingGradation)
+  ratingH4.style.color = '#383838'	
+  }
+})
+ratingH4.onclick = function() {
+	console.log('clicked')
+ chrome.storage.local.set({["rating-visited"] : true})
+}
+
+}
+
+gradationBtn()
 
 let targets = [ // add new feature name here 
   'bubble', 'letter', 'snowflake', 'heart', 'heart1', 

@@ -42,13 +42,30 @@
  	  }
 	@keyframes luminate {
 	  from {
-  	    box-shadow: 0.3rem 0.3rem 0.6rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	  }
-	  50% {
-  	    box-shadow: 0.3rem 0.3rem 0.8rem #c6ffc7, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  13% {
+  	    box-shadow: 0.3rem 0.3rem 0.9rem #00ff37, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	  }
 	  to {
-  	    box-shadow: 0.3rem 0.3rem 0.6rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	}
+	:root {
+	  --white-red: #ff8282;
+	}
+	@keyframes rainbow {
+	  from {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff8282;
+	  }
+	  50% {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff82d9, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff82d9;
+	  }
+	  to {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff8282;
 	  }
 	}
         h4 {
@@ -80,6 +97,17 @@
 
 	}
 	.mousemove:hover {
+ 	  animation-duration: 3s;
+  	  animation-iteration-count: infinite;
+          animation-name: luminate;
+
+/*  	    box-shadow: 0.3rem 0.3rem 1rem #00ff37, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    */
+	}
+	.mousemove:active {
+          box-shadow:0;
+	  transform: scale(0.95, 0.95);
+	  animation-iteration-count: 0;
 	}
         .test {
           display: none; 
@@ -155,11 +183,16 @@
 	#rating {
 	  color: #383838;
           text-decoration: none;
+	  display: none;
 	}
+	#rating h4:active {
+	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
+	}
+
 	#rating h4 {
       	  margin: 10px 0 0 0;
 	}
-
+	
 	#stop {
 	  cursor: pointer;		
           width: 100%;
@@ -175,6 +208,9 @@
           font-size: 0.9rem;
           animation-duration: 2s;
           animation-name: slidein;
+	}
+	#stop:active {
+	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
 	}
 
       </style>
@@ -255,7 +291,7 @@
   </span>
   </div>
   <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
-  <h4 >
+  <h4 id="rating-h4" >
   Go to rating	  
   </h4>	  
   </a>
