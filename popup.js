@@ -79,14 +79,16 @@ function stopEvent(func, targetId) {
   return stopButton.innerHTML;
 }
 
+function stampCounter() {
+
 chrome.storage.local.get(['advertised'], function(res1) { 
 chrome.storage.local.get(['stamp'], function(res) { 
-//console.log(res)
-let stamps = Object.keys(res.stamp)
+console.log(res)
+let stamps = res.stamp ? Object.keys(res.stamp) : []
 , advertised = res1.advertised
 , dayCount = 3	
 , ratingBtn = document.getElementById('rating')
-//	console.log(stamps)
+	console.log(stamps)
 //	console.log(advertised)
 //	console.log(advertised === undefined)
 if (stamps.length < dayCount) {	
@@ -98,7 +100,7 @@ lastStamp = Date.parse(lastStamp)
 //console.log(lastStamp + aDay) 
 //console.log(today.getTime())
 //	console.log(lastStamp)
-let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) 	
+let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) || lastStamp === undefined 	
 let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
 //	console.log(aDayOver)
 if (aDayOver) {
@@ -112,7 +114,7 @@ chrome.storage.local.set(stampObj)
  alert('Thanks for enjoying! \nPlease rating the extension!')
  ratingBtn.style.display = 'block'	 
  chrome.storage.local.set({advertised: true})
-
+ gradationBtn()
  } else {
  chrome.storage.local.set({stamp : {}})
  }
@@ -120,10 +122,12 @@ chrome.storage.local.set(stampObj)
 } else if(advertised) {
 	console.log(advertised)
  ratingBtn.style.display = 'block'	 
+ gradationBtn()
 }
 return
 })
 })
+}
 
 function gradationBtn() {
 let ratingH4 = document.getElementById('rating-h4')
@@ -149,10 +153,10 @@ ratingH4.onclick = function() {
 	console.log('clicked')
  chrome.storage.local.set({["rating-visited"] : true})
 }
-
+return
 }
 
-gradationBtn()
+stampCounter()
 
 let targets = [ // add new feature name here 
   'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
