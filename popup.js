@@ -11,8 +11,8 @@ function addClickEvent(func, targetId, targetUrl, type) {
   func(targetId).addEventListener('click', () => {
     
     let stopButton = buttonElement('stop');
-    if (stopButton.innerHTML === 'START Extension') {
-	  stopButton.innerHTML= 'STOP Extension'};
+    if (stopButton.innerHTML === startExtension) {
+	  stopButton.innerHTML= stopExtension};
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       
       chrome.tabs.sendMessage(
@@ -62,7 +62,7 @@ function triggerStop(func, targetId) {
           {
 	  name: res.msg.name,
             path: res.msg.path,
-            type: buttonName !== 'STOP Extension' ? targetId : 'moving',
+            type: buttonName !== stopExtension ? targetId : 'moving',
             sender: 'popup'}
         );
       })
@@ -73,9 +73,9 @@ function triggerStop(func, targetId) {
 
 function stopEvent(func, targetId) {
   let stopButton =  func(targetId);
-  stopButton.innerHTML === 'STOP Extension' ? 
-    stopButton.innerHTML = 'START Extension' : 
-    stopButton.innerHTML = 'STOP Extension';
+  stopButton.innerHTML === stopExtension ? 
+    stopButton.innerHTML = startExtension : 
+    stopButton.innerHTML = stopExtension
   return stopButton.innerHTML;
 }
 
@@ -110,8 +110,11 @@ chrome.storage.local.set(stampObj)
 }
 } else if(stamps.length >= dayCount && !advertised) {
 
- if (confirm('Have you enjoyed the extension?') === true) {
- alert('Thanks for enjoying! \nPlease rating the extension!')
+const askQuestion = chrome.i18n.getMessage('askQuestion')
+const ratingQuestion = chrome.i18n.getMessage('ratingQuestion')
+	
+ if (confirm(askQuestion) === true) {
+ alert(ratingQuestion)
  ratingBtn.style.display = 'block'	 
  chrome.storage.local.set({advertised: true})
  gradationBtn()
@@ -156,7 +159,25 @@ ratingH4.onclick = function() {
 return
 }
 
+function setInnerText() {
+const title = document.getElementById('title-ext')
+, ratingBtn = document.getElementById('rating-h4')
+, stopBtn = document.getElementById('stop')
+, stopExtension = chrome.i18n.getMessage('stopExtension')
+, popupTitle = chrome.i18n.getMessage('popupTitle')
+, ratingBtnText = chrome.i18n.getMessage('ratingBtn')
+
+ratingBtn.innerText = ratingBtnText	
+title.innerText = popupTitle
+stopBtn.innerText = stopExtension
+return	
+}
+
+setInnerText()
 stampCounter()
+
+const stopExtension = chrome.i18n.getMessage('stopExtension')
+const startExtension = chrome.i18n.getMessage('startExtension')
 
 let targets = [ // add new feature name here 
   'bubble', 'letter', 'snowflake', 'heart', 'heart1', 
@@ -178,3 +199,4 @@ chrome.storage.local.get(['msg'], function(res){
   if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
 
 })
+
