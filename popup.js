@@ -86,7 +86,7 @@ chrome.storage.local.get(['stamp'], function(res) {
 //console.log(res)
 let stamps = res.stamp ? Object.keys(res.stamp) : []
 , advertised = res1.advertised
-, dayCount = 1	
+, dayCount = 3	
 , ratingBtn = document.getElementById('rating')
 //	console.log(stamps)
 //	console.log(advertised)
