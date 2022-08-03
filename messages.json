@@ -1,0 +1,9 @@
+{"appName":
+	{"message":"Cursor Tails - Animations for your mouse","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Adding funny effects whenever you move your mouse. This extension make your mouse moving create fun effects.","description":"The description of the application, displayed in the web store."},
+"stopExtension": {"message": "Disable", "description":"When clicked, the extension disabled till the enable cliked."},
+"startExtension": {"message": "Enable", "description":"When clicked, the extension enabled till the disable cliked."},
+"popupTitle": {"message": "Choose your mouse effect", "description":"The tile when popup window opened."},
+"ratingBtn": {"message": "Go to rating", "description":"The button open new window to rate the extension for the user."},
+"askQuestion": {"message": "Have you enjoyed the extension?", "description":"Alert message occured when user visited over 3 days."},
+"ratingQuestion": {"message": "Thanks for enjoying! \nPlease rating the extension!", "description":"Alert message occured when user visited over 3 days."}
+}
