@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Makanema pa mbewa yanu","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Kuwonjezera zotsatira zoseketsa nthawi iliyonse mukasuntha mbewa yanu.Kuwonjezera uku kumapangitsa mbewa yanu kuyenda pangani zovuta.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor michira - makanema ojambula pa mbewa yanu",
+        "description": "Mutu wa pulogalamuyi, wowonetsedwa mu store."
+    },
+    "appDesc": {
+        "message": "Kuwonjezera zotsatira zoseketsa nthawi iliyonse mukasuntha mbewa yanu.Kuwonjezera uku kumapangitsa mbewa yanu kuyenda pangani zovuta.",
+        "description": "Mafotokozedwe a pulogalamuyi, omwe adawonetsedwa mu store."
+    },
+    "stopExtension": {
+        "message": "Kulepheretsa",
+        "description": "Mukadula, kuwonjezera olumala mpaka atakwanitsa."
+    },
+    "startExtension": {
+        "message": "Pangitsa",
+        "description": "Mukadula, kukulitsa komwe kwathe ntchito mpaka kuwulitsa."
+    },
+    "popupTitle": {
+        "message": "Sankhani zotsatira za mbewa yanu",
+        "description": "Matayala pomwe pawindo la popup idatsegulidwa."
+    },
+    "ratingBtn": {
+        "message": "Pitani ku",
+        "description": "Batani lotseguka zenera latsopano kuti muchepetse ogwiritsa ntchito."
+    },
+    "askQuestion": {
+        "message": "Kodi mwasangalala ndi kukulitsa?",
+        "description": "Mauthenga achidziwitso omwe amagwiritsa ntchito omwe amasuta anayendera masiku atatu."
+    },
+    "ratingQuestion": {
+        "message": "Zikomo posangalala ndi kusangalala!\n Chonde chonde gwiritsani ntchito zowonjezera!",
+        "description": "Mauthenga achidziwitso omwe amagwiritsa ntchito omwe amasuta anayendera masiku atatu."
+    }
+}

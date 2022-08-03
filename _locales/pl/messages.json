@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animacje dla twojej myszy","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Dodawanie zabawnych efektów za każdym razem, gdy przesuwasz mysz.To rozszerzenie sprawia, że poruszanie się myszy tworzy efekty zabawy.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Ogony kursora - animacje dla twojej myszy",
+        "description": "Tytuł aplikacji, wyświetlany w sklepie internetowym."
+    },
+    "appDesc": {
+        "message": "Dodawanie śmiesznych efektów za każdym razem, gdy poruszasz myszą.To rozszerzenie sprawia, że ruch myszy tworzy zabawne efekty.",
+        "description": "Opis aplikacji, wyświetlany w sklepie internetowym."
+    },
+    "stopExtension": {
+        "message": "Wyłączyć",
+        "description": "Po kliknięciu rozszerzenie wyłączone, aż do włączenia."
+    },
+    "startExtension": {
+        "message": "Włączać",
+        "description": "Po kliknięciu rozszerzenie włączono do momentu, aż wyłączono."
+    },
+    "popupTitle": {
+        "message": "Wybierz efekt myszy",
+        "description": "Płytka po otwarciu okna wyskakującego."
+    },
+    "ratingBtn": {
+        "message": "Przejdź do oceny",
+        "description": "Przycisk otwiera nowe okno, aby ocenić rozszerzenie dla użytkownika."
+    },
+    "askQuestion": {
+        "message": "Czy podobało Ci się rozszerzenie?",
+        "description": "Wiadomość alertu wystąpiła, gdy użytkownik odwiedził przez 3 dni."
+    },
+    "ratingQuestion": {
+        "message": "Dzięki za przyjemność!\n Proszę o ocenę rozszerzenia!",
+        "description": "Wiadomość alertu wystąpiła, gdy użytkownik odwiedził przez 3 dni."
+    }
+}

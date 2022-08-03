@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - 鼠标的动画","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"每当移动鼠标时添加有趣的效果。此扩展会使鼠标移动创造有趣的效果。","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "光标尾巴 - 鼠标的动画",
+        "description": "应用程序的标题，显示在网络商店中。"
+    },
+    "appDesc": {
+        "message": "每当您移动鼠标时，都会添加有趣的效果。此扩展使您的鼠标移动产生有趣的效果。",
+        "description": "该应用程序的描述，显示在网络商店中。"
+    },
+    "stopExtension": {
+        "message": "禁用",
+        "description": "单击时，禁用扩展名直到启用cliked。"
+    },
+    "startExtension": {
+        "message": "使能够",
+        "description": "单击时，启用了扩展名，直到禁用cliked。"
+    },
+    "popupTitle": {
+        "message": "选择鼠标效果",
+        "description": "打开弹出窗口时的瓷砖。"
+    },
+    "ratingBtn": {
+        "message": "去评级",
+        "description": "按钮打开新窗口，为用户评分扩展名。"
+    },
+    "askQuestion": {
+        "message": "您喜欢扩展吗？",
+        "description": "当用户访问3天内时，会发生警报消息。"
+    },
+    "ratingQuestion": {
+        "message": "感谢您的享受！（）请对扩展名进行评分！",
+        "description": "当用户访问3天内时，会发生警报消息。"
+    }
+}

@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animeiddiadau ar gyfer eich llygoden","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Ychwanegu effeithiau doniol pryd bynnag y byddwch yn symud eich llygoden.Mae'r estyniad hwn yn gwneud eich llygoden yn symud i greu effeithiau hwyliog.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cynffonau cyrchwr - animeiddiadau ar gyfer eich llygoden",
+        "description": "Teitl y cymhwysiad, wedi'i arddangos yn y siop we."
+    },
+    "appDesc": {
+        "message": "Ychwanegu effeithiau doniol pryd bynnag y byddwch chi'n symud eich llygoden.Mae'r estyniad hwn yn gwneud i'ch llygoden symud greu effeithiau hwyliog.",
+        "description": "Y disgrifiad o'r cymhwysiad, wedi'i arddangos yn y siop we."
+    },
+    "stopExtension": {
+        "message": "Analluoga ’",
+        "description": "Pan gaiff ei glicio, mae'r estyniad yn anabl nes bod y galluogi wedi'i glicio."
+    },
+    "startExtension": {
+        "message": "Galluoga",
+        "description": "Pan gafodd ei glicio, galluogodd yr estyniad nes i'r analluogi gael ei glicio."
+    },
+    "popupTitle": {
+        "message": "Dewiswch Effaith Eich Llygoden",
+        "description": "Y deilsen pan agorodd ffenestr naid."
+    },
+    "ratingBtn": {
+        "message": "Ewch i'r Sgôr",
+        "description": "Mae'r botwm yn agor ffenestr newydd i raddio'r estyniad ar gyfer y defnyddiwr."
+    },
+    "askQuestion": {
+        "message": "Ydych chi wedi mwynhau'r estyniad?",
+        "description": "Digwyddodd neges rhybuddio pan ymwelodd y defnyddiwr dros 3 diwrnod."
+    },
+    "ratingQuestion": {
+        "message": "Diolch am fwynhau!\n Graddiwch yr estyniad os gwelwch yn dda!",
+        "description": "Digwyddodd neges rhybuddio pan ymwelodd y defnyddiwr dros 3 diwrnod."
+    }
+}

@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animasi untuk mouse Anda","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Menambahkan efek lucu setiap kali Anda memindahkan mouse Anda.Ekstensi ini membuat mouse Anda bergerak menciptakan efek menyenangkan.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Ekor Kursor - Animasi untuk Mouse Anda",
+        "description": "Judul aplikasi, ditampilkan di toko web."
+    },
+    "appDesc": {
+        "message": "Menambahkan efek lucu setiap kali Anda memindahkan mouse Anda.Ekstensi ini membuat mouse Anda bergerak membuat efek yang menyenangkan.",
+        "description": "Deskripsi aplikasi, ditampilkan di toko web."
+    },
+    "stopExtension": {
+        "message": "Cacat",
+        "description": "Saat diklik, ekstensi dinonaktifkan sampai Aktifkan klik."
+    },
+    "startExtension": {
+        "message": "Memungkinkan",
+        "description": "Saat diklik, ekstensi diaktifkan sampai dinonaktifkan klik."
+    },
+    "popupTitle": {
+        "message": "Pilih Efek Mouse Anda",
+        "description": "Ubin saat jendela popup dibuka."
+    },
+    "ratingBtn": {
+        "message": "Pergi ke peringkat",
+        "description": "Tombol membuka jendela baru untuk menilai ekstensi untuk pengguna."
+    },
+    "askQuestion": {
+        "message": "Sudahkah Anda menikmati ekstensi?",
+        "description": "Pesan waspada terjadi ketika pengguna mengunjungi selama 3 hari."
+    },
+    "ratingQuestion": {
+        "message": "Terima kasih telah menikmati!\n Harap peringkat ekstensi!",
+        "description": "Pesan waspada terjadi ketika pengguna mengunjungi selama 3 hari."
+    }
+}

@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animace pro myš","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Přidání vtipných efektů, kdykoli pohybujete myší.Toto rozšíření umožňuje pohybující se myší Vytvořit zábavné efekty.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Kurzorové ocasy - animace pro myši",
+        "description": "Název aplikace, zobrazený ve webovém obchodě."
+    },
+    "appDesc": {
+        "message": "Přidání vtipných efektů, kdykoli přesunete myši.Toto rozšíření způsobí, že vaše myš pohybuje, vytváří zábavné efekty.",
+        "description": "Popis aplikace, zobrazený ve webovém obchodě."
+    },
+    "stopExtension": {
+        "message": "Zakázat",
+        "description": "Po kliknutí se prodloužení deaktivovalo, dokud se povolil."
+    },
+    "startExtension": {
+        "message": "Umožnit",
+        "description": "Po kliknutí je rozšíření povoleno, dokud se deaktivoval."
+    },
+    "popupTitle": {
+        "message": "Vyberte si efekt myši",
+        "description": "Dlaždice, když se otevřelo vyskakovací okno."
+    },
+    "ratingBtn": {
+        "message": "Přejděte na hodnocení",
+        "description": "Tlačítko Otevřeno nové okno pro ohodnocení přípony pro uživatele."
+    },
+    "askQuestion": {
+        "message": "Užili jste si prodloužení?",
+        "description": "Uzavřená zpráva došlo, když uživatel navštívil 3 dny."
+    },
+    "ratingQuestion": {
+        "message": "Díky za užívání!\n Hodnotíte prosím rozšíření!",
+        "description": "Uzavřená zpráva došlo, když uživatel navštívil 3 dny."
+    }
+}

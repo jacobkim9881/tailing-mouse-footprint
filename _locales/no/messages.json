@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animasjoner for musen din","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Legge til morsomme effekter når du beveger musen.Denne utvidelsen gjør musen din flytte til å skape morsomme effekter.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Markørhaler - Animasjoner for musen din",
+        "description": "Tittelen på applikasjonen, vises i nettbutikken."
+    },
+    "appDesc": {
+        "message": "Legge til morsomme effekter når du beveger musen.Denne utvidelsen gjør at musen din beveger seg til å skape morsomme effekter.",
+        "description": "Beskrivelsen av applikasjonen, vist i nettbutikken."
+    },
+    "stopExtension": {
+        "message": "Deaktiver",
+        "description": "Når du klikker, deaktiveres utvidelsen til Aktiver klikket."
+    },
+    "startExtension": {
+        "message": "Muliggjøre",
+        "description": "Når du klikket, aktiveres utvidelsen til deaktiveringene er klikket."
+    },
+    "popupTitle": {
+        "message": "Velg museeffekten din",
+        "description": "Flisen da popup -vinduet åpnet."
+    },
+    "ratingBtn": {
+        "message": "Gå til vurdering",
+        "description": "Knappen åpner nytt vindu for å vurdere utvidelsen for brukeren."
+    },
+    "askQuestion": {
+        "message": "Har du hatt glede av utvidelsen?",
+        "description": "Varslingsmelding oppstod da brukeren besøkte over 3 dager."
+    },
+    "ratingQuestion": {
+        "message": "Takk for at du nyter!\n Vennligst vurderer utvidelsen!",
+        "description": "Varslingsmelding oppstod da brukeren besøkte over 3 dager."
+    }
+}

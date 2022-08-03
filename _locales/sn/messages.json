@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Mifananidzo yehove yako","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Kuwedzera zvinonakidza zvinokanganisa chero paunofambisa mbeva yako.Kuwedzerwa uku kunoita kuti mbeva yako ichifamba ichigadzira migumisiro inonakidza.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Misungo yemisungo - mifananidzo yeiyo mbeva yako",
+        "description": "Zita rechishandiso, rinoratidzwa muchitoro chewebhu."
+    },
+    "appDesc": {
+        "message": "Kuwedzera zvinonakidza zvinokanganisa chero paunofambisa mbeva yako.Kuwedzerwa uku kunoita kuti mbeva yako ichifamba ichigadzira migumisiro inonakidza.",
+        "description": "Tsananguro yekushandiswa, inoratidzwa muchitoro chewebhu."
+    },
+    "stopExtension": {
+        "message": "Disable",
+        "description": "Kana zvichityiwa, kuwanda kwakaremara kusvika iyo yakagonesa kubvumidzwa."
+    },
+    "startExtension": {
+        "message": "Gonesa",
+        "description": "Kana zvichityiwa, kuwedzerwa kunogoneswa kusvika kune iyo ivhu rakabvumirwa."
+    },
+    "popupTitle": {
+        "message": "Sarudza yako mbeva yemhedzisiro",
+        "description": "Tile kana hwindo rePopup rakavhurwa."
+    },
+    "ratingBtn": {
+        "message": "Enda kuChiyero",
+        "description": "Bhatani rinovhura hwindo idzva kuyera kuwedzerwa kwemushandisi."
+    },
+    "askQuestion": {
+        "message": "Wakafarikanya here?",
+        "description": "Yambiro meseji yakaitika kana mushandisi akashanyira anopfuura mazuva matatu."
+    },
+    "ratingQuestion": {
+        "message": "Kutenda nekunakidzwa!\n Ndokumbira urege kuwedzerwa!",
+        "description": "Yambiro meseji yakaitika kana mushandisi akashanyira anopfuura mazuva matatu."
+    }
+}

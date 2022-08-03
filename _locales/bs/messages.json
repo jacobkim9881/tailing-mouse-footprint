@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animacije za vaš miš","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Dodavanje smiješnih efekata kad god pomakneš miš.Ovo ekstenzija čini vaš miš kretanje stvaranja zabavnih efekata.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Repovi kursora - animacije za miš",
+        "description": "Naslov aplikacije, prikazan u web trgovini."
+    },
+    "appDesc": {
+        "message": "Dodavanje smiješnih efekata kad god pomakneš miš.Ovo ekstenzija čini vaš miš kretanje stvaranja zabavnih efekata.",
+        "description": "Opis aplikacije, prikazan u web trgovini."
+    },
+    "stopExtension": {
+        "message": "Onesposobiti",
+        "description": "Kada se klikne, ekstenzije onemogućeno dok se omogući klizanje."
+    },
+    "startExtension": {
+        "message": "Omogućiti",
+        "description": "Kad se klikne, proširenje je omogućeno dok onemogućava klike."
+    },
+    "popupTitle": {
+        "message": "Odaberite svoj efekat miša",
+        "description": "Pločica kada se otvorio skočni prozor."
+    },
+    "ratingBtn": {
+        "message": "Idi na ocjenu",
+        "description": "Dugme Otvorite novi prozor da biste ocijenili proširenje za korisnika."
+    },
+    "askQuestion": {
+        "message": "Jeste li uživali u produžetku?",
+        "description": "Poruka upozorenja nastala je kada je korisnik posjetio više od 3 dana."
+    },
+    "ratingQuestion": {
+        "message": "Hvala što ste uživali!\n Molimo ocijenite proširenje!",
+        "description": "Poruka upozorenja nastala je kada je korisnik posjetio više od 3 dana."
+    }
+}

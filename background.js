@@ -51,6 +51,8 @@ chrome.storage.local.get(['msg'], function(res){
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
+  const stopExtension = chrome.i18n.getMessage('stopExtension')
+  const startExtension = chrome.i18n.getMessage('startExtension')
   let msgObj;
   if (msg.type === 'moving') {
     msgObj = {
@@ -67,7 +69,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 	    return
     });
     
-    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "STOP Extension"});
+    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": stopExtension});
 
   } else if (msg.type === 'stop') {
     msgObj = {
@@ -84,7 +86,7 @@ chrome.runtime.onMessage.addListener((msg) => {
 	    return
     });
 
-    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": "START Extension"});
+    chrome.contextMenus.update( "tails-mouse-footpring-switch", {"title": startExtension});
 
   } else if (msg.type === 'check') {
 

@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Kuraĝigoj por via muso","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Aldonante amuzajn efikojn kiam ajn vi movas vian muson.Ĉi tiu etendaĵo igas vian muson movanta krei amuzajn efikojn.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Kursoraj vostoj - kuraĝigoj por via muso",
+        "description": "La titolo de la aplikaĵo, montrita en la retbutiko."
+    },
+    "appDesc": {
+        "message": "Aldonante amuzajn efikojn kiam ajn vi movas vian muson.Ĉi tiu etendaĵo igas vian muson movi krei amuzajn efikojn.",
+        "description": "La priskribo de la aplikaĵo, montrita en la retbutiko."
+    },
+    "stopExtension": {
+        "message": "Malŝalti",
+        "description": "Kiam alklakita, la etendaĵo malebligis ĝis la ebligita klakado."
+    },
+    "startExtension": {
+        "message": "Ebligu",
+        "description": "Kiam alklakita, la etendaĵo ebligita ĝis la malebligita klakita."
+    },
+    "popupTitle": {
+        "message": "Elektu vian musan efikon",
+        "description": "La kahelo kiam ŝprucfenestro malfermiĝis."
+    },
+    "ratingBtn": {
+        "message": "Iru al takso",
+        "description": "La butono malfermas novan fenestron por taksi la etendon por la uzanto."
+    },
+    "askQuestion": {
+        "message": "Ĉu vi ĝuis la etendon?",
+        "description": "Atenta mesaĝo okazis kiam uzanto vizitis pli ol 3 tagojn."
+    },
+    "ratingQuestion": {
+        "message": "Dankon pro ĝui!\n Bonvolu taksi la etendon!",
+        "description": "Atenta mesaĝo okazis kiam uzanto vizitis pli ol 3 tagojn."
+    }
+}

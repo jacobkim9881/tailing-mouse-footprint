@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animations pro mus","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Addit ridiculam effectus ubicumque movere vestri mus.Hoc extensio faciam tibi mus movere creare fun effectus.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor caudis - Muris tuum Muris",
+        "description": "In titulo de application, ostendi in textus copia."
+    },
+    "appDesc": {
+        "message": "Addit ridiculam effectus ubicumque movere vestri mus.Hoc extensio faciam tibi mus movere creare fun effectus.",
+        "description": "Descriptio application, ostendi in textus copia."
+    },
+    "stopExtension": {
+        "message": "Inactivo",
+        "description": "Cum clicked, extensio erret usque ad enable cliked."
+    },
+    "startExtension": {
+        "message": "Enable",
+        "description": "Cum clicked, extensio enabled usque ad disable cliked."
+    },
+    "popupTitle": {
+        "message": "Elige tibi mus effectum",
+        "description": "Tile cum Popup fenestram aperuit."
+    },
+    "ratingBtn": {
+        "message": "Ad rating",
+        "description": "Et button apertum novum fenestram ad rate extensio pro user."
+    },
+    "askQuestion": {
+        "message": "Have vos fruendum extensio?",
+        "description": "Alert nuntius occurrit cum user visited super III diebus."
+    },
+    "ratingQuestion": {
+        "message": "Gratias frui!\n Quaeso Rating Tractus!",
+        "description": "Alert nuntius occurrit cum user visited super III diebus."
+    }
+}

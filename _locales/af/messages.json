@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animasies vir jou muis","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Voeg snaakse effekte by wanneer jy jou muis beweeg.Hierdie uitbreiding maak jou muis beweeg skep pret effekte.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor Tails - Animasies vir jou muis",
+        "description": "Die titel van die toepassing, wat in die webwinkel vertoon word."
+    },
+    "appDesc": {
+        "message": "Voeg snaakse effekte by wanneer jy jou muis beweeg.Hierdie uitbreiding laat u muisbeweging prettige effekte skep.",
+        "description": "Die beskrywing van die toepassing, wat in die webwinkel vertoon word."
+    },
+    "stopExtension": {
+        "message": "Uitskakel",
+        "description": "As dit geklik word, word die uitbreiding gedeaktiveer totdat die Aktiveer Cliked."
+    },
+    "startExtension": {
+        "message": "In staat stel",
+        "description": "As dit geklik word, word die uitbreiding in staat gestel totdat die Deaktiveer gekliek is."
+    },
+    "popupTitle": {
+        "message": "Kies u muiseffek",
+        "description": "Die teël toe die pop -upvenster oopgaan."
+    },
+    "ratingBtn": {
+        "message": "Gaan na gradering",
+        "description": "Op die knoppie Nuwe venster oop om die uitbreiding vir die gebruiker te beoordeel."
+    },
+    "askQuestion": {
+        "message": "Het u die uitbreiding geniet?",
+        "description": "Alert -boodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
+    },
+    "ratingQuestion": {
+        "message": "Dankie dat u geniet het!\n Beoordeel asseblief die uitbreiding!",
+        "description": "Alert -boodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
+    }
+}

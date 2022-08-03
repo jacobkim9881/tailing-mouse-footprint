@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Teiknimyndir fyrir músina","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Bætir fyndnum áhrifum þegar þú færir músina.Þessi viðbót gerir músina að flytja til skemmtunar.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Bendilinn halar - hreyfimyndir fyrir músina þína",
+        "description": "Titill forritsins, sem birtist í vefversluninni."
+    },
+    "appDesc": {
+        "message": "Bættu við fyndnum áhrifum hvenær sem þú færir músina.Þessi framlenging gerir það að verkum að músin fær til að skapa skemmtileg áhrif.",
+        "description": "Lýsing forritsins, sem birtist í vefversluninni."
+    },
+    "stopExtension": {
+        "message": "Slökkva",
+        "description": "Þegar smellt var á, þá var viðbótin óvirk þar til virkið er gert."
+    },
+    "startExtension": {
+        "message": "Virkja",
+        "description": "Þegar smellt var á, þá var viðbótin virkin þar til slökkt var á því."
+    },
+    "popupTitle": {
+        "message": "Veldu músaráhrif",
+        "description": "Flísarnar þegar sprettiglugginn opnaði."
+    },
+    "ratingBtn": {
+        "message": "Farðu í einkunn",
+        "description": "Hnappurinn opnar nýjan glugga til að meta viðbótina fyrir notandann."
+    },
+    "askQuestion": {
+        "message": "Hefur þú notið viðbyggingarinnar?",
+        "description": "Viðvörunarskilaboð komu fram þegar notandi heimsótti yfir 3 daga."
+    },
+    "ratingQuestion": {
+        "message": "Takk fyrir að njóta!\n Vinsamlegast metið framlenginguna!",
+        "description": "Viðvörunarskilaboð komu fram þegar notandi heimsótti yfir 3 daga."
+    }
+}

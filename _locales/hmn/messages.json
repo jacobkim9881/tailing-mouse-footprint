@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animations rau koj nas","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Ntxiv cov teebmeem kev lom zem thaum koj txav koj nas.Qhov no txuas ntxiv ua kom koj tus nas txav tsim kev lom zem.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor Tails - cov duab ua rau koj nas",
+        "description": "Cov npe ntawm daim ntawv thov, tso tawm hauv lub vev xaib."
+    },
+    "appDesc": {
+        "message": "Ntxiv cov teebmeem kev lom zem thaum koj txav koj nas.Qhov no txuas ntxiv ua kom koj tus nas txav tsim kev lom zem.",
+        "description": "Cov lus piav qhia ntawm daim ntawv thov, tso tawm hauv lub vev xaib."
+    },
+    "stopExtension": {
+        "message": "Lam nkim",
+        "description": "Thaum nias, qhov txuas ntxiv tsis taus txog kom txog qhov ua kom tiav."
+    },
+    "startExtension": {
+        "message": "Ua kom txawj",
+        "description": "Thaum nias, txuas ntxiv mus kom txog thaum lub txim ua tsis taus."
+    },
+    "popupTitle": {
+        "message": "Xaiv koj cov nyiaj muas nas",
+        "description": "Cov vuas luaj thaum popup windowed."
+    },
+    "ratingBtn": {
+        "message": "Mus ntaus nqi",
+        "description": "Lub khawm qhib lub qhov rai tshiab kom tus nqi txuas ntxiv rau tus neeg siv."
+    },
+    "askQuestion": {
+        "message": "Koj puas tau nyiam qhov txuas ntxiv?",
+        "description": "Alert lus tshwm sim thaum cov neeg siv tuaj xyuas dua 3 hnub."
+    },
+    "ratingQuestion": {
+        "message": "Ua tsaug rau kev txaus siab!\n Thov ntsuas qhov txuas ntxiv!",
+        "description": "Alert lus tshwm sim thaum cov neeg siv tuaj xyuas dua 3 hnub."
+    }
+}

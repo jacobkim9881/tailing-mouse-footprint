@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animaatiot hiirelle","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Lisäämällä hauskoja vaikutuksia aina, kun siirrät hiirtäsi.Tämä laajennus tekee hiiren siirtämisen luoda hauskoja vaikutuksia.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Kohdistimen hännät - animaatiot hiirellesi",
+        "description": "Web -kaupassa näytetty sovelluksen otsikko."
+    },
+    "appDesc": {
+        "message": "Lisäämällä hauskoja tehosteita aina, kun siirrät hiirtäsi.Tämä laajennus tekee hiirestä liikkuvan luomista hauskoja tehosteita.",
+        "description": "Web -kaupassa näkyvä sovelluksen kuvaus."
+    },
+    "stopExtension": {
+        "message": "Poista käytöstä",
+        "description": "Napsautettaessa laajennus käytti käytöstä, kunnes käyttöönotto on kytketty."
+    },
+    "startExtension": {
+        "message": "ota käyttöön",
+        "description": "Napsautettuna laajennus käytössä, kunnes poistetaan käytöstä."
+    },
+    "popupTitle": {
+        "message": "Valitse hiiren efekti",
+        "description": "Laatta, kun ponnahdusikkuna avattiin."
+    },
+    "ratingBtn": {
+        "message": "Siirtyä luokitukseen",
+        "description": "Painike avaa uusi ikkuna arvioidaksesi käyttäjän laajennuksen."
+    },
+    "askQuestion": {
+        "message": "Oletko nauttinut laajennuksesta?",
+        "description": "Hälytysviesti tapahtui, kun käyttäjä vieraili 3 päivän aikana."
+    },
+    "ratingQuestion": {
+        "message": "Kiitos nauttimisesta!\n Arvioi laajennus!",
+        "description": "Hälytysviesti tapahtui, kun käyttäjä vieraili 3 päivän aikana."
+    }
+}

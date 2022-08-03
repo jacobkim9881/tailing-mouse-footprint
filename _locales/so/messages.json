@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animations for jiirkaaga","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Ku darista saameynta qosol leh markasta oo aad dhaqaajiso jiirkaaga.Kordhintani waxay ka dhigeysaa dhaqaajinta jiirkaaga abuurista saameynta xiisaha leh.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Tuug dhiig - animations for jiirkaaga",
+        "description": "Cinwaanka arjiga, oo lagu muujiyey dukaanka shabakadda."
+    },
+    "appDesc": {
+        "message": "Ku darista saameynta qosol leh markasta oo aad dhaqaajiso jiirkaaga.Kordhintani waxay ka dhigeysaa dhaqaajinta jiirkaaga abuurista saameynta xiisaha leh.",
+        "description": "Tilmaanta dalabka, waxaa lagu muujiyey dukaanka shabakadda."
+    },
+    "stopExtension": {
+        "message": "Hawl gab",
+        "description": "Markii la gujiyey, kordhinta ayaa curyaamisay ilaa inta ay suuragal tahay in la xoojiyo."
+    },
+    "startExtension": {
+        "message": "Karsiin",
+        "description": "Markii la gujiyey, kordhinta ayaa la saamaxay ilaa uu ka xumaaday qolable."
+    },
+    "popupTitle": {
+        "message": "Xulo saamaynta jiirkaaga",
+        "description": "Taayirku marka daaqadda soo-dhejiska la furo."
+    },
+    "ratingBtn": {
+        "message": "U tag qiimeynta",
+        "description": "Badhanka wuxuu furan yahay daaqad cusub si uu ugu qiimeeyo kordhinta adeegsadaha."
+    },
+    "askQuestion": {
+        "message": "Miyaad ku raaxaysatay kordhinta?",
+        "description": "FARSAMADA FARSAMADA ayaa dhacay markii isticmaale uu booqday 3 maalmood."
+    },
+    "ratingQuestion": {
+        "message": "Waad ku mahadsan tahay raaxeysiga!\n Fadlan qiimeynta kordhinta!",
+        "description": "FARSAMADA FARSAMADA ayaa dhacay markii isticmaale uu booqday 3 maalmood."
+    }
+}

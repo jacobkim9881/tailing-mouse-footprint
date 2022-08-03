@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animacione për miun tuaj","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Shtimi i efekteve funny sa herë që lëvizni miun.Kjo zgjatje e bën lëvizjen e miut të krijojë efekte fun.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Bishtat e kursorit - Animacione për miun tuaj",
+        "description": "Titulli i aplikacionit, i shfaqur në dyqanin në internet."
+    },
+    "appDesc": {
+        "message": "Shtimi i efekteve qesharake sa herë që lëvizni miun.Kjo shtrirje e bën që lëvizja e miut të krijojë efekte argëtuese.",
+        "description": "Përshkrimi i aplikacionit, i shfaqur në dyqanin në internet."
+    },
+    "stopExtension": {
+        "message": "Çaktivizoj",
+        "description": "Kur klikohet, shtrirja çaktivizoi deri sa të aktivizohet."
+    },
+    "startExtension": {
+        "message": "Bëj mundësi",
+        "description": "Kur klikohet, shtrirja mundësoi derisa çaktivizimi i çarë."
+    },
+    "popupTitle": {
+        "message": "Zgjidhni efektin tuaj të miut",
+        "description": "Tjegull kur u hap dritarja e shfaqjes."
+    },
+    "ratingBtn": {
+        "message": "Shko te Vlerësimi",
+        "description": "Butoni hap dritaren e re për të vlerësuar shtrirjen për përdoruesin."
+    },
+    "askQuestion": {
+        "message": "A e keni shijuar shtrirjen?",
+        "description": "Mesazhi i alarmit ndodhi kur përdoruesi vizitoi gjatë 3 ditëve."
+    },
+    "ratingQuestion": {
+        "message": "Faleminderit për shijimin!\n Ju lutemi vlerësoni shtrirjen!",
+        "description": "Mesazhi i alarmit ndodhi kur përdoruesi vizitoi gjatë 3 ditëve."
+    }
+}

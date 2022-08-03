@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Zure sagua animazioak","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Sagua mugitzen duzunean efektu dibertigarriak gehitzea.Luzapen honek sagua mugitzen du efektu dibertigarriak sortzen.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Kurtsorearen buztanak - sagua animazioak",
+        "description": "Aplikazioaren izenburua, web dendan bistaratua."
+    },
+    "appDesc": {
+        "message": "Sagua mugitzen duzunean efektu dibertigarriak gehitzea.Luzapen honek sagua mugitzen du efektu dibertigarriak sortzen.",
+        "description": "Aplikazioaren deskribapena, web dendan bistaratua."
+    },
+    "stopExtension": {
+        "message": "Garatu",
+        "description": "Klikatu denean, luzapena desgaituta dago gaitu egin arte."
+    },
+    "startExtension": {
+        "message": "Ahalbidetu",
+        "description": "Klik egitean, luzapena gaituta dago desgaitu arte."
+    },
+    "popupTitle": {
+        "message": "Aukeratu saguaren eragina",
+        "description": "Teila popup leihoa ireki zenean."
+    },
+    "ratingBtn": {
+        "message": "Joan Baloraziora",
+        "description": "Botoia Ireki leiho berria erabiltzailearen luzapena baloratzeko."
+    },
+    "askQuestion": {
+        "message": "Gozatu al duzu luzapenarekin?",
+        "description": "Alerta mezua 3 egun baino gehiago bisitatu zenean gertatu da."
+    },
+    "ratingQuestion": {
+        "message": "Eskerrik asko gozatzeagatik!\n Mesedez, balorazioa luzapena!",
+        "description": "Alerta mezua 3 egun baino gehiago bisitatu zenean gertatu da."
+    }
+}

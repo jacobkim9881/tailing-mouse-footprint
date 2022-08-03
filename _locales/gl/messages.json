@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animacións para o rato","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Engadindo efectos divertidos cada vez que mova o rato.Esta extensión fai que o teu rato en movemento creza efectos divertidos.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor Tails: animacións para o teu rato",
+        "description": "O título da aplicación, que aparece na tenda web."
+    },
+    "appDesc": {
+        "message": "Engadindo efectos divertidos sempre que move o rato.Esta extensión fai que o rato se mova cree efectos divertidos.",
+        "description": "A descrición da aplicación, que aparece na tenda web."
+    },
+    "stopExtension": {
+        "message": "Desactivar",
+        "description": "Cando se fai clic, a extensión desactivada ata que se achegue o habilitado."
+    },
+    "startExtension": {
+        "message": "Habilitar",
+        "description": "Cando se fai clic, a extensión habilitada ata que a desactivación se recorde."
+    },
+    "popupTitle": {
+        "message": "Elixe o efecto do rato",
+        "description": "A tella cando se abriu a xanela emerxente."
+    },
+    "ratingBtn": {
+        "message": "Vaia á valoración",
+        "description": "O botón abre unha nova xanela para valorar a extensión para o usuario."
+    },
+    "askQuestion": {
+        "message": "¿Gozaches da extensión?",
+        "description": "A mensaxe de alerta ocorreu cando o usuario visitou durante 3 días."
+    },
+    "ratingQuestion": {
+        "message": "Grazas por gozar!\n Por favor, valora a extensión!",
+        "description": "A mensaxe de alerta ocorreu cando o usuario visitou durante 3 días."
+    }
+}

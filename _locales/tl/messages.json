@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Mga animation para sa iyong mouse","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Pagdaragdag ng mga nakakatawang epekto tuwing ililipat mo ang iyong mouse.Ang extension na ito ay gumagawa ng paglipat ng iyong mouse Lumikha ng mga nakakatuwang epekto.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Cursor Tails - Mga Animasyon para sa iyong mouse",
+        "description": "Ang pamagat ng application, na ipinapakita sa web store."
+    },
+    "appDesc": {
+        "message": "Pagdaragdag ng mga nakakatawang epekto tuwing ililipat mo ang iyong mouse.Ang extension na ito ay gumawa ng iyong mouse na gumagalaw lumikha ng mga nakakatuwang epekto.",
+        "description": "Ang paglalarawan ng application, na ipinapakita sa web store."
+    },
+    "stopExtension": {
+        "message": "Huwag paganahin",
+        "description": "Kapag nag -click, ang extension ay hindi pinagana hanggang sa paganahin ang pag -clikado."
+    },
+    "startExtension": {
+        "message": "Paganahin",
+        "description": "Kapag nag -click, ang extension ay pinagana hanggang sa hindi paganahin ang Cliked."
+    },
+    "popupTitle": {
+        "message": "Piliin ang iyong epekto sa mouse",
+        "description": "Ang tile kapag binuksan ang window ng popup."
+    },
+    "ratingBtn": {
+        "message": "Pumunta sa rating",
+        "description": "Buksan ang pindutan ng bagong window upang i -rate ang extension para sa gumagamit."
+    },
+    "askQuestion": {
+        "message": "Nasiyahan ka ba sa extension?",
+        "description": "Ang mensahe ng alerto ay naganap nang bumisita ang gumagamit ng higit sa 3 araw."
+    },
+    "ratingQuestion": {
+        "message": "Salamat sa kasiyahan!\n Mangyaring i -rating ang extension!",
+        "description": "Ang mensahe ng alerto ay naganap nang bumisita ang gumagamit ng higit sa 3 araw."
+    }
+}

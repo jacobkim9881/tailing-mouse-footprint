@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Beochan do do luchóg","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Ag cur éifeachtaí greannmhara leis aon uair a bhogann tú do luchóg.Déanann an síneadh seo do luchóg ag gluaiseacht éifeachtaí spraíúla a chruthú.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Tails cúrsóra - beochan do do luch",
+        "description": "Teideal an iarratais, a thaispeántar sa siopa gréasáin."
+    },
+    "appDesc": {
+        "message": "Éifeachtaí greannmhar a chur leis aon uair a bhogann tú do luch.Fágann an síneadh seo go gcruthaíonn do luch ag gluaiseacht éifeachtaí spraoi.",
+        "description": "An cur síos ar an iarratas, ar taispeáint sa siopa gréasáin."
+    },
+    "stopExtension": {
+        "message": "Míchumais",
+        "description": "Nuair a chliceáiltear é, chuir an síneadh faoi mhíchumas go dtí an chumasú ar chumas."
+    },
+    "startExtension": {
+        "message": "Cuónta",
+        "description": "Nuair a chliceáiltear é, chuir an síneadh ar chumas an díchumasaithe cliked."
+    },
+    "popupTitle": {
+        "message": "Roghnaigh d’éifeacht luiche",
+        "description": "An tíl nuair a osclaíodh an fhuinneog aníos."
+    },
+    "ratingBtn": {
+        "message": "Téigh go Rátáil",
+        "description": "Osclaíonn an cnaipe fuinneog nua chun an síneadh a mheas don úsáideoir."
+    },
+    "askQuestion": {
+        "message": "Ar bhain tú taitneamh as an síneadh?",
+        "description": "Tharla teachtaireacht foláirimh nuair a thug an t -úsáideoir cuairt air thar 3 lá."
+    },
+    "ratingQuestion": {
+        "message": "Go raibh maith agat as taitneamh a bhaint as!\n Rátáil an síneadh le do thoil!",
+        "description": "Tharla teachtaireacht foláirimh nuair a thug an t -úsáideoir cuairt air thar 3 lá."
+    }
+}

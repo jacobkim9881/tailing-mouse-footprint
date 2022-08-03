@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Beòthachaidhean airson do luchag","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"A 'cur buaidhean èibhinn a' cur buaidhean èibhinn nuair a ghluaiseas tu do luchag.Bidh an leudachadh seo a 'dèanamh do luchag a' gluasad buaidhean spòrsail.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Tails Cursair - Beothachdan airson do luchag",
+        "description": "Tiotal an tagraidh, air a thaisbeanadh anns a 'bhùth-lìn."
+    },
+    "appDesc": {
+        "message": "A 'cur buaidhean èibhinn a' cur buaidhean èibhinn nuair a ghluaiseas tu do luchag.Bidh an leudachadh seo a 'dèanamh do luchag a' gluasad buaidhean spòrsail.",
+        "description": "Tuairisgeul an tagradh, air a thaisbeanadh anns a 'bhùth-lìn."
+    },
+    "stopExtension": {
+        "message": "Cuir à comas",
+        "description": "Nuair a bhriogain e, an leudachadh ciorram gus an clachadh an comas."
+    },
+    "startExtension": {
+        "message": "Dèan comas",
+        "description": "Nuair a thèid clach a bhriogadh, gun robh an leudachadh air an comasachadh gus an cleachdar a chuir dheth."
+    },
+    "popupTitle": {
+        "message": "Tagh buaidh do luchag",
+        "description": "An leac nuair a dh 'fhosgail Uinneag Popup."
+    },
+    "ratingBtn": {
+        "message": "Rach gu rangachadh",
+        "description": "Am putan fosgail uinneag ùr gus measadh a dhèanamh air an leudachadh airson an neach-cleachdaidh."
+    },
+    "askQuestion": {
+        "message": "An do chòrd an leudachadh riut?",
+        "description": "Thachair an teachdaireachd rabhaidh nuair a thadhail cleachdaiche thairis air 3 latha."
+    },
+    "ratingQuestion": {
+        "message": "Taing airson tlachd fhaighinn!\n Feuch an rangachadh an leudachadh!",
+        "description": "Thachair an teachdaireachd rabhaidh nuair a thadhail cleachdaiche thairis air 3 latha."
+    }
+}

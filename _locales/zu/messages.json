@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Izithombe zegundane lakho","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Ukungeza imiphumela ehlekisayo noma nini lapho uhambisa igundane lakho.Lokhu kunwetshwa kwenza igundane lakho lihambise imiphumela emnandi.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Imisila ye-Cursor - Izithombe zegundane lakho",
+        "description": "Isihloko sohlelo lokusebenza, esiboniswe esitolo sewebhu."
+    },
+    "appDesc": {
+        "message": "Ukungeza imiphumela ehlekisayo noma nini lapho uhambisa igundane lakho.Lokhu kunwetshwa kwenza igundane lakho lihambise imiphumela emnandi.",
+        "description": "Ukuchazwa kwesicelo, kukhonjiswe esitolo sewebhu."
+    },
+    "stopExtension": {
+        "message": "Khubaza",
+        "description": "Uma uchofozwa, ukunwetshwa okukhutshazwe kuze kube yilapho enika amandla"
+    },
+    "startExtension": {
+        "message": "Nika amandla",
+        "description": "Uma uchofozwa, ukunwetshwa okunikwe amandla kuze kukhubazeke okuhlanganisiwe."
+    },
+    "popupTitle": {
+        "message": "Khetha umphumela wakho wegundane",
+        "description": "Ithayela lapho kuvulwa iwindi lokuvela."
+    },
+    "ratingBtn": {
+        "message": "Iya ekulinganiselweni",
+        "description": "Inkinobho evula iwindi elisha ukukala isandiso somsebenzisi."
+    },
+    "askQuestion": {
+        "message": "Ngabe ujabulele ukunwetshwa?",
+        "description": "Umlayezo wokuqwashisa wenzeke lapho umsebenzisi evakashele ngaphezu kwezinsuku ezi-3."
+    },
+    "ratingQuestion": {
+        "message": "Siyabonga ngokujabulela!\n Sicela ulinganise ukunwetshwa!",
+        "description": "Umlayezo wokuqwashisa wenzeke lapho umsebenzisi evakashele ngaphezu kwezinsuku ezi-3."
+    }
+}

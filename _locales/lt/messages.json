@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animacijos pelės","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Įrašykite juokingas efektas, kai perkeliate pelę.Šis pratęsimas leidžia pelę judėti sukuriant įdomus efektus.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Žymeklio uodegos - pelės animacijos",
+        "description": "Programos pavadinimas, rodomas internetinėje parduotuvėje."
+    },
+    "appDesc": {
+        "message": "Pridedant juokingus efektus, kai perkeliate pelę.Dėl šio pratęsimo pelės judėjimas sukuria linksmus efektus.",
+        "description": "Programos aprašymas, rodomas internetinėje parduotuvėje."
+    },
+    "stopExtension": {
+        "message": "Išjungti",
+        "description": "Spustelėjus, pratęsimas išjungtas, kol įjungta."
+    },
+    "startExtension": {
+        "message": "Įgalinti",
+        "description": "Spustelėjus, pratęsimas įgalintas, kol išjungtas išjungimas."
+    },
+    "popupTitle": {
+        "message": "Pasirinkite pelės efektą",
+        "description": "Plytelės, atidarius iššokantį langą."
+    },
+    "ratingBtn": {
+        "message": "Eik į reitingą",
+        "description": "Mygtukas atidaro naują langą, kad įvertintumėte vartotojo plėtinį."
+    },
+    "askQuestion": {
+        "message": "Ar jums patiko pratęsimas?",
+        "description": "Įspėjimo pranešimas įvyko, kai vartotojas lankėsi daugiau nei 3 dienas."
+    },
+    "ratingQuestion": {
+        "message": "Ačiū, kad mėgavosi!\n Prašome įvertinti plėtinį!",
+        "description": "Įspėjimo pranešimas įvyko, kai vartotojas lankėsi daugiau nei 3 dienas."
+    }
+}

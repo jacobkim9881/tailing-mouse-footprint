@@ -1,1 +1,34 @@
-{"appName":{"message":"Cursor Tails - Animations ho an'ny totozy","description":"The title of the application, displayed in the web store."},"appDesc":{"message":"Manampy fiantraikany mampihomehy isaky ny manosika ny totozy anao ianao.Ity fanitarana ity dia mahatonga ny totozy mifindra amin'ny fiantraikany mahafinaritra.","description":"The description of the application, displayed in the web store."}}
+{
+    "appName": {
+        "message": "Ny rambony ozatra - sary an-tsary amin'ny totozy",
+        "description": "Ny lohatenin'ny fampiharana, naseho tao amin'ny fivarotana Web."
+    },
+    "appDesc": {
+        "message": "Manampy fiantraikany mampihomehy isaky ny manosika ny totozy anao ianao.Ity fanitarana ity dia mahatonga ny totozy mifindra amin'ny fiantraikany mahafinaritra.",
+        "description": "Ny famaritana ny fampiharana, naseho tao amin'ny tranonkalan'ny tranokala."
+    },
+    "stopExtension": {
+        "message": "Tsy azo atao",
+        "description": "Rehefa tsindrio, dia tsy misy kilema ny fanitarana mandra-pahafahana."
+    },
+    "startExtension": {
+        "message": "Tadiavo",
+        "description": "Rehefa tsindrio, ny fanitarana dia nahafahana niasa mandra-pahatongan'ny tsimoka."
+    },
+    "popupTitle": {
+        "message": "Fidio ny vokatr'izany totozy",
+        "description": "Ny tile rehefa nisokatra ny varavarankely popup."
+    },
+    "ratingBtn": {
+        "message": "Mandehana amin'ny salanisa",
+        "description": "Ny bokotra misokatra varavarankely vaovao hanombohana ny fanitarana ny mpampiasa."
+    },
+    "askQuestion": {
+        "message": "Nahafinaritra anao ve ny fanitarana?",
+        "description": "Ny hafatra fanairana dia nitranga rehefa nitsidika 3 andro mahery ny mpampiasa."
+    },
+    "ratingQuestion": {
+        "message": "Misaotra mankafy!\n Azafady mba isaino ny fanitarana!",
+        "description": "Ny hafatra fanairana dia nitranga rehefa nitsidika 3 andro mahery ny mpampiasa."
+    }
+}

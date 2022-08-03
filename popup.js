@@ -196,7 +196,7 @@ triggerStop(buttonElement, 'stop');
 chrome.storage.local.get(['msg'], function(res){
 //  console.log(Object.keys(res).length)
      if (Object.keys(res).length === 0) return; 
-  if(res.msg.type === 'stop') buttonElement('stop').innerHTML = 'START Extension';
+  if(res.msg.type === 'stop') buttonElement('stop').innerHTML = startExtension;
 
 })
 
