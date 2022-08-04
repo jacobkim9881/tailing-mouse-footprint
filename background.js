@@ -19,35 +19,35 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.contextMenus.onClicked.addListener(() => {
-chrome.storage.local.get(['msg'], function(res){
-  if(res.msg.type === 'stop') {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+  chrome.storage.local.get(['msg'], function(res){
+    if(res.msg.type === 'stop') {
+      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        {
-          name: res.msg.name,
-          path: res.msg.name,
-          type: 'moving'})
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          {
+            name: res.msg.name,
+            path: res.msg.name,
+            type: 'moving'})
 	    return
-    });
+      });
    
-  } else {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    } else {
+      chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        {
-		type: 'stop',
-		name: res.msg.name,
-		path: res.msg.name
-	})
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          {
+            type: 'stop',
+            name: res.msg.name,
+            path: res.msg.name
+          })
 	    return
-    });
+      });
 
-  }
-	return
-})
+    }
+    return
+  })
 })
 
 chrome.runtime.onMessage.addListener((msg) => {
@@ -65,7 +65,7 @@ chrome.runtime.onMessage.addListener((msg) => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {     
       chrome.scripting.executeScript(
         { target: {tabId: tabs[0].id},
-        files: ['./functions/' + msg.name + '.js'] });
+          files: ['./functions/' + msg.name + '.js'] });
 	    return
     });
     
@@ -82,7 +82,7 @@ chrome.runtime.onMessage.addListener((msg) => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.scripting.executeScript(
         { target: { tabId : tabs[0].id},
-        files: ['./functions/' + 'stop' + '.js'] });
+          files: ['./functions/' + 'stop' + '.js'] });
 	    return
     });
 
@@ -92,21 +92,21 @@ chrome.runtime.onMessage.addListener((msg) => {
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
       chrome.storage.local.get(['msg'], function(res){
-//	      console.log(res)
-     if (Object.keys(res).length === 0) return; 
-      chrome.tabs.sendMessage(
-        tabs[0].id,
-        { name: res.msg.name,
-          path: res.msg.path,
+        //	      console.log(res)
+        if (Object.keys(res).length === 0) return; 
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          { name: res.msg.name,
+            path: res.msg.path,
 	 	    type: res.msg.type === 'stop' ? 'stop' : 'moving',
-          sender: 'background'}
-      );
-      chrome.action.setIcon({
-        path: res.msg.path,
-        tabId: tabs[0].id});
+            sender: 'background'}
+        );
+        chrome.action.setIcon({
+          path: res.msg.path,
+          tabId: tabs[0].id});
       })
     });
        
   }
-    return
+  return
 })

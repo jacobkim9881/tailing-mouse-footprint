@@ -55,8 +55,8 @@ function triggerStop(func, targetId) {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
       chrome.storage.local.get(['msg'], function(res){
-//	      console.log(res)
-//	      console.log(targetId)
+        //	      console.log(res)
+        //	      console.log(targetId)
         chrome.tabs.sendMessage(
           tabs[0].id,
           {
@@ -81,96 +81,119 @@ function stopEvent(func, targetId) {
 
 function stampCounter() {
 
-chrome.storage.local.get(['advertised'], function(res1) { 
-chrome.storage.local.get(['stamp'], function(res) { 
-//console.log(res)
-let stamps = res.stamp ? Object.keys(res.stamp) : []
-, advertised = res1.advertised
-, dayCount = 3	
-, ratingBtn = document.getElementById('rating')
-//	console.log(stamps)
-//	console.log(advertised)
-//	console.log(advertised === undefined)
-if (stamps.length < dayCount) {	
-let lastStamp = stamps[stamps.length -1]	
-let aDay = 1000 * 60 * 60 * 24
- today = new Date()	
-	//console.log(lastStamp)
-lastStamp = Date.parse(lastStamp)	
-//console.log(lastStamp + aDay) 
-//console.log(today.getTime())
-//	console.log(lastStamp)
-let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) || lastStamp === undefined 	
-let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
-//	console.log(aDayOver)
-if (aDayOver) {
-stampObj.stamp[today] = 1	
-//	console.log(stampObj)
-chrome.storage.local.set(stampObj)
-}
-} else if(stamps.length >= dayCount && !advertised) {
+  chrome.storage.local.get(['advertised'], function(res1) { 
+    chrome.storage.local.get(['stamp'], function(res) { 
+      //console.log(res)
+      let stamps = res.stamp ? Object.keys(res.stamp) : []
+        , advertised = res1.advertised
+        , dayCount = 3	
+        , ratingBtnTextTag = document.querySelector('#rating h4')
+        , ratingBtn = document.getElementById('rating')
+      //	console.log(stamps)
+      //	console.log(advertised)
+      //	console.log(advertised === undefined)
+      if (stamps.length < dayCount) {	
+        let lastStamp = stamps[stamps.length -1]	
+        let aDay = 1000 * 60 * 60 * 24
+        today = new Date()	
+        //console.log(lastStamp)
+        lastStamp = Date.parse(lastStamp)	
+        //console.log(lastStamp + aDay) 
+        //console.log(today.getTime())
+        //	console.log(lastStamp)
+        let aDayOver = lastStamp + aDay < today.getTime() || isNaN(lastStamp) || lastStamp === undefined 	
+        let stampObj =  isNaN(lastStamp) ? {stamp : {}} : res	
+        //	console.log(aDayOver)
+        if (aDayOver) {
+          stampObj.stamp[today] = 1	
+          //	console.log(stampObj)
+          chrome.storage.local.set(stampObj)
+        }
+      } else if(stamps.length >= dayCount && !advertised) {
 
-const askQuestion = chrome.i18n.getMessage('askQuestion')
-const ratingQuestion = chrome.i18n.getMessage('ratingQuestion')
-	
- if (confirm(askQuestion) === true) {
- alert(ratingQuestion)
- ratingBtn.style.display = 'block'	 
- chrome.storage.local.set({advertised: true})
- gradationBtn()
- } else {
- chrome.storage.local.set({stamp : {}})
- }
+        const askQuestion = chrome.i18n.getMessage('askQuestion')
+        const ratingQuestion = chrome.i18n.getMessage('ratingQuestion')
+          , ratingBtnText = chrome.i18n.getMessage('ratingBtn')
 
-} else if(advertised) {
-//	console.log(advertised)
- ratingBtn.style.display = 'block'	 
- gradationBtn()
-}
-return
-})
-})
+	     ratingBtn.style.display = 'block'	 
+        chrome.storage.local.set({advertised: true})
+        gradationBtn()
+
+        ratingBtnTextTag.innerText = askQuestion
+	      console.log(ratingQuestion)
+        let splited = ratingQuestion.split('\n') 
+
+        setTimeout(() => {
+          ratingBtnTextTag.innerText = splited[0] 
+        }, 2000)
+
+	     setTimeout(() => {
+          ratingBtnTextTag.innerText = splited[1]
+	     }, 4000)
+
+	      setTimeout(() => {
+          ratingBtnTextTag.innerText = ratingBtnText 
+        }, 6000)
+
+        /*
+        if (confirm(askQuestion) === true) {
+          alert(ratingQuestion)
+          ratingBtn.style.display = 'block'	 
+          chrome.storage.local.set({advertised: true})
+          gradationBtn()
+        } else {
+          chrome.storage.local.set({stamp : {}})
+        }
+*/
+      } else if(advertised) {
+        //	console.log(advertised)
+        ratingBtn.style.display = 'block'	 
+        gradationBtn()
+      }
+      return
+    })
+  })
 }
 
 function gradationBtn() {
-let ratingH4 = document.getElementById('rating-h4')
-let grad1 = 1	
+  let ratingH4 = document.getElementById('rating-h4')
+  let grad1 = 1	
 
-ratingH4.style.color = 'white'	
+  ratingH4.style.color = 'white'	
 
-let ratingGradation = setInterval(() => {
-ratingH4.style.backgroundImage = `linear-gradient(hsl(${grad1}, 100%, 50%) , hsl(${grad1 + 30}, 100%, 50%))`
-ratingH4.style.boxShadow = `0.3rem 0.3rem 0.6rem hsl(${grad1}, 100%, 50%), -0.2rem -0.2rem 0.5rem #FFFFFF`
+  let ratingGradation = setInterval(() => {
+    ratingH4.style.backgroundImage = `linear-gradient(hsl(${grad1}, 100%, 50%) , hsl(${grad1 + 30}, 100%, 50%))`
+    ratingH4.style.boxShadow = `0.3rem 0.3rem 0.6rem hsl(${grad1}, 100%, 50%), -0.2rem -0.2rem 0.5rem #FFFFFF`
 
-grad1 = (grad1 + 1) % 360	
-}, 50)
+    grad1 = (grad1 + 1) % 360	
+  }, 50)
 
-chrome.storage.local.get(['rating-visited'], function(res) { 
-//console.log(res)
-  if (res['rating-visited']) {
-  clearInterval(ratingGradation)
-  ratingH4.style.color = '#383838'	
+  chrome.storage.local.get(['rating-visited'], function(res) { 
+    //console.log(res)
+    if (res['rating-visited']) {
+      clearInterval(ratingGradation)
+      ratingH4.style.color = '#383838'	
+    }
+  })
+  ratingH4.onclick = function() {
+    //console.log('clicked')
+    chrome.storage.local.set({["rating-visited"] : true})
   }
-})
-ratingH4.onclick = function() {
-	//console.log('clicked')
- chrome.storage.local.set({["rating-visited"] : true})
-}
-return
+  return
 }
 
 function setInnerText() {
-const title = document.getElementById('title-ext')
-, ratingBtn = document.getElementById('rating-h4')
-, stopBtn = document.getElementById('stop')
-, stopExtension = chrome.i18n.getMessage('stopExtension')
-, popupTitle = chrome.i18n.getMessage('popupTitle')
-, ratingBtnText = chrome.i18n.getMessage('ratingBtn')
+  const title = document.getElementById('title-ext')
+    , ratingBtn = document.getElementById('rating-h4')
+    , stopBtn = document.getElementById('stop')
+    , stopExtension = chrome.i18n.getMessage('stopExtension')
+    , popupTitle = chrome.i18n.getMessage('popupTitle')
+    , ratingBtnText = chrome.i18n.getMessage('ratingBtn')
 
-ratingBtn.innerText = ratingBtnText	
-title.innerText = popupTitle
-stopBtn.innerText = stopExtension
-return	
+  ratingBtn.innerText = ratingBtnText	
+  title.innerText = popupTitle
+  stopBtn.innerText = stopExtension
+  return	
 }
 
 setInnerText()
@@ -195,7 +218,7 @@ triggerStop(buttonElement, 'stop');
 
 chrome.storage.local.get(['msg'], function(res){
 //  console.log(Object.keys(res).length)
-     if (Object.keys(res).length === 0) return; 
+  if (Object.keys(res).length === 0) return; 
   if(res.msg.type === 'stop') buttonElement('stop').innerHTML = startExtension;
 
 })
