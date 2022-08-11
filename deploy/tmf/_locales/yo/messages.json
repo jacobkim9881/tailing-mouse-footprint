@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Awọn iru Cursor - Awọn ohun idanilaraya fun rẹ Asin",
+        "description": "Akọle ti ohun elo, ṣafihan ninu itaja ayelujara."
+    },
+    "appDesc": {
+        "message": "Ṣafikun awọn ipa funny nigbakugba ti o gbe Asin rẹ.Ifaagun yii ṣe gbigbe gbigbe rẹ ṣiṣẹ dida awọn ipa igbadun.",
+        "description": "Alaye ti ohun elo naa, ti o han ninu Ile itaja wẹẹbu."
+    },
+    "stopExtension": {
+        "message": "Mu",
+        "description": "Nigbati o ba tẹ, Ifaagun naa alaabo titi di mimu ciked ṣiṣẹ."
+    },
+    "startExtension": {
+        "message": "Mu ṣiṣẹ",
+        "description": "Nigba ti tẹ, gbigba ifaagun titi di igba mu mu siga."
+    },
+    "popupTitle": {
+        "message": "Yan ipa amuse rẹ",
+        "description": "Tile nigbati window Agbejade ṣii ṣi."
+    },
+    "ratingBtn": {
+        "message": "Lọ si idiyele",
+        "description": "Bọtini Ṣi window tuntun lati ṣe oṣuwọn itẹsiwaju fun olumulo."
+    },
+    "askQuestion": {
+        "message": "Njẹ o gbadun itẹsiwaju naa?",
+        "description": "Ifiranṣẹ Itaniji ti wa nigbati olumulo ba ṣabẹwo si awọn ọjọ 3."
+    },
+    "ratingQuestion": {
+        "message": "O ṣeun fun igbadun!\n Jọwọ ṣe idiyele itẹsiwaju naa!",
+        "description": "Ifiranṣẹ Itaniji ti wa nigbati olumulo ba ṣabẹwo si awọn ọjọ 3."
+    }
+}

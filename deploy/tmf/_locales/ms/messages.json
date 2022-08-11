@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kursor Ekor - Animasi untuk tetikus anda",
+        "description": "Tajuk aplikasi, dipaparkan di kedai web."
+    },
+    "appDesc": {
+        "message": "Menambah kesan lucu setiap kali anda menggerakkan tetikus anda.Pelanjutan ini menjadikan tetikus anda bergerak membuat kesan yang menyeronokkan.",
+        "description": "Penerangan aplikasi, dipaparkan di kedai web."
+    },
+    "stopExtension": {
+        "message": "Lumpuhkan",
+        "description": "Apabila diklik, lanjutan dilumpuhkan sehingga membolehkan kliked."
+    },
+    "startExtension": {
+        "message": "Membolehkan",
+        "description": "Apabila diklik, lanjutan membolehkan sehingga disable cliked."
+    },
+    "popupTitle": {
+        "message": "Pilih kesan tetikus anda",
+        "description": "Jubin apabila tetingkap popup dibuka."
+    },
+    "ratingBtn": {
+        "message": "Pergi ke penarafan",
+        "description": "Butang Buka Tetingkap Baru untuk menilai pelanjutan untuk pengguna."
+    },
+    "askQuestion": {
+        "message": "Adakah anda menikmati lanjutan?",
+        "description": "Mesej amaran berlaku apabila pengguna melawat lebih dari 3 hari."
+    },
+    "ratingQuestion": {
+        "message": "Terima kasih kerana menikmati!\n Sila menilai pelanjutan!",
+        "description": "Mesej amaran berlaku apabila pengguna melawat lebih dari 3 hari."
+    }
+}

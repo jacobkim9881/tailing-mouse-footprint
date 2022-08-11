@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Mga ikog sa Cursor - Mga Animasyon alang sa Imong Mouse",
+        "description": "Ang titulo sa aplikasyon, gipakita sa web store."
+    },
+    "appDesc": {
+        "message": "Pagdugang mga kataw-anan nga epekto bisan kanus-a nimo ibalhin ang imong mouse.Kini nga extension naghimo sa imong mouse nga naglihok sa paghimo og makalingaw nga mga epekto.",
+        "description": "Ang paghulagway sa aplikasyon, gipakita sa web store."
+    },
+    "stopExtension": {
+        "message": "Mag-disable",
+        "description": "Kung gi-klik, ang extension adunay kapakyasan hangtod ang pag-ayo cliked."
+    },
+    "startExtension": {
+        "message": "Makahimo",
+        "description": "Kung gi-klik, gipadagan ang extension hangtod sa pag-undang sa Cliked."
+    },
+    "popupTitle": {
+        "message": "Pilia ang imong epekto sa mouse",
+        "description": "Ang tile kung gibuksan ang window sa popup."
+    },
+    "ratingBtn": {
+        "message": "Adto sa rating",
+        "description": "Ang butones nagbukas sa bag-ong bintana aron i-rate ang extension alang sa tiggamit."
+    },
+    "askQuestion": {
+        "message": "Nalingaw ka ba sa extension?",
+        "description": "Ang mensahe sa alerto nga nakuha kung ang user nga gibisita sa sobra sa 3 ka adlaw."
+    },
+    "ratingQuestion": {
+        "message": "Salamat sa pagkalipay!\n Palihug rating ang extension!",
+        "description": "Ang mensahe sa alerto nga nakuha kung ang user nga gibisita sa sobra sa 3 ka adlaw."
+    }
+}

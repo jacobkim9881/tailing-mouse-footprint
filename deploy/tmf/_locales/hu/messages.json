@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kurzor farok - animációk az egérhez",
+        "description": "Az alkalmazás címe, amely a webáruházban jelenik meg."
+    },
+    "appDesc": {
+        "message": "Vicces effektusok hozzáadása, amikor mozgatja az egeret.Ez a kiterjesztés miatt az egér mozgatása szórakoztató effektusokat hoz létre.",
+        "description": "Az alkalmazás leírása, amely a webáruházban jelenik meg."
+    },
+    "stopExtension": {
+        "message": "Letilt",
+        "description": "Amikor kattint, a hosszabbítás letiltva, amíg az engedélyezés meg nem kötött."
+    },
+    "startExtension": {
+        "message": "Engedélyezze",
+        "description": "Amikor kattint, a meghosszabbítás engedélyezve a letiltásig."
+    },
+    "popupTitle": {
+        "message": "Válassza ki az egérhatást",
+        "description": "A csempe, amikor a felbukkanó ablak kinyílt."
+    },
+    "ratingBtn": {
+        "message": "Menjen a minősítésre",
+        "description": "A gomb megnyitja az új ablakot a felhasználó kiterjesztésének értékeléséhez."
+    },
+    "askQuestion": {
+        "message": "Élvezte a kiterjesztést?",
+        "description": "A riasztási üzenet akkor történt, amikor a felhasználó 3 nap alatt meglátogatta."
+    },
+    "ratingQuestion": {
+        "message": "Köszönöm, hogy élvezted!\n Kérjük, értékelje a kiterjesztést!",
+        "description": "A riasztási üzenet akkor történt, amikor a felhasználó 3 nap alatt meglátogatta."
+    }
+}

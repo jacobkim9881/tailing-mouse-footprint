@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Li-cursis tsa cursiw - mofuta oa toeba ea hau",
+        "description": "Sehlooho sa kopo, e bonts'itsoeng lebenkeleng la webo."
+    },
+    "appDesc": {
+        "message": "Ho eketsa litlamorao tse qabolang neng kapa neng ha u tsamaisa toeba ea hau.Katoloso ena e etsa panya ea hau ho theha litlamorao.",
+        "description": "Tlhaloso ea kopo, e bonts'itsoeng lebenkeleng la webo."
+    },
+    "stopExtension": {
+        "message": "Qobella",
+        "description": "Ha o tobetsa, katoloso e atisang ho fihlela e itsamaela."
+    },
+    "startExtension": {
+        "message": "Enolo",
+        "description": "Ha o tobetsa, katoloso e nolofalletsa ho fihlela e sa sebetse."
+    },
+    "popupTitle": {
+        "message": "Khetha phello ea hau ea mouse",
+        "description": "Thile ha fensetere ea popo e buloa."
+    },
+    "ratingBtn": {
+        "message": "Eya ho ea tekanyetso",
+        "description": "Konopo e bulehileng fensetere e ncha ho lekola katoloso bakeng sa mosebelisi."
+    },
+    "askQuestion": {
+        "message": "Na u thabetse katoloso?",
+        "description": "Molaetsa oa Tlhokomeliso o hlahile ha mosebelisi a etela matsatsi a fetang a 3."
+    },
+    "ratingQuestion": {
+        "message": "Rea leboha ka ho natefeloa!\n Ka kopo lekanya katoloso!",
+        "description": "Molaetsa oa Tlhokomeliso o hlahile ha mosebelisi a etela matsatsi a fetang a 3."
+    }
+}

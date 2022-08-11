@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kursori sabad - hiire animatsioonid",
+        "description": "Rakenduse pealkiri, mis kuvatakse veebipoes."
+    },
+    "appDesc": {
+        "message": "Lisades naljakaid efekte alati, kui hiire liigutate.See laiendus paneb teie hiirt liikuvaks looma lõbusaid efekte.",
+        "description": "Rakenduse kirjeldus, mis kuvatakse veebipoes."
+    },
+    "stopExtension": {
+        "message": "Keelama",
+        "description": "Kui klõpsatakse, keelab laiendus, kuni lubage luba."
+    },
+    "startExtension": {
+        "message": "Lubama",
+        "description": "Kui klõpsati, lubas laiendus, kuni keelatud."
+    },
+    "popupTitle": {
+        "message": "Valige hiire efekt",
+        "description": "Plaat, kui hüpikaken avanes."
+    },
+    "ratingBtn": {
+        "message": "Reitingut tegema",
+        "description": "Nupp avage uus aken kasutaja laienduse hindamiseks."
+    },
+    "askQuestion": {
+        "message": "Kas olete laienduse nautinud?",
+        "description": "Häireteade tekkis siis, kui kasutaja külastas 3 päeva."
+    },
+    "ratingQuestion": {
+        "message": "Täname nautimise eest!\n Palun hinnake pikendust!",
+        "description": "Häireteade tekkis siis, kui kasutaja külastas 3 päeva."
+    }
+}

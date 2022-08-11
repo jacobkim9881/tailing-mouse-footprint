@@ -1,0 +1,305 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <style>
+	@font-face {
+	  font-family: Kanit;
+	    src: url(Kanit-Medium.ttf);	      
+	}
+        body {
+          width: 270px;
+	  background-color: azure;
+        }
+	#wrapper {
+	}
+	#icons {
+          width: 100%;
+	}
+        button {
+          height: 32px;
+          width: 32px;
+          outline: none;
+          padding: 5px;
+          border: none;
+        }
+        .buttonDiv :hover {
+          cursor: pointer;
+        }
+	@keyframes slidein {
+	  from {
+	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
+	    transform: scale(0.95, 0.95);
+	  }
+
+	  35% {
+	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
+	    transform: scale(1, 1);
+	  }
+
+	  to {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;				      }
+	    transform: scale(1, 1);
+ 	  }
+	@keyframes luminate {
+	  from {
+  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	  13% {
+  	    box-shadow: 0.3rem 0.3rem 0.9rem #00ff37, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	  to {
+  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  }
+	}
+	:root {
+	  --white-red: #ff8282;
+	}
+	@keyframes rainbow {
+	  from {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff8282;
+	  }
+	  50% {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff82d9, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff82d9;
+	  }
+	  to {
+	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    background-color: #ff8282;
+	  }
+	}
+        h4 {
+	  padding: 10px 0 10px 0;
+          font-size: 0.9rem;
+	  border-radius: 1rem;
+	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  color: #383838;
+	  font-family: Kanit;
+          text-indent: 10px;
+          background-color: #e0e0e0;
+	  font-weight: 100;
+          animation-duration: 3s;
+          animation-name: slidein;
+        }
+
+	
+        .buttonDiv {
+          margin: 5px;
+          padding: 0px;
+        }
+	.mousemove {
+	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  border-radius: 50%;
+	  border: 1px;
+	  background-color: #ec9d75;
+	  animation-duration: 2s;
+          animation-name: slidein;
+
+	}
+	.mousemove:hover {
+ 	  animation-duration: 3s;
+  	  animation-iteration-count: infinite;
+          animation-name: luminate;
+
+/*  	    box-shadow: 0.3rem 0.3rem 1rem #00ff37, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	    */
+	}
+	.mousemove:active {
+          box-shadow:0;
+	  transform: scale(0.95, 0.95);
+	  animation-iteration-count: 0;
+	}
+        .test {
+          display: none; 
+        }
+        #bubble {
+          background-image: url('./images/bubble/bubble32.png');
+        }
+        #letter {
+          background-image: url('./images/letter/letter32.png');
+        }
+        #colorfulSquare {
+          background-image: url('./images/csquare/colofulSquare32.png');
+        }
+        #colorfulBall {
+          background-image: url('./images/co/colofulBall32.png');
+        }
+        #strawblueberry {
+          background-image: url('./images/strawblueberry/strawblueberry32.png');
+        }
+        #snowflake {
+          background-image: url('./images/snow/snowflake32.png');
+        }
+	#bunny {
+          background-image: url('./images/bunny/bunny32.png');
+        }
+        #waterWave {
+          background-image: url('./images/snow/snowflake32.png');
+        }
+        #heart {
+          background-image: url('./images/heart/heart32.png');
+        }
+        #heart1 {
+          background-image: url('./images/heart/heart132.png');
+        }
+        #leaf {
+          background-image: url('./images/leaf/leaf32.png');
+        }
+        #dna {
+          background-image: url('./images/dna/dna32.png');
+        }
+        #card {
+          background-image: url('./images/card/card32.png');
+        }
+        #atom {
+          background-image: url('./images/atom/atom32.png');
+        }
+        #petal {
+          background-image: url('./images/petal/petal32.png');
+	  background-color: white;
+        }      
+        #float {
+          background-image: url('./images/dna/float32.png');
+        }        
+        #springCooler {
+          background-image: url('./images/spring/springCooler32.png');
+        }
+        #colorSpring {
+          background-image: url('./images/colorSpring/colorSpring32.png');
+        }
+	#coins {
+          background-image: url('./images/coins/coins32');
+        }
+	#digital {
+          background-image: url('./images/digital/digital32');
+        }
+	#particleMagnet {
+          background-image: url('./images/particleMagnet/particleMagnet32');
+        }
+	#rainbow {
+          background-image: url('./images/rainbow/rainbow32');
+	  background-color: white;
+        }
+	#rating {
+	  color: #383838;
+          text-decoration: none;
+	  display: none;
+	}
+	#rating h4:active {
+	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
+	}
+
+	#rating h4 {
+      	  margin: 10px 0 0 0;
+	  text-align: center;
+	}
+	
+	#stop {
+	  cursor: pointer;		
+          width: 100%;
+ 	  height: 40px;
+	  margin-top: 10px;
+	  border-radius: 1rem;
+	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  color: #383838;
+	  font-family: Kanit;
+          text-indent: 10px;
+          background-color: #e0e0e0;
+	  padding: 10px 0 10px 0;
+          font-size: 0.9rem;
+          animation-duration: 2s;
+          animation-name: slidein;
+	}
+	#stop:active {
+	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
+	}
+
+      </style>
+    </head>
+    <body>
+    <div id="wrapper">	    
+      <h4 id="title-ext">Choose your mouse effect</h4>
+
+      <div id="icons">
+      <span class= "buttonDiv" >
+        <button id="bubble" class="mousemove"></button>
+      </span>
+      <span class= "buttonDiv" >
+        <button id="letter" class="mousemove"></button>
+      </span>
+      <span class= "test" >
+      <button id="colorfulSquare" class="mousemove"></button>
+    </span>
+    <span class= "buttonDiv" >
+    <button id="colorfulBall" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+  <button id="strawblueberry" class="mousemove"></button>
+</span>
+  <span class= "buttonDiv" >
+    <button id="snowflake" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="bunny" class="mousemove"></button>
+  </span>
+  <span class= "test" >
+    <button id="waterWave"></button>
+  </span> 
+  <br/><br/> 
+  <span class= "buttonDiv" >
+    <button id="heart" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="heart1" class="mousemove"></button>
+  </span>
+  <span class= "test" >
+    <button id="leaf"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="dna" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="atom" class="mousemove"></button>
+  </span>
+ <span class= "buttonDiv" >
+    <button id="petal" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="float" class="mousemove"></button>
+  </span>
+  <br/><br/> 
+  <span class= "buttonDiv" >
+    <button id="card" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="springCooler" class="mousemove"></button>
+  </span>
+   <span class= "buttonDiv" >
+    <button id="colorSpring" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="coins" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="digital" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="particleMagnet" class="mousemove"></button>
+  </span>
+  <br/><br/> 
+  <span class= "buttonDiv" >
+    <button id="rainbow" class="mousemove"></button>
+  </span>
+  </div>
+  <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
+  <h4 id="rating-h4" >
+  Go to rating	  
+  </h4>	  
+  </a>
+  <span class= "stopButton" >
+    <button id="stop"></button>
+  </span>
+  </div>
+      <script src="popup.js"></script>
+    </body>
+  </html>

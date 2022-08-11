@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Tuntunan kursor - animasi kanggo mouse sampeyan",
+        "description": "Judhul aplikasi, ditampilake ing toko web."
+    },
+    "appDesc": {
+        "message": "Nambah efek lucu nalika sampeyan mindhah mouse sampeyan.Ekstensi iki nggawe mouse sampeyan obah nggawe efek sing nyenengake.",
+        "description": "Katrangan aplikasi, ditampilake ing toko web."
+    },
+    "stopExtension": {
+        "message": "Pateni",
+        "description": "Yen diklik, extension dipateni nganti ngaktifake klik."
+    },
+    "startExtension": {
+        "message": "Ngaktifake",
+        "description": "Yen diklik, extension ngaktifake nganti mateni clirik."
+    },
+    "popupTitle": {
+        "message": "Pilih efek mouse sampeyan",
+        "description": "Jubin nalika jendhela pop-up dibukak."
+    },
+    "ratingBtn": {
+        "message": "Menyang peringkat",
+        "description": "Tombol mbukak jendela anyar kanggo menehi rating extension kanggo pangguna."
+    },
+    "askQuestion": {
+        "message": "Apa sampeyan wis seneng ekstensi kasebut?",
+        "description": "Pesen tandha yen pangguna ngunjungi luwih saka 3 dina."
+    },
+    "ratingQuestion": {
+        "message": "Thanks kanggo seneng!\n Mangga rating extension!",
+        "description": "Pesen tandha yen pangguna ngunjungi luwih saka 3 dina."
+    }
+}

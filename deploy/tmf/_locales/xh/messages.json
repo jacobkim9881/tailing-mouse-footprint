@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Imisila yesikhombisi-oopopayi kwimouse yakho",
+        "description": "Isihloko sesicelo, esiboniswe kwivenkile yeWebhu."
+    },
+    "appDesc": {
+        "message": "Ukongeza iziphumo ezihlekisayo xa uqhubela imouse yakho.Olu lwandiso lwenza imouse yakho ihambisekwe kwimiphumo emihle.",
+        "description": "Inkcazo yesicelo, eboniswe kwivenkile yeWebhu."
+    },
+    "stopExtension": {
+        "message": "Khubaza",
+        "description": "Xa ucofe, ulwandiso olukhuselekileyo kude kube lenziwe i-cliked."
+    },
+    "startExtension": {
+        "message": "Yenza",
+        "description": "Xa ucofe, ulwandiso lwenziwe de kufike ukukhubaza i-cliked."
+    },
+    "popupTitle": {
+        "message": "Khetha isiphumo semouse yakho",
+        "description": "I-tile xa iwindow popup ivuliwe."
+    },
+    "ratingBtn": {
+        "message": "Yiya kumgangatho",
+        "description": "Iqhosha livule iwindows entsha ukulinganisa ulwandiso lomsebenzisi."
+    },
+    "askQuestion": {
+        "message": "Ngaba ukonwabele ulwandiso?",
+        "description": "Umyalezo owalumkisayo xa umsebenzisi etyelele ngaphezulu kweentsuku ezintathu."
+    },
+    "ratingQuestion": {
+        "message": "Enkosi ngokuzonwabisa!\n Nceda ulinganise ulwandiso!",
+        "description": "Umyalezo owalumkisayo xa umsebenzisi etyelele ngaphezulu kweentsuku ezintathu."
+    }
+}

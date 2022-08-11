@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Nga hiku o te Cursor - Animations mo to kiore",
+        "description": "Ko te taitara o te tono, e whakaatuhia ana i te toa tukutuku."
+    },
+    "appDesc": {
+        "message": "Te taapiri i nga Huarahi rorirori i nga wa e neke ana koe i to kiore.Ko tenei toronga ka puta to kiore ki te neke i nga hua ngahau.",
+        "description": "Ko te whakaahuatanga o te tono, e whakaatuhia ana i te toa tukutuku."
+    },
+    "stopExtension": {
+        "message": "Mahue",
+        "description": "Ina patotohia, ka haria te toronga kia taea ra ano te kape."
+    },
+    "startExtension": {
+        "message": "Whakamana",
+        "description": "Ina patotohia, ka whakahohea te toronga tae noa ki te whakakore i te hono."
+    },
+    "popupTitle": {
+        "message": "Whiriwhiria to paanga kiore",
+        "description": "Te tohu i te wa i tuwhera ai te matapihi papu."
+    },
+    "ratingBtn": {
+        "message": "Haere ki te whakatauranga",
+        "description": "Ko te paatene ka whakatuwhera i te matapihi hou hei utu mo te toronga mo te kaiwhakamahi."
+    },
+    "askQuestion": {
+        "message": "I pai koe ki te toronga?",
+        "description": "I puta te karere mataara i te wa i tirohia ai e te kaiwhakamahi mo te 3 nga ra."
+    },
+    "ratingQuestion": {
+        "message": "Nga mihi ki te koa!\n Tuhia koa te toronga!",
+        "description": "I puta te karere mataara i te wa i tirohia ai e te kaiwhakamahi mo te 3 nga ra."
+    }
+}

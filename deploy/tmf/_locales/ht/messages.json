@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Ke kurseur - Animations pou sourit ou",
+        "description": "Tit la nan aplikasyon an, parèt nan magazen an entènèt."
+    },
+    "appDesc": {
+        "message": "Ajoute efè komik nenpòt lè ou deplase sourit ou.Ekstansyon sa a fè sourit ou k ap deplase kreye efè plezi.",
+        "description": "Deskripsyon aplikasyon an, ki parèt nan magazen entènèt la."
+    },
+    "stopExtension": {
+        "message": "Enfim",
+        "description": "Lè klike, ekstansyon an ki andikape jouk nan pèmèt yo clied."
+    },
+    "startExtension": {
+        "message": "Pèmèt",
+        "description": "Lè klike, ekstansyon sa a te pèmèt jouk enfim yo te kloure."
+    },
+    "popupTitle": {
+        "message": "Chwazi efè sourit ou",
+        "description": "Mozayik la lè fenèt popup louvri."
+    },
+    "ratingBtn": {
+        "message": "Ale nan Rating",
+        "description": "Bouton an louvri nouvo fenèt pou evalye ekstansyon pou itilizatè a."
+    },
+    "askQuestion": {
+        "message": "Eske ou te jwi ekstansyon an?",
+        "description": "Mesaj alèt rive lè itilizatè te vizite sou 3 jou."
+    },
+    "ratingQuestion": {
+        "message": "Mèsi pou jwi!\n Tanpri evalye ekstansyon an!",
+        "description": "Mesaj alèt rive lè itilizatè te vizite sou 3 jou."
+    }
+}

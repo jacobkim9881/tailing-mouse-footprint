@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kursor dumlari - sichqonchangiz uchun animatsiyalar",
+        "description": "Internet do'konida ko'rsatilgan dasturning nomi."
+    },
+    "appDesc": {
+        "message": "Sichqonchani boshqa joyga ko'chirganingizda kulgili ta'sirni qo'shish.Ushbu kengaytma sizning sichqonchaning harakatlanishini juda qiziqarli ta'sir ko'rsatadi.",
+        "description": "Veb-do'konda ko'rsatilgan dasturning tavsifi."
+    },
+    "stopExtension": {
+        "message": "O'chirmoq",
+        "description": "Bosilganda, kengaytma o'chirilguncha o'chiriladi."
+    },
+    "startExtension": {
+        "message": "Yoqib yubormoq",
+        "description": "Bosilganda, kengaytma noto'g'ri joylashtirishni o'chirib qo'ydi."
+    },
+    "popupTitle": {
+        "message": "Sichqonchaning ta'sirini tanlang",
+        "description": "Plitka ochilganda plitka ochildi."
+    },
+    "ratingBtn": {
+        "message": "Reytingga o'ting",
+        "description": "Ushbu tugmachani uzaytirish uchun yangi oynani oching."
+    },
+    "askQuestion": {
+        "message": "Sizga kengaytmani yoqdimi?",
+        "description": "Foydalanuvchi 3 kundan ortiq tashrif buyurganida ogohlantirish xabari paydo bo'ldi."
+    },
+    "ratingQuestion": {
+        "message": "Rahmat uchun rahmat!\n Iltimos, kengaytmani baholang!",
+        "description": "Foydalanuvchi 3 kundan ortiq tashrif buyurganida ogohlantirish xabari paydo bo'ldi."
+    }
+}

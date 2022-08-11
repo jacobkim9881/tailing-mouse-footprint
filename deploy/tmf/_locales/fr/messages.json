@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor Tails - Animations pour votre souris",
+        "description": "Le titre de l'application, affiché dans la boutique en ligne."
+    },
+    "appDesc": {
+        "message": "Ajouter des effets amusants chaque fois que vous déplacez votre souris.Cette extension rend votre souris en mouvement créer des effets amusants.",
+        "description": "La description de l'application, affichée dans la boutique en ligne."
+    },
+    "stopExtension": {
+        "message": "Désactiver",
+        "description": "Lorsque vous cliquez sur, l'extension désactivée jusqu'à ce que l'activation soit cliquée."
+    },
+    "startExtension": {
+        "message": "Activer",
+        "description": "Lorsque vous cliquez sur, l'extension a permis le désactivation de la désactivation."
+    },
+    "popupTitle": {
+        "message": "Choisissez l'effet de votre souris",
+        "description": "La carreau lorsque la fenêtre contextuelle s'est ouverte."
+    },
+    "ratingBtn": {
+        "message": "Aller à la notation",
+        "description": "Le bouton ouvre la nouvelle fenêtre pour évaluer l'extension de l'utilisateur."
+    },
+    "askQuestion": {
+        "message": "Avez-vous apprécié l'extension?",
+        "description": "Le message d'alerte s'est produit lorsque l'utilisateur s'est rendu à 3 jours."
+    },
+    "ratingQuestion": {
+        "message": "Merci d'avoir apprécié!\n Veuillez noter l'extension!",
+        "description": "Le message d'alerte s'est produit lorsque l'utilisateur s'est rendu à 3 jours."
+    }
+}

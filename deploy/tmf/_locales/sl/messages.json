@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kazalec repi - animacije za miško",
+        "description": "Naslov aplikacije, prikazan v spletni trgovini."
+    },
+    "appDesc": {
+        "message": "Dodajanje smešnih učinkov vsakič, ko premikate miško.Zaradi te razširitve miške se premikajo zabavne učinke.",
+        "description": "Opis aplikacije, prikazan v spletni trgovini."
+    },
+    "stopExtension": {
+        "message": "Onemogoči",
+        "description": "Ko kliknete, razširitev onemogoča do ANAble Cliked."
+    },
+    "startExtension": {
+        "message": "Omogoči",
+        "description": "Ko kliknemo, je razširitev omogočena do onemogočanja."
+    },
+    "popupTitle": {
+        "message": "Izberite svoj učinek miške",
+        "description": "Ploščica, ko se je odprlo pojavno okno."
+    },
+    "ratingBtn": {
+        "message": "Pojdi na oceno",
+        "description": "Gumb Odprite novo okno za oceno razširitve za uporabnika."
+    },
+    "askQuestion": {
+        "message": "Ste uživali v podaljšku?",
+        "description": "Sporočilo o opozorilu se je zgodilo, ko ga je uporabnik obiskal v 3 dneh."
+    },
+    "ratingQuestion": {
+        "message": "Hvala za uživanje!\n Prosimo, ocenite razširitev!",
+        "description": "Sporočilo o opozorilu se je zgodilo, ko ga je uporabnik obiskal v 3 dneh."
+    }
+}

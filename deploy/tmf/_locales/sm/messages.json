@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Taofia siusiu - animations mo lau isumu",
+        "description": "O le ulutala o le talosaga, faʻaalia i totonu o le upega tafailagi."
+    },
+    "appDesc": {
+        "message": "Faʻaopopoina malie aʻafiaga i soʻo se taimi e te siʻi ai lou isumu.O lenei faʻaopopoga faia lou isumu agai i luma e maua ai aʻafiaga malie.",
+        "description": "O le faʻamatalaga o le talosaga, faʻaalia i totonu o le upega tafailagi."
+    },
+    "stopExtension": {
+        "message": "Faamuta",
+        "description": "A kiliki, o le faʻaopopoga e le atoatoa seʻia oʻo ina tau"
+    },
+    "startExtension": {
+        "message": "Mafai",
+        "description": "A kiliki, o le faʻaopoopoga mafai ona mafai ona faʻamutaina le faʻamamaina."
+    },
+    "popupTitle": {
+        "message": "Filifili lau isumu susu",
+        "description": "O le taʻele pe a tatalaina le faʻamalama appup."
+    },
+    "ratingBtn": {
+        "message": "Alu i le rating",
+        "description": "O le faʻamau matala le faʻamalama fou e faʻatatau ai le faʻaopopoga mo le tagata faʻaaoga."
+    },
+    "askQuestion": {
+        "message": "Na e fiafia i le faaopoopoga?",
+        "description": "O le feʻau alele e tupu pe a oʻo i le tagata faʻaaoga i le 3 aso."
+    },
+    "ratingQuestion": {
+        "message": "Faafetai mo le fiafia!\n Faʻamolemole o loʻo avea le faʻalauteleina!",
+        "description": "O le feʻau alele e tupu pe a oʻo i le tagata faʻaaoga i le 3 aso."
+    }
+}

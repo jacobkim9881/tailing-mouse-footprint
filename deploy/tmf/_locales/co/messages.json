@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor Tails - Animazioni per u mouse",
+        "description": "U titulu di l'applicazione, affissata in a tenda Web."
+    },
+    "appDesc": {
+        "message": "Aghjunghjendu l'effetti divertenti ogni volta chì ti move u vostru mouse.Questa estensione face u vostru mouse in muvimentu creà effetti divertenti.",
+        "description": "A descrizzione di l'applicazione, affissata in a tenda Web."
+    },
+    "stopExtension": {
+        "message": "Disattivà",
+        "description": "Quandu hà clicatu, l'estensione disattivata finu à chì a attivazione hè incadita."
+    },
+    "startExtension": {
+        "message": "Attivabile",
+        "description": "Quandu si cliccà, l'estensione attivata finu à chì a disattiva eliminata."
+    },
+    "popupTitle": {
+        "message": "Sceglite u vostru effettu di mouse",
+        "description": "A tile quandu a finestra di popup si apre."
+    },
+    "ratingBtn": {
+        "message": "Vai à a valutazione",
+        "description": "U buttone apre a nova finestra per votà l'estensione per l'utilizatore."
+    },
+    "askQuestion": {
+        "message": "Avete piaciutu l'estensione?",
+        "description": "U messagiu d'alerta hè accadutu quandu l'utente hà visitatu più di 3 ghjorni."
+    },
+    "ratingQuestion": {
+        "message": "Grazie per piacè!\n Per piacè, valutazione l'estensione!",
+        "description": "U messagiu d'alerta hè accadutu quandu l'utente hà visitatu più di 3 ghjorni."
+    }
+}

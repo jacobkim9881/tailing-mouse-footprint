@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Buntut kursor - animasi pikeun beurit anjeun",
+        "description": "Judul tina aplikasi, ditingalikeun di Wéb."
+    },
+    "appDesc": {
+        "message": "Nambahkeun épék lucu nalika anjeun mindahkeun beurit anjeun.Extension ieu ngadamel mouse mouse anjeun nyiptakeun épék pikaresepeun.",
+        "description": "Katerangan ngeunaan aplikasi, ditingalikeun dina toko wéb."
+    },
+    "stopExtension": {
+        "message": "Ditabungkeun",
+        "description": "Nalika diklik, extension ditumpurkeun dugi ka ngaktifkeun cliked."
+    },
+    "startExtension": {
+        "message": "Ngaktifkeun",
+        "description": "Nalika diklik, extension diaktipkeun dugi ka mareuman cliked."
+    },
+    "popupTitle": {
+        "message": "Pilih pangaruh mouse anjeun",
+        "description": "Ubin nalika jandela popup dibuka."
+    },
+    "ratingBtn": {
+        "message": "Angkat ka rating",
+        "description": "Tombol buka jandela anyar pikeun meuntakeun penyuluhan pikeun pangguna."
+    },
+    "askQuestion": {
+        "message": "Dupi anjeun resep penyambungan?",
+        "description": "Pesen Tarjamahan lumangsung nalika pangguna didatangan langkung ti 3 dinten."
+    },
+    "ratingQuestion": {
+        "message": "Hatur nuhun kanggo dinikmati!\n Punten rating extension!",
+        "description": "Pesen Tarjamahan lumangsung nalika pangguna didatangan langkung ti 3 dinten."
+    }
+}

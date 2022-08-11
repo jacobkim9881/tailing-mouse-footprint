@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "ʻO nā mea kanu lāʻau - nā hiʻohiʻona no kāu kiʻi",
+        "description": "ʻO ke poʻo inoa o ka noi, hōʻikeʻia ma ka hale kūʻai pūnaewele."
+    },
+    "appDesc": {
+        "message": "Ka hoʻohuiʻana i nā hopena maikaʻiʻole i nā manawa a pau āu e neʻe ai i kāu kiʻi.E hana ana kēia mea hoʻonui i kāu kiʻi i nā hopena leʻaleʻa.",
+        "description": "ʻO ka weheweheʻana o ka noi, hōʻikeʻia ma ka hale kūʻai pūnaewele."
+    },
+    "stopExtension": {
+        "message": "Hoʻopaʻa",
+        "description": "I ka wā i hoʻopiliʻia ai, ka hoʻonuiʻiaʻana o ka hoʻonuiʻia a hiki i ke kiʻiʻana."
+    },
+    "startExtension": {
+        "message": "Hoʻopā",
+        "description": "I ka wā i hoʻopiliʻia ai, i ka hoʻonuiʻia a hiki i ka hoʻopiʻiʻana i ka hoʻopiʻi."
+    },
+    "popupTitle": {
+        "message": "E koho i kāu hopena mouse",
+        "description": "ʻO ka tile ke weheʻia ka puka makani."
+    },
+    "ratingBtn": {
+        "message": "Hele i ka helu",
+        "description": "Ka pihi wehe i ka puka aniani hou e helu ai i ka hoʻonuiʻana no ka mea hoʻohana."
+    },
+    "askQuestion": {
+        "message": "Ua hauʻoli pahaʻoe i ka hoʻonui?",
+        "description": "ʻIkeʻia ka leka uila i ka wā i kipaʻia ai nā mea hoʻohana ma luna o 3 mau lā."
+    },
+    "ratingQuestion": {
+        "message": "Mahalo no ka leʻaleʻa!\n Eʻoluʻolu e helu i ka hoʻonui!",
+        "description": "ʻIkeʻia ka leka uila i ka wā i kipaʻia ai nā mea hoʻohana ma luna o 3 mau lā."
+    }
+}

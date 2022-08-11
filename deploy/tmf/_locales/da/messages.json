@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Markørhaler - Animationer til din mus",
+        "description": "Titlen på applikationen, der vises i webbutikken."
+    },
+    "appDesc": {
+        "message": "Tilføjelse af sjove effekter, når du flytter musen.Denne udvidelse får musen til at bevæge sig skaber sjove effekter.",
+        "description": "Beskrivelsen af applikationen, der vises i Web Store."
+    },
+    "stopExtension": {
+        "message": "Deaktiver",
+        "description": "Når det klikkes, deaktiveres udvidelsen, indtil det aktiveres."
+    },
+    "startExtension": {
+        "message": "Aktivér",
+        "description": "Når det klikkes, aktiveres udvidelsen, indtil deaktiveres det."
+    },
+    "popupTitle": {
+        "message": "Vælg din musekraft",
+        "description": "Flisen, når popup -vinduet åbnede."
+    },
+    "ratingBtn": {
+        "message": "Gå til vurdering",
+        "description": "Knappen åbner nyt vindue for at bedømme udvidelsen for brugeren."
+    },
+    "askQuestion": {
+        "message": "Har du nydt udvidelsen?",
+        "description": "Der opstod en alarmmeddelelse, da brugeren besøgte over 3 dage."
+    },
+    "ratingQuestion": {
+        "message": "Tak for at nyde!\n Vurder forlængelsen!",
+        "description": "Der opstod en alarmmeddelelse, da brugeren besøgte over 3 dage."
+    }
+}

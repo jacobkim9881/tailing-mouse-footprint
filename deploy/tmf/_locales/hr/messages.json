@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Repovi kursora - animacije za mišljenje",
+        "description": "Naslov aplikacije, prikazan u web trgovini."
+    },
+    "appDesc": {
+        "message": "Dodavanje smiješnih efekata kad god pomaknete miš.Ovo proširenje natjera da se vaš miš krene zabavnim efektima.",
+        "description": "Opis aplikacije, prikazan u web trgovini."
+    },
+    "stopExtension": {
+        "message": "Onesposobiti",
+        "description": "Kada se klikne, produženje se onemogućilo do klik -a."
+    },
+    "startExtension": {
+        "message": "Omogućiti",
+        "description": "Kada se klikne, produžetak je omogućilo do onemogućene klik."
+    },
+    "popupTitle": {
+        "message": "Odaberite svoj učinak miša",
+        "description": "Pločica kad se otvorio skočni prozor."
+    },
+    "ratingBtn": {
+        "message": "Idite na ocjenu",
+        "description": "Gumb Otvori novi prozor za ocjenu proširenja za korisnika."
+    },
+    "askQuestion": {
+        "message": "Jeste li uživali u produžetku?",
+        "description": "Poruka upozorenja nastala je kada je korisnik posjetio tijekom 3 dana."
+    },
+    "ratingQuestion": {
+        "message": "Hvala što ste uživali!\n Molimo ocjenjivanje proširenja!",
+        "description": "Poruka upozorenja nastala je kada je korisnik posjetio tijekom 3 dana."
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Tîrêjên Kursor - Animasyonên ji bo mişka we",
+        "description": "Sernavê serîlêdanê, di hewşa malperê de tê xuyang kirin."
+    },
+    "appDesc": {
+        "message": "Dema ku hûn mişka xwe bar bikin bandorên qeşeng zêde bikin.Vê dirêjkirinê tevgera mişkê we bandorên kêfê diafirîne.",
+        "description": "Danasîna serîlêdanê, di firoşgeha malperê de tê nîşandan."
+    },
+    "stopExtension": {
+        "message": "Neçala",
+        "description": "Gava ku bikirtînin, dirêjkirin heya ku cliked aktîf be."
+    },
+    "startExtension": {
+        "message": "Bikêrkirin",
+        "description": "Gava ku bikirtînin, dirêjkirin çalak kirin heya ku nekêşbar bike."
+    },
+    "popupTitle": {
+        "message": "Bandora Mişkiya xwe hilbijêrin",
+        "description": "Tiliya ku pope popup vekir."
+    },
+    "ratingBtn": {
+        "message": "Herin Rating",
+        "description": "Bişkojka pencereya nû veke da ku dirêjkirina ji bo bikarhêner binirxîne."
+    },
+    "askQuestion": {
+        "message": "Ma we ji dirêjkirinê kêfê kir?",
+        "description": "Peyama Alert dema ku bikarhêner zêdetirî 3 rojan ziyaret kiriye çêbû."
+    },
+    "ratingQuestion": {
+        "message": "Spas ji bo kêfa!\n Ji kerema xwe dirêjkirinê deng bidin!",
+        "description": "Peyama Alert dema ku bikarhêner zêdetirî 3 rojan ziyaret kiriye çêbû."
+    }
+}

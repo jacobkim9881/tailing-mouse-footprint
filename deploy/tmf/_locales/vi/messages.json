@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Trail Tails - Hoạt hình cho chuột của bạn",
+        "description": "Tiêu đề của ứng dụng, được hiển thị trong cửa hàng web."
+    },
+    "appDesc": {
+        "message": "Thêm hiệu ứng hài hước bất cứ khi nào bạn di chuyển chuột.Phần mở rộng này làm cho chuột di chuyển của bạn tạo ra hiệu ứng thú vị.",
+        "description": "Mô tả của ứng dụng, được hiển thị trong cửa hàng web."
+    },
+    "stopExtension": {
+        "message": "Vô hiệu hóa",
+        "description": "Khi được nhấp, phần mở rộng bị vô hiệu hóa cho đến khi kích hoạt."
+    },
+    "startExtension": {
+        "message": "Cho phép",
+        "description": "Khi được nhấp, phần mở rộng được bật cho đến khi vô hiệu hóa."
+    },
+    "popupTitle": {
+        "message": "Chọn hiệu ứng chuột của bạn",
+        "description": "Ngói khi cửa sổ bật lên mở."
+    },
+    "ratingBtn": {
+        "message": "Đi đến xếp hạng",
+        "description": "Nút mở cửa sổ mới để đánh giá tiện ích mở rộng cho người dùng."
+    },
+    "askQuestion": {
+        "message": "Bạn đã thích phần mở rộng?",
+        "description": "Thông báo cảnh báo đã xảy ra khi người dùng truy cập hơn 3 ngày."
+    },
+    "ratingQuestion": {
+        "message": "Cảm ơn vì đã tận hưởng!\n Vui lòng xếp hạng phần mở rộng!",
+        "description": "Thông báo cảnh báo đã xảy ra khi người dùng truy cập hơn 3 ngày."
+    }
+}

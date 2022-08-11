@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Markörsvansar - animationer för din mus",
+        "description": "Applikationens titel, som visas i webbbutiken."
+    },
+    "appDesc": {
+        "message": "Lägga till roliga effekter när du flyttar musen.Denna förlängning gör att musen rör sig för att skapa roliga effekter.",
+        "description": "Beskrivningen av applikationen, som visas i webbbutiken."
+    },
+    "stopExtension": {
+        "message": "Inaktivera",
+        "description": "När du klickar på inaktiverades tillägget tills det aktiverades klikat."
+    },
+    "startExtension": {
+        "message": "Gör det möjligt",
+        "description": "När du klickar på, aktiverades tillägget tills den inaktiveras klikade."
+    },
+    "popupTitle": {
+        "message": "Välj din museffekt",
+        "description": "Kakel när popup -fönstret öppnades."
+    },
+    "ratingBtn": {
+        "message": "Gå till betyg",
+        "description": "Knappen öppnar nytt fönster för att betygsätta tillägget för användaren."
+    },
+    "askQuestion": {
+        "message": "Har du haft förlängningen?",
+        "description": "Varningsmeddelande inträffade när användaren besökte under 3 dagar."
+    },
+    "ratingQuestion": {
+        "message": "Tack för att du njöt!\n Vänligen betygsätt tillägget!",
+        "description": "Varningsmeddelande inträffade när användaren besökte under 3 dagar."
+    }
+}

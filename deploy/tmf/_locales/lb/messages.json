@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor Schwänz - Animatioune fir Är Maus",
+        "description": "Den Titel vun der Uwendung, an der Websäit ugewisen."
+    },
+    "appDesc": {
+        "message": "Witzeg Effekter, wann Dir Är Maus réckelt.Dës Extensioun maacht Är Maus bewegend gutt Auswierkungen.",
+        "description": "D'Beschreiwung vun der Uwendung, déi am Web Store ugewise gëtt."
+    },
+    "stopExtension": {
+        "message": "Ausgerdéieren",
+        "description": "Wann geklickt, ass d'Extensioun ausgeschalt ginn, bis d'Aktioun gekippt huet."
+    },
+    "startExtension": {
+        "message": "Erméiglecher zréck",
+        "description": "Wann geklickt, ass d'Extensioun aktivéiert bis den Designéier gekippt huet."
+    },
+    "popupTitle": {
+        "message": "Wielt Är Mauseffekt",
+        "description": "De Fliesen wann Popupfënster opgaang ass."
+    },
+    "ratingBtn": {
+        "message": "Géi fannen",
+        "description": "De Knäppchen vun Knäppchen eng nei Fënster fir ze bewäerten d'Extensioun fir de Benotzer."
+    },
+    "askQuestion": {
+        "message": "Hutt Dir d'Verlängerung gefall?",
+        "description": "Alert Message geschitt wann de Benotzer iwwer 3 Deeg besicht huet."
+    },
+    "ratingQuestion": {
+        "message": "Merci fir genannen!\n Bewäert w.e.g. d'Verlängerung!",
+        "description": "Alert Message geschitt wann de Benotzer iwwer 3 Deeg besicht huet."
+    }
+}

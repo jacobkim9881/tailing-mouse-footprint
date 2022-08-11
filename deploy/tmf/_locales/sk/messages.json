@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Kurzorové chvosty - animácie pre vašu myš",
+        "description": "Názov aplikácie, zobrazený vo webovom obchode."
+    },
+    "appDesc": {
+        "message": "Pridanie vtipných efektov vždy, keď pohybujete myšou.Vďaka tomuto rozšíreniu sa vaša myš vytvára zábavné efekty.",
+        "description": "Opis aplikácie, zobrazený vo webovom obchode."
+    },
+    "stopExtension": {
+        "message": "Zakázať",
+        "description": "Po kliknutí sa rozšírenie zakázalo, až kým sa povoľuje."
+    },
+    "startExtension": {
+        "message": "Umožniť",
+        "description": "Po kliknutí sa rozšírenie povolilo, kým sa zakáže."
+    },
+    "popupTitle": {
+        "message": "Vyberte si efekt myši",
+        "description": "Dlaždica, keď sa otvorilo kontextové okno."
+    },
+    "ratingBtn": {
+        "message": "Prejdite na hodnotenie",
+        "description": "Tlačidlo Otvorte nové okno na ohodnotenie rozšírenia pre používateľa."
+    },
+    "askQuestion": {
+        "message": "Páčilo sa vám rozšírenie?",
+        "description": "Pri výstražnej správe sa vyskytla, keď používateľ navštívil 3 dni."
+    },
+    "ratingQuestion": {
+        "message": "Ďakujeme, že ste si užívali!\n Vyhodnoťte rozšírenie!",
+        "description": "Pri výstražnej správe sa vyskytla, keď používateľ navštívil 3 dni."
+    }
+}

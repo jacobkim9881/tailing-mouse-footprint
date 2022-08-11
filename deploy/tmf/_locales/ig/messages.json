@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Ọdụdụ cursor - animation maka òké gị",
+        "description": "Aha akwụkwọ a, gosipụtara na ụlọ ahịa weebụ."
+    },
+    "appDesc": {
+        "message": "Dinggbakwunye mmetụta na-adị oyi mgbe ọ bụla ị kwagara òké gị.Mgbatị a na-eme ka ị na-emegharị mmegharị ahụ na-arụpụta ihe na-enye ntụrụndụ gị.",
+        "description": "Nkọwa nke ngwa ahụ, gosipụtara na ụlọ ahịa weebụ."
+    },
+    "stopExtension": {
+        "message": "Iwepu",
+        "description": "Mgbe ọpị, ndọtị ahụ nwere nkwarụ ruo na Cliked Cliked."
+    },
+    "startExtension": {
+        "message": "Inwe ike",
+        "description": "Mgbe opịrị, na ndọtị na-enyere aka ruo mgbe Clikible Clikible."
+    },
+    "popupTitle": {
+        "message": "Họrọ mmetụta òké gị",
+        "description": "A na-emegharị mgbe windo popp mepere."
+    },
+    "ratingBtn": {
+        "message": "Gaa na Rating",
+        "description": "Bọtịnụ mepere emepe ọhụrụ iji tụọ ndọtị maka onye ọrụ ahụ."
+    },
+    "askQuestion": {
+        "message": "Itinye ndọtị ahụ?",
+        "description": "Ozi njikere mere mgbe onye ọrụ gara ihe karịrị ụbọchị 3."
+    },
+    "ratingQuestion": {
+        "message": "Daalụ maka ịnụ ụtọ!\n Biko bulie ndọtị!",
+        "description": "Ozi njikere mere mgbe onye ọrụ gara ihe karịrị ụbọchị 3."
+    }
+}

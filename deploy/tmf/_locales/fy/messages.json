@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor-staarten - Animaasjes foar jo mûs",
+        "description": "De titel fan 'e applikaasje, werjûn yn' e webwinkel."
+    },
+    "appDesc": {
+        "message": "Grappige effekten tafoegje as jo jo mûs ferpleatse.Dizze tafoeging meitsje jo mûskleilige bewegings fan 'e wille.",
+        "description": "De beskriuwing fan 'e applikaasje, werjûn yn' e webwinkel."
+    },
+    "stopExtension": {
+        "message": "Skeakelje",
+        "description": "As jo klikke, de útwreiding útskeakele oant it ynskeakelje tikje."
+    },
+    "startExtension": {
+        "message": "Mooglik meitsje",
+        "description": "As jo klikke, de útwreiding ynskeakele oant de tikte útskeakele."
+    },
+    "popupTitle": {
+        "message": "Kies jo mûseffekt",
+        "description": "De tegel as popup-finster iepene."
+    },
+    "ratingBtn": {
+        "message": "Gean nei de wurdearring",
+        "description": "De knop iepenje nij finster om de útwreiding te beoardieljen foar de brûker."
+    },
+    "askQuestion": {
+        "message": "Hawwe jo genoaten fan 'e útwreiding?",
+        "description": "Alertberjocht barde as de brûker mear dan 3 dagen besocht."
+    },
+    "ratingQuestion": {
+        "message": "Betanke foar genietsje!\n Wurdearje asjebleaft de tafoeging!",
+        "description": "Alertberjocht barde as de brûker mear dan 3 dagen besocht."
+    }
+}

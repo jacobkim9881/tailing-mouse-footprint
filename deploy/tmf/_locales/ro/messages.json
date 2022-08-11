@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor Tails - Animații pentru mouse",
+        "description": "Titlul aplicației, afișat în magazinul web."
+    },
+    "appDesc": {
+        "message": "Adăugarea de efecte amuzante ori de câte ori vă mutați mouse -ul.Această extensie face ca mouse -ul dvs. să creeze efecte distractive.",
+        "description": "Descrierea aplicației, afișată în magazinul web."
+    },
+    "stopExtension": {
+        "message": "Dezactivare",
+        "description": "Când a făcut clic, extensia dezactivată până la activarea activării."
+    },
+    "startExtension": {
+        "message": "Permite",
+        "description": "Când a făcut clic, extensia a activat până la dezactivarea clipei."
+    },
+    "popupTitle": {
+        "message": "Alegeți -vă efectul mouse -ului",
+        "description": "Faianța când a fost deschisă fereastra pop -up."
+    },
+    "ratingBtn": {
+        "message": "Mergeți la rating",
+        "description": "Butonul deschide fereastra nouă pentru a evalua extensia pentru utilizator."
+    },
+    "askQuestion": {
+        "message": "V -ați bucurat de extensie?",
+        "description": "Mesajul de alertă a apărut atunci când utilizatorul a vizitat peste 3 zile."
+    },
+    "ratingQuestion": {
+        "message": "Mulțumesc că te -ai bucurat!\n Vă rugăm să evaluați extensia!",
+        "description": "Mesajul de alertă a apărut atunci când utilizatorul a vizitat peste 3 zile."
+    }
+}

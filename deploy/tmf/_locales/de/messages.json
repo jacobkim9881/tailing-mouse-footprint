@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Cursor Tails - Animationen für Ihre Maus",
+        "description": "Der Titel der Anwendung, der im Web Store angezeigt wird."
+    },
+    "appDesc": {
+        "message": "Fügen Sie lustige Effekte hinzu, wenn Sie Ihre Maus bewegen.Diese Erweiterung macht Ihre Mausbewegung unterhaltsamen Effekten.",
+        "description": "Die Beschreibung der Anwendung, die im Web Store angezeigt wird."
+    },
+    "stopExtension": {
+        "message": "Deaktivieren",
+        "description": "Bei Klicken deaktiviert die Erweiterung, bis die Aktivierung ermöglicht wurde."
+    },
+    "startExtension": {
+        "message": "Ermöglichen",
+        "description": "Bei Klicken fähig die Erweiterung, bis die Deaktivierung geklebt wurde."
+    },
+    "popupTitle": {
+        "message": "Wählen Sie Ihren Mauseffekt",
+        "description": "Die Fliese beim Öffnen des Popup -Fensters."
+    },
+    "ratingBtn": {
+        "message": "Gehen Sie zur Bewertung",
+        "description": "Die Schaltfläche Öffnen Sie ein neues Fenster, um die Erweiterung für den Benutzer zu bewerten."
+    },
+    "askQuestion": {
+        "message": "Haben Sie die Erweiterung genossen?",
+        "description": "Warnmeldung ereignete sich, wenn der Benutzer über 3 Tage besucht wurde."
+    },
+    "ratingQuestion": {
+        "message": "Danke, dass du genossen hast!\n Bitte bewerten Sie die Verlängerung!",
+        "description": "Warnmeldung ereignete sich, wenn der Benutzer über 3 Tage besucht wurde."
+    }
+}

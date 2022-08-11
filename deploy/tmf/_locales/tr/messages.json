@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "İmleç Kuyrukları - Fareniz için Animasyonlar",
+        "description": "Web mağazasında görüntülenen uygulamanın başlığı."
+    },
+    "appDesc": {
+        "message": "Farenizi hareket ettirdiğinizde komik efektler eklemek.Bu uzantı, farenizin hareket ettirilmesi eğlenceli efektler yaratır.",
+        "description": "Web mağazasında görüntülenen uygulamanın açıklaması."
+    },
+    "stopExtension": {
+        "message": "Devre dışı bırakmak",
+        "description": "Tıklandığında, etkinleştirilene kadar uzantı devre dışı bırakıldı."
+    },
+    "startExtension": {
+        "message": "Olanak vermek",
+        "description": "Tıklandığında, devre dışı bırakılana kadar uzantı etkinleştirildi."
+    },
+    "popupTitle": {
+        "message": "Fare efektinizi seçin",
+        "description": "Açılır pencere açıldığında karo."
+    },
+    "ratingBtn": {
+        "message": "Derecelendirmeye git",
+        "description": "Kullanıcının uzantısını derecelendirmek için yeni pencere açın."
+    },
+    "askQuestion": {
+        "message": "Uzatmadan keyif aldınız mı?",
+        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı meydana geldi."
+    },
+    "ratingQuestion": {
+        "message": "Keyfini çıkardığınız için teşekkürler!\n Lütfen uzantıyı derecelendirin!",
+        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı meydana geldi."
+    }
+}

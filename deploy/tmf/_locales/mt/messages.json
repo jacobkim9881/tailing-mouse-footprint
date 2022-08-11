@@ -1,0 +1,34 @@
+{
+    "appName": {
+        "message": "Dnub Cursor - Animazzjonijiet għall-Ġurdien Tiegħek",
+        "description": "It-titlu tal-applikazzjoni, muri fil-maħżen tal-web."
+    },
+    "appDesc": {
+        "message": "Iż-żieda ta 'effetti umoristiċi kull meta tiċċaqlaq il-maws.Din l-estensjoni tagħmel il-maws tiegħek jiċċaqlaq joħloq effetti divertenti.",
+        "description": "Id-deskrizzjoni tal-applikazzjoni, murija fil-maħżen tal-web."
+    },
+    "stopExtension": {
+        "message": "Itfi",
+        "description": "Meta kklikkjat, l-estensjoni tiddiżattiva sa l-Enable Cliked."
+    },
+    "startExtension": {
+        "message": "Jippermetti",
+        "description": "Meta tkun ikklikkjata, l-estensjoni ppermettiet sa l-irfigħ tal-cliked."
+    },
+    "popupTitle": {
+        "message": "Agħżel l-effett tal-maws",
+        "description": "Il-maduma meta nfetħet it-tieqa popup."
+    },
+    "ratingBtn": {
+        "message": "Mur fil-klassifikazzjoni",
+        "description": "Il-buttuna tiftaħ tieqa ġdida biex tivvaluta l-estensjoni għall-utent."
+    },
+    "askQuestion": {
+        "message": "Ħadt gost bl-estensjoni?",
+        "description": "Messaġġ ta 'twissija seħħ meta l-utent żar fuq 3 ijiem."
+    },
+    "ratingQuestion": {
+        "message": "Grazzi talli tgawdi!\n Jekk jogħġbok ikklassifika l-estensjoni!",
+        "description": "Messaġġ ta 'twissija seħħ meta l-utent żar fuq 3 ijiem."
+    }
+}
