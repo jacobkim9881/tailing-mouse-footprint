@@ -9,13 +9,29 @@ function trigger(e, direction) {
     let ranXpos = Math.trunc(Math.random() * ran50) + parseInt(e.clientX, 10);
     let ranYpos = Math.trunc(Math.random() * ran50) + parseInt(e.clientY, 10);
     let ran20 = ranYpos - 30;
-	obj.style.transform = direction === -1 ? 'rotateY(3.142rad)' : 'rotateY(0deg)';
+	obj.style.transform = direction === -1 ? 'rotateZ(90deg)' : 'rotateY(0deg)';
     obj.style.position = 'fixed';
-    obj.style.backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
+    obj.style.backgroundImage = direction === -1 ? `linear-gradient(to bottom right, hsl(0, 100%, 100%), hsl(0, 0%, 0%)` : `linear-gradient(to bottom right, hsl(0, 0%, 0%), hsl(0, 100%, 100%)`;
 
 		//'white'
 		//backgroundImage = `linear-gradient(to bottom right, hsl(170, 100%, 50%), hsl(170, 100%, 0%)`;
-    //obj.style.borderRadius = '50%';  
+    //obj.style.borderRadius = '50%';
+	/*
+	if (direction === -1) {
+	obj.animate([
+      {top: ranYpos + 'px',
+      left: ranXpos + 'px',
+      width: ran502 + 'px',
+      height: 1 + 'px' 
+    }, 
+      {top: ranYpos + 'px',
+      left: ranXpos + 'px',
+      width: 1 + 'px',
+      height: 1 + 'px' 
+    }
+    ], 200)
+	} else {
+		*/
     obj.animate([
       {top: ranYpos + 'px',
       left: ranXpos + 'px',
@@ -28,7 +44,7 @@ function trigger(e, direction) {
       height: 1 + 'px' 
     }
     ], 200)
-
+//}
   document.body.appendChild(obj);
   setTimeout(() => {
 	  obj.remove()
