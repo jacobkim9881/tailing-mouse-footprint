@@ -1,48 +1,16 @@
 //test.js 
-function trigger(e, direction) {
+function trigger(e) {
 	// object for styling
   let obj = document.createElement('div');
-  let pOrM = Math.random() >= 0.5 ? 1 : -1;	
-
-    //;let ranXpos = Math.trunc(Math.random() * ran50) + parseInt(e.clientX, 10);
     obj.style.position = 'fixed';
     obj.style.backgroundColor = 'white'
     obj.style.height = '1px'	
-		//backgroundImage = direction === -1 ? `linear-gradient(to bottom right, hsl(0, 100%, 100%), hsl(0, 0%, 0%)` : `linear-gradient(to bottom right, hsl(0, 0%, 0%), hsl(0, 100%, 100%)`;
-    //obj.style.borderRadius = '50%';
-	/*
-	if (direction === -1) {
-	obj.animate([
-      {top: ranYpos + 'px',
-      left: ranXpos + 'px',
-      width: ran502 + 'px',
-      height: 1 + 'px' 
-    }, 
-      {top: ranYpos + 'px',
-      left: ranXpos + 'px',
-      width: 1 + 'px',
-      height: 1 + 'px' 
-    }
-    ], 200)
-	} else {
-    obj.animate([
-      {top: ranYpos + 'px',
-      left: ranXpos + 'px',
-      width: 1 + 'px',
-      height: 1 + 'px' 
-    }, 
-      {top: ranYpos + 'px',
-      left: ranXpos + 'px',
-      width: ran502 + 'px',
-      height: 1 + 'px' 
-    }
-    ], 200)
-}*/
+
   return obj;
   }
 
 function mouseEvent(e) {
-  let xSize = 200
+  let xSize = 100
 		//Math.trunc(Math.random() * 50) + 35;
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
@@ -50,12 +18,12 @@ function mouseEvent(e) {
   localStorage.mouseCounter = num + 1;
   if (num %  13 === 0 ) {
   let  ballPos = {x: e.clientX , y: e.clientY}  
-   , ran50 = Math.trunc(Math.random() * 150) * pOrM + 15
-   , ranYpos = Math.trunc(Math.random() * ran50) + parseInt(e.clientY, 10) 
       , obj1 = trigger(e)
       , obj2 = trigger(e)	  
       , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1	 
-	, limit = 200  
+   , ran50 = (Math.trunc(Math.random() * 50) + 15) * roDeg
+   , ranYpos = Math.trunc(Math.random() * 50 + 30) * pOrM + parseInt(e.clientY, 10) 
+	, limit = 200 
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
     obj1.style.top = ranYpos + 'px'
     obj2.style.top = ranYpos + 'px'
@@ -86,7 +54,9 @@ function mouseEvent(e) {
 	}
         obj1.style.width = width1 + 'px';
         obj2.style.width = 1 + 'px';  	
-  document.body.appendChild(obj1);
+
+      }, (xSize + 1 + i)) 
+	 document.body.appendChild(obj1);
   document.body.appendChild(obj2);
 	      //console.log('obj2X: ', obj2X)
 	      //console.log('edge: ', edge)
@@ -94,8 +64,7 @@ function mouseEvent(e) {
 	 obj1.remove()
 	 obj2.remove()
         localStorage.xMousePos = e.clientX;	
-  } ,(400));
-      }, (xSize + 1 + i))
+  } ,(300));
     }
 
   } 
