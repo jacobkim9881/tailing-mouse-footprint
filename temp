@@ -1,0 +1,9 @@
+help
+
+- the extension does not work. : There would be cases that the extension does not work. 
+1. The extension was tried to work on Chrome webstore site, Google home page, Chrome developer website, websites starts with `chrome://`, `chrome://extensions` or any websites without starting with `http:`, `https:`. You can try this the extension this page(https://www.google.com/search?q=cursor+tails) if the extension works.
+2. The extension is on `disable` mode by clicking `popup` page. Anyhow the extenion can be on disable mode after the disable button on popup page you can open by clicking the extension icon. The disable and enable button was created for users who want to take a rest from fancy cursor effect of the extension. If you want the extension to work then click the enable button on popup page.
+3. The extension turned off at `chrome://extensions` which control all the extensions of your chrome browser. Click the on and off button to turn on the extension.
+4. Any error makes the extension to malfunction. In that case, please to contact this email(jacobkim9881@gmail.com) with details that what is your OS, what the version of the extension. 
+
+- how can I check the extension version?
