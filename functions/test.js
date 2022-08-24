@@ -9,17 +9,13 @@ function trigger(e) {
   return obj;
   }
 
-function buildObjArrays(e, roDeg, pOrM, xSize, ballPos, edge, func) {
-   if (Math.random() > 0.5) return;
+function buildObj(e, roDeg, pOrM, xSize, ballPos, edge, func) {
+   //if (Math.random() > 0.5) return;
    const obj1 = trigger(e)
-      , obj2 = trigger(e)	  
    , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.style.top = ranYpos + 'px'
-    obj2.style.top = ranYpos + 'px'
 
-	  console.log('objs: ', obj1, obj2)
-return ['', obj1, obj2]
-
+return obj1
 }
 
 function dimmingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
@@ -101,11 +97,9 @@ function mouseEvent(e) {
 	, limit = 200 
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
 //console.log(diff)
-	const arrayObj = buildObjArrays(e, roDeg, pOrM, xSize, ballPos, edge) 
-	const obj2 = arrayObj[2]
-	  , obj1 = arrayObj[1]
-   	, ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
-	  console.log('array: ', arrayObj)
+	const obj2 = buildObj(e, roDeg, pOrM, xSize, ballPos, edge)
+	  , obj1 = buildObj(e, roDeg, pOrM, xSize, ballPos, edge)
+		  , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
     if (Math.abs(diff) > 50) loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize) 
 //	  else dimminingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize);
 
