@@ -9,21 +9,15 @@ function trigger(e) {
   return obj;
   }
 
-function buildObj(e, roDeg, pOrM, xSize, ballPos, edge, func) {
+function buildObjArrays(e, roDeg, pOrM, xSize, ballPos, edge, func) {
    if (Math.random() > 0.5) return;
    const obj1 = trigger(e)
       , obj2 = trigger(e)	  
-   , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
    , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.style.top = ranYpos + 'px'
     obj2.style.top = ranYpos + 'px'
-	 // console.log('roDeg: ', roDeg)
- for (let i = 0; i <= xSize; i++) {     
-//	 if (i === Math.abs(ran50)) break;	 	 
-      //let i2 = i >= 0 ? i - 180 : i;	  
-func(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize)
-    }
 
+return [obj1, obj2]
 
 }
 
@@ -54,6 +48,8 @@ function dimmingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
 }
 
 function loopObj(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
+	 // console.log('roDeg: ', roDeg)
+ for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
         let obj1X , obj2X, width1
 	width1 = i < 50 ? i + 1 : 50 
@@ -82,6 +78,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
   document.body.appendChild(obj2);
 	      //console.log('obj2X: ', obj2X)
 	      //console.log('edge: ', edge)
+    }
      setTimeout(() =>  {
 	 obj1.remove()
 	 obj2.remove()
@@ -103,8 +100,13 @@ function mouseEvent(e) {
 	, limit = 200 
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
 //console.log(diff)
-    if (Math.abs(diff) > 50)  buildObj(e, roDeg, pOrM, xSize, ballPos, edge, loopObj) 
-	  else  buildObj(e, roDeg, pOrM, xSize, ballPos, edge, dimmingStar);
+	const arrayObj = buildObj(e, roDeg, pOrM, xSize, ballPos, edge) 
+	  , obj1 = arrayObj[1]
+	  , obj2 = arrayObj[2]
+   	, ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
+    if (Math.abs(diff) > 50) loopObj(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) 
+	  else dimminingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize);
+
 
 	    } 
 }
