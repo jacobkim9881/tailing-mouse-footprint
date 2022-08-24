@@ -17,7 +17,8 @@ function buildObjArrays(e, roDeg, pOrM, xSize, ballPos, edge, func) {
     obj1.style.top = ranYpos + 'px'
     obj2.style.top = ranYpos + 'px'
 
-return [obj1, obj2]
+	  console.log('objs: ', obj1, obj2)
+return ['', obj1, obj2]
 
 }
 
@@ -47,7 +48,7 @@ function dimmingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
   } ,(1000));
 }
 
-function loopObj(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
+function loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize) {
 	 // console.log('roDeg: ', roDeg)
  for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
@@ -100,12 +101,13 @@ function mouseEvent(e) {
 	, limit = 200 
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
 //console.log(diff)
-	const arrayObj = buildObj(e, roDeg, pOrM, xSize, ballPos, edge) 
+	const arrayObj = buildObjArrays(e, roDeg, pOrM, xSize, ballPos, edge) 
+	const obj2 = arrayObj[2]
 	  , obj1 = arrayObj[1]
-	  , obj2 = arrayObj[2]
    	, ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
-    if (Math.abs(diff) > 50) loopObj(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) 
-	  else dimminingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize);
+	  console.log('array: ', arrayObj)
+    if (Math.abs(diff) > 50) loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize) 
+//	  else dimminingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize);
 
 
 	    } 
