@@ -53,7 +53,9 @@ function dimmingStar(obj1, obj2, roDeg, ballPos, i, ran50, edge, e, xSize) {
   } ,(1000));
 }
 function loopObj1(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM) {
+	 //diff = parseInt(obj1.style.left)  - parseInt(localStorage.xMousePos) 
 	 // console.log('roDeg: ', roDeg)
+console.log('diff: ', diff)
   if(Math.abs(diff) < 100) {
 	  let obj1X 
 	  , ran101 = (Math.trunc(Math.random() * 10)) * pOrM 
@@ -118,7 +120,9 @@ function loopObj1(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM)
 
 }
 function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed = false) {
+	 diff = parseInt(obj1.style.left)  - parseInt(localStorage.xMousePos) 
 	 // console.log('roDeg: ', roDeg)
+console.log('diff: ', diff)
   if(Math.abs(diff) < 100) {
 	console.log('diff < 100: ', diff)
 	  let obj1X 
@@ -187,7 +191,7 @@ loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, true)
 		console.log('obj removed')
 	 obj1.remove()
 	 obj2.remove()
-
+        localStorage.xMousePos = e.clientX;	
 		}
 
 	 document.body.appendChild(obj1);
@@ -223,13 +227,15 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff) {
 	}
         obj1.style.width = width1 + 'px';
         obj2.style.width = 1 + 'px';  	
+
+      }, (xSize + 1 + i * 10)) 
 	if(i === xSize) {
 	 obj1.remove()
 	 obj2.remove()
         localStorage.xMousePos = e.clientX;	
 
+	  console.log('e.clientx when i === xSize: ', e.clientX)
 		}
-      }, (xSize + 1 + i * 10)) 
 	 document.body.appendChild(obj1);
   document.body.appendChild(obj2);
 	      //console.log('obj2X: ', obj2X)
@@ -250,10 +256,12 @@ function mouseEvent(e) {
       , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1	  
 	, limit = 200 
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
+	  console.log('e.clientx: ', e.clientX)
+	  console.log('xmouse pos: ', localStorage.xMousePos)
 //console.log(diff)
 	  let objs = document.querySelectorAll('.tmf-star')
  if (objs.length === 0) {
-	  console.log('ovjs > 10')
+	  console.log('ovjs === 0')
 	const obj2 = buildObj1(e, roDeg, pOrM, xSize, ballPos, edge)
 	  , obj1 = buildObj(e, roDeg, pOrM, xSize, ballPos, edge)
 		  , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
@@ -261,11 +269,15 @@ function mouseEvent(e) {
 	  } else if (objs.length > 10) {
 	  console.log('ovjs < 10')
 	  const tails = document.querySelectorAll('.tmf-tail')
+		  console.log('objs: ', objs)
+		  console.log('tails: ', tails)
 	objs.forEach((obj2, idx) => {	  
 	  //const obj2 = objs[0]
 	  const obj1 = tails[idx] 
-		 // , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
-
+		 // , ran50 = (Ma
+		// th.trunc(Math.random() * 150) + 15) * pOrM 
+	console.log('index at objs loop: ', idx)
+	console.log('obj : ', obj1. obj2)
 	  loopObj2(obj1, obj2, roDeg, ballPos, 0, edge, e, xSize, diff, pOrM) 
 	})
   } else {
