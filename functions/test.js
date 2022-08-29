@@ -117,7 +117,7 @@ function loopObj1(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM)
 }
 
 }
-function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM) {
+function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed = false) {
 	 // console.log('roDeg: ', roDeg)
   if(Math.abs(diff) < 100) {
 	  let obj1X 
@@ -142,6 +142,12 @@ function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM)
 
     }
     ], 1000)
+	  if(executed) {
+    setTimeout(() => {
+loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed, true)
+
+    }, 1000)
+	  	  }
 	 document.body.appendChild(obj1);
   } else {
  for (let i = 0; i <= xSize; i++) {     
