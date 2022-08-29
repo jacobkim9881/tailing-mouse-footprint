@@ -120,11 +120,12 @@ function loopObj1(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM)
 function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed = false) {
 	 // console.log('roDeg: ', roDeg)
   if(Math.abs(diff) < 100) {
+	console.log('diff < 100: ', diff)
 	  let obj1X 
 	  , ran101 = (Math.trunc(Math.random() * 10)) * pOrM 
 	  , ran102 = (Math.trunc(Math.random() * 10)) * pOrM 
         obj1X = parseFloat(obj1.style.left) - ran50  
-
+console.log('obj1x: ', obj1X)
         obj1.style.width = 1 + 'px';
     obj1.animate([
     {
@@ -142,14 +143,21 @@ function loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM,
 
     }
     ], 1000)
-	  if(executed) {
+	  if(!executed) {
     setTimeout(() => {
-loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed, true)
+loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, true)
 
     }, 1000)
-	  	  }
+	  	  } else {
+			  setTimeout(() => {
+	 obj1.remove()
+	 obj2.remove()
+    }, 1000)
+
+		  }
 	 document.body.appendChild(obj1);
   } else {
+	console.log('diff > 100: ', diff)
  for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
         let obj1X , obj2X, width1
@@ -157,7 +165,7 @@ loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed
 	if (roDeg === -1) {      
         obj1X =  parseFloat(obj1.style.left) - 2 * (i * i)/10 - (ran50 - i) 
         , obj2X =  parseFloat(obj1.style.left) - 2 * (i * i)/10 - 2- (ran50 - i) 
-//	      console.log('obj1x: ', obj1X)
+	      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
         if(obj2X < edge) return
@@ -165,7 +173,7 @@ loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed
 	} else {
         obj1X =  parseFloat(obj1.style.left) + 2 * (i * i)/10 + (ran50 - i) 
         , obj2X =  parseFloat(obj1.style.left) + 2 * (i * i)/10 + 1 + (ran50 - i) 
-//	      console.log('obj1x: ', obj1X)
+	      //console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
         if(obj2X > edge) return
@@ -173,13 +181,15 @@ loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM, executed
 	}
         obj1.style.width = width1 + 'px';
         obj2.style.width = 1 + 'px';  	
-	if(i === xSize) {
+      }, (xSize + 1 + i * 10)) 
+	      //console.log('i: ', i)
+	 if((i + 1) === xSize) {
+		console.log('obj removed')
 	 obj1.remove()
 	 obj2.remove()
-        localStorage.xMousePos = e.clientX;	
 
 		}
-      }, (xSize + 1 + i * 10)) 
+
 	 document.body.appendChild(obj1);
   document.body.appendChild(obj2);
 	      //console.log('obj2X: ', obj2X)
@@ -242,13 +252,24 @@ function mouseEvent(e) {
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
 //console.log(diff)
 	  let objs = document.querySelectorAll('.tmf-star')
-  if (objs.length > 10) {	
-	  const obj2 = objs[0]
-	  tails = document.querySelectorAll('.tmf-tail')
-	  , obj1 = tails[0] 
+ if (objs.length === 0) {
+	  console.log('ovjs > 10')
+	const obj2 = buildObj1(e, roDeg, pOrM, xSize, ballPos, edge)
+	  , obj1 = buildObj(e, roDeg, pOrM, xSize, ballPos, edge)
 		  , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
-	  loopObj2(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM) 
+	  loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff, pOrM) 
+	  } else if (objs.length > 10) {
+	  console.log('ovjs < 10')
+	  const tails = document.querySelectorAll('.tmf-tail')
+	objs.forEach((obj2, idx) => {	  
+	  //const obj2 = objs[0]
+	  const obj1 = tails[idx] 
+		 // , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
+
+	  loopObj2(obj1, obj2, roDeg, ballPos, 0, edge, e, xSize, diff, pOrM) 
+	})
   } else {
+	  console.log('ovjs > 10')
 	const obj2 = buildObj1(e, roDeg, pOrM, xSize, ballPos, edge)
 	  , obj1 = buildObj(e, roDeg, pOrM, xSize, ballPos, edge)
 		  , ran50 = (Math.trunc(Math.random() * 150) + 15) * pOrM 
