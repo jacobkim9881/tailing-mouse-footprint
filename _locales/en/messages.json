@@ -30,5 +30,41 @@
     "ratingQuestion": {
         "message": "Thanks for enjoying! \nPlease rating the extension!",
         "description": "Alert message occured when user visited over 3 days."
+    },
+    "helpButton": {
+	"message": "Help",
+	"description": "text for help button which guides users to get help"
+    },
+    "closeButton": {
+	"message": "Close",
+	"description": "text for close button which help window in popup"
+    },
+    "backButton": {
+	"message": "Before",
+	"description": "text for before button which goes to lists of help window on popup"
+    },
+    "helpTitle1": {
+	"message": "The extension does not work. : There would be cases where the extension does not work.",
+    "description": "text for one of help titles which links to contents of help title"
+    },
+    "helpContent1": {
+	"message": "",
+	"description": "text for one of help contents which explains of problems from the link of help title"
+    },
+    "helpTitle2": {
+	"message": "How can I check the extension version?",
+	"description": "text for one of help titles which links to contents of help title"
+    },
+    "helpContent2": {
+	"message": "When you go to `chrome://extensions` in the chrome browser, you can see the extension like the picture below. There is a number next to the title, which is the version number.",
+	"description": "text for one of help contents which explains of problems from the link of help title"
+    },
+    "helpTitle3": {
+	"message": "Some of the effects have low frame rates or do not function well.",
+	"description": "text for one of help titles which links to contents of help title"
+    },
+    "helpContent3": {
+	"message": "Currently cursor effects of the extension run only with lines of code. While the code running CPU of the machine works to run code. As the CPU work to run the code of the effects, some of the effects need low CPU performance but some need high CPU performance for work. So by machine CPU performance, some of the effects could run with low frame rates. Though code of effects are getting optimized whenever some editing is needed, the needed performance of the code can not be deleted.",
+	"description": "text for one of help contents which explains of problems from the link of help title"
     }
 }
