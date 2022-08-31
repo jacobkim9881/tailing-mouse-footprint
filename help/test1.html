@@ -17,9 +17,12 @@
           text-decoration: none;
 	}
 	h3 {
+	  font-size: 1.2rem;
+	  font-weight: 500;
 	  font-family: Kanit;
 	}
 	p {
+	  font-size: 1rem;
 	  font-family: Kanit;
 	}
 	.ui-btn h4:active {
@@ -32,7 +35,14 @@
 	  width: 270px;
 	  height: 350px;
 	  background-color: white;
+	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	}
+	#help-content {
+ 	  overflow: auto;
+	  height: 330px;
+	  padding: 1px 15px 0 15px;
+	}
+
 	#close-help {
   cursor: pointer;
   display: block;
@@ -57,13 +67,15 @@
     </head>
     <body>
     <div id="wrapper">	   
-      <div id="help-window">	   
+      <div id="help-window">	  
+	<div id="help-content">	      
    <h3> 
-	   title 
+ Some of the effects have low frame rates or do not function well.   
    </h3>
    <p>
-   content
+   2. The extension was tried to work on Chrome Webstore site, Google home page, Chrome developer website, websites starting with `chrome://`, `chrome://extensions`, or any websites without starting with `http:`, `https:`. You can try the extension on <a target="_blank" href="https://www.google.com/search?q=cursor+tails"> this page</a> if the extension works. 
    </p>
+   </div>
   </div>
   <a id="close-help" class="ui-btn" href="./main.html">
   <h4 id="help-h4" >
