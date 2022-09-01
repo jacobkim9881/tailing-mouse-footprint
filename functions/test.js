@@ -27,10 +27,8 @@ function buildObj1(e, pOrM) {
 
 return obj1
 }
-function dimmingStar(obj1, ballPos, e) {
+function dimmingStar(obj1, ballPos, e, ran50, plusOrMinus) {
         let obj1X 
-  	, plusOrMinus = Math.random() >= 0.5 ? 1 : -1
-	, ran50 = Math.trunc(Math.random() * 250) * plusOrMinus 
 	, rightAndLeft = Math.random() > 0.5 ? 1 : -1     
         obj1X =  ballPos.x + ran50 
 //		- 4 * rightAndLeft + 2 + ran50 
@@ -58,8 +56,9 @@ function dimmingStar(obj1, ballPos, e) {
         if (e) localStorage.xMousePos = e.clientX;	
   } ,(1000));
 }
-function loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff) {
-	 // console.log('roDeg: ', roDeg)
+
+function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff) {
+	  console.log('roDeg: ', roDeg)
  for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
         let obj1X , obj2X, width1
@@ -70,21 +69,20 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff) {
 //	      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
-        if(obj2X < edge) return
-	      //console.log(obj2X < edge)
+        //if(obj2X < edge) return
 	} else {
         obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) 
         , obj2X =  ballPos.x + 2 * (i * i)/10 + 1 + (ran50 - i) 
 //	      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
-        if(obj2X > edge) return
-	      //console.log(obj2X > edge)
+        //if(obj2X > edge) return
 	}
         obj1.style.width = width1 + 'px';
         obj2.style.width = 1 + 'px';  	
 
-      }, (xSize + 1 + i * 10)) 
+      }, (xSize + i * 10)) 
+      setTimeout(() => {
 	if(i === xSize) {
 	 obj1.remove()
 	 obj2.remove()
@@ -92,6 +90,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, edge, e, xSize, diff) {
 
 	  console.log('e.clientx when i === xSize: ', e.clientX)
 		}
+      }, (xSize * 2  * 10)) 
 	 document.body.appendChild(obj1);
   document.body.appendChild(obj2);
 	      //console.log('obj2X: ', obj2X)
@@ -109,16 +108,24 @@ function mouseEvent(e) {
   localStorage.mouseCounter = num + 1;
   if (num %  3 === 0 ) {
   let  ballPos = {x: e.clientX , y: e.clientY} 
-	, diff =  e.clientX - localStorage.xMousePos 
+	, diff =  e.clientX - localStorage.xMousePos
+	 , differenceAbs = Math.abs(diff) 
       , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1	  
+		  , plusOrMinus = Math.random() >= 0.5 ? 1 : -1
+	, ran50 = Math.trunc(Math.random() * 250) * plusOrMinus 
 	, limit = 200 
-//	  console.log('diff: ', diff)
-if (diff < 100) {
-const obj1 = buildObj(e, pOrM) 
+	  console.log('diff: ', diff)
+	  const obj1 = buildObj(e, pOrM) 
 , obj2 = buildObj1(e, pOrM)
-//console.log('objs: ', obj1, obj2)
-dimmingStar(obj1, ballPos, e)
 
+if (differenceAbs < 100) {
+//console.log('objs: ', obj1, obj2)
+//dimmingStar(obj1, ballPos, e, ran50, plusOrMinus)
+
+} else {
+
+console.log('objs: ', obj1, obj2)
+loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff) 
 }
 
 	    } 
