@@ -57,6 +57,21 @@ function dimmingStar(obj1, ballPos, e, ran50, plusOrMinus) {
   } ,(1000));
 }
 
+function limitFinish(limit, edge, obj1, obj2, e) {
+if(limit > edge) {
+		obj1.remove()
+	 obj2.remove()
+        localStorage.xMousePos = e.clientX;	
+	//	console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge)
+	//	console.log('return')
+		return
+	} else {
+		//loop till i = 29
+//		console.log('count: ', i)
+//		console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge - limit)
+	}
+}
+
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
 	  //console.log('roDeg: ', roDeg)
  for (let i = 0; i <= xSize; i++) {     
@@ -72,18 +87,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
 //		console.log('width: ', width1)
-        if(limit > edge) {
-		obj1.remove()
-	 obj2.remove()
-        localStorage.xMousePos = e.clientX;	
-	//	console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge)
-	//	console.log('return')
-		return
-	} else {
-		//loop till i = 29
-//		console.log('count: ', i)
-//		console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge - limit)
-	}
+        limitFinish(limit, edge, obj1, obj2, e)
 	} else {
         obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) 
         , obj2X =  ballPos.x + 2 * (i * i)/10 + 1 + (ran50 - i) 
@@ -92,18 +96,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
         //if(limit > edge) return
-        if(limit > edge) {
-		obj1.remove()
-	 obj2.remove()
-        localStorage.xMousePos = e.clientX;	
-	//	console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge)
-	//	console.log('return')
-		return
-	} else {
-		//loop till i = 29
-//		console.log('count: ', i)
-//		console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge - limit)
-	}
+        limitFinish(limit, edge, obj1, obj2, e)
 	}
         obj1.style.width = width1 + 'px';
         obj2.style.width = 1 + 'px';  	
