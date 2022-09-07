@@ -34,32 +34,11 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
         obj1X =  ballPos.x + ran50 
 //		- 4 * rightAndLeft + 2 + ran50 
 	//		      console.log('obj1x: ', obj1X)
-	, obj1Keyframes = new KeyframeEffect(
-		obj1, [
-		{
-			left: obj1X + 'px'
-		},
-{
-			left: (obj1X + rightAndLeft * 4) + 'px'
-		},
-	], 10000)	
-/*
-	obj1.animate([
-		{
-			left: obj1X + 'px'
-		},
-{
-			left: (obj1X + rightAndLeft * 4) + 'px'
-		},
-	], 10000)
-		*/
-	, obj1Animation = new Animation(obj1Keyframes, document.timeline)
-	obj1Animation.play()
-//	console.log(obj1Animation)
-       // obj1.style.left = obj1X + 'px';
+        obj1.style.left = obj1X + 'px';
 	      obj1.style.width = 1 + 'px';
-
 	 document.body.appendChild(obj1);
+
+  animateDimming(1, 4, false, obj1X, plusOrMinus, obj1)
 
 	setTimeout(() =>  {
 		const diff = e.clientX - parseInt(localStorage.xMousePos) 
@@ -67,15 +46,17 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 //		console.log('diff: ', diff, 'x: ', e.clientX, 'storage x: ', localStorage.xMousePos)
 		if (differenceAbs < 50) {
 //console.log('objs: ', obj1, obj2)
+  animateDimming(4, 11, true, obj1X, plusOrMinus, obj1)
      setTimeout(() =>  {
+//	     console.log('remove')
 	 obj1.remove()
 	 obj2.remove()
+//console.log('objs: ', obj1, obj2)
         if (e) localStorage.xMousePos = e.clientX;	
   } ,(1000));
 } else {
 //console.log('event count:')
-obj1Animation.cancel()
-	console.log(obj1Animation)
+
 //console.log('objs: ', obj1, obj2)
 loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 }
@@ -96,6 +77,21 @@ if(limit > edge) {
 //		console.log('count: ', i)
 //		console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge - limit)
 	}
+}
+
+function animateDimming(i, limit, isRemove, x, plusOrMinus, obj) {
+//	console.log('i: ', i)
+if (i === limit) {
+if (isRemove) obj.remove()
+	return; 	
+}
+setTimeout(() => {
+obj.style.left = (i * 0.5 * plusOrMinus + x) + 'px'
+ document.body.appendChild(obj);
+	i++
+return animateDimming(i, limit, x, plusOrMinus, obj)	
+}, 125)
+return
 }
 
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
