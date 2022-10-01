@@ -41,7 +41,7 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
   animateDimming(1, 4, false, obj1X, plusOrMinus, obj1)
 
 	setTimeout(() =>  {
-		console.log(e.clientX, localStorage.xMousePos, (localStorage.xMousePos2) ) 
+		//console.log(e.clientX, localStorage.xMousePos, (localStorage.xMousePos2) ) 
 		//const diff = e.clientX - parseInt(localStorage.xMousePos) 
 		//const diff = parseInt(localStorage.xMousePos2) - parseInt(localStorage.xMousePos) 
 		const diff = e.clientX - parseInt(localStorage.xMousePos2) 
@@ -61,9 +61,9 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 //console.log('event count:')
 
 //console.log('objs: ', obj1, obj2)
-loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 }
-  } ,(500))
+  } ,(10))
 
 }
 
@@ -174,7 +174,7 @@ dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit)
 } else {
 //console.log('event count:')
 //console.log('objs: ', obj1, obj2)
-//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 }
 
 	    } 
