@@ -41,7 +41,10 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
   animateDimming(1, 4, false, obj1X, plusOrMinus, obj1)
 
 	setTimeout(() =>  {
-		const diff = e.clientX - parseInt(localStorage.xMousePos) 
+		console.log(e.clientX, localStorage.xMousePos, (localStorage.xMousePos2) ) 
+		//const diff = e.clientX - parseInt(localStorage.xMousePos) 
+		//const diff = parseInt(localStorage.xMousePos2) - parseInt(localStorage.xMousePos) 
+		const diff = e.clientX - parseInt(localStorage.xMousePos2) 
 	 , differenceAbs = Math.abs(diff) 
 //		console.log('diff: ', diff, 'x: ', e.clientX, 'storage x: ', localStorage.xMousePos)
 		if (differenceAbs < 50) {
@@ -86,10 +89,11 @@ if (isRemove) obj.remove()
 	return; 	
 }
 setTimeout(() => {
-obj.style.left = (i * 0.5 * plusOrMinus + x) + 'px'
+if (obj) { obj.style.left = (i * 0.5 * plusOrMinus + x) + 'px'
  document.body.appendChild(obj);
 	i++
 return animateDimming(i, limit, x, plusOrMinus, obj)	
+}
 }, 125)
 return
 }
@@ -143,6 +147,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
 
 function mouseEvent(e) {
 //	console.log('EVENT')
+	localStorage.xMousePos2 = e.clientX;	
   let xSize = 100
 		//Math.trunc(Math.random() * 50) + 35;
   let squareWid = Math.random() * 0.4 + 0.1;
