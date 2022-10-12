@@ -36,6 +36,7 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 	//		      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
 	      obj1.style.width = 1 + 'px';
+
 	 document.body.appendChild(obj1);
 
   animateDimming(1, 4, false, obj1X, plusOrMinus, obj1)
@@ -46,6 +47,8 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 		//const diff = parseInt(localStorage.xMousePos2) - parseInt(localStorage.xMousePos) 
 		const diff = e.clientX - parseInt(localStorage.xMousePos2) 
 	 , differenceAbs = Math.abs(diff) 
+	, getLeftOrRight = localStorage.leftOrRight
+	//console.log('load LOR: ', getLeftOrRight)
 //		console.log('diff: ', diff, 'x: ', e.clientX, 'storage x: ', localStorage.xMousePos)
 		if (differenceAbs < 50) {
 //console.log('objs: ', obj1, obj2)
@@ -61,9 +64,9 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 //console.log('event count:')
 
 //console.log('objs: ', obj1, obj2)
-//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+loopObj(obj1, obj2, getLeftOrRight, ballPos, ran50, e, xSize, diff, limit) 
 }
-  } ,(10))
+  } ,(1000))
 
 }
 
@@ -166,6 +169,8 @@ function mouseEvent(e) {
 //	  console.log('diff: ', diff)
 	  const obj1 = buildObj(e, pOrM) 
 , obj2 = buildObj1(e, pOrM)
+
+localStorage.leftOrRight = roDeg
 
 if (differenceAbs < 100) {
 //console.log('objs: ', obj1, obj2)
