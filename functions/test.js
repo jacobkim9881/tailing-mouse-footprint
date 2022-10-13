@@ -101,8 +101,19 @@ return animateDimming(i, limit, x, plusOrMinus, obj)
 return
 }
 
+function setDirection(direction) {
+localStorage.currentDirection = direction
+
+setTimeout(() => {
+localStorage.currentDirection = ''
+}, 2000)	
+
+return	
+}
+
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
 	  //console.log('roDeg: ', roDeg)
+	setDirection(roDeg)
  for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
         let obj1X , obj2X, width1, limit
@@ -172,6 +183,7 @@ function mouseEvent(e) {
 
 localStorage.leftOrRight = roDeg
 
+if ( localStorage.currentDirection && localStorage.currentDirection !== '' && parseInt(localStorage.currentDirection) !== roDeg) return; 
 if (differenceAbs < 100) {
 //console.log('objs: ', obj1, obj2)
 //dimmingStar(obj1, ballPos, e, ran50, plusOrMinus)
