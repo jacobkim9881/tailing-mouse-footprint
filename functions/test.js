@@ -47,10 +47,10 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 		//const diff = parseInt(localStorage.xMousePos2) - parseInt(localStorage.xMousePos) 
 		const diff = e.clientX - parseInt(localStorage.xMousePos2) 
 	 , differenceAbs = Math.abs(diff) 
-	, getLeftOrRight = localStorage.leftOrRight
+	, getLeftOrRight = parseInt(localStorage.leftOrRight)
 	//console.log('load LOR: ', getLeftOrRight)
 //		console.log('diff: ', diff, 'x: ', e.clientX, 'storage x: ', localStorage.xMousePos)
-		if (differenceAbs < 50) {
+		if (differenceAbs < 100) {
 //console.log('objs: ', obj1, obj2)
   animateDimming(4, 11, true, obj1X, plusOrMinus, obj1)
      setTimeout(() =>  {
@@ -63,6 +63,7 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 } else {
 //console.log('event count:')
 
+	//console.log('load LOR: ', getLeftOrRight)
 //console.log('objs: ', obj1, obj2)
 loopObj(obj1, obj2, getLeftOrRight, ballPos, ran50, e, xSize, diff, limit) 
 }
@@ -106,7 +107,7 @@ localStorage.currentDirection = direction
 
 setTimeout(() => {
 localStorage.currentDirection = ''
-}, 2000)	
+}, 3000)	
 
 return	
 }
@@ -118,6 +119,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
       setTimeout(() => {
         let obj1X , obj2X, width1, limit
 	width1 = i < 50 ? i + 1 : 50 
+	  //console.log('roDeg: ', typeof roDeg)
 	if (roDeg === -1) {      
         obj1X =  ballPos.x - 2 * (i * i)/10 - (ran50 - i) 
         , obj2X =  ballPos.x - 2 * (i * i)/10 - 2- (ran50 - i) 
@@ -191,7 +193,7 @@ dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit)
 } else {
 //console.log('event count:')
 //console.log('objs: ', obj1, obj2)
-loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 }
 
 	    } 
