@@ -4,26 +4,29 @@ function trigger(e) {
   let obj = document.createElement('div');
     obj.style.position = 'fixed';
     obj.style.backgroundColor = 'white'
-    obj.style.height = '1px'	
   return obj;
   }
 
-function buildObj(e, pOrM) {
+function buildObj(e, ranYpos) {
+//function buildObj(e, pOrM) {
    //if (Math.random() > 0.5) return;
    const obj1 = trigger(e)
-   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
+//   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.className = 'tmf-star'
     obj1.style.top = ranYpos + 'px'
+    obj1.style.height = '1px'	
 
 return obj1
 }
 
-function buildObj1(e, pOrM) {
+//function buildObj1(e, pOrM) {
+function buildObj1(e, ranYpos) {
    //if (Math.random() > 0.5) return;
    const obj1 = trigger(e)
-   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
+//   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.className = 'tmf-tail'
     obj1.style.top = ranYpos + 'px'
+    obj1.style.height = '1px'	
 
 return obj1
 }
@@ -113,7 +116,7 @@ return
 }
 
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
-	  //console.log('roDeg: ', roDeg)
+	//console.log('roDeg: ', roDeg)
 	setDirection(roDeg)
  for (let i = 0; i <= xSize; i++) {     
       setTimeout(() => {
@@ -140,8 +143,10 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         //if(limit > edge) return
         limitFinish(limit, edge, obj1, obj2, e)
 	}
-        obj1.style.width = width1 + 'px';
-        obj2.style.width = 1 + 'px';  	
+        obj2.style.width = width1 + 'px';
+        obj1.style.width = 2 + 'px';  	
+        //obj1.style.width = width1 + 'px';
+        //obj2.style.width = 2 + 'px';  	
 //console.log('obj1x left: ', obj1.style.left)
 //console.log('obj2x left: ', obj2.style.left)
       }, (xSize + i * 10)) 
@@ -179,9 +184,11 @@ function mouseEvent(e) {
 	, ran50 = Math.trunc(Math.random() * 250) * plusOrMinus 
 	, limit = 200 	
      , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
+   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
+//	  console.log('ranYpos: ', ranYpos)
 //	  console.log('diff: ', diff)
-	  const obj1 = buildObj(e, pOrM) 
-, obj2 = buildObj1(e, pOrM)
+	  const obj1 = buildObj(e, ranYpos) 
+, obj2 = buildObj1(e, ranYpos)
 
 localStorage.leftOrRight = roDeg
 
@@ -193,7 +200,7 @@ dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit)
 } else {
 //console.log('event count:')
 //console.log('objs: ', obj1, obj2)
-//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 }
 
 	    } 
