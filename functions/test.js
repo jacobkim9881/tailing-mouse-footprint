@@ -11,10 +11,12 @@ function buildObj(e, ranYpos) {
 //function buildObj(e, pOrM) {
    //if (Math.random() > 0.5) return;
    const obj1 = trigger(e)
+	, ran3 = Math.trunc(Math.random() * 3) + 1 
 //   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.className = 'tmf-star'
     obj1.style.top = ranYpos + 'px'
-    obj1.style.height = '2px'	
+    obj1.style.height = ran3 + 'px'	
+    obj1.style.width = ran3 + 'px';  	
 
 return obj1
 }
@@ -38,7 +40,7 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 //		- 4 * rightAndLeft + 2 + ran50 
 	//		      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
-	      obj1.style.width = 1 + 'px';
+	      //obj1.style.width = 1 + 'px';
 
 	 document.body.appendChild(obj1);
 
@@ -145,7 +147,6 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         limitFinish(limit, edge, obj1, obj2, e)
 	}
         obj2.style.width = width1 + 'px';
-        obj1.style.width = 2 + 'px';  	
         //obj1.style.width = width1 + 'px';
         //obj2.style.width = 2 + 'px';  	
 //console.log('obj1x left: ', obj1.style.left)
