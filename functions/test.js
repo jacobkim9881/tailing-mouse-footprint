@@ -120,7 +120,10 @@ return
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, xSize, edge) {
 	//console.log('roDeg: ', roDeg)
 	setDirection(roDeg)
- for (let i = 0; i <= xSize; i++) {    
+ for (let i = 0; i <= xSize; i++) {   
+	 if (i === 0) {
+        obj1.style.left = (ballPos.x - ran50) + 'px';
+	 }
       setTimeout(() => {
         let obj1X , obj2X, width1, limit
 	width1 = i < 50 ? i + 1 : 50 
