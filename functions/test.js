@@ -32,7 +32,7 @@ function buildObj1(e, ranYpos) {
 
 return obj1
 }
-function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit) {
+function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, xSize, limit) {
 	//let star size different
         let obj1X 
 	, rightAndLeft = Math.random() > 0.5 ? 1 : -1     
@@ -199,7 +199,7 @@ if ( localStorage.currentDirection && localStorage.currentDirection !== '' && pa
 if (differenceAbs < 100) {
 //console.log('objs: ', obj1, obj2)
 //dimmingStar(obj1, ballPos, e, ran50, plusOrMinus)
-dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit) 
+dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, xSize, limit) 
 } else {
 //console.log('event count:')
 //console.log('objs: ', obj1, obj2)
