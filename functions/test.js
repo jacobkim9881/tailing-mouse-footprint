@@ -14,7 +14,7 @@ function buildObj(e, ranYpos) {
 //   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.className = 'tmf-star'
     obj1.style.top = ranYpos + 'px'
-    obj1.style.height = '1px'	
+    obj1.style.height = '2px'	
 
 return obj1
 }
@@ -118,25 +118,26 @@ return
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
 	//console.log('roDeg: ', roDeg)
 	setDirection(roDeg)
- for (let i = 0; i <= xSize; i++) {     
+ for (let i = 0; i <= xSize; i++) {    
       setTimeout(() => {
         let obj1X , obj2X, width1, limit
 	width1 = i < 50 ? i + 1 : 50 
 	  //console.log('roDeg: ', typeof roDeg)
-	if (roDeg === -1) {      
+	if (roDeg === -1) {      //  ->  //
+	 //console.log('right')
+	limit = width1 + 2 * (i * i)/10  
         obj1X =  ballPos.x - 2 * (i * i)/10 - (ran50 - i) 
         , obj2X =  ballPos.x - 2 * (i * i)/10 - 2- (ran50 - i) 
-	,limit = width1 + 2 * (i * i)/10 
 			//Math.abs(obj1X) - Math.abs(obj2X)	
 //	      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
 //		console.log('width: ', width1)
         limitFinish(limit, edge, obj1, obj2, e)
-	} else {
-        obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) 
+	} else {  // <- //
+	limit = width1 + 2 * (i * i)/10 
+        obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) + width1
         , obj2X =  ballPos.x + 2 * (i * i)/10 + 1 + (ran50 - i) 
-	,limit = width1 + 2 * (i * i)/10 
 //	      console.log('obj1x: ', obj1X)
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
@@ -175,7 +176,7 @@ function mouseEvent(e) {
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
    let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  3 === 0 ) {
+  if (num %  7 === 0 ) {
   let  ballPos = {x: e.clientX , y: e.clientY} 
 	, diff =  e.clientX - localStorage.xMousePos
 	 , differenceAbs = Math.abs(diff) 
@@ -192,6 +193,7 @@ function mouseEvent(e) {
 
 localStorage.leftOrRight = roDeg
 
+//loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
 if ( localStorage.currentDirection && localStorage.currentDirection !== '' && parseInt(localStorage.currentDirection) !== roDeg) return; 
 if (differenceAbs < 100) {
 //console.log('objs: ', obj1, obj2)
