@@ -70,17 +70,17 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, l
 
 	//console.log('load LOR: ', getLeftOrRight)
 //console.log('objs: ', obj1, obj2)
-loopObj(obj1, obj2, getLeftOrRight, ballPos, ran50, e, xSize, diff, limit) 
+loopObj(obj1, obj2, getLeftOrRight, ballPos, ran50, xSize, limit) 
 }
   } ,(1000))
 
 }
 
-function limitFinish(limit, edge, obj1, obj2, e) {
+function limitFinish(limit, edge, obj1, obj2, clientX) {
 if(limit > edge) {
 		obj1.remove()
 	 obj2.remove()
-        localStorage.xMousePos = e.clientX;	
+        localStorage.xMousePos = clientX;	
 	//	console.log('limit: ', limit, 'edge: ', edge, 'diff: ', edge)
 	//	console.log('return')
 		return
@@ -117,7 +117,7 @@ localStorage.currentDirection = ''
 return	
 }
 
-function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
+function loopObj(obj1, obj2, roDeg, ballPos, ran50, xSize, edge) {
 	//console.log('roDeg: ', roDeg)
 	setDirection(roDeg)
  for (let i = 0; i <= xSize; i++) {    
@@ -135,7 +135,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
 //		console.log('width: ', width1)
-        limitFinish(limit, edge, obj1, obj2, e)
+        limitFinish(limit, edge, obj1, obj2, ballPos.x)
 	} else {  // <- //
 	limit = width1 + 2 * (i * i)/10 
         obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) + width1
@@ -144,7 +144,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
         obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
         //if(limit > edge) return
-        limitFinish(limit, edge, obj1, obj2, e)
+        limitFinish(limit, edge, obj1, obj2, ballPos.x)
 	}
         obj2.style.width = width1 + 'px';
         //obj1.style.width = width1 + 'px';
@@ -156,7 +156,7 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, edge) {
 	if(i === xSize) {
 	 obj1.remove()
 	 obj2.remove()
-        localStorage.xMousePos = e.clientX;	
+        localStorage.xMousePos = ballPos.x;	
 
 	 // console.log('e.clientx when i === xSize: ', e.clientX)
 		}
@@ -203,7 +203,7 @@ dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, roDeg, xSize, limit)
 } else {
 //console.log('event count:')
 //console.log('objs: ', obj1, obj2)
-loopObj(obj1, obj2, roDeg, ballPos, ran50, e, xSize, diff, limit) 
+loopObj(obj1, obj2, roDeg, ballPos, ran50, xSize, limit) 
 }
 
 	    } 
