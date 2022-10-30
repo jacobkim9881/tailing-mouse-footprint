@@ -176,19 +176,19 @@ function mouseEvent(e) {
 	localStorage.xMousePos2 = e.clientX;	
   let xSize = 100
 		//Math.trunc(Math.random() * 50) + 35;
-  let squareWid = Math.random() * 0.4 + 0.1;
+  //let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
    let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
   if (num %  7 === 0 ) {
-  let  ballPos = {x: e.clientX , y: e.clientY} 
+  let ballPos = {x: e.clientX , y: e.clientY} 
 	, diff =  e.clientX - localStorage.xMousePos
 	 , differenceAbs = Math.abs(diff) 
       , roDeg = e.clientX - localStorage.xMousePos > 0 ? -1 : 1	  
-		  , plusOrMinus = Math.random() >= 0.5 ? 1 : -1
+	, plusOrMinus = Math.random() >= 0.5 ? 1 : -1
 	, ran50 = Math.trunc(Math.random() * 250) * plusOrMinus 
 	, limit = 200 	
-     , edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
+     //, edge = roDeg === 1 ? ballPos.x + limit : ballPos.x - limit 
    , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
 //	  console.log('ranYpos: ', ranYpos)
 //	  console.log('diff: ', diff)
