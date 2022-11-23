@@ -14,7 +14,7 @@ function buildObj(e, ranYpos) {
 	, ran3 = Math.trunc(Math.random() * 3) + 1 
 //   , ranYpos = Math.trunc(Math.random() * 80) * pOrM + parseInt(e.clientY, 10) 
     obj1.className = 'tmf-star'
-    obj1.style.top = ranYpos + 'px'
+    obj1.style.top = (ranYpos - ran3/2) + 'px'
     obj1.style.height = ran3 + 'px'	
     obj1.style.width = ran3 + 'px';  	
 
