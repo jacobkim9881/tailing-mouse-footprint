@@ -207,7 +207,7 @@ let targets = [ // add new feature name here
   'colorfulBall', 'strawblueberry', 'bunny', 'dna', 'card', 
   'atom', 'petal', 'float', 'springCooler', 'colorSpring', 
   'coins', 'digital', 'particleMagnet', 
-  'rainbow', 'warpWhite', 'warpBlack'
+  'rainbow', 'warpWhite', 'warpBlack', 'warpRainbow'
 ]
 for (let i = 0; i < targets.length; i++ ){
 
