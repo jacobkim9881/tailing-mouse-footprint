@@ -3,14 +3,27 @@
     <head>
       <style>
 	@font-face {
-	  font-family: Kanit;
-	    src: url(Kanit-Medium.ttf);	      
+	  font-family: BebasNeue;
+	    src: url(BebasNeue-Regular.ttf);	      
+
 	}
-        body {
+	@font-face {
+	    font-family: Permanent Marker;
+	    src: url(PermanentMarker-Regular.ttf);	      
+	}
+	body {
+	  margin: 0;	
           width: 270px;
-	  background-color: azure;
+	  background-color: #ffe2ad;
         }
 	#wrapper {
+	}
+	#title-ext {
+	height: 200px;
+	margin: 10px 0 10px 0;
+	font-size: 70px;
+	  text-align: center;
+	font-family: Permanent Marker;
 	}
 	#icons {
           width: 100%;
@@ -27,18 +40,16 @@
         }
 	@keyframes slidein {
 	  from {
-	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
 	    transform: scale(0.95, 0.95);
 	  }
 
 	  35% {
-	    box-shadow: 0rem 0rem 0rem #cccccc, -0rem -0rem 0rem #FFFFFF;
 	    transform: scale(1, 1);
 	  }
 
 	  to {
-	    box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;				      }
 	    transform: scale(1, 1);
+	  }
  	  }
 	@keyframes luminate {
 	  from {
@@ -56,27 +67,22 @@
 	}
 	@keyframes rainbow {
 	  from {
-	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	    background-color: #ff8282;
 	  }
 	  50% {
-	    box-shadow: 0.3rem 0.3rem 0.6rem #ff82d9, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	    background-color: #ff82d9;
 	  }
 	  to {
-	    box-shadow: 0.3rem 0.3rem 0.6rem #ff8282, -0.2rem -0.2rem 0.5rem #FFFFFF;
 	    background-color: #ff8282;
 	  }
 	}
         h4 {
 	  padding: 10px 0 10px 0;
           font-size: 0.9rem;
-	  border-radius: 1rem;
-	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
-	  color: #383838;
-	  font-family: Kanit;
+	  color: #573a00;
+	  font-family: BebasNeue;
           text-indent: 10px;
-          background-color: #e0e0e0;
+          background-color: #ffa05c;
 	  font-weight: 100;
           animation-duration: 3s;
           animation-name: slidein;
@@ -88,10 +94,10 @@
           padding: 0px;
         }
 	.mousemove {
-	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
+	  box-shadow: 0.3rem 0.3rem 0.6rem #ffc69e, -0.2rem -0.2rem 0.5rem #ffede0;
 	  border-radius: 50%;
 	  border: 1px;
-	  background-color: #ec9d75;
+	  background-color: #ffa05c;
 	  animation-duration: 2s;
           animation-name: slidein;
 
@@ -119,7 +125,7 @@
           background-image: url('./images/letter/letter32.png');
         }
         #colorfulSquare {
-          background-image: url('./images/csquare/colofulSquare32.png');
+         #573a00 background-image: url('./images/csquare/colofulSquare32.png');
         }
         #colorfulBall {
           background-image: url('./images/co/colofulBall32.png');
@@ -185,6 +191,10 @@
 	  background-color: #ec9d75;
         }
 	#warpBlack {
+          background-image: url('./images/warpBlack/warpBlack32');
+	  background-color: #ec9d75;
+        }
+	#warpRainbow {
           background-image: url('./images/rainbow/rainbow32');
 	  background-color: #ec9d75;
         }
@@ -194,7 +204,6 @@
 	  display: none;
 	}
 	#rating h4:active {
-	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
 	}
 
 	#rating h4 {
@@ -206,20 +215,16 @@
 	  cursor: pointer;		
           width: 100%;
  	  height: 40px;
-	  margin-top: 10px;
-	  border-radius: 1rem;
-	  box-shadow: 0.3rem 0.3rem 0.6rem #cccccc, -0.2rem -0.2rem 0.5rem #FFFFFF;
-	  color: #383838;
-	  font-family: Kanit;
+	  color: #ffe2ad;
+	  font-family: BebasNeue;
           text-indent: 10px;
-          background-color: #e0e0e0;
+          background-color: #573a00;
 	  padding: 10px 0 10px 0;
           font-size: 0.9rem;
           animation-duration: 2s;
           animation-name: slidein;
 	}
 	#stop:active {
-	  box-shadow:inset 0.1rem 0.1rem 0.1rem #cccccc, inset -0.1rem -0.1rem 0.1rem #FFFFFF;
 	}
 
       </style>
@@ -303,6 +308,9 @@
   </span>
   <span class= "buttonDiv" >
     <button id="warpBlack" class="mousemove"></button>
+  </span>
+  <span class= "buttonDiv" >
+    <button id="warpRainbow" class="mousemove"></button>
   </span>
   </div>
   <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
