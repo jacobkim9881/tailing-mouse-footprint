@@ -16,8 +16,8 @@
         "description": "Kapag nag -click, ang extension ay pinagana hanggang sa hindi paganahin ang Cliked."
     },
     "popupTitle": {
-        "message": "Piliin ang iyong epekto sa mouse",
-        "description": "Ang tile kapag binuksan ang window ng popup."
+        "message": "Buntot ng cursor",
+        "description": "Ang pamagat kapag binuksan ang popup window."
     },
     "ratingBtn": {
         "message": "Pumunta sa rating",
@@ -28,7 +28,7 @@
         "description": "Ang mensahe ng alerto ay naganap nang bumisita ang gumagamit ng higit sa 3 araw."
     },
     "ratingQuestion": {
-        "message": "Salamat sa kasiyahan!\n Mangyaring i -rating ang extension!",
+        "message": "Salamat sa kasiyahan!() Mangyaring i -rating ang extension!",
         "description": "Ang mensahe ng alerto ay naganap nang bumisita ang gumagamit ng higit sa 3 araw."
     }
 }

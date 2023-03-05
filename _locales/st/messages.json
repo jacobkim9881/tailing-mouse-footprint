@@ -16,8 +16,8 @@
         "description": "Ha o tobetsa, katoloso e nolofalletsa ho fihlela e sa sebetse."
     },
     "popupTitle": {
-        "message": "Khetha phello ea hau ea mouse",
-        "description": "Thile ha fensetere ea popo e buloa."
+        "message": "Cursor Mohatla",
+        "description": "Sehlooho ha fensetere ea popup e buloa."
     },
     "ratingBtn": {
         "message": "Eya ho ea tekanyetso",
@@ -28,7 +28,7 @@
         "description": "Molaetsa oa Tlhokomeliso o hlahile ha mosebelisi a etela matsatsi a fetang a 3."
     },
     "ratingQuestion": {
-        "message": "Rea leboha ka ho natefeloa!\n Ka kopo lekanya katoloso!",
+        "message": "Rea leboha ka ho natefeloa!() Ka kopo lekanya katoloso!",
         "description": "Molaetsa oa Tlhokomeliso o hlahile ha mosebelisi a etela matsatsi a fetang a 3."
     }
 }

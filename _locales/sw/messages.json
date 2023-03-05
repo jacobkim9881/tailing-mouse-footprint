@@ -16,8 +16,8 @@
         "description": "Wakati wa kubonyeza, ugani umewezeshwa hadi kulemaza."
     },
     "popupTitle": {
-        "message": "Chagua athari yako ya panya",
-        "description": "Tile wakati dirisha la kidukizo lilifunguliwa."
+        "message": "Mkia wa mshale",
+        "description": "Kichwa wakati dirisha la kidukizo lilifunguliwa."
     },
     "ratingBtn": {
         "message": "Nenda kwa rating",
@@ -28,7 +28,7 @@
         "description": "Ujumbe wa tahadhari ulitokea wakati mtumiaji alitembelea zaidi ya siku 3."
     },
     "ratingQuestion": {
-        "message": "Asante kwa kufurahiya!\n Tafadhali rating ugani!",
+        "message": "Asante kwa kufurahiya!() Tafadhali rating ugani!",
         "description": "Ujumbe wa tahadhari ulitokea wakati mtumiaji alitembelea zaidi ya siku 3."
     }
 }

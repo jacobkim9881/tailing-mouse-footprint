@@ -16,8 +16,8 @@
         "description": "Rehefa tsindrio, ny fanitarana dia nahafahana niasa mandra-pahatongan'ny tsimoka."
     },
     "popupTitle": {
-        "message": "Fidio ny vokatr'izany totozy",
-        "description": "Ny tile rehefa nisokatra ny varavarankely popup."
+        "message": "Rambony ozona",
+        "description": "Ny lohateny rehefa nisokatra ny varavarankely popup."
     },
     "ratingBtn": {
         "message": "Mandehana amin'ny salanisa",
@@ -28,7 +28,7 @@
         "description": "Ny hafatra fanairana dia nitranga rehefa nitsidika 3 andro mahery ny mpampiasa."
     },
     "ratingQuestion": {
-        "message": "Misaotra mankafy!\n Azafady mba isaino ny fanitarana!",
+        "message": "Misaotra mankafy!() Azafady mba isaino ny fanitarana!",
         "description": "Ny hafatra fanairana dia nitranga rehefa nitsidika 3 andro mahery ny mpampiasa."
     }
 }

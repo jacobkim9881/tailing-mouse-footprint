@@ -5,7 +5,7 @@
     },
     "appDesc": {
         "message": "Menambah kesan lucu setiap kali anda menggerakkan tetikus anda.Pelanjutan ini menjadikan tetikus anda bergerak membuat kesan yang menyeronokkan.",
-        "description": "Penerangan aplikasi, dipaparkan di kedai web."
+        "description": "Penerangan aplikasi, yang dipaparkan di kedai web."
     },
     "stopExtension": {
         "message": "Lumpuhkan",
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Membolehkan",
-        "description": "Apabila diklik, lanjutan membolehkan sehingga disable cliked."
+        "description": "Apabila diklik, pelanjutan membolehkan sehingga disable cliked."
     },
     "popupTitle": {
-        "message": "Pilih kesan tetikus anda",
-        "description": "Jubin apabila tetingkap popup dibuka."
+        "message": "Ekor kursor",
+        "description": "Tajuk apabila tetingkap popup dibuka."
     },
     "ratingBtn": {
         "message": "Pergi ke penarafan",
@@ -28,7 +28,7 @@
         "description": "Mesej amaran berlaku apabila pengguna melawat lebih dari 3 hari."
     },
     "ratingQuestion": {
-        "message": "Terima kasih kerana menikmati!\n Sila menilai pelanjutan!",
+        "message": "Terima kasih kerana menikmati!() Sila menilai pelanjutan!",
         "description": "Mesej amaran berlaku apabila pengguna melawat lebih dari 3 hari."
     }
 }

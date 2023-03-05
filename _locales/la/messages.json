@@ -16,8 +16,8 @@
         "description": "Cum clicked, extensio enabled usque ad disable cliked."
     },
     "popupTitle": {
-        "message": "Elige tibi mus effectum",
-        "description": "Tile cum Popup fenestram aperuit."
+        "message": "Cursor cauda",
+        "description": "Titulus cum Popup fenestram aperuit."
     },
     "ratingBtn": {
         "message": "Ad rating",
@@ -28,7 +28,7 @@
         "description": "Alert nuntius occurrit cum user visited super III diebus."
     },
     "ratingQuestion": {
-        "message": "Gratias frui!\n Quaeso Rating Tractus!",
+        "message": "Gratias frui!() Quaeso Rating Tractus!",
         "description": "Alert nuntius occurrit cum user visited super III diebus."
     }
 }

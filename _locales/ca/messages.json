@@ -4,8 +4,8 @@
         "description": "El títol de l'aplicació, que es mostra a la botiga web."
     },
     "appDesc": {
-        "message": "Afegint efectes divertits cada vegada que mou el ratolí.Aquesta extensió fa que el vostre ratolí es mogui crei efectes divertits.",
-        "description": "La descripció de l’aplicació, que es mostra a la botiga web."
+        "message": "Afegint efectes divertits cada vegada que mou el ratolí.Aquesta extensió fa que el ratolí en moviment crei efectes divertits.",
+        "description": "La descripció de l'aplicació, que es mostra a la botiga web."
     },
     "stopExtension": {
         "message": "Desactivar",
@@ -13,14 +13,14 @@
     },
     "startExtension": {
         "message": "Capacitar",
-        "description": "Quan es fa clic, l'extensió ha activat fins a la desactivació."
+        "description": "Quan es fa clic, l'extensió ha activat fins a la desactivació de la desactivació."
     },
     "popupTitle": {
-        "message": "Trieu l'efecte del ratolí",
-        "description": "La finestra emergent es va obrir."
+        "message": "Cua del cursor",
+        "description": "El títol quan es va obrir la finestra emergent."
     },
     "ratingBtn": {
-        "message": "Vés a la qualificació",
+        "message": "Anar a la qualificació",
         "description": "El botó Obriu la finestra nova per valorar l'extensió de l'usuari."
     },
     "askQuestion": {
@@ -28,7 +28,7 @@
         "description": "El missatge d'alerta es va produir quan l'usuari va visitar durant 3 dies."
     },
     "ratingQuestion": {
-        "message": "Gràcies per gaudir!\n Si us plau, valoreu l'extensió.",
+        "message": "Gràcies per gaudir!() Si us plau, valoreu l'extensió.",
         "description": "El missatge d'alerta es va produir quan l'usuari va visitar durant 3 dies."
     }
 }

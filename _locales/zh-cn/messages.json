@@ -1,11 +1,11 @@
 {
     "appName": {
         "message": "光标尾巴 - 鼠标的动画",
-        "description": "应用程序的标题，显示在网络商店中。"
+        "description": "该应用程序的标题显示在网络商店中。"
     },
     "appDesc": {
-        "message": "每当您移动鼠标时，都会添加有趣的效果。此扩展使您的鼠标移动产生有趣的效果。",
-        "description": "该应用程序的描述，显示在网络商店中。"
+        "message": "每当您移动鼠标时，都会添加有趣的效果。此扩展使您的鼠标移动创造出有趣的效果。",
+        "description": "应用程序的描述，显示在网络商店中。"
     },
     "stopExtension": {
         "message": "禁用",
@@ -13,22 +13,22 @@
     },
     "startExtension": {
         "message": "使能够",
-        "description": "单击时，启用了扩展名，直到禁用cliked。"
+        "description": "单击时，启用了扩展名，直到禁用粘合。"
     },
     "popupTitle": {
-        "message": "选择鼠标效果",
-        "description": "打开弹出窗口时的瓷砖。"
+        "message": "光标尾巴",
+        "description": "打开弹出窗口时的标题。"
     },
     "ratingBtn": {
         "message": "去评级",
-        "description": "按钮打开新窗口，为用户评分扩展名。"
+        "description": "该按钮打开新窗口，以对用户的扩展名进行评分。"
     },
     "askQuestion": {
         "message": "您喜欢扩展吗？",
         "description": "当用户访问3天内时，会发生警报消息。"
     },
     "ratingQuestion": {
-        "message": "感谢您的享受！（）请对扩展名进行评分！",
+        "message": "感谢您的享受！（）请对扩展名进行评级！",
         "description": "当用户访问3天内时，会发生警报消息。"
     }
 }

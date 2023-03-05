@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Ermöglichen",
-        "description": "Bei Klicken fähig die Erweiterung, bis die Deaktivierung geklebt wurde."
+        "description": "Bei Klicken fähig die Erweiterung, bis der Deaktivieren geklebt wurde."
     },
     "popupTitle": {
-        "message": "Wählen Sie Ihren Mauseffekt",
-        "description": "Die Fliese beim Öffnen des Popup -Fensters."
+        "message": "Cursorschwanz",
+        "description": "Der Titel beim Öffnen des Popup -Fensters."
     },
     "ratingBtn": {
         "message": "Gehen Sie zur Bewertung",
@@ -28,7 +28,7 @@
         "description": "Warnmeldung ereignete sich, wenn der Benutzer über 3 Tage besucht wurde."
     },
     "ratingQuestion": {
-        "message": "Danke, dass du genossen hast!\n Bitte bewerten Sie die Verlängerung!",
+        "message": "Danke, dass du genossen hast!() Bitte bewerten Sie die Verlängerung!",
         "description": "Warnmeldung ereignete sich, wenn der Benutzer über 3 Tage besucht wurde."
     }
 }

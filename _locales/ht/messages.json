@@ -9,15 +9,15 @@
     },
     "stopExtension": {
         "message": "Enfim",
-        "description": "Lè klike, ekstansyon an ki andikape jouk nan pèmèt yo clied."
+        "description": "Lè klike, ekstansyon an ki andikape jouk pèmèt la cliced."
     },
     "startExtension": {
         "message": "Pèmèt",
-        "description": "Lè klike, ekstansyon sa a te pèmèt jouk enfim yo te kloure."
+        "description": "Lè klike, ekstansyon an pèmèt jouk enfim yo te kloure."
     },
     "popupTitle": {
-        "message": "Chwazi efè sourit ou",
-        "description": "Mozayik la lè fenèt popup louvri."
+        "message": "Ke kurseur",
+        "description": "Tit la lè fenèt popup louvri."
     },
     "ratingBtn": {
         "message": "Ale nan Rating",
@@ -28,7 +28,7 @@
         "description": "Mesaj alèt rive lè itilizatè te vizite sou 3 jou."
     },
     "ratingQuestion": {
-        "message": "Mèsi pou jwi!\n Tanpri evalye ekstansyon an!",
+        "message": "Mèsi pou jwi!() Tanpri evalye ekstansyon an!",
         "description": "Mesaj alèt rive lè itilizatè te vizite sou 3 jou."
     }
 }

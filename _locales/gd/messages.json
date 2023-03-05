@@ -16,8 +16,8 @@
         "description": "Nuair a thèid clach a bhriogadh, gun robh an leudachadh air an comasachadh gus an cleachdar a chuir dheth."
     },
     "popupTitle": {
-        "message": "Tagh buaidh do luchag",
-        "description": "An leac nuair a dh 'fhosgail Uinneag Popup."
+        "message": "Earball cùrsair",
+        "description": "An tiotal nuair a dh 'fhosgail Uinneag Popup."
     },
     "ratingBtn": {
         "message": "Rach gu rangachadh",
@@ -28,7 +28,7 @@
         "description": "Thachair an teachdaireachd rabhaidh nuair a thadhail cleachdaiche thairis air 3 latha."
     },
     "ratingQuestion": {
-        "message": "Taing airson tlachd fhaighinn!\n Feuch an rangachadh an leudachadh!",
+        "message": "Taing airson tlachd fhaighinn!() Feuch an rangachadh an leudachadh!",
         "description": "Thachair an teachdaireachd rabhaidh nuair a thadhail cleachdaiche thairis air 3 latha."
     }
 }

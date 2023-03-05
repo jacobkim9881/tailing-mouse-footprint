@@ -16,8 +16,8 @@
         "description": "Kiam alklakita, la etendaĵo ebligita ĝis la malebligita klakita."
     },
     "popupTitle": {
-        "message": "Elektu vian musan efikon",
-        "description": "La kahelo kiam ŝprucfenestro malfermiĝis."
+        "message": "Kursora vosto",
+        "description": "La titolo kiam ŝprucfenestro malfermiĝis."
     },
     "ratingBtn": {
         "message": "Iru al takso",
@@ -28,7 +28,7 @@
         "description": "Atenta mesaĝo okazis kiam uzanto vizitis pli ol 3 tagojn."
     },
     "ratingQuestion": {
-        "message": "Dankon pro ĝui!\n Bonvolu taksi la etendon!",
+        "message": "Dankon pro ĝui!() Bonvolu taksi la etendon!",
         "description": "Atenta mesaĝo okazis kiam uzanto vizitis pli ol 3 tagojn."
     }
 }

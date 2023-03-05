@@ -16,8 +16,8 @@
         "description": "Markii la gujiyey, kordhinta ayaa la saamaxay ilaa uu ka xumaaday qolable."
     },
     "popupTitle": {
-        "message": "Xulo saamaynta jiirkaaga",
-        "description": "Taayirku marka daaqadda soo-dhejiska la furo."
+        "message": "Cursor dabada",
+        "description": "Cinwaanka marka daaqadaha soo-dhexaadinta la furo."
     },
     "ratingBtn": {
         "message": "U tag qiimeynta",
@@ -28,7 +28,7 @@
         "description": "FARSAMADA FARSAMADA ayaa dhacay markii isticmaale uu booqday 3 maalmood."
     },
     "ratingQuestion": {
-        "message": "Waad ku mahadsan tahay raaxeysiga!\n Fadlan qiimeynta kordhinta!",
+        "message": "Waad ku mahadsan tahay raaxeysiga!() Fadlan qiimeynta kordhinta!",
         "description": "FARSAMADA FARSAMADA ayaa dhacay markii isticmaale uu booqday 3 maalmood."
     }
 }

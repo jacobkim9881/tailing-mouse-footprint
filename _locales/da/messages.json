@@ -9,15 +9,15 @@
     },
     "stopExtension": {
         "message": "Deaktiver",
-        "description": "Når det klikkes, deaktiveres udvidelsen, indtil det aktiveres."
+        "description": "Når den klikkes, deaktiveres udvidelsen, indtil det aktiveres."
     },
     "startExtension": {
         "message": "Aktivér",
         "description": "Når det klikkes, aktiveres udvidelsen, indtil deaktiveres det."
     },
     "popupTitle": {
-        "message": "Vælg din musekraft",
-        "description": "Flisen, når popup -vinduet åbnede."
+        "message": "Markørhale",
+        "description": "Titlen, når popup -vinduet åbnede."
     },
     "ratingBtn": {
         "message": "Gå til vurdering",
@@ -28,7 +28,7 @@
         "description": "Der opstod en alarmmeddelelse, da brugeren besøgte over 3 dage."
     },
     "ratingQuestion": {
-        "message": "Tak for at nyde!\n Vurder forlængelsen!",
+        "message": "Tak for at nyde!() Vurder forlængelsen!",
         "description": "Der opstod en alarmmeddelelse, da brugeren besøgte over 3 dage."
     }
 }

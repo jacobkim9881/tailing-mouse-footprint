@@ -9,26 +9,26 @@
     },
     "stopExtension": {
         "message": "Désactiver",
-        "description": "Lorsque vous cliquez sur, l'extension désactivée jusqu'à ce que l'activation soit cliquée."
+        "description": "Lorsque vous cliquez, l'extension désactivée jusqu'à ce que l'activation soit cliquée."
     },
     "startExtension": {
         "message": "Activer",
-        "description": "Lorsque vous cliquez sur, l'extension a permis le désactivation de la désactivation."
+        "description": "Lorsque vous cliquez sur, l'extension a activé jusqu'à ce que le désactivation soit cliquée."
     },
     "popupTitle": {
-        "message": "Choisissez l'effet de votre souris",
-        "description": "La carreau lorsque la fenêtre contextuelle s'est ouverte."
+        "message": "Queue de curseur",
+        "description": "Le titre lorsque la fenêtre contextuelle s'est ouverte."
     },
     "ratingBtn": {
         "message": "Aller à la notation",
-        "description": "Le bouton ouvre la nouvelle fenêtre pour évaluer l'extension de l'utilisateur."
+        "description": "Le bouton ouvre une nouvelle fenêtre pour évaluer l'extension de l'utilisateur."
     },
     "askQuestion": {
         "message": "Avez-vous apprécié l'extension?",
         "description": "Le message d'alerte s'est produit lorsque l'utilisateur s'est rendu à 3 jours."
     },
     "ratingQuestion": {
-        "message": "Merci d'avoir apprécié!\n Veuillez noter l'extension!",
+        "message": "Merci d'avoir apprécié!() Veuillez noter l'extension!",
         "description": "Le message d'alerte s'est produit lorsque l'utilisateur s'est rendu à 3 jours."
     }
 }

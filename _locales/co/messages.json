@@ -16,8 +16,8 @@
         "description": "Quandu si cliccà, l'estensione attivata finu à chì a disattiva eliminata."
     },
     "popupTitle": {
-        "message": "Sceglite u vostru effettu di mouse",
-        "description": "A tile quandu a finestra di popup si apre."
+        "message": "Cola di cursore",
+        "description": "U titulu quandu a finestra Popup hè aperta."
     },
     "ratingBtn": {
         "message": "Vai à a valutazione",
@@ -28,7 +28,7 @@
         "description": "U messagiu d'alerta hè accadutu quandu l'utente hà visitatu più di 3 ghjorni."
     },
     "ratingQuestion": {
-        "message": "Grazie per piacè!\n Per piacè, valutazione l'estensione!",
+        "message": "Grazie per piacè!() Per piacè, valutazione l'estensione!",
         "description": "U messagiu d'alerta hè accadutu quandu l'utente hà visitatu più di 3 ghjorni."
     }
 }

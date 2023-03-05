@@ -5,7 +5,7 @@
     },
     "appDesc": {
         "message": "マウスを動かすたびに面白い効果を追加します。この拡張機能により、マウスを動かして楽しい効果が生まれます。",
-        "description": "Webストアに表示されるアプリケーションの説明。"
+        "description": "ウェブストアに表示されるアプリケーションの説明。"
     },
     "stopExtension": {
         "message": "無効にします",
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "有効",
-        "description": "クリックすると、拡張機能が無効になるまで有効になります。"
+        "description": "クリックすると、拡張機能が無効になるまで有効になりました。"
     },
     "popupTitle": {
-        "message": "マウス効果を選択してください",
-        "description": "ポップアップウィンドウが開いたときのタイル。"
+        "message": "カーソルテール",
+        "description": "ポップアップウィンドウが開いたときのタイトル。"
     },
     "ratingBtn": {
         "message": "評価に移動します",

@@ -16,8 +16,8 @@
         "description": "Nalika diklik, extension diaktipkeun dugi ka mareuman cliked."
     },
     "popupTitle": {
-        "message": "Pilih pangaruh mouse anjeun",
-        "description": "Ubin nalika jandela popup dibuka."
+        "message": "Buntut kursor",
+        "description": "Judul nalika jandela popup dibuka."
     },
     "ratingBtn": {
         "message": "Angkat ka rating",
@@ -28,7 +28,7 @@
         "description": "Pesen Tarjamahan lumangsung nalika pangguna didatangan langkung ti 3 dinten."
     },
     "ratingQuestion": {
-        "message": "Hatur nuhun kanggo dinikmati!\n Punten rating extension!",
+        "message": "Hatur nuhun kanggo dinikmati!() Punten rating extension!",
         "description": "Pesen Tarjamahan lumangsung nalika pangguna didatangan langkung ti 3 dinten."
     }
 }

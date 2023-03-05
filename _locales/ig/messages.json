@@ -16,8 +16,8 @@
         "description": "Mgbe opịrị, na ndọtị na-enyere aka ruo mgbe Clikible Clikible."
     },
     "popupTitle": {
-        "message": "Họrọ mmetụta òké gị",
-        "description": "A na-emegharị mgbe windo popp mepere."
+        "message": "Ọdụ ọdụ",
+        "description": "Isi mgbe windo poppe mepere."
     },
     "ratingBtn": {
         "message": "Gaa na Rating",
@@ -28,7 +28,7 @@
         "description": "Ozi njikere mere mgbe onye ọrụ gara ihe karịrị ụbọchị 3."
     },
     "ratingQuestion": {
-        "message": "Daalụ maka ịnụ ụtọ!\n Biko bulie ndọtị!",
+        "message": "Daalụ maka ịnụ ụtọ!() Biko bulie ndọtị!",
         "description": "Ozi njikere mere mgbe onye ọrụ gara ihe karịrị ụbọchị 3."
     }
 }

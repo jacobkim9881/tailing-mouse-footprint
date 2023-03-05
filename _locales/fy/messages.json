@@ -16,8 +16,8 @@
         "description": "As jo klikke, de útwreiding ynskeakele oant de tikte útskeakele."
     },
     "popupTitle": {
-        "message": "Kies jo mûseffekt",
-        "description": "De tegel as popup-finster iepene."
+        "message": "Cursor Tail",
+        "description": "De titel as popup-finster iepene."
     },
     "ratingBtn": {
         "message": "Gean nei de wurdearring",
@@ -28,7 +28,7 @@
         "description": "Alertberjocht barde as de brûker mear dan 3 dagen besocht."
     },
     "ratingQuestion": {
-        "message": "Betanke foar genietsje!\n Wurdearje asjebleaft de tafoeging!",
+        "message": "Betanke foar genietsje!() Wurdearje asjebleaft de tafoeging!",
         "description": "Alertberjocht barde as de brûker mear dan 3 dagen besocht."
     }
 }

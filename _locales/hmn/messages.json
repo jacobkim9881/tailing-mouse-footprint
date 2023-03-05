@@ -16,8 +16,8 @@
         "description": "Thaum nias, txuas ntxiv mus kom txog thaum lub txim ua tsis taus."
     },
     "popupTitle": {
-        "message": "Xaiv koj cov nyiaj muas nas",
-        "description": "Cov vuas luaj thaum popup windowed."
+        "message": "Tus cwj pwm tail",
+        "description": "Lub npe thaum popup qhov rais qhib."
     },
     "ratingBtn": {
         "message": "Mus ntaus nqi",
@@ -28,7 +28,7 @@
         "description": "Alert lus tshwm sim thaum cov neeg siv tuaj xyuas dua 3 hnub."
     },
     "ratingQuestion": {
-        "message": "Ua tsaug rau kev txaus siab!\n Thov ntsuas qhov txuas ntxiv!",
+        "message": "Ua tsaug rau kev txaus siab!() Thov ntsuas qhov txuas ntxiv!",
         "description": "Alert lus tshwm sim thaum cov neeg siv tuaj xyuas dua 3 hnub."
     }
 }

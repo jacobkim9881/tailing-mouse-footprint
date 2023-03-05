@@ -1,6 +1,6 @@
 {
     "appName": {
-        "message": "Cursor Tails - Animazioni per il tuo mouse",
+        "message": "Cursore Code - Animazioni per il tuo mouse",
         "description": "Il titolo dell'applicazione, visualizzato nel Web Store."
     },
     "appDesc": {
@@ -16,8 +16,8 @@
         "description": "Quando è stato cliccato, l'estensione abilitata fino a Disabilita clike."
     },
     "popupTitle": {
-        "message": "Scegli il tuo effetto mouse",
-        "description": "La piastrella all'apertura della finestra popup."
+        "message": "Coda di cursore",
+        "description": "Il titolo all'apertura della finestra popup."
     },
     "ratingBtn": {
         "message": "Vai al rating",
@@ -28,7 +28,7 @@
         "description": "Il messaggio di avviso si è verificato quando l'utente ha visitato per 3 giorni."
     },
     "ratingQuestion": {
-        "message": "Grazie per il divertimento!\n Per favore valutare l'estensione!",
+        "message": "Grazie per il divertimento!() Per favore valutare l'estensione!",
         "description": "Il messaggio di avviso si è verificato quando l'utente ha visitato per 3 giorni."
     }
 }

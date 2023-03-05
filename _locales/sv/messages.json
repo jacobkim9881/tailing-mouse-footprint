@@ -4,20 +4,20 @@
         "description": "Applikationens titel, som visas i webbbutiken."
     },
     "appDesc": {
-        "message": "Lägga till roliga effekter när du flyttar musen.Denna förlängning gör att musen rör sig för att skapa roliga effekter.",
+        "message": "Lägga till roliga effekter när du flyttar musen.Denna förlängning gör att musen rör sig att skapa roliga effekter.",
         "description": "Beskrivningen av applikationen, som visas i webbbutiken."
     },
     "stopExtension": {
         "message": "Inaktivera",
-        "description": "När du klickar på inaktiverades tillägget tills det aktiverades klikat."
+        "description": "När du klickar på inaktiverades tillägget tills den aktiverade klikade."
     },
     "startExtension": {
         "message": "Gör det möjligt",
-        "description": "När du klickar på, aktiverades tillägget tills den inaktiveras klikade."
+        "description": "När du klickar på, aktiverades tillägget tills den var klikad."
     },
     "popupTitle": {
-        "message": "Välj din museffekt",
-        "description": "Kakel när popup -fönstret öppnades."
+        "message": "Markör",
+        "description": "Titeln när popup -fönstret öppnades."
     },
     "ratingBtn": {
         "message": "Gå till betyg",
@@ -28,7 +28,7 @@
         "description": "Varningsmeddelande inträffade när användaren besökte under 3 dagar."
     },
     "ratingQuestion": {
-        "message": "Tack för att du njöt!\n Vänligen betygsätt tillägget!",
+        "message": "Tack för att du njöt!() Vänligen betygsätt tillägget!",
         "description": "Varningsmeddelande inträffade när användaren besökte under 3 dagar."
     }
 }

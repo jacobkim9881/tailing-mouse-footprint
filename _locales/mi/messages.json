@@ -16,8 +16,8 @@
         "description": "Ina patotohia, ka whakahohea te toronga tae noa ki te whakakore i te hono."
     },
     "popupTitle": {
-        "message": "Whiriwhiria to paanga kiore",
-        "description": "Te tohu i te wa i tuwhera ai te matapihi papu."
+        "message": "Hiku o te toto",
+        "description": "Ko te taitara ka whakatuwherahia te matapihi papu."
     },
     "ratingBtn": {
         "message": "Haere ki te whakatauranga",
@@ -28,7 +28,7 @@
         "description": "I puta te karere mataara i te wa i tirohia ai e te kaiwhakamahi mo te 3 nga ra."
     },
     "ratingQuestion": {
-        "message": "Nga mihi ki te koa!\n Tuhia koa te toronga!",
+        "message": "Nga mihi ki te koa!() Tuhia koa te toronga!",
         "description": "I puta te karere mataara i te wa i tirohia ai e te kaiwhakamahi mo te 3 nga ra."
     }
 }

@@ -1,10 +1,10 @@
 {
     "appName": {
-        "message": "Ogony kursora - animacje dla twojej myszy",
+        "message": "Ogony kursora - animacje dla myszy",
         "description": "Tytuł aplikacji, wyświetlany w sklepie internetowym."
     },
     "appDesc": {
-        "message": "Dodawanie śmiesznych efektów za każdym razem, gdy poruszasz myszą.To rozszerzenie sprawia, że ruch myszy tworzy zabawne efekty.",
+        "message": "Dodawanie śmiesznych efektów za każdym razem, gdy poruszasz myszą.To rozszerzenie sprawia, że ruch myszy tworzy efekty zabawne.",
         "description": "Opis aplikacji, wyświetlany w sklepie internetowym."
     },
     "stopExtension": {
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Włączać",
-        "description": "Po kliknięciu rozszerzenie włączono do momentu, aż wyłączono."
+        "description": "Po kliknięciu rozszerzenie włączono, aż wyłącz się określa."
     },
     "popupTitle": {
-        "message": "Wybierz efekt myszy",
-        "description": "Płytka po otwarciu okna wyskakującego."
+        "message": "Ogon kursora",
+        "description": "Tytuł po otwarciu okienka wyskakującego."
     },
     "ratingBtn": {
         "message": "Przejdź do oceny",
@@ -28,7 +28,7 @@
         "description": "Wiadomość alertu wystąpiła, gdy użytkownik odwiedził przez 3 dni."
     },
     "ratingQuestion": {
-        "message": "Dzięki za przyjemność!\n Proszę o ocenę rozszerzenia!",
+        "message": "Dzięki za przyjemność!() Proszę o ocenę rozszerzenia!",
         "description": "Wiadomość alertu wystąpiła, gdy użytkownik odwiedził przez 3 dni."
     }
 }
