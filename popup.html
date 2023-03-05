@@ -17,16 +17,20 @@
 	  background-color: #ffe2ad;
         }
 	#wrapper {
+		border: thick double #573a00;
+		margin: 10px;
 	}
 	#title-ext {
 	height: 200px;
-	margin: 10px 0 10px 0;
-	font-size: 70px;
+	margin: 0px 0 10px 0;
+	font-size: 65px;
+	  text-shadow: 2px 4px #ad7400;
 	  text-align: center;
 	font-family: Permanent Marker;
 	}
 	#icons {
           width: 100%;
+	  padding: 8px;
 	}
         button {
           height: 32px;
@@ -39,27 +43,16 @@
           cursor: pointer;
         }
 	@keyframes slidein {
-	  from {
-	    transform: scale(0.95, 0.95);
-	  }
-
-	  35% {
-	    transform: scale(1, 1);
-	  }
-
-	  to {
-	    transform: scale(1, 1);
-	  }
  	  }
 	@keyframes luminate {
 	  from {
-  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+		border: 1px dashed #573a00;
 	  }
 	  13% {
-  	    box-shadow: 0.3rem 0.3rem 0.9rem #00ff37, -0.2rem -0.2rem 0.5rem #FFFFFF;
+		border: 1px  dashed #573a00;
 	  }
 	  to {
-  	    box-shadow: 0.3rem 0.3rem 0.8rem #abdfac, -0.2rem -0.2rem 0.5rem #FFFFFF;
+		border: 1px dashed #573a00;
 	  }
 	}
 	:root {
@@ -87,11 +80,15 @@
           animation-duration: 3s;
           animation-name: slidein;
         }
-
+	h4:hover {
+  text-decoration: underline;
+	}
 	
         .buttonDiv {
           margin: 5px;
           padding: 0px;
+	  height: 20px;
+	  display: inline-block;
         }
 	.mousemove {
 	  box-shadow: 0.3rem 0.3rem 0.6rem #ffc69e, -0.2rem -0.2rem 0.5rem #ffede0;
@@ -226,7 +223,10 @@
 	}
 	#stop:active {
 	}
-
+	#stop:hover {
+  text-decoration: underline;
+	}
+	
       </style>
     </head>
     <body>
@@ -252,13 +252,13 @@
   <span class= "buttonDiv" >
     <button id="snowflake" class="mousemove"></button>
   </span>
+  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="bunny" class="mousemove"></button>
   </span>
   <span class= "test" >
     <button id="waterWave"></button>
   </span> 
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="heart" class="mousemove"></button>
   </span>
@@ -274,13 +274,13 @@
   <span class= "buttonDiv" >
     <button id="atom" class="mousemove"></button>
   </span>
+  <br/><br/> 
  <span class= "buttonDiv" >
     <button id="petal" class="mousemove"></button>
   </span>
   <span class= "buttonDiv" >
     <button id="float" class="mousemove"></button>
   </span>
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="card" class="mousemove"></button>
   </span>
@@ -290,6 +290,7 @@
    <span class= "buttonDiv" >
     <button id="colorSpring" class="mousemove"></button>
   </span>
+  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="coins" class="mousemove"></button>
   </span>
@@ -299,13 +300,13 @@
   <span class= "buttonDiv" >
     <button id="particleMagnet" class="mousemove"></button>
   </span>
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="rainbow" class="mousemove"></button>
   </span>
   <span class= "buttonDiv" >
     <button id="warpWhite" class="mousemove"></button>
   </span>
+  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="warpBlack" class="mousemove"></button>
   </span>
