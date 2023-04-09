@@ -38,8 +38,11 @@ function dimmingStar(obj1, obj2, ballPos, e, ran50, plusOrMinus, xSize, limit) {
         let obj1X 
 	, rightAndLeft = Math.random() > 0.5 ? 1 : -1     
         obj1X =  ballPos.x + ran50 
+
+
 //		- 4 * rightAndLeft + 2 + ran50 
 	//		      console.log('obj1x: ', obj1X)
+        //obj1.style.left = 10 + 'px';
         obj1.style.left = obj1X + 'px';
 	      //obj1.style.width = 1 + 'px';
 
@@ -98,13 +101,22 @@ if (i === limit) {
 if (isRemove) obj.remove()
 	return; 	
 }
+
+let posLeft = i * 0.5 * plusOrMinus + x
+//console.log(isNaN(posLeft))
+if(isNaN(posLeft)) { return; } else {
 setTimeout(() => {
-if (obj) { obj.style.left = (i * 0.5 * plusOrMinus + x) + 'px'
+//console.log(posLeft)
+if (obj) { 
+//	obj.style.left = 10 + 'px'
+obj.style.left = (i * 0.5 * plusOrMinus + x) + 'px'
  document.body.appendChild(obj);
 	i++
 return animateDimming(i, limit, x, plusOrMinus, obj)	
 }
 }, 125)
+}
+
 return
 }
 
@@ -121,9 +133,20 @@ return
 function loopObj(obj1, obj2, roDeg, ballPos, ran50, xSize, edge) {
 	//console.log('roDeg: ', roDeg)
 	setDirection(roDeg)
- for (let i = 0; i <= xSize; i++) {   
-	 if (i === 0) {
-        obj1.style.left = (ballPos.x - ran50) + 'px';
+        obj1.style.left = 10 + 'px';
+        obj2.style.left = 10 + 'px';
+//	let test = ballPos.x - 2 * (xSize * xSize)/10 - (ran50 - xSize) 
+//	console.log(test)
+//	 if (test < 0) return;
+ for (let i = 0; i <= xSize; i++) {
+//const obj1X1 =  ballPos.x - 2 * (i * i)/10 - (ran50 - i) 
+//console.log(obj1X1)
+//	 if (obj1X1 < 0) return;
+	 let posLeft = ballPos.x - ran50
+	 //console.log(posLeft)
+	 	 if (i === 0) {
+        obj1.style.left = 10 + 'px';
+        //obj1.style.left = (ballPos.x - ran50) + 'px';
 	 }
       setTimeout(() => {
         let obj1X , obj2X, width1, limit
@@ -135,18 +158,26 @@ function loopObj(obj1, obj2, roDeg, ballPos, ran50, xSize, edge) {
         obj1X =  ballPos.x - 2 * (i * i)/10 - (ran50 - i) 
         , obj2X =  ballPos.x - 2 * (i * i)/10 - 2- (ran50 - i) 
 			//Math.abs(obj1X) - Math.abs(obj2X)	
-//	      console.log('obj1x: ', obj1X)
-        obj1.style.left = obj1X + 'px';
-        obj2.style.left = obj2X + 'px';
+	      //console.log('obj1x: ', obj1X)
+	      //console.log('obj1x: ', obj2X)
+		if(obj1X < 10) return;
+        obj1.style.left = 10 + 'px';
+        //obj1.style.left = obj1X + 'px';
+        //obj2.style.left = 10 + 'px';
+        //obj2.style.left = obj2X + 'px';
 //		console.log('width: ', width1)
         limitFinish(limit, edge, obj1, obj2, ballPos.x)
 	} else {  // <- //
 	limit = width1 + 2 * (i * i)/10 
         obj1X =  ballPos.x + 2 * (i * i)/10 + (ran50 - i) + width1
         , obj2X =  ballPos.x + 2 * (i * i)/10 + 1 + (ran50 - i) 
-//	      console.log('obj1x: ', obj1X)
-        obj1.style.left = obj1X + 'px';
+	      //console.log('obj1x: ', obj1X)
+	      //console.log('obj1x: ', obj2X)
+		//if(obj1X < 0) return;
+        obj1.style.left = 10 + 'px';
+        //obj1.style.left = obj1X + 'px';
         obj2.style.left = obj2X + 'px';
+        obj2.style.left = 10 + 'px';
         //if(limit > edge) return
         limitFinish(limit, edge, obj1, obj2, ballPos.x)
 	}
