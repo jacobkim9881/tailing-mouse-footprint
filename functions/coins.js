@@ -1,25 +1,40 @@
 //test.js
 
 function animateBar(obj, top, cls) {
+    let ranW = Math.trunc(Math.random() * 50);
+    let ranW2 = Math.trunc(Math.random() * 50);
+    let ranW3 = Math.trunc(Math.random() * 50);
+    let ranH = Math.trunc(Math.random() * 50);
+    let ranH2 = Math.trunc(Math.random() * 50);
+    let ranH3 = Math.trunc(Math.random() * 50);
   let secnd = 500;	
+	/*
   obj.animate([
     {
-      transform: `rotateY(${0}deg)`,
-      top: top + 'px' 	      
+      top: top + 'px' 	     
+      , left: left + 'px'	    
     }, 
     {
-      transform: `rotateY(${360}deg)`,
-      top: (top - 70) + 'px' 	      
+      top: (top - ranH) + 'px' 	      
+      , left: (left - ranW) + 'px'	    
     },
     {
-      transform: `rotateY(${360}deg)`,
-      top: (top - 50) + 'px' 	      
+      top: (top - ranH2) + 'px' 	      
+      , left: (left - ranW2) + 'px'	    
     },        
   ], secnd)
-  obj.style.backgroundColor = 'white';
+	*/
+  //obj.style.backgroundColor = 'white';
   obj.style.opacity = '1';	
-  setTimeout(() => obj.remove(), secnd - 1);	
+  //setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
+}
+
+function setPosition(time) {
+
+	setTimeout(() => {
+	obj.style.top = 
+	}, time)
 }
 
 function mouseEvent(e) {
@@ -60,6 +75,34 @@ function onLoadEvent(obj, e) {
   obj.style.opacity = '0';
 }
 
+function createObjs(j, oClass) {
+
+for (let i = 0; i > 9; i++) {
+    let oneObj = document.createElement('div');
+    let oneTop = Math.trunc(window.innerHeight * Math.random());
+    let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
+    let ranH = Math.trunc(Math.random() * 360);
+    oneObj.id = oClass.class + '-' + j + '-' + i;
+    oneObj.className = 'tmf-objs';	  
+    oneObj.className = 'tmf-sub-' + i;	  
+    oneObj.style.width = oClass.width;
+    oneObj.style.height = oClass.height;
+    obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+    //oneObj.style.backgroundImage = oClass.backgroundColor;
+    oneObj.style.top = oneTop + 'px';
+    oneObj.style.left = oneLeft + 'px';
+    oneObj.style.position = 'fixed';
+    //oneObj.style.border = oClass.border;
+    oneObj.style.borderRadius = '50%';	 
+    oneObj.style.zIndex = '999999999';	  
+    document.body.appendChild(oneObj);	 	 
+    oneObj.onmouseover = function(e) {
+      animateBar(oneObj, oneTop);	
+    } 
+}
+return
+}
+
 function setObjs() {
   let oClass = {
       class: 'objs-test',
@@ -71,27 +114,10 @@ function setObjs() {
     },
     cntWidth = Math.trunc(window.innerWidth / 15);
   for (let i = 0; i < cntWidth * 2; i++) {
-    let oneObj = document.createElement('div');
-    let oneTop = Math.trunc(window.innerHeight * Math.random());
-    let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
-    oneObj.id = oClass.class + i;
-    oneObj.className = 'tmf-objs';	  
-    oneObj.style.width = oClass.width;
-    oneObj.style.height = oClass.height;
-    oneObj.style.backgroundImage = oClass.backgroundColor;
-    oneObj.style.top = oneTop + 'px';
-    oneObj.style.left = oneLeft + 'px';
-    oneObj.style.position = 'fixed';
-    oneObj.style.border = oClass.border;
-    oneObj.style.borderRadius = '50%';	 
-    oneObj.style.zIndex = '999999999';	  
-    onLoadEvent(oneObj);	   
+	  createObjs(i, oClass)
+   //onLoadEvent(oneObj);	   
 
-    document.body.appendChild(oneObj);	 
-	 
-    oneObj.onmouseover = function(e) {
-      animateBar(oneObj, oneTop);	
-    }  
+ 
   }
 }
 
