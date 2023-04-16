@@ -24,10 +24,15 @@ function animateBar(obj, top, left, cls) {
     },        
   ], secnd)
 	*/
+  let classes = document.querySelectorAll('.' + obj.className)
+	console.log('classname: ', obj.className)
+	console.log(classes)
   for (let i = 0; i < 3; i++) {
+    classes.forEach(each => {
     let ranW = Math.trunc(Math.random() * 50);
     let ranH = Math.trunc(Math.random() * 50);
-    setPosition(obj, top, left, ranH, ranW, secnd * i) 
+    setPosition(each, top, left, ranH, ranW, secnd * i) 
+    })
   }
   //obj.style.backgroundColor = 'white';
   obj.style.opacity = '1';	
@@ -81,16 +86,16 @@ function onLoadEvent(obj, e) {
   obj.style.opacity = '0';
 }
 
-function createObjs(j, oClass) {
+function createObjs(i, oClass) {
 
-for (let i = 0; i < 9; i++) {
+for (let j = 0; j < 9; j++) {
     let oneObj = document.createElement('div');
     let oneTop = Math.trunc(window.innerHeight * Math.random());
     let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
     let ranH = Math.trunc(Math.random() * 360);
-    oneObj.id = oClass.class + '-' + j + '-' + i;
+    oneObj.id = oClass.class + '-' + i + '-' + j;
     oneObj.className = 'tmf-objs';	  
-    oneObj.className = 'tmf-sub-' + i;	  
+    oneObj.className = 'tmf-sub-' + i ;	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
     oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
@@ -106,7 +111,7 @@ for (let i = 0; i < 9; i++) {
       animateBar(oneObj, oneTop, oneLeft);	
     }
    onLoadEvent(oneObj);	   
-	console.log('obj created')
+//	console.log('obj created', j)
 	
 }
 return
@@ -124,9 +129,32 @@ function setObjs() {
     cntWidth = Math.trunc(window.innerWidth / 15);
   for (let i = 0; i < cntWidth * 2; i++) {
 	  createObjs(i, oClass)
+	  /*
+	  let oneObj = document.createElement('div');
+    let oneTop = Math.trunc(window.innerHeight * Math.random());
+    let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
+    let ranH = Math.trunc(Math.random() * 360);
+    oneObj.id = oClass.class + i;
+    oneObj.className = 'tmf-objs';	  
+    oneObj.style.width = oClass.width;
+    oneObj.style.height = oClass.height;
+    oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+    //oneObj.style.backgroundImage = oClass.backgroundColor;
+    oneObj.style.top = oneTop + 'px';
+    oneObj.style.left = oneLeft + 'px';
+    oneObj.style.position = 'fixed';
+    //oneObj.style.border = oClass.border;
+    oneObj.style.borderRadius = '50%';	 
+    oneObj.style.zIndex = '999999999';	  
+    document.body.appendChild(oneObj);	 	 
 
+ oneObj.onmouseover = function(e) {
+      animateBar(oneObj, oneTop, oneLeft);	
+    }
+   onLoadEvent(oneObj);	   
+*/
   }
-	
+
 	console.log('obj set')
 }
 
