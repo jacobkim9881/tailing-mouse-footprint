@@ -1,13 +1,13 @@
 //test.js
 
-function animateBar(obj, top, cls) {
-    let ranW = Math.trunc(Math.random() * 50);
+function animateBar(obj, top, left, cls) {
     let ranW2 = Math.trunc(Math.random() * 50);
     let ranW3 = Math.trunc(Math.random() * 50);
-    let ranH = Math.trunc(Math.random() * 50);
     let ranH2 = Math.trunc(Math.random() * 50);
     let ranH3 = Math.trunc(Math.random() * 50);
   let secnd = 500;	
+	obj.style.width = '10px';
+    obj.style.height = '10px';
 	/*
   obj.animate([
     {
@@ -24,16 +24,22 @@ function animateBar(obj, top, cls) {
     },        
   ], secnd)
 	*/
+  for (let i = 0; i < 3; i++) {
+    let ranW = Math.trunc(Math.random() * 50);
+    let ranH = Math.trunc(Math.random() * 50);
+    setPosition(obj, top, left, ranH, ranW, secnd * i) 
+  }
   //obj.style.backgroundColor = 'white';
   obj.style.opacity = '1';	
   //setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
 }
 
-function setPosition(time) {
+function setPosition(obj, top, left, ranH, ranW, time) {
 
 	setTimeout(() => {
-	obj.style.top = 
+	obj.style.top = (top - ranH) + 'px'
+ 	obj.style.left = (left - ranW) + 'px'	    
 	}, time)
 }
 
@@ -77,7 +83,7 @@ function onLoadEvent(obj, e) {
 
 function createObjs(j, oClass) {
 
-for (let i = 0; i > 9; i++) {
+for (let i = 0; i < 9; i++) {
     let oneObj = document.createElement('div');
     let oneTop = Math.trunc(window.innerHeight * Math.random());
     let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
@@ -87,7 +93,7 @@ for (let i = 0; i > 9; i++) {
     oneObj.className = 'tmf-sub-' + i;	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
-    obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+    oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
     //oneObj.style.backgroundImage = oClass.backgroundColor;
     oneObj.style.top = oneTop + 'px';
     oneObj.style.left = oneLeft + 'px';
@@ -97,8 +103,11 @@ for (let i = 0; i > 9; i++) {
     oneObj.style.zIndex = '999999999';	  
     document.body.appendChild(oneObj);	 	 
     oneObj.onmouseover = function(e) {
-      animateBar(oneObj, oneTop);	
-    } 
+      animateBar(oneObj, oneTop, oneLeft);	
+    }
+   onLoadEvent(oneObj);	   
+	console.log('obj created')
+	
 }
 return
 }
@@ -106,8 +115,8 @@ return
 function setObjs() {
   let oClass = {
       class: 'objs-test',
-      width: '30px',
-      height: '30px',
+      width: '10px',
+      height: '10px',
       border: '3px solid #f2d404',	  
       backgroundColor : 'repeating-linear-gradient(90deg,#f1a501,#f2d404,#f1a501)',
       where: window.innerHeight * Math.random() + 'px'
@@ -115,10 +124,10 @@ function setObjs() {
     cntWidth = Math.trunc(window.innerWidth / 15);
   for (let i = 0; i < cntWidth * 2; i++) {
 	  createObjs(i, oClass)
-   //onLoadEvent(oneObj);	   
 
- 
   }
+	
+	console.log('obj set')
 }
 
 function deleteObjs() {
