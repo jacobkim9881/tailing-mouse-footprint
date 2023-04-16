@@ -27,15 +27,17 @@ function animateBar(obj, top, left, cls) {
   let classes = document.querySelectorAll('.' + obj.className)
 	console.log('classname: ', obj.className)
 	console.log(classes)
-  for (let i = 0; i < 3; i++) {
+
+  //obj.style.backgroundColor = 'white';
+	for (let i = 0; i < 3; i++) {
     classes.forEach(each => {
+  each.style.opacity = '1';	
     let ranW = Math.trunc(Math.random() * 50);
     let ranH = Math.trunc(Math.random() * 50);
-    setPosition(each, top, left, ranH, ranW, secnd * i) 
+    let ranSec = Math.trunc(Math.random() * 100);
+    setPosition(each, top, left, ranH, ranW, (secnd - ranSec) * i) 
     })
   }
-  //obj.style.backgroundColor = 'white';
-  obj.style.opacity = '1';	
   //setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
 }
