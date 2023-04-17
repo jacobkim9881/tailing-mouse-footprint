@@ -24,27 +24,48 @@ function animateBar(obj, top, left, cls) {
     },        
   ], secnd)
 	*/
-  let classes = document.querySelectorAll('.' + obj.className)
-	console.log('classname: ', obj.className)
-	console.log(classes)
-
+  //let classes = document.querySelectorAll('.' + obj.className)
+//	console.log('classname: ', obj.className)
+//	console.log(classes)
+  let oClass = {
+      class: 'objs-test',
+      width: '10px',
+      height: '10px',
+      border: '3px solid #f2d404',	  
+      backgroundColor : 'repeating-linear-gradient(90deg,#f1a501,#f2d404,#f1a501)',
+      where: window.innerHeight * Math.random() + 'px'
+    }
   //obj.style.backgroundColor = 'white';
-	for (let i = 0; i < 3; i++) {
-    classes.forEach(each => {
+	for (let j = 0; j < 9; j++) {
+	let each = createObjs(j, oClass)	
+	for (let i = 0; i < 1; i++) {
+		
+   /* classes.forEach(each => {
   each.style.opacity = '1';	
     let ranW = Math.trunc(Math.random() * 50);
     let ranH = Math.trunc(Math.random() * 50);
     let ranSec = Math.trunc(Math.random() * 100);
     setPosition(each, top, left, ranH, ranW, (secnd - ranSec) * i) 
     })
+    */ 
+		each.style.opacity = '1';
+		each.style.display = 'none'
+    let ranW = Math.trunc((Math.random() - 0.1) * 100);
+    let ranH = Math.trunc((Math.random() - 0.1) * 100);
+    let ranSec = Math.trunc(Math.random() * 300);
+    setPosition(each, top, left, ranH, ranW, (400 - ranSec) * i) 
+
   }
+	}
   //setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
 }
 
 function setPosition(obj, top, left, ranH, ranW, time) {
-
+//console.log(top - ranH, left - ranW)
+console.log(top - ranH, left - ranW)
 	setTimeout(() => {
+		obj.style.display = 'block'
 	obj.style.top = (top - ranH) + 'px'
  	obj.style.left = (left - ranW) + 'px'	    
 	}, time)
@@ -61,6 +82,7 @@ function mouseEvent(e) {
 }
 
 function onLoadEvent(obj, e) {
+	/*
   let pop = Math.random() < 0.1 ? `0.3`: `0`;	
   obj.animate([
     {
@@ -84,20 +106,21 @@ function onLoadEvent(obj, e) {
       opacity: `0`	      
     },        
   ], {duration:1000}) 
-   
+  */ 
   obj.style.opacity = '0';
 }
 
-function createObjs(i, oClass) {
+function createObjs(j, oClass) {
 
-for (let j = 0; j < 9; j++) {
+//for (let j = 0; j < 9; j++) {
     let oneObj = document.createElement('div');
     let oneTop = Math.trunc(window.innerHeight * Math.random());
     let oneLeft = Math.trunc(window.innerWidth * Math.random()); 	  
     let ranH = Math.trunc(Math.random() * 360);
-    oneObj.id = oClass.class + '-' + i + '-' + j;
+    //oneObj.id = oClass.class + '-' + i + '-' + j;
+    oneObj.id = oClass.class + '-' + j;
     oneObj.className = 'tmf-objs';	  
-    oneObj.className = 'tmf-sub-' + i ;	  
+    //oneObj.className = 'tmf-sub-' + i ;	  
     oneObj.style.width = oClass.width;
     oneObj.style.height = oClass.height;
     oneObj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
@@ -115,8 +138,8 @@ for (let j = 0; j < 9; j++) {
    onLoadEvent(oneObj);	   
 //	console.log('obj created', j)
 	
-}
-return
+//}
+return oneObj
 }
 
 function setObjs() {
@@ -130,7 +153,9 @@ function setObjs() {
     },
     cntWidth = Math.trunc(window.innerWidth / 15);
   for (let i = 0; i < cntWidth * 2; i++) {
-	  createObjs(i, oClass)
+  for (let j = 0; j < 9; j++) {
+	  createObjs(j, oClass)
+  }
 	  /*
 	  let oneObj = document.createElement('div');
     let oneTop = Math.trunc(window.innerHeight * Math.random());
