@@ -1,6 +1,8 @@
 //test.js
 
-function animateBar(obj, top, left, cls) {
+function animateBar(obj, e) {
+    let top = e.clientY
+	, left = e.clientX
     let ranW2 = Math.trunc(Math.random() * 50);
     let ranW3 = Math.trunc(Math.random() * 50);
     let ranH2 = Math.trunc(Math.random() * 50);
@@ -50,8 +52,8 @@ function animateBar(obj, top, left, cls) {
     */ 
 		each.style.opacity = '1';
 		each.style.display = 'none'
-    let ranW = Math.trunc((Math.random() - 0.1) * 100);
-    let ranH = Math.trunc((Math.random() - 0.1) * 100);
+    let ranW = Math.abs(Math.trunc((Math.random() - 0.1) * 100));
+    let ranH = Math.abs(Math.trunc((Math.random() - 0.1) * 100));
     let ranSec = Math.trunc(Math.random() * 300);
     setPosition(each, top, left, ranH, ranW, (400 - ranSec) * i) 
 
@@ -63,7 +65,7 @@ function animateBar(obj, top, left, cls) {
 
 function setPosition(obj, top, left, ranH, ranW, time) {
 //console.log(top - ranH, left - ranW)
-console.log(top - ranH, left - ranW)
+console.log(top - ranH, left - ranW, ranH, ranW)
 	setTimeout(() => {
 		obj.style.display = 'block'
 	obj.style.top = (top - ranH) + 'px'
@@ -133,7 +135,7 @@ function createObjs(j, oClass) {
     oneObj.style.zIndex = '999999999';	  
     document.body.appendChild(oneObj);	 	 
     oneObj.onmouseover = function(e) {
-      animateBar(oneObj, oneTop, oneLeft);	
+      animateBar(oneObj, e);	
     }
    onLoadEvent(oneObj);	   
 //	console.log('obj created', j)
