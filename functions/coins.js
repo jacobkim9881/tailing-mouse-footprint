@@ -40,8 +40,10 @@ function animateBar(obj, e) {
   //obj.style.backgroundColor = 'white';
 	for (let j = 0; j < 9; j++) {
 	let each = createObjs(j, oClass)	
-	for (let i = 0; i < 1; i++) {
-		
+		let blinks = 180
+    let barLen = window.innerWidth/15  
+	for (let i = 0 ; i < 360; i++) {
+	// y + sin(degree) * pi * r	
    /* classes.forEach(each => {
   each.style.opacity = '1';	
     let ranW = Math.trunc(Math.random() * 50);
@@ -52,25 +54,36 @@ function animateBar(obj, e) {
     */ 
 		each.style.opacity = '1';
 		each.style.display = 'none'
-    let ranW = Math.abs(Math.trunc((Math.random() - 0.1) * 100));
-    let ranH = Math.abs(Math.trunc((Math.random() - 0.1) * 100));
-    let ranSec = Math.trunc(Math.random() * 300);
-    setPosition(each, top, left, ranH, ranW, (400 - ranSec) * i) 
+      let i2 = i // i >= 0 ? i - 180 : i;	   
+    let ranW = Math.cos(i2/blinks * Math.PI) * barLen 
+
+			//(blinks - i) * 2  //i2 / blinks * 180 
+			//Math.abs(Math.trunc((Math.random() - 0.1) * 100));
+    let ranH = Math.sin(i2/blinks * Math.PI) * barLen 
+		console.log(i2+ '/' +blinks, Math.sin(i2/blinks * Math.PI) )
+			//Math.abs(Math.trunc((Math.random() - 0.1) * 100));
+    let ranSec = 30 // Math.trunc(Math.random() * 30);
+    setPosition(each, top, left, ranH, ranW, (35 - ranSec) * i, i, blinks) 
 
   }
 	}
-  //setTimeout(() => obj.remove(), secnd - 1);	
+  setTimeout(() => obj.remove(), secnd - 1);	
   //obj.style.transform = `rotate(${d2}deg)`
 }
 
-function setPosition(obj, top, left, ranH, ranW, time) {
+function setPosition(obj, top, left, ranH, ranW, time, i, blinks) {
 //console.log(top - ranH, left - ranW)
-console.log(top - ranH, left - ranW, ranH, ranW)
+//console.log(top - ranH, left - ranW, ranH, ranW)
+console.log(ranH, ranW)
 	setTimeout(() => {
 		obj.style.display = 'block'
 	obj.style.top = (top - ranH) + 'px'
  	obj.style.left = (left - ranW) + 'px'	    
 	}, time)
+	if (i - 1 === 359) {
+ 
+  setTimeout(() => obj.remove(), time - 10);	
+	}
 }
 
 function mouseEvent(e) {
@@ -112,7 +125,7 @@ function onLoadEvent(obj, e) {
   obj.style.opacity = '0';
 }
 
-function createObjs(j, oClass) {
+function createObjs(j, oClass, isInitiate) {
 
 //for (let j = 0; j < 9; j++) {
     let oneObj = document.createElement('div');
@@ -133,9 +146,11 @@ function createObjs(j, oClass) {
     //oneObj.style.border = oClass.border;
     oneObj.style.borderRadius = '50%';	 
     oneObj.style.zIndex = '999999999';	  
-    document.body.appendChild(oneObj);	 	 
+    document.body.appendChild(oneObj);	 
+    if (isInitiate) {	
     oneObj.onmouseover = function(e) {
       animateBar(oneObj, e);	
+    }
     }
    onLoadEvent(oneObj);	   
 //	console.log('obj created', j)
@@ -156,7 +171,7 @@ function setObjs() {
     cntWidth = Math.trunc(window.innerWidth / 15);
   for (let i = 0; i < cntWidth * 2; i++) {
   for (let j = 0; j < 9; j++) {
-	  createObjs(j, oClass)
+	  createObjs(j, oClass, 1)
   }
 	  /*
 	  let oneObj = document.createElement('div');
