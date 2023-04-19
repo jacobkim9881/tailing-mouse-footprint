@@ -14,9 +14,9 @@ function addClickEvent(func, targetId, targetUrl, type) {
     if (stopButton.innerHTML === startExtension) {
 	  stopButton.innerHTML= stopExtension};
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      
+	    for (let i = 0; i <= tabs.length; i++) {
       chrome.tabs.sendMessage(
-        tabs[0].id,
+        tabs[i].id,
         {
           name: targetId, 
           path: targetUrl, 
@@ -28,10 +28,10 @@ function addClickEvent(func, targetId, targetUrl, type) {
       
       chrome.runtime.onMessage.addListener((msg, _, sendRes) => {
         chrome.action.setIcon({path: targetUrl,
-          tabId: tabs[0].id
+          tabId: tabs[i].id
         });
       });
-      
+    } 
     });
 
   });
@@ -54,11 +54,12 @@ function triggerStop(func, targetId) {
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
 
+	    for (let i = 0; i <= tabs.length; i++) {
       chrome.storage.local.get(['msg'], function(res){
         //	      console.log(res)
         //	      console.log(targetId)
         chrome.tabs.sendMessage(
-          tabs[0].id,
+          tabs[i].id,
           {
 	  name: res.msg.name,
             path: res.msg.path,
@@ -66,6 +67,7 @@ function triggerStop(func, targetId) {
             sender: 'popup'}
         );
       })
+    }
     });
 	  
   });

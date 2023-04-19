@@ -62,10 +62,12 @@ chrome.runtime.onMessage.addListener((msg) => {
     }
     chrome.storage.local.set({msg: msgObj})
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {     
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {    
+	    for (let i = 0; i <= tabs.length; i++) {
       chrome.scripting.executeScript(
-        { target: {tabId: tabs[0].id},
+        { target: {tabId: tabs[i].id},
           files: ['./functions/' + msg.name + '.js'] });
+	    }
 	    return
     });
     
@@ -80,9 +82,11 @@ chrome.runtime.onMessage.addListener((msg) => {
     chrome.storage.local.set({msg: msgObj})
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+	    for (let i = 0; i <= tabs.length; i++) {
       chrome.scripting.executeScript(
-        { target: { tabId : tabs[0].id},
+        { target: { tabId : tabs[i].id},
           files: ['./functions/' + 'stop' + '.js'] });
+    }
 	    return
     });
 
@@ -91,11 +95,13 @@ chrome.runtime.onMessage.addListener((msg) => {
   } else if (msg.type === 'check') {
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {              
+
+	    for (let i = 0; i <= tabs.length; i++) {
       chrome.storage.local.get(['msg'], function(res){
         //	      console.log(res)
         if (Object.keys(res).length === 0) return; 
         chrome.tabs.sendMessage(
-          tabs[0].id,
+          tabs[i].id,
           { name: res.msg.name,
             path: res.msg.path,
 	 	    type: res.msg.type === 'stop' ? 'stop' : 'moving',
@@ -103,8 +109,9 @@ chrome.runtime.onMessage.addListener((msg) => {
         );
         chrome.action.setIcon({
           path: res.msg.path,
-          tabId: tabs[0].id});
+          tabId: tabs[i].id});
       })
+    }
     });
        
   }
