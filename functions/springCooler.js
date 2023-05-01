@@ -36,9 +36,14 @@ function mouseEvent(e) {
       let t = i >= 0 ? 100 + i : 100 + i;
       setTimeout(() => {
 
-        let newX = pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
+        let newX = Math.cos(i/xSize * Math.PI) * (100/squareWid) + ballPos.x 
+		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.x;       
+
+		      //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
         let newY;             
-        newY = Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
+        newY = Math.sin(i/xSize * Math.PI) * (100/squareWid) + ballPos.y 
+
+		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
 
         //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
         obj.style.left = newX + 'px';
