@@ -16,8 +16,8 @@
         "description": "When clicked, the extension enabled till the disable cliked."
     },
     "popupTitle": {
-        "message": "Choose your mouse effect",
-        "description": "The tile when popup window opened."
+        "message": "Cursor tail",
+        "description": "The title when popup window opened."
     },
     "ratingBtn": {
         "message": "Go to rating",
@@ -28,7 +28,7 @@
         "description": "Alert message occured when user visited over 3 days."
     },
     "ratingQuestion": {
-        "message": "Thanks for enjoying! \nPlease rating the extension!",
+        "message": "Thanks for enjoying! ()Please rating the extension!",
         "description": "Alert message occured when user visited over 3 days."
     }
 }

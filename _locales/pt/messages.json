@@ -9,15 +9,15 @@
     },
     "stopExtension": {
         "message": "Desativar",
-        "description": "Quando clicado, a extensão desativou até a ativação cliked."
+        "description": "Quando clicado, a extensão desativou até a habilitação clicada."
     },
     "startExtension": {
-        "message": "Permitir",
+        "message": "Habilitar",
         "description": "Quando clicado, a extensão ativada até a desativação clinada."
     },
     "popupTitle": {
-        "message": "Escolha o efeito do seu mouse",
-        "description": "O ladrilho quando a janela pop -up se abriu."
+        "message": "Tail do cursor",
+        "description": "O título quando a janela pop -up foi aberta."
     },
     "ratingBtn": {
         "message": "Vá para a classificação",
@@ -28,7 +28,7 @@
         "description": "A mensagem de alerta ocorreu quando o usuário visitou mais de 3 dias."
     },
     "ratingQuestion": {
-        "message": "Obrigado por aproveitar!\n Classificando a extensão!",
+        "message": "Obrigado por aproveitar!() Classificando a extensão!",
         "description": "A mensagem de alerta ocorreu quando o usuário visitou mais de 3 dias."
     }
 }

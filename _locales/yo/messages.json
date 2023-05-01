@@ -16,8 +16,8 @@
         "description": "Nigba ti tẹ, gbigba ifaagun titi di igba mu mu siga."
     },
     "popupTitle": {
-        "message": "Yan ipa amuse rẹ",
-        "description": "Tile nigbati window Agbejade ṣii ṣi."
+        "message": "Iru eso",
+        "description": "Akọle nigbati window Agbejade ṣi ṣi."
     },
     "ratingBtn": {
         "message": "Lọ si idiyele",
@@ -28,7 +28,7 @@
         "description": "Ifiranṣẹ Itaniji ti wa nigbati olumulo ba ṣabẹwo si awọn ọjọ 3."
     },
     "ratingQuestion": {
-        "message": "O ṣeun fun igbadun!\n Jọwọ ṣe idiyele itẹsiwaju naa!",
+        "message": "O ṣeun fun igbadun!() Jọwọ ṣe idiyele itẹsiwaju naa!",
         "description": "Ifiranṣẹ Itaniji ti wa nigbati olumulo ba ṣabẹwo si awọn ọjọ 3."
     }
 }

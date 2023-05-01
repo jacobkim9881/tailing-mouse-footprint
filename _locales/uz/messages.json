@@ -16,8 +16,8 @@
         "description": "Bosilganda, kengaytma noto'g'ri joylashtirishni o'chirib qo'ydi."
     },
     "popupTitle": {
-        "message": "Sichqonchaning ta'sirini tanlang",
-        "description": "Plitka ochilganda plitka ochildi."
+        "message": "Kursor dumi",
+        "description": "Popup oynasi ochilganda sarlavha."
     },
     "ratingBtn": {
         "message": "Reytingga o'ting",
@@ -28,7 +28,7 @@
         "description": "Foydalanuvchi 3 kundan ortiq tashrif buyurganida ogohlantirish xabari paydo bo'ldi."
     },
     "ratingQuestion": {
-        "message": "Rahmat uchun rahmat!\n Iltimos, kengaytmani baholang!",
+        "message": "Rahmat uchun rahmat!() Iltimos, kengaytmani baholang!",
         "description": "Foydalanuvchi 3 kundan ortiq tashrif buyurganida ogohlantirish xabari paydo bo'ldi."
     }
 }

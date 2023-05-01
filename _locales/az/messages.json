@@ -16,8 +16,8 @@
         "description": "Tıklandığında, deaktiv olana qədər uzantı aktivdir."
     },
     "popupTitle": {
-        "message": "Siçan effektinizi seçin",
-        "description": "Popup pəncərə açıldıqda kafel."
+        "message": "Kursor quyruğu",
+        "description": "Popup pəncərəsi açılanda başlıq."
     },
     "ratingBtn": {
         "message": "Reytinqə gedin",
@@ -28,7 +28,7 @@
         "description": "Xəbərdarlıq mesajı istifadəçi 3 gün ərzində ziyarət edərkən baş verdi."
     },
     "ratingQuestion": {
-        "message": "Zövq üçün təşəkkür edirik!\n Zəhmət olmasa uzantıya reytinq edin!",
+        "message": "Zövq üçün təşəkkür edirik!() Zəhmət olmasa uzantıya reytinq edin!",
         "description": "Xəbərdarlıq mesajı istifadəçi 3 gün ərzində ziyarət edərkən baş verdi."
     }
 }

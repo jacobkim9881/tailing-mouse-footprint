@@ -4,8 +4,8 @@
         "description": "Titill forritsins, sem birtist í vefversluninni."
     },
     "appDesc": {
-        "message": "Bættu við fyndnum áhrifum hvenær sem þú færir músina.Þessi framlenging gerir það að verkum að músin fær til að skapa skemmtileg áhrif.",
-        "description": "Lýsing forritsins, sem birtist í vefversluninni."
+        "message": "Bættu við fyndnum áhrifum hvenær sem þú færir músina.Þessi framlenging gerir það að verkum að músin færir til að skapa skemmtileg áhrif.",
+        "description": "Lýsingin á forritinu, birt í vefversluninni."
     },
     "stopExtension": {
         "message": "Slökkva",
@@ -16,8 +16,8 @@
         "description": "Þegar smellt var á, þá var viðbótin virkin þar til slökkt var á því."
     },
     "popupTitle": {
-        "message": "Veldu músaráhrif",
-        "description": "Flísarnar þegar sprettiglugginn opnaði."
+        "message": "Bendilinn hali",
+        "description": "Titillinn þegar sprettiglugginn opnaði."
     },
     "ratingBtn": {
         "message": "Farðu í einkunn",
@@ -28,7 +28,7 @@
         "description": "Viðvörunarskilaboð komu fram þegar notandi heimsótti yfir 3 daga."
     },
     "ratingQuestion": {
-        "message": "Takk fyrir að njóta!\n Vinsamlegast metið framlenginguna!",
+        "message": "Takk fyrir að njóta!() Vinsamlegast metið framlenginguna!",
         "description": "Viðvörunarskilaboð komu fram þegar notandi heimsótti yfir 3 daga."
     }
 }

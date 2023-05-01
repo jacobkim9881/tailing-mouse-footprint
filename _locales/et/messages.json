@@ -5,19 +5,19 @@
     },
     "appDesc": {
         "message": "Lisades naljakaid efekte alati, kui hiire liigutate.See laiendus paneb teie hiirt liikuvaks looma lõbusaid efekte.",
-        "description": "Rakenduse kirjeldus, mis kuvatakse veebipoes."
+        "description": "Veebipoes kuvatud rakenduse kirjeldus."
     },
     "stopExtension": {
         "message": "Keelama",
-        "description": "Kui klõpsatakse, keelab laiendus, kuni lubage luba."
+        "description": "Kui klõpsatakse, keelab laiendus kuni lubamiseni."
     },
     "startExtension": {
         "message": "Lubama",
         "description": "Kui klõpsati, lubas laiendus, kuni keelatud."
     },
     "popupTitle": {
-        "message": "Valige hiire efekt",
-        "description": "Plaat, kui hüpikaken avanes."
+        "message": "Kursorisaba",
+        "description": "Pealkiri, kui hüpikaken avanes."
     },
     "ratingBtn": {
         "message": "Reitingut tegema",
@@ -28,7 +28,7 @@
         "description": "Häireteade tekkis siis, kui kasutaja külastas 3 päeva."
     },
     "ratingQuestion": {
-        "message": "Täname nautimise eest!\n Palun hinnake pikendust!",
+        "message": "Täname nautimise eest!() Palun hinnake pikendust!",
         "description": "Häireteade tekkis siis, kui kasutaja külastas 3 päeva."
     }
 }

@@ -9,18 +9,18 @@
     },
     "stopExtension": {
         "message": "장애를 입히다",
-        "description": "클릭하면 확장이 활성화 될 때까지 연장이 비활성화되었습니다."
+        "description": "클릭하면 확장이 활성화 될 때까지 비활성화됩니다."
     },
     "startExtension": {
         "message": "할 수 있게 하다",
         "description": "클릭하면 연장이 비활성화 될 때까지 확장이 활성화되었습니다."
     },
     "popupTitle": {
-        "message": "마우스 효과를 선택하십시오",
-        "description": "팝업 창이 열렸을 때 타일."
+        "message": "커서 꼬리",
+        "description": "팝업 창이 열렸을 때의 제목."
     },
     "ratingBtn": {
-        "message": "등급으로 이동하십시오",
+        "message": "평가로 이동하십시오",
         "description": "버튼은 새 창을 열어 사용자의 확장을 평가합니다."
     },
     "askQuestion": {
@@ -28,7 +28,7 @@
         "description": "사용자가 3 일 이상 방문했을 때 경고 메시지가 발생했습니다."
     },
     "ratingQuestion": {
-        "message": "즐기 주셔서 감사합니다!\n 연장을 평가하십시오!",
+        "message": "즐기 주셔서 감사합니다!() 연장을 평가하십시오!",
         "description": "사용자가 3 일 이상 방문했을 때 경고 메시지가 발생했습니다."
     }
 }

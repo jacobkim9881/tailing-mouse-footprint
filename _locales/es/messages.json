@@ -8,27 +8,27 @@
         "description": "La descripción de la aplicación, que se muestra en la tienda web."
     },
     "stopExtension": {
-        "message": "Deshabilitar",
+        "message": "Desactivar",
         "description": "Cuando se hace clic, la extensión deshabilitada hasta que la habilitar se aclare."
     },
     "startExtension": {
-        "message": "Habilitar",
-        "description": "Cuando se hace clic, la extensión habilitada hasta que se desactivara."
+        "message": "Permitir",
+        "description": "Cuando se hace clic, la extensión habilitada hasta que la desactivación se reduzca."
     },
     "popupTitle": {
-        "message": "Elija su efecto del mouse",
-        "description": "El mosaico cuando se abrió la ventana emergente."
+        "message": "Cola del cursor",
+        "description": "El título cuando se abrió la ventana emergente."
     },
     "ratingBtn": {
         "message": "Ir a la calificación",
-        "description": "El botón Abra nueva ventana para calificar la extensión del usuario."
+        "description": "El botón Abra una nueva ventana para calificar la extensión del usuario."
     },
     "askQuestion": {
         "message": "¿Has disfrutado de la extensión?",
         "description": "El mensaje de alerta ocurrió cuando el usuario visitó durante 3 días."
     },
     "ratingQuestion": {
-        "message": "¡Gracias por disfrutar!\n Por favor califique la extensión!",
+        "message": "¡Gracias por disfrutar!() Por favor califique la extensión!",
         "description": "El mensaje de alerta ocurrió cuando el usuario visitó durante 3 días."
     }
 }

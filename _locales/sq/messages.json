@@ -16,8 +16,8 @@
         "description": "Kur klikohet, shtrirja mundësoi derisa çaktivizimi i çarë."
     },
     "popupTitle": {
-        "message": "Zgjidhni efektin tuaj të miut",
-        "description": "Tjegull kur u hap dritarja e shfaqjes."
+        "message": "Bishti i kursorit",
+        "description": "Titulli kur u hap dritarja e shfaqjes."
     },
     "ratingBtn": {
         "message": "Shko te Vlerësimi",
@@ -28,7 +28,7 @@
         "description": "Mesazhi i alarmit ndodhi kur përdoruesi vizitoi gjatë 3 ditëve."
     },
     "ratingQuestion": {
-        "message": "Faleminderit për shijimin!\n Ju lutemi vlerësoni shtrirjen!",
+        "message": "Faleminderit për shijimin!() Ju lutemi vlerësoni shtesën!",
         "description": "Mesazhi i alarmit ndodhi kur përdoruesi vizitoi gjatë 3 ditëve."
     }
 }

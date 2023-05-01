@@ -8,7 +8,7 @@
         "description": "D'Beschreiwung vun der Uwendung, déi am Web Store ugewise gëtt."
     },
     "stopExtension": {
-        "message": "Ausgerdéieren",
+        "message": "Ausgedroen",
         "description": "Wann geklickt, ass d'Extensioun ausgeschalt ginn, bis d'Aktioun gekippt huet."
     },
     "startExtension": {
@@ -16,8 +16,8 @@
         "description": "Wann geklickt, ass d'Extensioun aktivéiert bis den Designéier gekippt huet."
     },
     "popupTitle": {
-        "message": "Wielt Är Mauseffekt",
-        "description": "De Fliesen wann Popupfënster opgaang ass."
+        "message": "Cursor Schwanz",
+        "description": "Den Titel wann Pop-up Fënster opgaang ass."
     },
     "ratingBtn": {
         "message": "Géi fannen",
@@ -28,7 +28,7 @@
         "description": "Alert Message geschitt wann de Benotzer iwwer 3 Deeg besicht huet."
     },
     "ratingQuestion": {
-        "message": "Merci fir genannen!\n Bewäert w.e.g. d'Verlängerung!",
+        "message": "Merci fir genannen!() Bewäert w.e.g. d'Verlängerung!",
         "description": "Alert Message geschitt wann de Benotzer iwwer 3 Deeg besicht huet."
     }
 }

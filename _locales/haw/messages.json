@@ -16,8 +16,8 @@
         "description": "I ka wā i hoʻopiliʻia ai, i ka hoʻonuiʻia a hiki i ka hoʻopiʻiʻana i ka hoʻopiʻi."
     },
     "popupTitle": {
-        "message": "E koho i kāu hopena mouse",
-        "description": "ʻO ka tile ke weheʻia ka puka makani."
+        "message": "ʻEke haki launa",
+        "description": "ʻO ke poʻo inoa i ka wā e weheʻia ai ka puka makani."
     },
     "ratingBtn": {
         "message": "Hele i ka helu",
@@ -28,7 +28,7 @@
         "description": "ʻIkeʻia ka leka uila i ka wā i kipaʻia ai nā mea hoʻohana ma luna o 3 mau lā."
     },
     "ratingQuestion": {
-        "message": "Mahalo no ka leʻaleʻa!\n Eʻoluʻolu e helu i ka hoʻonui!",
+        "message": "Mahalo no ka leʻaleʻa!() Eʻoluʻolu e helu i ka hoʻonui!",
         "description": "ʻIkeʻia ka leka uila i ka wā i kipaʻia ai nā mea hoʻohana ma luna o 3 mau lā."
     }
 }

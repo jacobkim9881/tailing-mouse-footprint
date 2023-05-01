@@ -4,20 +4,20 @@
         "description": "It-titlu tal-applikazzjoni, muri fil-maħżen tal-web."
     },
     "appDesc": {
-        "message": "Iż-żieda ta 'effetti umoristiċi kull meta tiċċaqlaq il-maws.Din l-estensjoni tagħmel il-maws tiegħek jiċċaqlaq joħloq effetti divertenti.",
+        "message": "Iż-żieda ta 'effetti umoristiċi kull meta tiċċaqlaq il-maws.Din l-estensjoni tagħmel il-ġurdien tiegħek jiċċaqlaq joħloq effetti divertenti.",
         "description": "Id-deskrizzjoni tal-applikazzjoni, murija fil-maħżen tal-web."
     },
     "stopExtension": {
         "message": "Itfi",
-        "description": "Meta kklikkjat, l-estensjoni tiddiżattiva sa l-Enable Cliked."
+        "description": "Meta tkun ikklikkjata, l-estensjoni kienet diżattivata sa l-Enable Cliked."
     },
     "startExtension": {
         "message": "Jippermetti",
         "description": "Meta tkun ikklikkjata, l-estensjoni ppermettiet sa l-irfigħ tal-cliked."
     },
     "popupTitle": {
-        "message": "Agħżel l-effett tal-maws",
-        "description": "Il-maduma meta nfetħet it-tieqa popup."
+        "message": "Denb tal-cursor",
+        "description": "It-titlu meta nfetħet it-tieqa popup."
     },
     "ratingBtn": {
         "message": "Mur fil-klassifikazzjoni",
@@ -28,7 +28,7 @@
         "description": "Messaġġ ta 'twissija seħħ meta l-utent żar fuq 3 ijiem."
     },
     "ratingQuestion": {
-        "message": "Grazzi talli tgawdi!\n Jekk jogħġbok ikklassifika l-estensjoni!",
+        "message": "Grazzi talli tgawdi!() Jekk jogħġbok ikklassifika l-estensjoni!",
         "description": "Messaġġ ta 'twissija seħħ meta l-utent żar fuq 3 ijiem."
     }
 }

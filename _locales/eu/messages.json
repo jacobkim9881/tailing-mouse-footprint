@@ -16,8 +16,8 @@
         "description": "Klik egitean, luzapena gaituta dago desgaitu arte."
     },
     "popupTitle": {
-        "message": "Aukeratu saguaren eragina",
-        "description": "Teila popup leihoa ireki zenean."
+        "message": "Kurtsorearen buztana",
+        "description": "Izenburua popup leihoa ireki denean."
     },
     "ratingBtn": {
         "message": "Joan Baloraziora",
@@ -28,7 +28,7 @@
         "description": "Alerta mezua 3 egun baino gehiago bisitatu zenean gertatu da."
     },
     "ratingQuestion": {
-        "message": "Eskerrik asko gozatzeagatik!\n Mesedez, balorazioa luzapena!",
+        "message": "Eskerrik asko gozatzeagatik!() Mesedez, balorazioa luzapena!",
         "description": "Alerta mezua 3 egun baino gehiago bisitatu zenean gertatu da."
     }
 }

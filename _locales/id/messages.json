@@ -1,6 +1,6 @@
 {
     "appName": {
-        "message": "Ekor Kursor - Animasi untuk Mouse Anda",
+        "message": "Kursor Ekor - Animasi untuk mouse Anda",
         "description": "Judul aplikasi, ditampilkan di toko web."
     },
     "appDesc": {
@@ -9,15 +9,15 @@
     },
     "stopExtension": {
         "message": "Cacat",
-        "description": "Saat diklik, ekstensi dinonaktifkan sampai Aktifkan klik."
+        "description": "Saat diklik, ekstensi dinonaktifkan sampai diaktifkan."
     },
     "startExtension": {
         "message": "Memungkinkan",
         "description": "Saat diklik, ekstensi diaktifkan sampai dinonaktifkan klik."
     },
     "popupTitle": {
-        "message": "Pilih Efek Mouse Anda",
-        "description": "Ubin saat jendela popup dibuka."
+        "message": "Ekor kursor",
+        "description": "Judul saat jendela popup dibuka."
     },
     "ratingBtn": {
         "message": "Pergi ke peringkat",
@@ -28,7 +28,7 @@
         "description": "Pesan waspada terjadi ketika pengguna mengunjungi selama 3 hari."
     },
     "ratingQuestion": {
-        "message": "Terima kasih telah menikmati!\n Harap peringkat ekstensi!",
+        "message": "Terima kasih telah menikmati!() Harap peringkat ekstensi!",
         "description": "Pesan waspada terjadi ketika pengguna mengunjungi selama 3 hari."
     }
 }

@@ -4,20 +4,20 @@
         "description": "Lietojumprogrammas nosaukums, kas parādīts interneta veikalā."
     },
     "appDesc": {
-        "message": "Pievienojot smieklīgus efektus ikreiz, kad pārvietojat peli.Šis paplašinājums liek pelei kustēties radīt jautrus efektus.",
+        "message": "Smieklīgu efektu pievienošana ikreiz, kad pārvietojat peli.Šis paplašinājums liek pelei kustēties radīt jautrus efektus.",
         "description": "Lietojumprogrammas apraksts, kas parādīts interneta veikalā."
     },
     "stopExtension": {
         "message": "Atspējot",
-        "description": "Noklikšķinot uz, paplašinājums ir atspējots līdz iespējotai atcelšanai."
+        "description": "Noklikšķinot, paplašinājums ir atspējots, līdz ieslēdzat ieslēdzam."
     },
     "startExtension": {
         "message": "Dot iespēju",
         "description": "Noklikšķinot uz, paplašinājums iespējots līdz atspējošanai."
     },
     "popupTitle": {
-        "message": "Izvēlieties peles efektu",
-        "description": "Flīzes, kad atvērts uznirstošais logs."
+        "message": "Kursora aste",
+        "description": "Nosaukums, kad atvērts uznirstošais logs."
     },
     "ratingBtn": {
         "message": "Iet uz vērtējumu",
@@ -28,7 +28,7 @@
         "description": "Brīdinājuma ziņojums notika, kad lietotājs apmeklēja 3 dienu laikā."
     },
     "ratingQuestion": {
-        "message": "Paldies, ka baudījāt!\n Lūdzu, novērtējiet paplašinājumu!",
+        "message": "Paldies, ka baudījāt!() Lūdzu, novērtējiet paplašinājumu!",
         "description": "Brīdinājuma ziņojums notika, kad lietotājs apmeklēja 3 dienu laikā."
     }
 }

@@ -16,8 +16,8 @@
         "description": "Yen diklik, extension ngaktifake nganti mateni clirik."
     },
     "popupTitle": {
-        "message": "Pilih efek mouse sampeyan",
-        "description": "Jubin nalika jendhela pop-up dibukak."
+        "message": "Tail Cursor",
+        "description": "Judhul nalika jendhela nyembul dibukak."
     },
     "ratingBtn": {
         "message": "Menyang peringkat",
@@ -28,7 +28,7 @@
         "description": "Pesen tandha yen pangguna ngunjungi luwih saka 3 dina."
     },
     "ratingQuestion": {
-        "message": "Thanks kanggo seneng!\n Mangga rating extension!",
+        "message": "Thanks kanggo seneng!() Mangga rating extension!",
         "description": "Pesen tandha yen pangguna ngunjungi luwih saka 3 dina."
     }
 }

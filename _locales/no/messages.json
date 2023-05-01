@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Muliggjøre",
-        "description": "Når du klikket, aktiveres utvidelsen til deaktiveringene er klikket."
+        "description": "Når du klikket, aktiveres utvidelsen til de deaktiverer klikket."
     },
     "popupTitle": {
-        "message": "Velg museeffekten din",
-        "description": "Flisen da popup -vinduet åpnet."
+        "message": "Markørhale",
+        "description": "Tittelen da popup -vinduet åpnet."
     },
     "ratingBtn": {
         "message": "Gå til vurdering",
@@ -28,7 +28,7 @@
         "description": "Varslingsmelding oppstod da brukeren besøkte over 3 dager."
     },
     "ratingQuestion": {
-        "message": "Takk for at du nyter!\n Vennligst vurderer utvidelsen!",
+        "message": "Takk for at du nyter!() Vennligst vurderer utvidelsen!",
         "description": "Varslingsmelding oppstod da brukeren besøkte over 3 dager."
     }
 }

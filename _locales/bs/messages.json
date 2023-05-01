@@ -16,8 +16,8 @@
         "description": "Kad se klikne, proširenje je omogućeno dok onemogućava klike."
     },
     "popupTitle": {
-        "message": "Odaberite svoj efekat miša",
-        "description": "Pločica kada se otvorio skočni prozor."
+        "message": "Rep kursora",
+        "description": "Naslov kada se otvorio skočni prozor."
     },
     "ratingBtn": {
         "message": "Idi na ocjenu",
@@ -28,7 +28,7 @@
         "description": "Poruka upozorenja nastala je kada je korisnik posjetio više od 3 dana."
     },
     "ratingQuestion": {
-        "message": "Hvala što ste uživali!\n Molimo ocijenite proširenje!",
+        "message": "Hvala što ste uživali!() Molimo ocijenite proširenje!",
         "description": "Poruka upozorenja nastala je kada je korisnik posjetio više od 3 dana."
     }
 }

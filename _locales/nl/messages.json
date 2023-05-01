@@ -4,7 +4,7 @@
         "description": "De titel van de applicatie, weergegeven in de webwinkel."
     },
     "appDesc": {
-        "message": "Grappige effecten toevoegen wanneer u uw muis beweegt.Door deze extensie zorgt u ervoor dat uw muis leuke effecten veroorzaakt.",
+        "message": "Grappige effecten toevoegen wanneer u uw muis beweegt.Deze extensie zorgt ervoor dat uw muis in beweging gaat, leuke effecten creëren.",
         "description": "De beschrijving van de applicatie, weergegeven in de webwinkel."
     },
     "stopExtension": {
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Inschakelen",
-        "description": "Wanneer geklikt, de extensie ingeschakeld tot de uitschakeling Cliked."
+        "description": "Wanneer geklikt, de extensie ingeschakeld tot de uitschakeling cliked."
     },
     "popupTitle": {
-        "message": "Kies uw muiseffect",
-        "description": "De tegel wanneer het pop -upvenster werd geopend."
+        "message": "Cursorstaart",
+        "description": "De titel wanneer het pop -upvenster werd geopend."
     },
     "ratingBtn": {
         "message": "Ga naar de beoordeling",
@@ -28,7 +28,7 @@
         "description": "Waarschuwingsbericht vond plaats wanneer de gebruiker meer dan 3 dagen bezocht."
     },
     "ratingQuestion": {
-        "message": "Bedankt voor het genieten!\n Beoordeling van de extensie!",
+        "message": "Bedankt voor het genieten!() Beoordeling van de extensie!",
         "description": "Waarschuwingsbericht vond plaats wanneer de gebruiker meer dan 3 dagen bezocht."
     }
 }

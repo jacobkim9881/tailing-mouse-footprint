@@ -8,16 +8,16 @@
         "description": "Descrierea aplicației, afișată în magazinul web."
     },
     "stopExtension": {
-        "message": "Dezactivare",
-        "description": "Când a făcut clic, extensia dezactivată până la activarea activării."
+        "message": "Dezactiva",
+        "description": "Când a făcut clic, extensia dezactivată până la clipeul de activare."
     },
     "startExtension": {
         "message": "Permite",
         "description": "Când a făcut clic, extensia a activat până la dezactivarea clipei."
     },
     "popupTitle": {
-        "message": "Alegeți -vă efectul mouse -ului",
-        "description": "Faianța când a fost deschisă fereastra pop -up."
+        "message": "Coada cursorului",
+        "description": "Titlul când se deschide fereastra pop -up."
     },
     "ratingBtn": {
         "message": "Mergeți la rating",
@@ -28,7 +28,7 @@
         "description": "Mesajul de alertă a apărut atunci când utilizatorul a vizitat peste 3 zile."
     },
     "ratingQuestion": {
-        "message": "Mulțumesc că te -ai bucurat!\n Vă rugăm să evaluați extensia!",
+        "message": "Mulțumesc că te -ai bucurat!() Vă rugăm să evaluați extensia!",
         "description": "Mesajul de alertă a apărut atunci când utilizatorul a vizitat peste 3 zile."
     }
 }

@@ -16,8 +16,8 @@
         "description": "Uma uchofozwa, ukunwetshwa okunikwe amandla kuze kukhubazeke okuhlanganisiwe."
     },
     "popupTitle": {
-        "message": "Khetha umphumela wakho wegundane",
-        "description": "Ithayela lapho kuvulwa iwindi lokuvela."
+        "message": "Umsila wesikhombisi",
+        "description": "Isihloko lapho kuvulwa iwindi lokuvela."
     },
     "ratingBtn": {
         "message": "Iya ekulinganiselweni",
@@ -28,7 +28,7 @@
         "description": "Umlayezo wokuqwashisa wenzeke lapho umsebenzisi evakashele ngaphezu kwezinsuku ezi-3."
     },
     "ratingQuestion": {
-        "message": "Siyabonga ngokujabulela!\n Sicela ulinganise ukunwetshwa!",
+        "message": "Siyabonga ngokujabulela!() Sicela ulinganise ukunwetshwa!",
         "description": "Umlayezo wokuqwashisa wenzeke lapho umsebenzisi evakashele ngaphezu kwezinsuku ezi-3."
     }
 }

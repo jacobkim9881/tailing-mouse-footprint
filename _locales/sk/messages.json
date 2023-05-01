@@ -4,7 +4,7 @@
         "description": "Názov aplikácie, zobrazený vo webovom obchode."
     },
     "appDesc": {
-        "message": "Pridanie vtipných efektov vždy, keď pohybujete myšou.Vďaka tomuto rozšíreniu sa vaša myš vytvára zábavné efekty.",
+        "message": "Pridanie vtipných efektov vždy, keď presuniete myš.Toto rozšírenie spôsobuje, že pohyb myši vytvára zábavné efekty.",
         "description": "Opis aplikácie, zobrazený vo webovom obchode."
     },
     "stopExtension": {
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Umožniť",
-        "description": "Po kliknutí sa rozšírenie povolilo, kým sa zakáže."
+        "description": "Po kliknutí sa rozšírenie povolilo, až kým sa zakáže."
     },
     "popupTitle": {
-        "message": "Vyberte si efekt myši",
-        "description": "Dlaždica, keď sa otvorilo kontextové okno."
+        "message": "Cursor chvost",
+        "description": "Názov, keď sa otvorilo kontextové okno."
     },
     "ratingBtn": {
         "message": "Prejdite na hodnotenie",
@@ -28,7 +28,7 @@
         "description": "Pri výstražnej správe sa vyskytla, keď používateľ navštívil 3 dni."
     },
     "ratingQuestion": {
-        "message": "Ďakujeme, že ste si užívali!\n Vyhodnoťte rozšírenie!",
+        "message": "Ďakujeme, že ste si užívali!() Vyhodnoťte rozšírenie!",
         "description": "Pri výstražnej správe sa vyskytla, keď používateľ navštívil 3 dni."
     }
 }

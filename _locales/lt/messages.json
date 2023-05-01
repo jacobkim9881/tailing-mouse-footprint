@@ -4,7 +4,7 @@
         "description": "Programos pavadinimas, rodomas internetinėje parduotuvėje."
     },
     "appDesc": {
-        "message": "Pridedant juokingus efektus, kai perkeliate pelę.Dėl šio pratęsimo pelės judėjimas sukuria linksmus efektus.",
+        "message": "Pridedant juokingus efektus, kai perkeliate pelę.Dėl šio pratęsimo pelės judėjimas sukuria įdomų efektą.",
         "description": "Programos aprašymas, rodomas internetinėje parduotuvėje."
     },
     "stopExtension": {
@@ -16,8 +16,8 @@
         "description": "Spustelėjus, pratęsimas įgalintas, kol išjungtas išjungimas."
     },
     "popupTitle": {
-        "message": "Pasirinkite pelės efektą",
-        "description": "Plytelės, atidarius iššokantį langą."
+        "message": "Žymeklio uodega",
+        "description": "Pavadinimas, atidarius iššokantį langą."
     },
     "ratingBtn": {
         "message": "Eik į reitingą",
@@ -28,7 +28,7 @@
         "description": "Įspėjimo pranešimas įvyko, kai vartotojas lankėsi daugiau nei 3 dienas."
     },
     "ratingQuestion": {
-        "message": "Ačiū, kad mėgavosi!\n Prašome įvertinti plėtinį!",
+        "message": "Ačiū, kad mėgavosi!() Prašome įvertinti plėtinį!",
         "description": "Įspėjimo pranešimas įvyko, kai vartotojas lankėsi daugiau nei 3 dienas."
     }
 }

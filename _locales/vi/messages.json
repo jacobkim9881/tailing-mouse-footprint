@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Cho phép",
-        "description": "Khi được nhấp, phần mở rộng được bật cho đến khi vô hiệu hóa."
+        "description": "Khi được nhấp, tiện ích mở rộng được bật cho đến khi vô hiệu hóa."
     },
     "popupTitle": {
-        "message": "Chọn hiệu ứng chuột của bạn",
-        "description": "Ngói khi cửa sổ bật lên mở."
+        "message": "Đuôi con trỏ",
+        "description": "Tiêu đề khi cửa sổ bật lên mở."
     },
     "ratingBtn": {
         "message": "Đi đến xếp hạng",
@@ -28,7 +28,7 @@
         "description": "Thông báo cảnh báo đã xảy ra khi người dùng truy cập hơn 3 ngày."
     },
     "ratingQuestion": {
-        "message": "Cảm ơn vì đã tận hưởng!\n Vui lòng xếp hạng phần mở rộng!",
+        "message": "Cảm ơn vì đã tận hưởng!() Vui lòng đánh giá phần mở rộng!",
         "description": "Thông báo cảnh báo đã xảy ra khi người dùng truy cập hơn 3 ngày."
     }
 }

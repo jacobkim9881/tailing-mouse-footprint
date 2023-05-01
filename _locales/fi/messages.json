@@ -9,26 +9,26 @@
     },
     "stopExtension": {
         "message": "Poista käytöstä",
-        "description": "Napsautettaessa laajennus käytti käytöstä, kunnes käyttöönotto on kytketty."
+        "description": "Napsautettuna laajennus poistettiin käytöstä, kunnes käyttöönotto on kytketty."
     },
     "startExtension": {
         "message": "ota käyttöön",
-        "description": "Napsautettuna laajennus käytössä, kunnes poistetaan käytöstä."
+        "description": "Napsautettaessa laajennus käytti, kunnes käytöstä poistetaan."
     },
     "popupTitle": {
-        "message": "Valitse hiiren efekti",
-        "description": "Laatta, kun ponnahdusikkuna avattiin."
+        "message": "Kohdistinhäntä",
+        "description": "Otsikko, kun ponnahdusikkuna avattiin."
     },
     "ratingBtn": {
         "message": "Siirtyä luokitukseen",
-        "description": "Painike avaa uusi ikkuna arvioidaksesi käyttäjän laajennuksen."
+        "description": "Painike Avaa uusi ikkuna arvioidaksesi käyttäjän laajennuksen."
     },
     "askQuestion": {
         "message": "Oletko nauttinut laajennuksesta?",
         "description": "Hälytysviesti tapahtui, kun käyttäjä vieraili 3 päivän aikana."
     },
     "ratingQuestion": {
-        "message": "Kiitos nauttimisesta!\n Arvioi laajennus!",
+        "message": "Kiitos nauttimisesta!() Arvioi laajennus!",
         "description": "Hälytysviesti tapahtui, kun käyttäjä vieraili 3 päivän aikana."
     }
 }

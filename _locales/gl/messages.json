@@ -4,7 +4,7 @@
         "description": "O título da aplicación, que aparece na tenda web."
     },
     "appDesc": {
-        "message": "Engadindo efectos divertidos sempre que move o rato.Esta extensión fai que o rato se mova cree efectos divertidos.",
+        "message": "Engadindo efectos divertidos sempre que move o rato.Esta extensión fai que o rato en movemento cree efectos divertidos.",
         "description": "A descrición da aplicación, que aparece na tenda web."
     },
     "stopExtension": {
@@ -16,19 +16,19 @@
         "description": "Cando se fai clic, a extensión habilitada ata que a desactivación se recorde."
     },
     "popupTitle": {
-        "message": "Elixe o efecto do rato",
-        "description": "A tella cando se abriu a xanela emerxente."
+        "message": "Cola do cursor",
+        "description": "O título cando se abriu a xanela emerxente."
     },
     "ratingBtn": {
         "message": "Vaia á valoración",
-        "description": "O botón abre unha nova xanela para valorar a extensión para o usuario."
+        "description": "O botón Abre nova xanela para valorar a extensión para o usuario."
     },
     "askQuestion": {
         "message": "¿Gozaches da extensión?",
         "description": "A mensaxe de alerta ocorreu cando o usuario visitou durante 3 días."
     },
     "ratingQuestion": {
-        "message": "Grazas por gozar!\n Por favor, valora a extensión!",
+        "message": "Grazas por gozar!() Por favor, valora a extensión!",
         "description": "A mensaxe de alerta ocorreu cando o usuario visitou durante 3 días."
     }
 }

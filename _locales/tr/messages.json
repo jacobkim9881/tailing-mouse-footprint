@@ -16,8 +16,8 @@
         "description": "Tıklandığında, devre dışı bırakılana kadar uzantı etkinleştirildi."
     },
     "popupTitle": {
-        "message": "Fare efektinizi seçin",
-        "description": "Açılır pencere açıldığında karo."
+        "message": "İmleç kuyruğu",
+        "description": "Açılır pencerenin açıldığı başlık."
     },
     "ratingBtn": {
         "message": "Derecelendirmeye git",
@@ -25,10 +25,10 @@
     },
     "askQuestion": {
         "message": "Uzatmadan keyif aldınız mı?",
-        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı meydana geldi."
+        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı oluştu."
     },
     "ratingQuestion": {
-        "message": "Keyfini çıkardığınız için teşekkürler!\n Lütfen uzantıyı derecelendirin!",
-        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı meydana geldi."
+        "message": "Keyfini çıkardığınız için teşekkürler!() Lütfen uzantıyı derecelendirin!",
+        "description": "Kullanıcı 3 gün boyunca ziyaret ettiğinde uyarı mesajı oluştu."
     }
 }

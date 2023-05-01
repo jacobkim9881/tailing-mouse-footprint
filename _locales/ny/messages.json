@@ -16,8 +16,8 @@
         "description": "Mukadula, kukulitsa komwe kwathe ntchito mpaka kuwulitsa."
     },
     "popupTitle": {
-        "message": "Sankhani zotsatira za mbewa yanu",
-        "description": "Matayala pomwe pawindo la popup idatsegulidwa."
+        "message": "Chotemberera mchira",
+        "description": "Mutuwu pomwe popup idatsegulidwa."
     },
     "ratingBtn": {
         "message": "Pitani ku",
@@ -28,7 +28,7 @@
         "description": "Mauthenga achidziwitso omwe amagwiritsa ntchito omwe amasuta anayendera masiku atatu."
     },
     "ratingQuestion": {
-        "message": "Zikomo posangalala ndi kusangalala!\n Chonde chonde gwiritsani ntchito zowonjezera!",
+        "message": "Zikomo posangalala ndi kusangalala!() Chonde chonde gwiritsani ntchito zowonjezera!",
         "description": "Mauthenga achidziwitso omwe amagwiritsa ntchito omwe amasuta anayendera masiku atatu."
     }
 }

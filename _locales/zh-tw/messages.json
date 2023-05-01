@@ -1,11 +1,11 @@
 {
     "appName": {
         "message": "光標尾巴 - 鼠標的動畫",
-        "description": "應用程序的標題，顯示在網絡商店中。"
+        "description": "該應用程序的標題顯示在網絡商店中。"
     },
     "appDesc": {
-        "message": "每當您移動鼠標時，都會添加有趣的效果。此擴展使您的鼠標移動產生有趣的效果。",
-        "description": "該應用程序的描述，顯示在網絡商店中。"
+        "message": "每當您移動鼠標時，都會添加有趣的效果。此擴展使您的鼠標移動創造出有趣的效果。",
+        "description": "應用程序的描述，顯示在網絡商店中。"
     },
     "stopExtension": {
         "message": "禁用",
@@ -13,22 +13,22 @@
     },
     "startExtension": {
         "message": "使能夠",
-        "description": "單擊時，啟用了擴展名，直到禁用cliked。"
+        "description": "單擊時，啟用了擴展名，直到禁用粘合。"
     },
     "popupTitle": {
-        "message": "選擇鼠標效果",
-        "description": "打開彈出窗口時的瓷磚。"
+        "message": "光標尾巴",
+        "description": "打開彈出窗口時的標題。"
     },
     "ratingBtn": {
         "message": "去評級",
-        "description": "按鈕打開新窗口，為用戶評分擴展名。"
+        "description": "該按鈕打開新窗口，以對用戶的擴展名進行評分。"
     },
     "askQuestion": {
         "message": "您喜歡擴展嗎？",
         "description": "當用戶訪問3天內時，會發生警報消息。"
     },
     "ratingQuestion": {
-        "message": "感謝您的享受！（）請對擴展名進行評分！",
+        "message": "感謝您的享受！（）請對擴展名進行評級！",
         "description": "當用戶訪問3天內時，會發生警報消息。"
     }
 }

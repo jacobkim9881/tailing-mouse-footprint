@@ -16,8 +16,8 @@
         "description": "Xa ucofe, ulwandiso lwenziwe de kufike ukukhubaza i-cliked."
     },
     "popupTitle": {
-        "message": "Khetha isiphumo semouse yakho",
-        "description": "I-tile xa iwindow popup ivuliwe."
+        "message": "Umsila wesikhombisi",
+        "description": "Isihloko xa iwindow popup ivuliwe."
     },
     "ratingBtn": {
         "message": "Yiya kumgangatho",
@@ -28,7 +28,7 @@
         "description": "Umyalezo owalumkisayo xa umsebenzisi etyelele ngaphezulu kweentsuku ezintathu."
     },
     "ratingQuestion": {
-        "message": "Enkosi ngokuzonwabisa!\n Nceda ulinganise ulwandiso!",
+        "message": "Enkosi ngokuzonwabisa!() Nceda ulinganise ulwandiso!",
         "description": "Umyalezo owalumkisayo xa umsebenzisi etyelele ngaphezulu kweentsuku ezintathu."
     }
 }

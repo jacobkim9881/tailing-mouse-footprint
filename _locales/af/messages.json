@@ -1,6 +1,6 @@
 {
     "appName": {
-        "message": "Cursor Tails - Animasies vir jou muis",
+        "message": "Mysersterte - animasies vir jou muis",
         "description": "Die titel van die toepassing, wat in die webwinkel vertoon word."
     },
     "appDesc": {
@@ -16,8 +16,8 @@
         "description": "As dit geklik word, word die uitbreiding in staat gestel totdat die Deaktiveer gekliek is."
     },
     "popupTitle": {
-        "message": "Kies u muiseffek",
-        "description": "Die teël toe die pop -upvenster oopgaan."
+        "message": "Wyserstert",
+        "description": "Die titel toe die pop -upvenster oopgemaak word."
     },
     "ratingBtn": {
         "message": "Gaan na gradering",
@@ -25,10 +25,10 @@
     },
     "askQuestion": {
         "message": "Het u die uitbreiding geniet?",
-        "description": "Alert -boodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
+        "description": "Waarskuwingsboodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
     },
     "ratingQuestion": {
-        "message": "Dankie dat u geniet het!\n Beoordeel asseblief die uitbreiding!",
-        "description": "Alert -boodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
+        "message": "Dankie dat u geniet het!() Beoordeel asseblief die uitbreiding!",
+        "description": "Waarskuwingsboodskap het plaasgevind toe die gebruiker oor 3 dae besoek het."
     }
 }

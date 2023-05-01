@@ -4,7 +4,7 @@
         "description": "Naslov aplikacije, prikazan v spletni trgovini."
     },
     "appDesc": {
-        "message": "Dodajanje smešnih učinkov vsakič, ko premikate miško.Zaradi te razširitve miške se premikajo zabavne učinke.",
+        "message": "Dodajanje smešnih učinkov vsakič, ko premikate miško.Zaradi te razširitve miške premikajo zabavne učinke.",
         "description": "Opis aplikacije, prikazan v spletni trgovini."
     },
     "stopExtension": {
@@ -13,11 +13,11 @@
     },
     "startExtension": {
         "message": "Omogoči",
-        "description": "Ko kliknemo, je razširitev omogočena do onemogočanja."
+        "description": "Ko kliknete, je razširitev omogočena do onemogočanja."
     },
     "popupTitle": {
-        "message": "Izberite svoj učinek miške",
-        "description": "Ploščica, ko se je odprlo pojavno okno."
+        "message": "Rep kazalca",
+        "description": "Naslov, ko se je odprlo pojavno okno."
     },
     "ratingBtn": {
         "message": "Pojdi na oceno",
@@ -28,7 +28,7 @@
         "description": "Sporočilo o opozorilu se je zgodilo, ko ga je uporabnik obiskal v 3 dneh."
     },
     "ratingQuestion": {
-        "message": "Hvala za uživanje!\n Prosimo, ocenite razširitev!",
+        "message": "Hvala za uživanje!() Prosimo, ocenite razširitev!",
         "description": "Sporočilo o opozorilu se je zgodilo, ko ga je uporabnik obiskal v 3 dneh."
     }
 }

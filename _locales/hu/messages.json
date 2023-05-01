@@ -16,8 +16,8 @@
         "description": "Amikor kattint, a meghosszabbítás engedélyezve a letiltásig."
     },
     "popupTitle": {
-        "message": "Válassza ki az egérhatást",
-        "description": "A csempe, amikor a felbukkanó ablak kinyílt."
+        "message": "Kurzor fark",
+        "description": "A cím, amikor a felbukkanó ablak megnyílt."
     },
     "ratingBtn": {
         "message": "Menjen a minősítésre",
@@ -28,7 +28,7 @@
         "description": "A riasztási üzenet akkor történt, amikor a felhasználó 3 nap alatt meglátogatta."
     },
     "ratingQuestion": {
-        "message": "Köszönöm, hogy élvezted!\n Kérjük, értékelje a kiterjesztést!",
+        "message": "Köszönöm, hogy élvezted!() Kérjük, értékelje a kiterjesztést!",
         "description": "A riasztási üzenet akkor történt, amikor a felhasználó 3 nap alatt meglátogatta."
     }
 }

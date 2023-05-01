@@ -1,11 +1,11 @@
 {
     "appName": {
-        "message": "Tails cúrsóra - beochan do do luch",
+        "message": "Tails cúrsóra - Beochan do do luch",
         "description": "Teideal an iarratais, a thaispeántar sa siopa gréasáin."
     },
     "appDesc": {
         "message": "Éifeachtaí greannmhar a chur leis aon uair a bhogann tú do luch.Fágann an síneadh seo go gcruthaíonn do luch ag gluaiseacht éifeachtaí spraoi.",
-        "description": "An cur síos ar an iarratas, ar taispeáint sa siopa gréasáin."
+        "description": "An cur síos ar an iarratas, a thaispeántar sa siopa gréasáin."
     },
     "stopExtension": {
         "message": "Míchumais",
@@ -16,8 +16,8 @@
         "description": "Nuair a chliceáiltear é, chuir an síneadh ar chumas an díchumasaithe cliked."
     },
     "popupTitle": {
-        "message": "Roghnaigh d’éifeacht luiche",
-        "description": "An tíl nuair a osclaíodh an fhuinneog aníos."
+        "message": "Eireaball cúrsóra",
+        "description": "An teideal nuair a osclaíodh an fhuinneog aníos."
     },
     "ratingBtn": {
         "message": "Téigh go Rátáil",
@@ -28,7 +28,7 @@
         "description": "Tharla teachtaireacht foláirimh nuair a thug an t -úsáideoir cuairt air thar 3 lá."
     },
     "ratingQuestion": {
-        "message": "Go raibh maith agat as taitneamh a bhaint as!\n Rátáil an síneadh le do thoil!",
+        "message": "Go raibh maith agat as taitneamh a bhaint as!() Rátáil an síneadh le do thoil!",
         "description": "Tharla teachtaireacht foláirimh nuair a thug an t -úsáideoir cuairt air thar 3 lá."
     }
 }

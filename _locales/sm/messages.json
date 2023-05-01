@@ -16,8 +16,8 @@
         "description": "A kiliki, o le faʻaopoopoga mafai ona mafai ona faʻamutaina le faʻamamaina."
     },
     "popupTitle": {
-        "message": "Filifili lau isumu susu",
-        "description": "O le taʻele pe a tatalaina le faʻamalama appup."
+        "message": "Taui i luga",
+        "description": "O le ulutala pe a tatalaina le faamalama faamalama."
     },
     "ratingBtn": {
         "message": "Alu i le rating",
@@ -28,7 +28,7 @@
         "description": "O le feʻau alele e tupu pe a oʻo i le tagata faʻaaoga i le 3 aso."
     },
     "ratingQuestion": {
-        "message": "Faafetai mo le fiafia!\n Faʻamolemole o loʻo avea le faʻalauteleina!",
+        "message": "Faafetai mo le fiafia!() Faʻamolemole o loʻo avea le faʻalauteleina!",
         "description": "O le feʻau alele e tupu pe a oʻo i le tagata faʻaaoga i le 3 aso."
     }
 }

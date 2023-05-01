@@ -8,16 +8,16 @@
         "description": "Y disgrifiad o'r cymhwysiad, wedi'i arddangos yn y siop we."
     },
     "stopExtension": {
-        "message": "Analluoga ’",
-        "description": "Pan gaiff ei glicio, mae'r estyniad yn anabl nes bod y galluogi wedi'i glicio."
+        "message": "Analluogasech",
+        "description": "Pan gaiff ei glicio, mae'r estyniad yn anabl nes bod y galluogi yn clicio."
     },
     "startExtension": {
         "message": "Galluoga",
         "description": "Pan gafodd ei glicio, galluogodd yr estyniad nes i'r analluogi gael ei glicio."
     },
     "popupTitle": {
-        "message": "Dewiswch Effaith Eich Llygoden",
-        "description": "Y deilsen pan agorodd ffenestr naid."
+        "message": "Cynffon cyrchwr",
+        "description": "Y teitl pan agorodd ffenestr naid."
     },
     "ratingBtn": {
         "message": "Ewch i'r Sgôr",
@@ -28,7 +28,7 @@
         "description": "Digwyddodd neges rhybuddio pan ymwelodd y defnyddiwr dros 3 diwrnod."
     },
     "ratingQuestion": {
-        "message": "Diolch am fwynhau!\n Graddiwch yr estyniad os gwelwch yn dda!",
+        "message": "Diolch am fwynhau!() Graddiwch yr estyniad os gwelwch yn dda!",
         "description": "Digwyddodd neges rhybuddio pan ymwelodd y defnyddiwr dros 3 diwrnod."
     }
 }

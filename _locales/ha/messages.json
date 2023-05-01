@@ -16,8 +16,8 @@
         "description": "Lokacin da aka danna, an kunna tsawa har kashe kashe."
     },
     "popupTitle": {
-        "message": "Zaɓi tasirin linzamin kwamfuta",
-        "description": "Da tayal lokacin da aka bude taga."
+        "message": "Kurarrun wutsiya",
+        "description": "Taken lokacin da aka buɗe wuraren fito da ke buɗe."
     },
     "ratingBtn": {
         "message": "Je zuwa kimantawa",
@@ -28,7 +28,7 @@
         "description": "Saƙon Alamar Taɗi ya faru lokacin da mai amfani ya ziyarci kwanaki 3."
     },
     "ratingQuestion": {
-        "message": "Na gode da jin daɗin rayuwa!\n Da fatan za a kimanta tsawo!",
+        "message": "Na gode da jin daɗin rayuwa!() Da fatan za a kimanta tsawo!",
         "description": "Saƙon Alamar Taɗi ya faru lokacin da mai amfani ya ziyarci kwanaki 3."
     }
 }

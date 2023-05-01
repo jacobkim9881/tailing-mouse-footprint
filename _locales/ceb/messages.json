@@ -16,8 +16,8 @@
         "description": "Kung gi-klik, gipadagan ang extension hangtod sa pag-undang sa Cliked."
     },
     "popupTitle": {
-        "message": "Pilia ang imong epekto sa mouse",
-        "description": "Ang tile kung gibuksan ang window sa popup."
+        "message": "Ikog sa cursor",
+        "description": "Ang titulo sa pagbukas sa window sa popup."
     },
     "ratingBtn": {
         "message": "Adto sa rating",
@@ -28,7 +28,7 @@
         "description": "Ang mensahe sa alerto nga nakuha kung ang user nga gibisita sa sobra sa 3 ka adlaw."
     },
     "ratingQuestion": {
-        "message": "Salamat sa pagkalipay!\n Palihug rating ang extension!",
+        "message": "Salamat sa pagkalipay!() Palihug rating ang extension!",
         "description": "Ang mensahe sa alerto nga nakuha kung ang user nga gibisita sa sobra sa 3 ka adlaw."
     }
 }

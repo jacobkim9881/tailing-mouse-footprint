@@ -16,8 +16,8 @@
         "description": "Kana zvichityiwa, kuwedzerwa kunogoneswa kusvika kune iyo ivhu rakabvumirwa."
     },
     "popupTitle": {
-        "message": "Sarudza yako mbeva yemhedzisiro",
-        "description": "Tile kana hwindo rePopup rakavhurwa."
+        "message": "Cursor muswe",
+        "description": "Iro zita racho parwindo rapa rakavhurwa."
     },
     "ratingBtn": {
         "message": "Enda kuChiyero",
@@ -28,7 +28,7 @@
         "description": "Yambiro meseji yakaitika kana mushandisi akashanyira anopfuura mazuva matatu."
     },
     "ratingQuestion": {
-        "message": "Kutenda nekunakidzwa!\n Ndokumbira urege kuwedzerwa!",
+        "message": "Kutenda nekunakidzwa!() Ndokumbira urege kuwedzerwa!",
         "description": "Yambiro meseji yakaitika kana mushandisi akashanyira anopfuura mazuva matatu."
     }
 }

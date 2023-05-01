@@ -16,8 +16,8 @@
         "description": "Gava ku bikirtînin, dirêjkirin çalak kirin heya ku nekêşbar bike."
     },
     "popupTitle": {
-        "message": "Bandora Mişkiya xwe hilbijêrin",
-        "description": "Tiliya ku pope popup vekir."
+        "message": "Çivîkên kursî",
+        "description": "Sernavê dema ku populer popup vekir."
     },
     "ratingBtn": {
         "message": "Herin Rating",
@@ -28,7 +28,7 @@
         "description": "Peyama Alert dema ku bikarhêner zêdetirî 3 rojan ziyaret kiriye çêbû."
     },
     "ratingQuestion": {
-        "message": "Spas ji bo kêfa!\n Ji kerema xwe dirêjkirinê deng bidin!",
+        "message": "Spas ji bo kêfa!() Ji kerema xwe dirêjkirinê deng bidin!",
         "description": "Peyama Alert dema ku bikarhêner zêdetirî 3 rojan ziyaret kiriye çêbû."
     }
 }
