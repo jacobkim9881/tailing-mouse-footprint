@@ -31,20 +31,32 @@ function mouseEvent(e) {
     //Math.trunc(Math.random() * 100)
     let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
-    let obj = trigger(e);
+    let obj = trigger(e)
+	  , roundLength = 10
+	  , formerLength = roundLength
+	    , limit = xSize/2
+	  , former2
     for (let i = -xSize; i <= xSize; i++) {     
-      let t = i >= 0 ? 100 + i : 100 + i;
+	   formerLength = roundLength
+	    former2 = 0 
+     // let t = i >= 0 ? 100 + i : 100 + i
+	    let i2 = i * 2
+	    
       setTimeout(() => {
-
-        let newX = Math.cos(i/xSize * Math.PI) * (100/squareWid) + ballPos.x 
+if (Math.abs(i) === limit || Math.abs(i) === 0) {
+		roundLength = roundLength * 1.68
+	former2 = Math.cos(i2/xSize * Math.PI) * formerLength
+	    }
+        let newX = (Math.cos(i2/xSize * Math.PI) * roundLength - former2 )+ ballPos.x  
 		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.x;       
 
 		      //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
         let newY;             
-        newY = Math.sin(i/xSize * Math.PI) * (100/squareWid) + ballPos.y 
+        newY = Math.sin(i2/xSize * Math.PI) * roundLength + ballPos.y 
 
-		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;       
-
+		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;      
+	      console.log(roundLength)
+	//console.log(newX, newY)
         //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
         obj.style.left = newX + 'px';
         obj.style.top = newY + 'px';        
