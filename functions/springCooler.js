@@ -63,7 +63,7 @@ function mouseEvent(e) {
 	  obj.style.display = 'block'
         //ballPos.x = newX;
         //ballPos.y = newY;
-      }, (xSize + 1 + i))
+      }, (1 + i * 2))
     }
   }
 }
