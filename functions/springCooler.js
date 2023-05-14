@@ -1,6 +1,6 @@
 function mouseEvent(e) {
 
-  let xSize = 200;
+  let xSize = 1000;
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
 
@@ -21,48 +21,49 @@ function mouseEvent(e) {
     obj.style.borderRadius = '50%';
   
     document.body.appendChild(obj);
-    setTimeout(() => obj.remove(), xSize * 2 * (600/xSize));
+    setTimeout(() => obj.remove(), xSize * 2 );
     return obj;
   }
   let num = parseInt(localStorage.mouseCounter);
   localStorage.mouseCounter = num + 1;
-  if (num %  3 === 0 ) {  
+  if (num %  7 === 0 ) {  
     let ballRad = 100;
     //Math.trunc(Math.random() * 100)
     let ballPos = {x: e.clientX + ballRad , y: e.clientY};  
     // for loop ball's orbit
     let obj = trigger(e)
-	  , roundLength = 10
-	  , formerLength = roundLength
+	  , roundLength = 1
 	    , limit = xSize/2
 	  , former2
-    for (let i = -xSize; i <= xSize; i++) {     
-	   formerLength = roundLength
-	    former2 = 0 
+	  , shootDeg = num % 360 < 180 ? - (num % 180) * 2 : (179 - (num % 180)) * 2
+	  console.log(shootDeg)
+	  // this will hide stayed obj
+	  //obj.style.display = 'none'
+    for (let i = 1; i <= xSize; i++) {     
      // let t = i >= 0 ? 100 + i : 100 + i
 	    let i2 = i * 2
 	    
       setTimeout(() => {
-if (Math.abs(i) === limit || Math.abs(i) === 0) {
-		roundLength = roundLength * 1.68
-	former2 = Math.cos(i2/xSize * Math.PI) * formerLength
-	    }
-        let newX = (Math.cos(i2/xSize * Math.PI) * roundLength - former2 )+ ballPos.x  
+
+        let newX = (Math.cos((shootDeg % 360) / 360 * Math.PI) * roundLength * i)+ ballPos.x  
+        //let newX = (Math.cos(i2/xSize * Math.PI) * roundLength)+ ballPos.x  
 		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.x;       
 
 		      //pOrM === 1 ? i / 2 + ballPos.x : i * pOrM / 2 - xSize + ballPos.x;
         let newY;             
-        newY = Math.sin(i2/xSize * Math.PI) * roundLength + ballPos.y 
+        newY = Math.sin((shootDeg % 360) / 360 * Math.PI) * roundLength * i + ballPos.y 
+        //newY = Math.sin(i2/xSize * Math.PI) * roundLength + ballPos.y 
 
 		      //Math.pow(i, 2)/(100/squareWid) - Math.pow(-xSize, 2)/(100/squareWid) + ballPos.y;      
-	      console.log(roundLength)
-	//console.log(newX, newY)
+//	      console.log(roundLength)
+	console.log(newX, newY)
         //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
         obj.style.left = newX + 'px';
         obj.style.top = newY + 'px';        
+	  obj.style.display = 'block'
         //ballPos.x = newX;
         //ballPos.y = newY;
-      }, (xSize + 1 + i) * (600/xSize))
+      }, (xSize + 1 + i))
     }
   }
 }
