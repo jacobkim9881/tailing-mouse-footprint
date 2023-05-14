@@ -7,7 +7,8 @@ function mouseEvent(e) {
   function trigger(e) {
     let obj = document.createElement('div');
     let ballSize = window.innerWidth/150;
-    let randomBallSize = Math.trunc(Math.random() * ballSize) + 5;
+    let randomBallSize = (window.innerWidth/60) 
+		  //Math.trunc(Math.random() * ballSize) + 5;
     let ranXpos = parseInt(e.clientX, 10);
     let ranYpos = parseInt(e.clientY, 10);
     let ranH = Math.trunc(Math.random() * 360);
@@ -17,7 +18,7 @@ function mouseEvent(e) {
     obj.style.top = ranYpos + 'px'
     obj.style.width = randomBallSize + 'px';
     obj.style.height = randomBallSize + 'px';
-    obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
+    //obj.style.backgroundColor = `hsl(${ranH}, 100%, 50%)`;
     obj.style.borderRadius = '50%';
   
     document.body.appendChild(obj);
@@ -35,6 +36,8 @@ function mouseEvent(e) {
 	  , roundLength = 1
 	    , limit = xSize/2
 	  , former2
+	  , colorChange = (num * 3 )% 360 
+	  , colorChange2 = (num * 3 + 180)% 360 
 	  , shootDeg = num % 360 < 180 ? - (num % 180) * 2 : (179 - (num % 180)) * 2
 	  console.log(shootDeg)
 	  // this will hide stayed obj
@@ -58,6 +61,7 @@ function mouseEvent(e) {
 //	      console.log(roundLength)
 	console.log(newX, newY)
         //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
+        obj.style.background = `linear-gradient(${colorChange}deg, hsl(${colorChange}, 100%, 50%), hsl(${colorChange2}, 100%, 50%) 100%)` 
         obj.style.left = newX + 'px';
         obj.style.top = newY + 'px';        
 	  obj.style.display = 'block'
