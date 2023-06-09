@@ -1,8 +1,46 @@
-	  function runObj(e, xSize, num, startDeg, timeSlower) {
-    //Math.trunc(Math.random() * 100)
+	  function runObjs(e, xSize, num, startDeg, timeSlower) {
+		  const degs = [0, 60, 119, 179, -59, -119, -179]
     let ballPos = {x: e.clientX, y: e.clientY};  
+    let obj = trigger(e, xSize, timeSlower)
+    , obj2 = trigger(e, xSize, timeSlower)
+		  , round1 = 24 
+		  , halfRound = round1/2
+	, degTo24 = ((num + degs[0]) % (17 * round1)) / 17 
+	, deg2To24 = ((num + degs[1]) % (17 * round1)) / 17 
+	, numIn360 = num % 360
+	  , shootDeg = degTo24 < halfRound ? - (degTo24 * 15 % 181) * 2 - 0.01 : (360 - (degTo24 * 15 % 180)) * 2 - 0.01
+	  , shootDeg2 = deg2To24 < halfRound ? - (deg2To24 * 15 % 181) * 2 - 0.01 : (360 - (deg2To24 * 15 % 180)) * 2 - 0.01
+		  , lengMulti = 0.5 
+
+    for (let i = 1; i <= xSize; i++) {     
+    	  let colorChange = Math.trunc((i * 0.05 + numIn360 )% 360) 
+      setTimeout(() => {
+
+        let newX = (Math.cos((shootDeg % 360) / 360 * Math.PI) *  i * lengMulti )+ ballPos.x  
+        , newX2 = (Math.cos((shootDeg2 % 360) / 360 * Math.PI) *  i * lengMulti )+ ballPos.x  
+               , newY = Math.sin((shootDeg % 360) / 360 * Math.PI) * i * lengMulti + ballPos.y 
+               , newY2 = Math.sin((shootDeg2 % 360) / 360 * Math.PI) * i * lengMulti + ballPos.y 
+        obj.style.backgroundColor = `hsl(${colorChange}, 80%, 55%)` 
+        obj2.style.backgroundColor = `hsl(${colorChange}, 80%, 55%)` 
+        obj.style.left = newX + 'px';
+        obj2.style.left = newX2 + 'px';
+        obj.style.top = newY + 'px';        
+        obj2.style.top = newY2 + 'px';        
+	  obj.style.display = 'block'
+	  obj2.style.display = 'block'
+      }, (1 + i * timeSlower))
+    }
+  }
+
+function runObj(e, xSize, num, startDeg, timeSlower) {
+    //Math.trunc(Math.random() * 100)
+		  //console.time('client x, y: ')
+    let ballPos = {x: e.clientX, y: e.clientY};  
+		  //console.timeLog('client x, y: ')
     // for loop ball's orbit
     let obj = trigger(e, xSize, timeSlower)
+		  //console.time('trigger: ')
+		  //console.timeLog('trigger: ')
 		  , round1 = 24 
 		  , halfRound = round1/2
 	//, numIn360 = ((num + startDeg) % (17 * round1)) / 17 
@@ -10,9 +48,9 @@
 	, numIn360 = num % 360
 	  , shootDeg = degTo24 < halfRound ? - (degTo24 * 15 % 181) * 2 - 0.01 : (360 - (degTo24 * 15 % 180)) * 2 - 0.01
 	  //, shootDeg = numIn360  < 180 ? - (numIn360 + startDeg % 180) * 2 : (179 - (numIn360+ startDeg % 180)) * 2
-		  , lengMulti = 1.5 
+		  , lengMulti = 0.5 
 	  //console.log('shootDeg : ', shootDeg, ' numIn360 : ', numIn360)
-		  
+
 	  // this will hide stayed obj
 	  //obj.style.display = 'none'
 		  //let degChange
@@ -20,11 +58,12 @@
 		  //, newY
     for (let i = 1; i <= xSize; i++) {     
      // let t = i >= 0 ? 100 + i : 100 + i
-	    	  let degChange = Math.trunc((i * 0.2 )% 360) 
+	    	  //let degChange = Math.trunc((i * 0.2 )% 360) 
 	    	  //let degChange = Math.trunc((i * 0.2 )% 360) 
 	    	  //, degChange = Math.trunc((i * 0.54 )% 360) 
-	  , colorChange = Math.trunc((i * 0.05 + numIn360 )% 360) 
-	  , colorChange2 = Math.trunc((i * num * 0.005 + 180)% 360) 
+	  let colorChange = Math.trunc((i * 0.05 + numIn360 )% 360) 
+	  //, colorChange = Math.trunc((i * 0.05 + numIn360 )% 360) 
+	  //, colorChange2 = Math.trunc((i * num * 0.005 + 180)% 360) 
 	  //, colorChange = Math.trunc((i * num * 0.01 )% 360) 
 	  //, colorChange2 = Math.trunc((i * num * 0.01 + 180)% 360) 
       setTimeout(() => {
@@ -42,11 +81,13 @@
 	//console.log(newX, newY)
 //	      console.log(num)
         //console.log(Math.cos(i/180 * Math.PI), ballRad, ballPos.x)
-        obj.style.backgroundColor = `hsl(${colorChange}, 80%, 50%)` 
+//	      console.time('style: ')
+        obj.style.backgroundColor = `hsl(${colorChange}, 80%, 55%)` 
         //obj.style.background = `linear-gradient(${degChange}deg, hsl(${colorChange}, 100%, 50%), hsl(${colorChange2}, 100%, 50%) 100%)` 
         obj.style.left = newX + 'px';
         obj.style.top = newY + 'px';        
 	  obj.style.display = 'block'
+//	      console.timeEnd('style: ')
         //ballPos.x = newX;
         //ballPos.y = newY;
       }, (1 + i * timeSlower))
@@ -60,7 +101,7 @@
     let ranXpos = parseInt(e.clientX, 10);
     let ranYpos = parseInt(e.clientY, 10);
     let ranH = Math.trunc(Math.random() * 360);
-    let ranH2 =  Math.trunc(Math.random() * 360); 
+    //let ranH2 =  Math.trunc(Math.random() * 360); 
     obj.style.position = 'fixed';
     //obj.style.left = ranXpos + 'px';
     //obj.style.top = ranYpos + 'px'
@@ -77,7 +118,7 @@
 function mouseEvent(e) {
 
   let xSize = 500
-	, timeSlower = 4
+	, timeSlower = 2 
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
 
@@ -86,14 +127,21 @@ function mouseEvent(e) {
   if (num %  17 === 0 ) {
 	  //console.log(num)
 	 // for(let i = 1, i <= 6; i++) {
+	   console.time('style: ')
+runObjs(e, xSize, num, 0, timeSlower)
+	      console.timeEnd('style: ')
+/*
+	      console.time('style: ')
 //runObj(e, xSize, num, i * 60)
 runObj(e, xSize, num, 0, timeSlower)
 runObj(e, xSize, num, 60, timeSlower)
-runObj(e, xSize, num, 119, timeSlower)
-runObj(e, xSize, num, 179, timeSlower)
-runObj(e, xSize, num, - 59, timeSlower)
-runObj(e, xSize, num, - 119, timeSlower)
-runObj(e, xSize, num, - 179, timeSlower)
+//runObj(e, xSize, num, 119, timeSlower)
+//runObj(e, xSize, num, 179, timeSlower)
+//runObj(e, xSize, num, - 59, timeSlower)
+//runObj(e, xSize, num, - 119, timeSlower)
+//runObj(e, xSize, num, - 179, timeSlower)
+	      console.timeEnd('style: ')
+	  */
 	 // }
   }
 }
