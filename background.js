@@ -62,7 +62,16 @@ chrome.runtime.onMessage.addListener((msg) => {
     }
     chrome.storage.local.set({msg: msgObj})
 
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {     
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {    
+if (msg.name === 'springCooler') {
+
+chrome.scripting.insertCSS(   { target: {tabId: tabs[0].id},
+ files: ['./functions/test.css'] }, () => {console.log('testtest')} )
+ //css: './test.css' }, () => {console.log('testtest')} )
+
+}
+
+
       chrome.scripting.executeScript(
         { target: {tabId: tabs[0].id},
           files: ['./functions/' + msg.name + '.js'] });

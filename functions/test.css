@@ -1,0 +1,10 @@
+.round-grad {
+position: fixed;
+border-radius: 50%;
+width: 14.75px;
+height: 14.75px;
+}
+
+body {
+background-color: white;
+}
