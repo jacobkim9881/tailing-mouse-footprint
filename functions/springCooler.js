@@ -1,4 +1,4 @@
-	  function runObjs(e, xSize, num, startDeg, timeSlower) {
+	  function runObjs(e, xSize, num, startDeg, timeSlower, lengMulti) {
 		  const degs = [0, 60, 119, 179, -59, -119, -179]
     let ballPos = {x: e.clientX, y: e.clientY};  
     let obj = trigger(e, xSize, timeSlower)
@@ -27,7 +27,6 @@
 	  , shootDeg5 = deg5To24 < halfRound ? - (deg5To24 * 15 % 181) * 2 - 0.01 : (360 - (deg5To24 * 15 % 180)) * 2 - 0.01
 	  , shootDeg6 = deg6To24 < halfRound ? - (deg6To24 * 15 % 181) * 2 - 0.01 : (360 - (deg6To24 * 15 % 180)) * 2 - 0.01
 	  , shootDeg7 = deg7To24 < halfRound ? - (deg7To24 * 15 % 181) * 2 - 0.01 : (360 - (deg7To24 * 15 % 180)) * 2 - 0.01
-		  , lengMulti = 0.5 
 
     for (let i = 1; i <= xSize; i++) {     
     	  let colorChange = Math.trunc((i * 0.05 + numIn360 )% 360) 
@@ -166,7 +165,8 @@ function runObj(e, xSize, num, startDeg, timeSlower) {
 function mouseEvent(e) {
 
   let xSize = 500
-	, timeSlower = 3 
+	, timeSlower = 2 
+		  , lengMulti = 0.3
   let squareWid = Math.random() * 0.4 + 0.1;
   let pOrM = Math.random() >= 0.5 ? 1 : -1;
 
@@ -176,7 +176,7 @@ function mouseEvent(e) {
 	  //console.log(num)
 	 // for(let i = 1, i <= 6; i++) {
 	   console.time('style: ')
-runObjs(e, xSize, num, 0, timeSlower)
+runObjs(e, xSize, num, 0, timeSlower, lengMulti)
 	      console.timeEnd('style: ')
 /*
 	      console.time('style: ')
