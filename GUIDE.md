@@ -1,4 +1,4 @@
-## How to contribute
+### How to contribute
 Firstly the extension installing guide for devleoping is here [installed](https://github.com/jacobkim9881/tailing-mouse-footprint/blob/master/README.md). In [./functions](https://github.com/jacobkim9881/tailing-mouse-footprint/tree/master/functions) javascript files for styled mouse pointer are. For custome mouse pointer or for testing new mouse pointer here below is making mouse pointer guide.
 
 ## How to make custome/test mouse pointer
