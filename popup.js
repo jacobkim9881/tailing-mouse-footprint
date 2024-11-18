@@ -73,9 +73,15 @@ function triggerStop(func, targetId) {
 
 function stopEvent(func, targetId) {
   let stopButton =  func(targetId);
-  stopButton.innerHTML === stopExtension ? 
-    stopButton.innerHTML = startExtension : 
+
+  if (stopButton.innerHTML === stopExtension) { 
+    stopButton.innerHTML = startExtension 
+    stopButton.className = 'on'
+  }
+  else {
     stopButton.innerHTML = stopExtension
+    stopButton.className = 'off'
+  }
   return stopButton.innerHTML;
 }
 
@@ -223,4 +229,14 @@ chrome.storage.local.get(['msg'], function(res){
   if(res.msg.type === 'stop') buttonElement('stop').innerHTML = startExtension;
 
 })
+
+
+/////////// click sound ////////////
+const vid = document.getElementById("crisp-audio");   
+const button = document.querySelectorAll(".mousemove") 
+button.forEach(element => {  
+element.onclick = function playVid() { 
+vid.play(); 
+} 
+});
 

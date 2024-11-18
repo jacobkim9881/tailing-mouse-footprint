@@ -17,8 +17,7 @@
 	  height: 510px;
 	  background-image: url('./images/cover_20241118.png');
         }
-	#wrapper {
-		border: thick double #573a00;
+	#wrapper {		
 		margin: 10px;
 	}
 	#title-ext {
@@ -31,17 +30,36 @@
 	display:none;
 	}
 	#empty-space1 {
-	height: 150px;
+	height: 110px;
+	}  
+	#rating {
+	  color: #383838;
+    text-decoration: none;
+    background-image: url('./images/cover_t1_20241118.png');
+    display: block;
+    width: 192px;
+    height: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+	}
+	#rating h4:active {
+	}
+
+	#rating h4 {
+      	  margin: 10px 0 0 0;
+	  text-align: center;
+    
+    display: none;
 	}
 	#icons {
           width: 100%;
-	  padding: 8px;
+	  padding: 6px;
 	}
         button {
           height: 32px;
           width: 32px;
           outline: none;
-          padding: 5px;
+          padding: 3px;
           border: none;
         }
         .buttonDiv :hover {
@@ -96,10 +114,9 @@
 	  display: inline-block;
         }
 	.mousemove {
-	  box-shadow: 0.3rem 0.3rem 0.6rem #ffc69e, -0.2rem -0.2rem 0.5rem #ffede0;
 	  border-radius: 50%;
 	  border: 1px;
-	  background-color: #ffa05c;
+    background-color: #cca813;
 	  animation-duration: 2s;
           animation-name: slidein;
 
@@ -127,7 +144,7 @@
           background-image: url('./images/letter/letter32.png');
         }
         #colorfulSquare {
-         #573a00 background-image: url('./images/csquare/colofulSquare32.png');
+          background-image: url('./images/csquare/colofulSquare32.png');
         }
         #colorfulBall {
           background-image: url('./images/co/colofulBall32.png');
@@ -200,44 +217,45 @@
           background-image: url('./images/rainbow/rainbow32');
 	  background-color: #ec9d75;
         }
-	#rating {
-	  color: #383838;
-          text-decoration: none;
-	  display: none;
-	}
-	#rating h4:active {
+	
+  .stopButton {    
+  }
+
+  .on {
+    background-image: url('./images/cover_t2_20241118.png');  
+  }
+
+  .off {
+    background-image: url('./images/cover_t3_20241118.png');    
+  }
+
+	#stop {
+    display: block;
+    cursor: pointer;		
+    width: 140px;    
+    color: #481710;
+    font-size: 1px;
+    height: 40px;
+    margin-left: 75px;    
+    margin-top: 20px;
 	}
 
-	#rating h4 {
-      	  margin: 10px 0 0 0;
-	  text-align: center;
-	}
-	
-	#stop {
-	  cursor: pointer;		
-          width: 100%;
- 	  height: 40px;
-	  color: #ffe2ad;
-	  font-family: BebasNeue;
-          text-indent: 10px;
-          background-color: #573a00;
-	  padding: 10px 0 10px 0;
-          font-size: 0.9rem;
-          animation-duration: 2s;
-          animation-name: slidein;
-	}
 	#stop:active {
 	}
-	#stop:hover {
-  text-decoration: underline;
+	#stop:hover {      
 	}
 	
       </style>
     </head>
     <body>
-    <div id="wrapper">	    
+    <div id="wrapper">	     
       <h4 id="title-ext">Choose your mouse effect</h4>
       <div id="empty-space1"></div>
+      <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
+        <h4 id="rating-h4" >
+        Go to rating	  
+        </h4>	  
+        </a>
       <div id="icons">
       <span class= "buttonDiv" >
         <button id="bubble" class="mousemove"></button>
@@ -257,10 +275,10 @@
   <span class= "buttonDiv" >
     <button id="snowflake" class="mousemove"></button>
   </span>
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="bunny" class="mousemove"></button>
-  </span>
+  </span>  
+  <br/><br/> 
   <span class= "test" >
     <button id="waterWave"></button>
   </span> 
@@ -279,13 +297,13 @@
   <span class= "buttonDiv" >
     <button id="atom" class="mousemove"></button>
   </span>
-  <br/><br/> 
  <span class= "buttonDiv" >
     <button id="petal" class="mousemove"></button>
   </span>
   <span class= "buttonDiv" >
     <button id="float" class="mousemove"></button>
-  </span>
+  </span>  
+  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="card" class="mousemove"></button>
   </span>
@@ -295,23 +313,22 @@
    <span class= "buttonDiv" >
     <button id="colorSpring" class="mousemove"></button>
   </span>
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="coins" class="mousemove"></button>
   </span>
   <span class= "buttonDiv" >
     <button id="digital" class="mousemove"></button>
-  </span>
+  </span>  
   <span class= "buttonDiv" >
     <button id="particleMagnet" class="mousemove"></button>
   </span>
+  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="rainbow" class="mousemove"></button>
   </span>
   <span class= "buttonDiv" >
     <button id="warpWhite" class="mousemove"></button>
   </span>
-  <br/><br/> 
   <span class= "buttonDiv" >
     <button id="warpBlack" class="mousemove"></button>
   </span>
@@ -319,15 +336,13 @@
     <button id="warpRainbow" class="mousemove"></button>
   </span>
   </div>
-  <a id="rating" target="_blank" href="https://chrome.google.com/webstore/detail/cursor-tails-animations-f/bgmbliffojkhembdalfdgldpeihhpdnm?hl&authuser=0" >
-  <h4 id="rating-h4" >
-  Go to rating	  
-  </h4>	  
-  </a>
   <span class= "stopButton" >
-    <button id="stop"></button>
+    <div id="stop"></div>      
   </span>
   </div>
-      <script src="popup.js"></script>
+  <audio id="crisp-audio">
+    <source src="./etc/crisp.wav" type="audio/wav">
+  </audio>  
+  <script src="popup.js"></script>
     </body>
   </html>
