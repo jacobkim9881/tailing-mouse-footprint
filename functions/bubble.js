@@ -20,10 +20,10 @@ function mouseEvent(e) {
       width: ran10 + 'px',
       height: ran10 + 'px' 
     }
-  ], 200)
+  ], 400)
 
   document.body.appendChild(obj);
-  setTimeout(() => obj.remove(), 200);
+  setTimeout(() => obj.remove(), 500);
   return;
 }
 
